@@ -42,7 +42,7 @@ export default function ComingSoon() {
       </p>
 
       {/* Scrolling Ribbon */}
-<div className="relative w-full my-12 h-24 sm:h-28 md:h-32">
+<div className="relative w-full my-4 sm:my-12 h-24 sm:h-28 md:h-32">
   {/* Ribbon 1 - Top Left to Bottom Right */}
   <div className="ribbon top -rotate-4 top-2 sm:top-4 md:top-6">
     <div className="marquee marquee-left">
@@ -83,7 +83,7 @@ export default function ComingSoon() {
 
 
 
-        <p className="text-center mb-6">
+        <p className="text-center md:text-0.5 mb-6">
           But why wait? We’re already taking orders. Drop your details below and let’s get the mithai rolling..
         </p>
       {/* Contact Form */}
@@ -94,7 +94,7 @@ export default function ComingSoon() {
 
         <form
           onSubmit={handleSubmit}
-          className="bg-white rounded-2xl p-6 shadow-lg space-y-4"
+          className="bg-white rounded-2xl p-6 shadow-lg space-y-4 mx-[4px] sm:mx-0"
         >
           {/* Name + Email */}
           <div className="flex flex-col md:flex-row gap-4">
