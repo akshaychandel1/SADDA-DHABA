@@ -12,11 +12,35 @@ export default function ComingSoon() {
   setForm((prev) => ({ ...prev, [name]: value }));
 };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     console.log("Form submitted:", form);
-    // alert("Thanks for reaching out! We'll get back to you soon.");
-     // Clear the form fields
+    try {
+    const res = await fetch("http://localhost:5000/api/contact", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(form),
+    });
+
+    const data = await res.json();
+
+    if (data.success) {
+      console.log("Form submitted:", form);
+
+      // Reset form
+      setForm({ name: "", email: "", message: "" });
+
+      // Show success popup
+      setShowPopup(true);
+      setTimeout(() => setShowPopup(false), 3000);
+    } else {
+      alert("Failed to send. Try again later.");
+    }
+  } catch (error) {
+    console.error(error);
+    alert("Something went wrong.");
+  }  
+    // Clear the form fields
     setForm({
       name: "",
       email: "",
