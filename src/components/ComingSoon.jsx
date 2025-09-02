@@ -5,6 +5,7 @@ import LogoText from '../assets/icons/LogoText.svg';
 
 export default function ComingSoon() {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
+  const [showPopup, setShowPopup] = useState(false);
 
   const handleChange = (e) => {
   const { name, value } = e.target;
@@ -14,13 +15,15 @@ export default function ComingSoon() {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("Form submitted:", form);
-    alert("Thanks for reaching out! We'll get back to you soon.");
+    // alert("Thanks for reaching out! We'll get back to you soon.");
      // Clear the form fields
-    setFormData({
+    setForm({
       name: "",
       email: "",
       message: "",
     });
+     setShowPopup(true);
+     setTimeout(() => setShowPopup(false), 3000);
   };
 
   return (
@@ -94,7 +97,7 @@ export default function ComingSoon() {
 
         <form
           onSubmit={handleSubmit}
-          className="bg-white rounded-2xl p-6 shadow-lg space-y-4 mx-[4px] sm:mx-0"
+          className="bg-white rounded-2xl p-6 shadow-lg space-y-4 mx-[20px] sm:mx-0"
         >
           {/* Name + Email */}
           <div className="flex flex-col md:flex-row gap-4">
@@ -136,6 +139,12 @@ export default function ComingSoon() {
             LET&apos;S GET COOKING
           </button>
         </form>
+         {/* ✅ Popup */}
+      {showPopup && (
+        <div className="absolute top-2 right-2 bg-green-500 text-white px-4 py-2 rounded-lg shadow-md">
+          Your Message Submitted, Thanks for reaching out! 🎉
+        </div>
+         )}
       </div>
     </div>
   );
