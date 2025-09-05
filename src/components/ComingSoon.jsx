@@ -153,42 +153,43 @@ export default function ComingSoon() {
             name="message"
             placeholder="Enter Your Message!"
             value={form.message}
+            required
             onChange={handleChange}
             rows="4"
             className="bg-white w-full p-3 rounded-lg border border-gray-300 focus:outline-none text-gray-900"
           ></textarea>
 
-          {/* Submit Button */}
-              <button
-        type="submit"
-        className="font-barber tracking-wider w-full bg-white py-3 rounded-full font-bold text-lg text-red-600 hover:bg-gray-100 transition flex items-center justify-center"
-        disabled={loading} // prevent double click
-      >
-        {loading ? (
-          <svg
-            className="animate-spin h-5 w-5 text-red-600"
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-          >
-            <circle
-              className="opacity-25"
-              cx="12"
-              cy="12"
-              r="10"
-              stroke="currentColor"
-              strokeWidth="4"
-            ></circle>
-            <path
-              className="opacity-75"
-              fill="currentColor"
-              d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"
-            ></path>
-          </svg>
-        ) : (
-          "LET'S GET COOKING"
-        )}
-      </button>
+         <button
+  type="submit"
+  className="items-center font-barber tracking-wider w-full bg-white py-3 rounded-full font-bold text-lg text-red-600 hover:bg-gray-100 transition flex items-center justify-center h-[48px]"
+  disabled={loading}
+>
+  {loading ? (
+    <svg
+      className="animate-spin h-5 w-5 text-red-600"
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+    >
+      <circle
+        className="opacity-25"
+        cx="12"
+        cy="12"
+        r="10"
+        stroke="currentColor"
+        strokeWidth="4"
+      ></circle>
+      <path
+        className="opacity-75"
+        fill="currentColor"
+        d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"
+      ></path>
+    </svg>
+  ) : (
+    "LET'S GET COOKING"
+  )}
+</button>
+
 
           {/* <button
             type="submit"
