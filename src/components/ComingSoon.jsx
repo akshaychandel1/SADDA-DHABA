@@ -80,12 +80,12 @@ export default function ComingSoon() {
       {/* <h1 className="font-barber text-5xl">SAADA HALWAI</h1> */}
       <br />
       {/* Main Heading */}
-      <h2 className="font-barber tracking-wide text-4xl md:text-8xl text-center">
-        COOKING UP MAGIC...
+      <h2 className="font-barber tracking-wide text-6xl md:text-8xl text-center">
+        COOKING UP MAGIC
       </h2>
 
       {/* Sub Text */}
-      <p className="mt-4 text-center max-w-xl">
+      <p className="text-center text-sm md:text-base mb-6 px-[28px] md:px-0 mt-4">
         Saada Halwai is almost here to serve you a taste of tradition with a twist.
       </p>
 
@@ -131,7 +131,7 @@ export default function ComingSoon() {
 
 
 
-        <p className="text-center md:text-0.5 mb-6">
+        <p className="text-center text-sm md:text-base mb-6 px-[28px] md:px-0">
           But why wait? We’re already taking orders. Drop your details below and let’s get the mithai rolling..
         </p>
       {/* Contact Form */}
