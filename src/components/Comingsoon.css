@@ -15,6 +15,11 @@
     transform: translateX(0%);
   }
 }
+/* Prevent horizontal scrollbar globally */
+html, body {
+  overflow-x: hidden;
+}
+
 
 
  .ribbon { 
@@ -25,7 +30,7 @@
   background: white;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* soft shadow below */
   transform: translateY(-2px); 
-  border-radius: 6px;
+  /* border-radius: 6px; */
   height: 50px;
   display: flex;
   align-items: center;
@@ -100,8 +105,8 @@
 @media (max-width: 640px) {
   .ribbon {
     position: absolute;
-    left: -6%;   /* extend slightly outside to close side gaps */
-    right: -6%;
+    left: 0;   /* extend slightly outside to close side gaps */
+    right: 0;
     height: 32px;
     display: flex;
     align-items: center;
@@ -110,14 +115,14 @@
   .ribbon.top {
     top: 52%;
     transform-origin: center;
-    transform: translateY(-50%) rotate(-3deg); /* smaller angle */
+    transform: translateY(-50%) rotate(-3deg) scaleX(1.04); /* smaller angle */
     z-index: 10;
   }
 
   .ribbon.bottom {
     top: 52%;
     transform-origin: center;
-    transform: translateY(-50%) rotate(3deg); /* smaller angle */
+    transform: translateY(-50%) rotate(3deg) scaleX(1.04); /* smaller angle */
     z-index: 5;
   }
 
@@ -135,6 +140,6 @@
   }
   .marquee {
   display: flex;
-  width: 100%; /* doubled so text can loop */
+  width: 200%; /* doubled so text can loop */
 }
 }

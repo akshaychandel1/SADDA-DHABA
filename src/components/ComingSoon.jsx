@@ -49,7 +49,7 @@ export default function ComingSoon() {
   };
 
   return (
-    <div className="flex flex-col m-2 pt-5 pb-5 items-center rounded-4xl justify-center bg-red-600 text-white">
+    <div className="flex flex-col min-h-screen m-2 pt-5 pb-5 items-center rounded-4xl justify-center bg-red-600 text-white">
       {/* Logo / Title */}
       <img className="w-52"
               src={LogoText} 
@@ -69,7 +69,7 @@ export default function ComingSoon() {
       {/* Scrolling Ribbon */}
 <div className="relative w-full my-4 sm:my-12 h-24 sm:h-28 md:h-32">
   {/* Ribbon 1 - Top Left to Bottom Right */}
-  <div className="ribbon top -rotate-4 top-2 sm:top-4 md:top-6">
+  <div className="ribbon top -rotate-4 top-2 sm:top-4 md:top-6 absolute inset-x-0 top-[40%] -rotate-6 sm:top-4 md:top-6 bg-white shadow-lg h-10 flex items-center scale-x-[1.014] origin-center">
     <div className="marquee marquee-left">
       <span className="flex items-center">
         {Array.from({ length: 20 }).map((_, i) => (
@@ -87,7 +87,7 @@ export default function ComingSoon() {
   </div>
 
   {/* Ribbon 2 - Top Right to Bottom Left */}
-  <div className="ribbon bottom rotate-4 top-2 sm:top-4 md:top-6">
+  <div className="ribbon bottom rotate-4 top-2 sm:top-4 md:top-6 absolute inset-x-0 top-[60%] rotate-6 sm:top-4 md:top-6 bg-white shadow-md h-10 flex items-center z-5 scale-x-[1.013] origin-center">
     <div className="marquee marquee-right">
       <span className="flex items-center">
         {Array.from({ length: 20 }).map((_, i) => (
