@@ -16,7 +16,7 @@ export default function ComingSoon() {
     e.preventDefault();
     console.log("Form submitted:", form);
      try {
-    const res = await fetch("https://asia-south1-mechatron-lab.cloudfunctions.net/sendSaddaHalwaiQuery", {
+    const res = await fetch("https://sendsaddahalwaiquery-rlsrgzipqq-el.a.run.app", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(form),
