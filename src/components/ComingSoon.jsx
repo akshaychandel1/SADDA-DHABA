@@ -15,26 +15,26 @@ export default function ComingSoon() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     console.log("Form submitted:", form);
-    const myHeaders = new Headers();
-myHeaders.append("Content-Type", "application/json");
+     try {
+    const res = await fetch("https://asia-south1-mechatron-lab.cloudfunctions.net/sendSaddaHalwaiQuery", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(form),
+    });
 
-const raw = JSON.stringify({
-  "name": form.name,
-  "email": form.email,
-  "message": form.message
-});
-
-const requestOptions = {
-  method: "POST",
-  headers: myHeaders,
-  body: raw,
-  redirect: "follow"
-};
-
-fetch("https://sendsaddahalwaiquery-rlsrgzipqq-el.a.run.app", requestOptions)
-  .then((response) => response.text())
-  .then((result) => console.log(result))
-  .catch((error) => console.error(error));
+    if (res.ok) {
+      console.log("Form submitted successfully!");
+      setForm({ name: "", email: "", message: "" });
+      setShowPopup(true);
+      setTimeout(() => setShowPopup(false), 3000);
+    } else {
+      console.error("Failed to submit form:", res.status);
+      alert("Failed to send. Try again later.");
+    }
+  } catch (error) {
+    console.error("Error submitting form:", error);
+    alert("Something went wrong.");
+  }
     // try {
     // const res = await fetch("https://asia-south1-mechatron-lab.cloudfunctions.net/sendSaddaHalwaiQuery", {
     
@@ -45,30 +45,30 @@ fetch("https://sendsaddahalwaiquery-rlsrgzipqq-el.a.run.app", requestOptions)
 
    
 
-    if (res.status==200) {
-      console.log("Form submitted:");
+    // if (res.status==200) {
+    //   console.log("Form submitted:");
 
-      // Reset form
-      setForm({ name: "", email: "", message: "" });
+    //   // Reset form
+    //   setForm({ name: "", email: "", message: "" });
 
-      // Show success popup
-      setShowPopup(true);
-      setTimeout(() => setShowPopup(false), 3000);
-    } else {
-      alert("Failed to send. Try again later.");
-    }
+    //   // Show success popup
+    //   setShowPopup(true);
+    //   setTimeout(() => setShowPopup(false), 3000);
+    // } else {
+    //   alert("Failed to send. Try again later.");
+    // }
   // } catch (error) {
   //   console.error(error);
   //   alert("Something went wrong.");
   // }  
     // Clear the form fields
-    setForm({
-      name: "",
-      email: "",
-      message: "",
-    });
-     setShowPopup(true);
-     setTimeout(() => setShowPopup(false), 3000);
+    // setForm({
+    //   name: "",
+    //   email: "",
+    //   message: "",
+    // });
+    //  setShowPopup(true);
+    //  setTimeout(() => setShowPopup(false), 3000);
   };
 
   return (
