@@ -6,6 +6,7 @@ import LogoText from '../assets/icons/LogoText.svg';
 export default function ComingSoon() {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
   const [showPopup, setShowPopup] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const handleChange = (e) => {
   const { name, value } = e.target;
@@ -14,6 +15,7 @@ export default function ComingSoon() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true); // Start loading
     console.log("Form submitted:", form);
     try {
     const res = await fetch("https://asia-south1-mechatron-lab.cloudfunctions.net/sendSaddaHalwaiQuery", {
@@ -37,7 +39,10 @@ export default function ComingSoon() {
   } catch (error) {
     console.error(error);
     alert("Something went wrong.");
-  }  
+  } finally {
+    setLoading(false); // Stop loading
+  }
+
     // Clear the form fields
     setForm({
       name: "",
@@ -119,7 +124,7 @@ export default function ComingSoon() {
 
         <form
           onSubmit={handleSubmit}
-          className="bg-white rounded-2xl p-6 shadow-lg space-y-4 mx-[20px] sm:mx-0"
+          className=" p-6 space-y-4 mx-[20px] sm:mx-0"
         >
           {/* Name + Email */}
           <div className="flex flex-col md:flex-row gap-4">
@@ -129,7 +134,7 @@ export default function ComingSoon() {
               placeholder="Your Name"
               value={form.name}
               onChange={handleChange}
-              className="flex-1 p-3 rounded-lg border border-gray-300 focus:outline-none text-gray-900"
+              className="bg-white flex-1 p-3 rounded-lg border border-gray-300 focus:outline-none text-gray-900"
               required
             />
             <input
@@ -138,7 +143,7 @@ export default function ComingSoon() {
               placeholder="Your Mail"
               value={form.email}
               onChange={handleChange}
-              className="flex-1 p-3 rounded-lg border border-gray-300 focus:outline-none text-gray-900"
+              className="bg-white flex-1 p-3 rounded-lg border border-gray-300 focus:outline-none text-gray-900"
               required
             />
           </div>
@@ -150,16 +155,47 @@ export default function ComingSoon() {
             value={form.message}
             onChange={handleChange}
             rows="4"
-            className="w-full p-3 rounded-lg border border-gray-300 focus:outline-none text-gray-900"
+            className="bg-white w-full p-3 rounded-lg border border-gray-300 focus:outline-none text-gray-900"
           ></textarea>
 
           {/* Submit Button */}
-          <button
+              <button
+        type="submit"
+        className="font-barber tracking-wider w-full bg-white py-3 rounded-full font-bold text-lg text-red-600 hover:bg-gray-100 transition flex items-center justify-center"
+        disabled={loading} // prevent double click
+      >
+        {loading ? (
+          <svg
+            className="animate-spin h-5 w-5 text-red-600"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+          >
+            <circle
+              className="opacity-25"
+              cx="12"
+              cy="12"
+              r="10"
+              stroke="currentColor"
+              strokeWidth="4"
+            ></circle>
+            <path
+              className="opacity-75"
+              fill="currentColor"
+              d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"
+            ></path>
+          </svg>
+        ) : (
+          "LET'S GET COOKING"
+        )}
+      </button>
+
+          {/* <button
             type="submit"
             className="font-barber tracking-wider w-full bg-red-600 text-white py-3 rounded-full font-bold text-lg hover:bg-red-700 transition"
           >
             LET&apos;S GET COOKING
-          </button>
+          </button> */}
         </form>
          {/* ✅ Popup */}
       {showPopup && (
