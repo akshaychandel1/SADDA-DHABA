@@ -15,17 +15,38 @@ export default function ComingSoon() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     console.log("Form submitted:", form);
-    try {
-    const res = await fetch("http://localhost:5000/api/contact", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(form),
-    });
+    const myHeaders = new Headers();
+myHeaders.append("Content-Type", "application/json");
 
-    const data = await res.json();
+const raw = JSON.stringify({
+  "name": form.name,
+  "email": form.email,
+  "message": form.message
+});
 
-    if (data.success) {
-      console.log("Form submitted:", form);
+const requestOptions = {
+  method: "POST",
+  headers: myHeaders,
+  body: raw,
+  redirect: "follow"
+};
+
+fetch("https://sendsaddahalwaiquery-rlsrgzipqq-el.a.run.app", requestOptions)
+  .then((response) => response.text())
+  .then((result) => console.log(result))
+  .catch((error) => console.error(error));
+    // try {
+    // const res = await fetch("https://asia-south1-mechatron-lab.cloudfunctions.net/sendSaddaHalwaiQuery", {
+    
+    //   method: "POST",
+    //   headers: { "Content-Type": "application/json" },
+    //   body: JSON.stringify(form),
+    // });
+
+   
+
+    if (res.status==200) {
+      console.log("Form submitted:");
 
       // Reset form
       setForm({ name: "", email: "", message: "" });
@@ -36,10 +57,10 @@ export default function ComingSoon() {
     } else {
       alert("Failed to send. Try again later.");
     }
-  } catch (error) {
-    console.error(error);
-    alert("Something went wrong.");
-  }  
+  // } catch (error) {
+  //   console.error(error);
+  //   alert("Something went wrong.");
+  // }  
     // Clear the form fields
     setForm({
       name: "",
