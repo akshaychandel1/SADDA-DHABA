@@ -3,7 +3,7 @@
     transform: translateX(0%);
   }
   100% {
-    transform: translateX(-50%);
+    transform: translateX(-50%)
   }
 }
 
@@ -25,7 +25,7 @@ html, body {
  .ribbon { 
   position: absolute;
   left: 0;
-  width: 100%;
+  width: 200%;
   overflow: hidden;
   background: white;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* soft shadow below */
@@ -71,7 +71,7 @@ html, body {
 
 .marquee {
   display: flex;
-  width: 100%; /* doubled so text can loop */
+   width: max-content /* doubled so text can loop */
 }
 
 .marquee span {
@@ -93,11 +93,11 @@ html, body {
 }
 
 .marquee-left {
-  animation: marquee-left 25s linear infinite;
+  animation: marquee-left 105s linear infinite;
 }
 
 .marquee-right {
-  animation: marquee-right 25s linear infinite;
+  animation: marquee-right 105s linear infinite;
 }
 
 /* ===== Responsive fixes for small screens ===== */
@@ -125,6 +125,14 @@ html, body {
     transform: translateY(-50%) rotate(3deg) scaleX(1.04); /* smaller angle */
     z-index: 5;
   }
+  .marquee-left {
+  animation: marquee-left 25s linear infinite;
+}
+
+.marquee-right {
+  animation: marquee-right 25s linear infinite;
+}
+
 
   .marquee span {
     font-size: 0.9rem;

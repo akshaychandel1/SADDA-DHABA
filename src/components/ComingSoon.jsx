@@ -92,7 +92,7 @@ export default function ComingSoon() {
   </div>
 
   {/* Ribbon 2 - Top Right to Bottom Left */}
-  <div className="ribbon bottom rotate-4 top-2 sm:top-4 md:top-6 absolute inset-x-0 top-[60%] rotate-6 sm:top-4 md:top-6 bg-white shadow-md h-10 flex items-center z-5 scale-x-[1.013] origin-center">
+  <div className="ribbon bottom rotate-4 top-2 absolute inset-x-0 top-[60%] rotate-6 sm:top-4 md:top-6 bg-white shadow-md h-10 flex items-center z-5 scale-x-[1.013] origin-center">
     <div className="marquee marquee-right">
       <span className="flex items-center">
         {Array.from({ length: 20 }).map((_, i) => (
