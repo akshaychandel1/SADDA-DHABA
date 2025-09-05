@@ -1,0 +1,31 @@
+// try {
+    // const res = await fetch("https://asia-south1-mechatron-lab.cloudfunctions.net/sendSaddaHalwaiQuery", {
+    
+    //   method: "POST",
+    //   headers: { "Content-Type": "application/json" },
+    //   body: JSON.stringify(form),
+    // });
+    // if (res.status==200) {
+    //   console.log("Form submitted:");
+
+    //   // Reset form
+    //   setForm({ name: "", email: "", message: "" });
+
+    //   // Show success popup
+    //   setShowPopup(true);
+    //   setTimeout(() => setShowPopup(false), 3000);
+    // } else {
+    //   alert("Failed to send. Try again later.");
+    // }
+  // } catch (error) {
+  //   console.error(error);
+  //   alert("Something went wrong.");
+  // }  
+    // Clear the form fields
+    // setForm({
+    //   name: "",
+    //   email: "",
+    //   message: "",
+    // });
+    //  setShowPopup(true);
+    //  setTimeout(() => setShowPopup(false), 3000);

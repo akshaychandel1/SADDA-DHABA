@@ -15,60 +15,37 @@ export default function ComingSoon() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     console.log("Form submitted:", form);
-     try {
-    const res = await fetch("https://sendsaddahalwaiquery-rlsrgzipqq-el.a.run.app", {
+    try {
+    const res = await fetch("https://asia-south1-mechatron-lab.cloudfunctions.net/sendSaddaHalwaiQuery", {
+    
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(form),
     });
+    if (res.status==200) {
+      console.log("Form submitted:");
 
-    if (res.ok) {
-      console.log("Form submitted successfully!");
+      // Reset form
       setForm({ name: "", email: "", message: "" });
+
+      // Show success popup
       setShowPopup(true);
       setTimeout(() => setShowPopup(false), 3000);
     } else {
-      console.error("Failed to submit form:", res.status);
       alert("Failed to send. Try again later.");
     }
   } catch (error) {
-    console.error("Error submitting form:", error);
+    console.error(error);
     alert("Something went wrong.");
-  }
-    // try {
-    // const res = await fetch("https://asia-south1-mechatron-lab.cloudfunctions.net/sendSaddaHalwaiQuery", {
-    
-    //   method: "POST",
-    //   headers: { "Content-Type": "application/json" },
-    //   body: JSON.stringify(form),
-    // });
-
-   
-
-    // if (res.status==200) {
-    //   console.log("Form submitted:");
-
-    //   // Reset form
-    //   setForm({ name: "", email: "", message: "" });
-
-    //   // Show success popup
-    //   setShowPopup(true);
-    //   setTimeout(() => setShowPopup(false), 3000);
-    // } else {
-    //   alert("Failed to send. Try again later.");
-    // }
-  // } catch (error) {
-  //   console.error(error);
-  //   alert("Something went wrong.");
-  // }  
+  }  
     // Clear the form fields
-    // setForm({
-    //   name: "",
-    //   email: "",
-    //   message: "",
-    // });
-    //  setShowPopup(true);
-    //  setTimeout(() => setShowPopup(false), 3000);
+    setForm({
+      name: "",
+      email: "",
+      message: "",
+    });
+     setShowPopup(true);
+     setTimeout(() => setShowPopup(false), 3000);
   };
 
   return (

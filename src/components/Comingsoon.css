@@ -16,21 +16,23 @@
   }
 }
 
-.ribbon {
+
+ .ribbon { 
   position: absolute;
   left: 0;
   width: 100%;
   overflow: hidden;
   background: white;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* soft shadow below */
-  transform: translateY(-2px); /* slight elevation */
-  /* border-radius: 6px; optional: smooth edges */
-   /* New: increase height */
-  height: 50px; /* or any value you want */
+  transform: translateY(-2px); 
+  border-radius: 6px;
+  height: 50px;
   display: flex;
-  align-items: center; /* vertically centers content */
-  padding: 0 15px; /* optional horizontal padding */
+  align-items: center;
+  padding: 0 15px; 
 }
+
+
 .ribbon:hover {
   transform: translateY(-4px);
   box-shadow: 0 8px 18px rgba(0, 0, 0, 0.2);
