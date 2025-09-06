@@ -1,4 +1,6 @@
 import React from "react";
+import headlogo from '../assets/icons/headlogo.svg';
+
 
 const Navbar = () => {
   return (
@@ -13,11 +15,14 @@ const Navbar = () => {
         </ul>
 
         {/* Logo */}
-        <div className="absolute left-1/2 transform -translate-x-1/2 -rotate-6">
-          <span className="font-extrabold text-2xl bg-black text-white px-3 py-1 rounded">
-            SAADA HALWAI
-          </span>
+        <div className="absolute left-1/2 -translate-x-1/2 -inset-y-0 -my-[12px] flex items-center">
+          <img
+            src={headlogo}
+            alt="Saada Halwai Logo"
+            className="h-full object-contain drop-shadow-lg"
+          />
         </div>
+
 
         {/* Right Links */}
         <div className="flex items-center space-x-12">

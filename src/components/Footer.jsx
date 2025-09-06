@@ -1,5 +1,7 @@
 import React from 'react';
 import { FaFacebookF, FaInstagram, FaTwitter, FaTiktok } from 'react-icons/fa';
+import cartoon from '../assets/icons/cartoon.svg';
+import Illustration from '../assets/icons/Illustration.svg';
 
 // Social icon helper
 const SocialIcon = ({ href, children }) => (
@@ -27,18 +29,13 @@ const Footer = () => {
     </div>
 
     {/* Right Box: Logo */}
-    <div className="bg-white rounded-2xl shadow-lg p-4 flex items-center justify-center basis-1/4">
-      <div className="flex items-center space-x-3">
+          <div className="bg-white rounded-2xl shadow-lg flex items-center justify-center basis-1/4">
         <img
-          src="/logo.png"
+          src={cartoon}
           alt="Saada Halwai Logo"
-          className="h-16 w-16 md:h-20 md:w-20 rounded-full border-4 border-red-600 flex-shrink-0"
+          className="w-46 md:w-80 "
         />
-        <span className="font-anton text-2xl md:text-4xl text-gray-800">
-          SAADA HALWAI
-        </span>
       </div>
-    </div>
   </div>
 
 
@@ -84,20 +81,13 @@ const Footer = () => {
           </div>
         </div>
         {/* Background Layer */}
-      <div className="left-0 w-full text-center select-none z-0">
-        <h2
-          className="font-anton text-8xl md:text-[150px] lg:text-[200px] xl:text-[250px] leading-none text-white"
-          style={{ WebkitTextStroke: '2px black', textStroke: '2px black' }}
-        >
-          SAADA HALWAI
-        </h2>
-        {/* Mascot on top of text */}
-        <img
-          src="/halwai.png"
-          alt="Halwai Mascot"
-          className="absolute left-1/2 transform -translate-x-1/2 -top-20 w-48 md:w-64"
-        />
-      </div>
+       <div className=" flex justify-center left-0 w-full text-center select-none z-0 relative">
+      <img
+        src={Illustration}
+        alt="Halwai Mascot"
+        className="pt-2"
+      />
+    </div>
       </footer>
     </div>
   );
