@@ -76,7 +76,8 @@ export default function ComingSoon() {
   {/* Ribbon 1 - Top Left to Bottom Right */}
   <div className="ribbon top -rotate-4 top-2 sm:top-4 md:top-6 absolute inset-x-0 top-[40%] -rotate-6 sm:top-4 md:top-6 bg-white shadow-lg h-10 flex items-center scale-x-[1.014] origin-center">
     <div className="marquee marquee-left">
-      <span className="flex items-center">
+      <span className="
+      flex items-center">
         {Array.from({ length: 20 }).map((_, i) => (
           <span key={i} className="font-barber flex items-center text-sm sm:text-base md:text-lg mr-4">
             <img 
