@@ -9,12 +9,6 @@ const SocialIcon = ({ href, children }) => (
     {children}
   </a>
 );
-const socials = [
-    { href: '#', icon: <FaFacebookF size={28} /> },
-    { href: '#', icon: <FaInstagram size={28} /> },
-    { href: '#', icon: <FaTwitter size={28} /> },
-    { href: '#', icon: <FaTiktok size={28} /> },
-  ];
 
 const Footer = () => {
   return (

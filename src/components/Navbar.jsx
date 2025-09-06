@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Navbar() {
+const Navbar = () => {
   return (
     <nav className="w-full bg-black flex justify-center items-center py-2">
       <div className="bg-white w-11/12 max-w-7xl flex justify-between items-center rounded-full px-10 py-3 shadow-md relative">
@@ -33,3 +33,4 @@ export default function Navbar() {
     </nav>
   );
 }
+export default Navbar
