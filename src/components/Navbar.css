@@ -1,0 +1,11 @@
+/* In App.css or global CSS */
+@keyframes shiver {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(2deg); }
+  50% { transform: rotate(-2deg); }
+  75% { transform: rotate(1deg); }
+}
+
+.shiver:hover {
+  animation: shiver 0.3s infinite;
+}

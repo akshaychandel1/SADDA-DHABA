@@ -1,4 +1,5 @@
-import { useState } from 'react'
+import { Routes, Route, Link } from 'react-router-dom';
+
 import './App.css'
 import ComingSoon from './components/ComingSoon'
 import HomePage from './components/HomePage'
@@ -8,8 +9,11 @@ function App() {
 
   return (
     <>
-     <ComingSoon />
-     <HomePage/>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        {/* <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} /> */}
+      </Routes>
       
      </>
   )

@@ -1,0 +1,28 @@
+{/* ribbon */}
+      <div className="relative w-full h-[140px] overflow-visible bg-white">
+      {/* Ribbon 1 - tilt left */}
+      <div
+        className="absolute left-1/2 top-1/2 w-[160%] h-10 -translate-x-1/2 -translate-y-1/2 bg-repeat-x"
+        style={{
+          backgroundImage: `url(${ribbon})`,
+          backgroundSize: "auto 100%",
+          transform: "rotate(-2deg)", // tilt to bottom-left
+          animation: "ribbon-marquee 18s linear infinite",
+          filter: "drop-shadow(0 6px 8px rgba(0,0,0,0.25))",
+          willChange: "background-position",
+        }}
+      />
+
+      {/* Ribbon 2 - tilt right */}
+      <div
+        className="absolute mt-[-45px] left-1/2 top-1/2 w-[160%] h-10 -translate-x-1/2 -translate-y-1/2 bg-repeat-x"
+        style={{
+          backgroundImage: `url(${ribbon})`,
+          backgroundSize: "auto 100%",
+          transform: "rotate(2deg)", // tilt to bottom-right
+          animation: "ribbon-marquee 22s linear infinite reverse",
+          filter: "drop-shadow(0 6px 8px rgba(0,0,0,0.25))",
+          willChange: "background-position",
+        }}
+      />
+    </div>
