@@ -2,7 +2,8 @@ import React, { useState, useEffect } from "react";
 import "./HomePage.css";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
+import { FaStar } from "react-icons/fa"
 import carrot from "../assets/icons/carrot.svg";
 import brinjal from "../assets/icons/brinjal.svg";
 import tumip from "../assets/icons/tumip.svg";
@@ -21,17 +22,43 @@ import textthink from "../assets/icons/textthink.svg";
 import WeddingsandEvents from "../assets/icons/WeddingsandEvents.jpg";
 import GrabandGo from "../assets/icons/GrabandGo.jpg";
 import CorporateEvents from "../assets/icons/CorporateEvents.jpg";
+import Cap from "../assets/icons/Cap.svg";
 
 
 
-import img1 from "../assets/icons/img1.jpeg";
-import img2 from "../assets/icons/img1.jpeg";
-import img3 from "../assets/icons/img1.jpeg";
-import img4 from "../assets/icons/img1.jpeg";
-import img5 from "../assets/icons/img1.jpeg";
-
+const testimonials = [
+  {
+    text: "We hired Saada Halwai for our wedding reception, and I can honestly say they stole the show! From the first meeting, their team understood exactly what we wanted authentic Indian flavours, but presented with the elegance our UK guests would appreciate. The chaat station was an absolute hit, with people going back for seconds (and thirds!). Even our non-Indian guests couldn’t stop talking about the mithai they said it was the best they’d ever tasted. Everything was freshly cooked, beautifully presented, and served with a smile. Saada Halwai didn’t just cater our event, they added warmth, colour, and soul to it. ",
+    author: "PRIYA & ARJUN",
+    location: "LONDON",
+    rating: 5, // ⭐⭐⭐⭐⭐
+  },
+  {
+    text: "When we chose Saada Halwai for our daughter’s engagement, we knew the food would be good, but they went far beyond anything we imagined. The variety of chaats and snacks brought so much colour and excitement to the evening, and every dish tasted like it was made at home with love. Guests kept complimenting the richness of the curries and the delicate balance of spices in the starters. Even the desserts were so fresh that people were asking for takeaway boxes! Saada Halwai didn’t just serve food, they created memories, and we’ll always be grateful for the joy they added to such an important occasion.",
+    author: "ANITA & RAJ",
+    location: "MANCHESTER",
+    rating: 4, // ⭐⭐⭐⭐
+  },
+  {
+    text: "For our corporate Diwali celebration, Saada Halwai was the perfect partner. They managed to cater for a large crowd without compromising on authenticity or presentation. From the samosas to the mithai, everything had that unmistakable homemade taste that reminded so many of us of festivals back in India. What impressed us most was how professionally their team handled the event, keeping everything running smoothly while still making us feel like family. The positive feedback from our colleagues has been overwhelming, and many said it was the best food they’ve had at a company event. Saada Halwai brought the spirit of Diwali to life for us.",
+    author: "MEERA & VIKRAM",
+    location: "BIRMINGHAM",
+    rating: 5,
+  },
+];
 
 const HomePage = () => {
+
+   const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIndex((prev) => (prev + 1) % testimonials.length);
+    }, 2800); // auto-slide every 2 sec
+    return () => clearInterval(interval);
+  }, []);
+
+
 
   return (
     <>
@@ -245,6 +272,15 @@ authentic desi soul.
 
 
 
+
+
+
+
+
+
+
+
+
           <div className="flex items-center my-10 justify-center px-4">
   <div className="max-w-5xl flex flex-col md:flex-row rounded-xl overflow-hidden shadow-md">
     
@@ -333,34 +369,6 @@ authentic desi soul.
   </div>
 </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div className="flex items-center my-10 justify-center px-4">
   <div className="max-w-5xl flex flex-col md:flex-row rounded-xl overflow-hidden shadow-md">
     
@@ -406,6 +414,121 @@ authentic desi soul.
 
 
 
+
+
+
+
+
+
+
+
+              {/* ribbon */}
+
+            {/* ribbon */}
+      <div className="relative  w-full h-[140px] overflow-visible bg-red-600">
+        {/* Ribbon 1 - tilt left */}
+        <div
+          className="absolute  left-1/2 mt-[-59px] top-1/2 w-[160%] h-10 -translate-x-1/2 -translate-y-1/2 bg-repeat-x"
+          style={{
+            backgroundImage: `url(${ribbon})`,
+            backgroundSize: "auto 100%",
+            transform: "rotate(-2deg)", // tilt to bottom-left
+            animation: "ribbon-marquee 18s linear infinite",
+            filter: "drop-shadow(0 6px 8px rgba(0,0,0,0.25))",
+            willChange: "background-position",
+          }}
+        />
+
+        {/* Ribbon 2 - tilt right */}
+        <div
+          className="absolute  mt-[-40px] left-1/2 top-1/2 w-[160%] h-10 -translate-x-1/2 -translate-y-1/2 bg-repeat-x"
+          style={{
+            backgroundImage: `url(${ribbon})`,
+            backgroundSize: "auto 100%",
+            transform: "rotate(2deg)", // tilt to bottom-right
+            animation: "ribbon-marquee 22s linear infinite reverse",
+            filter: "drop-shadow(0 6px 8px rgba(0,0,0,0.25))",
+            willChange: "background-position",
+          }}
+        />
+      </div>
+
+
+          
+
+              <section className="bg-red-600 mb-10 py-8 md:py-12 flex items-center justify-center">
+  <div className="relative max-w-4xl w-full flex justify-center">
+    {/* Cap image */}
+    <img src={Cap} alt="cap shape" className="w-full max-w-4xl h-auto" />
+
+    {/* Content inside cap */}
+    <div className="absolute inset-10 md:inset-20 flex flex-col justify-between items-center px-3 sm:px-6 md:px-10 py-6 md:py-8 text-center">
+      {/* Heading at top */}
+      <h2 className="text-xl sm:text-3xl md:text-5xl lg:text-6xl leading-tight font-barber text-red-600 mb-4 md:mb-6">
+        CURRY <br className="hidden sm:block" /> CONFESSIONS
+      </h2>
+
+      {/* Testimonial text in center */}
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={index}
+          initial={{ opacity: 0, x: 100 }}
+          animate={{ opacity: 1, x: 0 }}
+          exit={{ opacity: 0, x: -100 }}
+          transition={{ duration: 0.6 }}
+          className="flex-1 flex items-center justify-center"
+        >
+         <p
+  className="text-black 
+             text-[10px] sm:text-xs md:text-base lg:text-lg 
+             leading-snug sm:leading-relaxed 
+             max-w-[85%] sm:max-w-md md:max-w-2xl 
+             px-2 break-words text-center"
+>
+  {testimonials[index].text}
+</p>
+
+
+        </motion.div>
+      </AnimatePresence>
+
+      {/* Stars + Author + Location at bottom */}
+      <div className="mt-4 md:mt-6">
+        <div className="flex justify-center mb-2 text-red-600 text-xs sm:text-base">
+          {Array(testimonials[index].rating)
+            .fill(0)
+            .map((_, i) => (
+              <FaStar key={i} className="mx-0.5" />
+            ))}
+        </div>
+        <div className="flex flex-col items-center">
+          <span className="text-red-600 text-sm sm:text-lg md:text-2xl font-extrabold uppercase">
+            {testimonials[index].author}
+          </span>
+          <span className="text-black text-xs sm:text-base md:text-lg">
+            {testimonials[index].location}
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+  <section className="bg-red-600 text-white rounded-xl md:mx-auto mb-10 p-8 md:p-12 max-w-5xl mx-3 text-left">
+  <p className="text-xl md:text-4xl font- mb-2">Let’s Chat</p>
+  <h2 className="text-4xl md:text-7xl font-barber leading-tight md:leading-wide mb-6">
+    TELL US YOUR PLANS, <br className="hidden sm:block" /> 
+    WE’LL BRING THE PANS
+  </h2>
+  <button className="font-barber text-sm md:text-xl bg-white text-red-600 py-2 px-6 md:px-10 rounded-lg shadow-lg hover:transition duration-300 ease-in-out transform hover:scale-105 font-bold ">
+    KNOW MORE
+  </button>
+</section>
 
 
 
