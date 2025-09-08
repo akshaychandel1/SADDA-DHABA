@@ -14,6 +14,15 @@ import pan from "../assets/icons/pan.svg";
 import wine from "../assets/icons/wine.svg";
 import suit from "../assets/icons/suit.svg";
 import bag from "../assets/icons/bag.svg";
+import HalfCharacter from "../assets/icons/HalfCharacter.png";
+import Hand from "../assets/icons/Hand.png";
+import HandRight from "../assets/icons/HandRight.png";
+import textthink from "../assets/icons/textthink.svg";
+import WeddingsandEvents from "../assets/icons/WeddingsandEvents.jpg";
+import GrabandGo from "../assets/icons/GrabandGo.jpg";
+import CorporateEvents from "../assets/icons/CorporateEvents.jpg";
+
+
 
 import img1 from "../assets/icons/img1.jpeg";
 import img2 from "../assets/icons/img1.jpeg";
@@ -23,11 +32,6 @@ import img5 from "../assets/icons/img1.jpeg";
 
 
 const HomePage = () => {
-  const MASCOT_IMAGE_URL =
-    "https://placehold.co/200x200/000000/FFFFFF?text=Halwai+Mascot";
-  const FOOD_DISPLAY_IMAGE_URL =
-    "https://placehold.co/800x400/dddddd/333333?text=Delicious+Indian+Dishes";
-
 
   return (
     <>
@@ -40,7 +44,7 @@ const HomePage = () => {
       <div className="bg-red-600  text-white  overflow-hidden">
         <div className="relative container mx-auto px-1 py-12 md:py-20 text-center">
           {/* Header Content */}
-          <div className=" mx-auto mb-8">
+          <div className=" mx-auto md:mb-60">
             <h1 className="text-4xl font-barber md:text-8xl tracking-wider mb-3">
               YOUR HALWAI'S IN TOWN
             </h1>
@@ -49,59 +53,58 @@ const HomePage = () => {
               is cheeky, tasty, and made to impress. Ready to be served with
               flair.
             </p>
-            <button className="font-barber mt-6 mb-6 bg-white text-red-600 font-bold py-2 px-10 rounded-lg shadow-lg hover: transition duration-300 ease-in-out transform hover:scale-105">
+            <button className="font-barber mt-6 mb-26 bg-white text-red-600 font-bold py-2 px-10 rounded-lg shadow-lg hover: transition duration-300 ease-in-out transform hover:scale-105">
               EXPLORE MENU
             </button>
           </div>
 
           {/* Mascot and Food Display Section */}
           <div className="relative mt-16 md:mt-24">
-            {/* Mascot Image */}
-            <div className="absolute -top-20 md:-top-28 left-1/2 -translate-x-1/2 z-20 w-32 md:w-48">
+          
+            <div className="absolute -top-30 md:-top-70 left-1/2 -translate-x-1/2 z-20 w-48 md:w-140">
               <img
-                src={MASCOT_IMAGE_URL}
+                src={HalfCharacter}
                 alt="Happy Halwai Mascot"
-                className="w-full h-auto"
-                onError={(e) => {
-                  e.target.onerror = null;
-                  e.target.src =
-                    "https://placehold.co/200x200/000000/FFFFFF?text=Mascot";
-                }}
+                className="z-0"
               />
+                
 
-
-
-
+                
 
               {/* Speech Bubble */}
-              <div className="absolute top-4 -right-20 md:-right-32 w-40 md:w-52">
-                <div className="relative bg-white text-gray-800 p-3 rounded-lg shadow-md">
-                  <p className="text-sm md:text-base font-semibold">
-                    CUSTOMIZED SWEETS AND CHAAT!
-                  </p>
-                  <div className="absolute left-0 -bottom-2 w-4 h-4 bg-white transform rotate-45 -translate-x-2"></div>
+              <div className="absolute -top-7 md:top-4 -right-18 md:-right-32 w-28 md:w-52">
+                <div className="relative ">
+                  <img src={textthink} alt="" />
+                  <div className="absolute left-0 -bottom-2  transform rotate-45 -translate-x-2"></div>
                 </div>
               </div>
             </div>
 
-
-
+                <div className="absolute -top-10 md:-top-10 left-1/2 -translate-x-[150%] md:-translate-x-[270%] z-50">
+              <img
+                src={Hand}
+                alt="Hand"
+                className="w-20 md:w-30"
+              />
+            </div>
+                  <div className="absolute -top-10 md:-top-10 left-1/2 translate-x-[70%] md:translate-x-[180%] z-50">
+              <img
+                src={HandRight}
+                alt="Hand"
+                className="w-20 md:w-29"
+              />
+            </div>
 
 
             {/* White background card for food */}
-            <div className="bg-red-800 rounded-3xl pt-20 md:pt-28 pb-10 shadow-2xl relative z-10">
-              <div className="w-full max-w-4xl mx-auto px-4">
+            {/* <div className="absolute  md:pt-28 pb-10 shadow-2xl relative z-10"> */}
+              <div className="relative z-30 md:mx-6">
                 <img
-                  src={FOOD_DISPLAY_IMAGE_URL}
+                  src={WeddingsandEvents}
                   alt="Display of various Indian sweets and chaat dishes"
                   className="w-full h-auto rounded-xl shadow-lg"
-                  onError={(e) => {
-                    e.target.onerror = null;
-                    e.target.src =
-                      "https://placehold.co/800x400/dddddd/333333?text=Food+Display";
-                  }}
                 />
-              </div>
+              {/* </div> */}
             </div>
           </div>
         </div>
@@ -275,7 +278,7 @@ authentic desi soul.
     {/* Right Side */}
     <div className="md:w-1/2 w-full bg-black flex items-center justify-center">
       <img
-        src="https://via.placeholder.com/400x250"
+        src={WeddingsandEvents}
         alt="Wedding & Events"
         className="object-cover w-full h-full"
       />
@@ -321,7 +324,7 @@ authentic desi soul.
     {/* Left Side (Black Image) */}
     <div className="md:w-1/2 w-full bg-black flex items-center justify-center">
       <img
-        src="https://via.placeholder.com/400x250"
+        src={CorporateEvents}
         alt="Wedding & Events"
         className="object-cover w-full h-full"
       />
@@ -369,8 +372,8 @@ authentic desi soul.
         </h2>
         <p className="mt-3 text-xs md:text-sm leading-relaxed">
                 Perfect for busy days and hungry moments, Saada Halwai’s
-      Grab & Go brings Indian flavours to your hands in minutes.
-      From spicy chaats to hearty curries and sweet mithai, every bite is
+      Grab & Go brings  Indian flavours to your  hands in minutes.
+      From spicy chaats to hearty curries and  sweet mithai, every bite is
       fresh, authentic, and ready when you are.
         </p>
       </div>
@@ -391,7 +394,7 @@ authentic desi soul.
     {/* Right Side */}
     <div className="md:w-1/2 w-full bg-black flex items-center justify-center">
       <img
-        src="https://via.placeholder.com/400x250"
+        src={GrabandGo}
         alt="Wedding & Events"
         className="object-cover w-full h-full"
       />
