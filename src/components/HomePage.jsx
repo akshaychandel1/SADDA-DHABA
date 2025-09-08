@@ -3,7 +3,7 @@ import "./HomePage.css";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import { motion, AnimatePresence } from "framer-motion";
-import { FaStar } from "react-icons/fa"
+import { FaStar } from "react-icons/fa";
 import carrot from "../assets/icons/carrot.svg";
 import brinjal from "../assets/icons/brinjal.svg";
 import tumip from "../assets/icons/tumip.svg";
@@ -23,8 +23,6 @@ import WeddingsandEvents from "../assets/icons/WeddingsandEvents.jpg";
 import GrabandGo from "../assets/icons/GrabandGo.jpg";
 import CorporateEvents from "../assets/icons/CorporateEvents.jpg";
 import Cap from "../assets/icons/Cap.svg";
-
-
 
 const testimonials = [
   {
@@ -48,8 +46,7 @@ const testimonials = [
 ];
 
 const HomePage = () => {
-
-   const [index, setIndex] = useState(0);
+  const [index, setIndex] = useState(0);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -58,15 +55,9 @@ const HomePage = () => {
     return () => clearInterval(interval);
   }, []);
 
-
-
   return (
     <>
       <Navbar />
-
-
-
-
 
       <div className="bg-red-600  text-white  overflow-hidden">
         <div className="relative container mx-auto px-1 py-12 md:py-20 text-center">
@@ -87,16 +78,12 @@ const HomePage = () => {
 
           {/* Mascot and Food Display Section */}
           <div className="relative mt-16 md:mt-24">
-          
             <div className="absolute -top-30 md:-top-70 left-1/2 -translate-x-1/2 z-20 w-48 md:w-140">
               <img
                 src={HalfCharacter}
                 alt="Happy Halwai Mascot"
                 className="z-0"
               />
-                
-
-                
 
               {/* Speech Bubble */}
               <div className="absolute -top-7 md:top-4 -right-18 md:-right-32 w-28 md:w-52">
@@ -107,38 +94,26 @@ const HomePage = () => {
               </div>
             </div>
 
-                <div className="absolute -top-10 md:-top-10 left-1/2 -translate-x-[150%] md:-translate-x-[270%] z-50">
-              <img
-                src={Hand}
-                alt="Hand"
-                className="w-20 md:w-30"
-              />
+            <div className="absolute -top-10 md:-top-10 left-1/2 -translate-x-[150%] md:-translate-x-[270%] z-50">
+              <img src={Hand} alt="Hand" className="w-20 md:w-30" />
             </div>
-                  <div className="absolute -top-10 md:-top-10 left-1/2 translate-x-[70%] md:translate-x-[180%] z-50">
-              <img
-                src={HandRight}
-                alt="Hand"
-                className="w-20 md:w-29"
-              />
+            <div className="absolute -top-10 md:-top-10 left-1/2 translate-x-[70%] md:translate-x-[180%] z-50">
+              <img src={HandRight} alt="Hand" className="w-20 md:w-29" />
             </div>
-
 
             {/* White background card for food */}
             {/* <div className="absolute  md:pt-28 pb-10 shadow-2xl relative z-10"> */}
-              <div className="relative z-30 md:mx-6">
-                <img
-                  src={WeddingsandEvents}
-                  alt="Display of various Indian sweets and chaat dishes"
-                  className="w-full h-auto rounded-xl shadow-lg"
-                />
+            <div className="relative z-30 md:mx-6">
+              <img
+                src={WeddingsandEvents}
+                alt="Display of various Indian sweets and chaat dishes"
+                className="w-full h-auto rounded-xl shadow-lg"
+              />
               {/* </div> */}
             </div>
           </div>
         </div>
       </div>
-
-
-
 
       {/* allooo mulli section */}
       <div className="flex items-center justify-center bg-red-600 text-white p-4 pb-10">
@@ -191,10 +166,6 @@ const HomePage = () => {
         </div>
       </div>
 
-
-
-
-
       {/* ribbon */}
       <div className="relative w-full h-[140px] overflow-visible bg-white">
         {/* Ribbon 1 - tilt left */}
@@ -224,207 +195,173 @@ const HomePage = () => {
         />
       </div>
 
+      <section className="bg-white py-16 mb-16 px-6">
+        <h2 className="text-center font-barber tracking-wide text-4xl md:text-6xl  text-red-600 mb-10">
+          WHAT MAKES SAADA HALWAI BETTER?
+        </h2>
 
-
-
-<section className="bg-white py-16 mb-16 px-6">
-      <h2 className="text-center font-barber tracking-wide text-4xl md:text-6xl  text-red-600 mb-10">
-        WHAT MAKES SAADA HALWAI BETTER?
-      </h2>
-
-      <div className="grid md:grid-cols-3 gap-4 text-center max-w-4xl mx-auto">
-        <div>
-          <img src={chopping} alt="Halwai" className="mx-auto w-26 h-26" />
-          <h3 className="mt-4 text-xl font-barber text-red-600">HALWAI AT HEARTS</h3>
-          <p className="mt-2 text-red-600 text-sm">
-            We’re not just another caterer, we’re halwai by tradition, serving Britain with
-authentic desi soul.
+        <div className="grid md:grid-cols-3 gap-4 text-center max-w-4xl mx-auto">
+          <div>
+            <img src={chopping} alt="Halwai" className="mx-auto w-26 h-26" />
+            <h3 className="mt-4 text-xl font-barber text-red-600">
+              HALWAI AT HEARTS
+            </h3>
+            <p className="mt-2 text-red-600 text-sm">
+              We’re not just another caterer, we’re halwai by tradition, serving
+              Britain with authentic desi soul.
             </p>
-        </div>
+          </div>
 
-        <div>
-          <img src={cover} alt="Dish" className="mx-auto w-26 h-26" />
-          <h3 className="mt-4 text-xl font-barber  text-red-600">PANI PURI TO POSH</h3>
-          <p className="mt-2 text-red-600 text-sm">
-            Street-style chaats, royal curries, and mithai magic all styled to impress UK weddings, events, and celebrations.
+          <div>
+            <img src={cover} alt="Dish" className="mx-auto w-26 h-26" />
+            <h3 className="mt-4 text-xl font-barber  text-red-600">
+              PANI PURI TO POSH
+            </h3>
+            <p className="mt-2 text-red-600 text-sm">
+              Street-style chaats, royal curries, and mithai magic all styled to
+              impress UK weddings, events, and celebrations.
             </p>
+          </div>
+
+          <div>
+            <img src={pan} alt="Stove" className="mx-auto w-26 h-26" />
+            <h3 className="mt-4 text-xl font-barber text-red-600">
+              HOT OFF THE STOVE
+            </h3>
+            <p className="mt-2 text-red-600 text-sm">
+              Cooked fresh right here in the UK, so every bite carries the
+              warmth of India without losing a minute of flavour.
+            </p>
+          </div>
         </div>
+      </section>
 
-        <div>
-          <img src={pan} alt="Stove" className="mx-auto w-26 h-26" />
-          <h3 className="mt-4 text-xl font-barber text-red-600">HOT OFF THE STOVE</h3>
-          <p className="mt-2 text-red-600 text-sm">
-            Cooked fresh right here in the UK, so every bite carries the warmth of India without losing a minute of flavour.
-          </p>
-        </div>
-      </div>
-    </section>
+      {/* Carousel Container */}
 
+      <div className="flex items-center my-10 justify-center px-4">
+        <div className="max-w-5xl flex flex-col md:flex-row rounded-xl overflow-hidden shadow-md">
+          {/* Left Side */}
+          <div className="bg-red-600 text-white p-6 md:w-1/2 flex flex-col justify-between">
+            <div>
+              <h2 className="text-4xl md:text-7xl font-barber leading-tight md:leading-wide">
+                WEDDING & EVENTS
+              </h2>
+              <p className="mt-3 text-xs md:text-sm leading-relaxed">
+                From grand weddings to lively celebrations, Saada Halwai serves
+                the soul of India with every plate. Think sizzling street-style
+                chaats, rich royal curries, and decadent mithai, all crafted
+                fresh in the UK to keep the flavour authentic and your guests
+                smiling.
+              </p>
+            </div>
 
+            <div className="flex items-baseline justify-between">
+              {/* Custom Button */}
+              <button className="font-barber text-sm md:text-xl bg-white text-red-600 py-2 px-6 md:px-10 rounded-lg shadow-lg hover:transition duration-300 ease-in-out transform hover:scale-105">
+                KNOW MORE
+              </button>
 
-        {/* Carousel Container */}
+              {/* Glasses Icon */}
+              <div>
+                <img src={wine} alt="Glasses" className="w-12 md:w-36" />
+              </div>
+            </div>
+          </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-          <div className="flex items-center my-10 justify-center px-4">
-  <div className="max-w-5xl flex flex-col md:flex-row rounded-xl overflow-hidden shadow-md">
-    
-    {/* Left Side */}
-    <div className="bg-red-600 text-white p-6 md:w-1/2 flex flex-col justify-between">
-      <div>
-        <h2 className="text-4xl md:text-7xl font-barber leading-tight md:leading-wide">
-          WEDDING & EVENTS
-        </h2>
-        <p className="mt-3 text-xs md:text-sm leading-relaxed">
-          From grand weddings to lively celebrations, Saada Halwai serves the soul of
-          India with every plate. Think sizzling street-style chaats, rich royal curries,
-          and decadent mithai, all crafted fresh in the UK to keep the flavour
-          authentic and your guests smiling.
-        </p>
-      </div>
-
-      <div className="flex items-baseline justify-between">
-        {/* Custom Button */}
-        <button className="font-barber text-sm md:text-xl bg-white text-red-600 py-2 px-6 md:px-10 rounded-lg shadow-lg hover:transition duration-300 ease-in-out transform hover:scale-105">
-          KNOW MORE
-        </button>
-
-        {/* Glasses Icon */}
-        <div>
-          <img src={wine} alt="Glasses" className="w-12 md:w-36" />
+          {/* Right Side */}
+          <div className="md:w-1/2 w-full bg-black flex items-center justify-center">
+            <img
+              src={WeddingsandEvents}
+              alt="Wedding & Events"
+              className="object-cover w-full h-full"
+            />
+          </div>
         </div>
       </div>
-    </div>
 
-    {/* Right Side */}
-    <div className="md:w-1/2 w-full bg-black flex items-center justify-center">
-      <img
-        src={WeddingsandEvents}
-        alt="Wedding & Events"
-        className="object-cover w-full h-full"
-      />
-    </div>
+      <div className="flex items-center my-10 justify-center px-4">
+        <div className="max-w-5xl flex flex-col md:flex-row-reverse rounded-xl overflow-hidden shadow-md">
+          {/* Right Side (Red Content) */}
+          <div className="bg-red-600 text-white p-6 md:w-1/2 flex flex-col justify-between">
+            <div className="text-right">
+              <h2 className="text-4xl md:text-7xl font-barber leading-tight md:leading-wide">
+                Corporate Events
+              </h2>
+              <p className="mt-3 text-xs md:text-sm leading-relaxed">
+                Make your corporate events unforgettable with Saada Halwai. From
+                vibrant chaats to rich curries and indulgent mithai, we serve
+                authentic Indian flavours with a polished touch. Freshly cooked
+                in the UK, our catering keeps guests impressed and conversations
+                flowing.
+              </p>
+            </div>
 
-  </div>
-</div>
+            {/* Icon + Button separated */}
+            <div className="flex items-baseline justify-between ">
+              {/* Suit Icon (stays left) */}
+              <img src={suit} alt="Suit" className="w-12 md:w-36" />
 
+              {/* Button (moves right, below text) */}
+              <button className="font-barber text-sm md:text-xl pb-2 bg-white text-red-600 py-2 px-6 md:px-10 rounded-lg shadow-lg hover:transition duration-300 ease-in-out transform hover:scale-105">
+                KNOW MORE
+              </button>
+            </div>
+          </div>
 
-
-
-
-
-<div className="flex items-center my-10 justify-center px-4">
-  <div className="max-w-5xl flex flex-col md:flex-row-reverse rounded-xl overflow-hidden shadow-md">
-    
-    {/* Right Side (Red Content) */}
-    <div className="bg-red-600 text-white p-6 md:w-1/2 flex flex-col justify-between">
-      <div className="text-right">
-        <h2 className="text-4xl md:text-7xl font-barber leading-tight md:leading-wide">
-          Corporate Events
-        </h2>
-        <p className="mt-3 text-xs md:text-sm leading-relaxed">
-          Make your corporate events unforgettable with Saada Halwai. From vibrant
-          chaats to rich curries and indulgent mithai, we serve authentic Indian flavours
-          with a polished touch. Freshly cooked in the UK, our catering
-          keeps guests impressed and conversations flowing.
-        </p>
-      </div>
-
-      {/* Icon + Button separated */}
-      <div className="flex items-baseline justify-between ">
-        {/* Suit Icon (stays left) */}
-        <img src={suit} alt="Suit" className="w-12 md:w-36" />
-
-        {/* Button (moves right, below text) */}
-        <button className="font-barber text-sm md:text-xl pb-2 bg-white text-red-600 py-2 px-6 md:px-10 rounded-lg shadow-lg hover:transition duration-300 ease-in-out transform hover:scale-105">
-          KNOW MORE
-        </button>
-      </div>
-    </div>
-
-    {/* Left Side (Black Image) */}
-    <div className="md:w-1/2 w-full bg-black flex items-center justify-center">
-      <img
-        src={CorporateEvents}
-        alt="Wedding & Events"
-        className="object-cover w-full h-full"
-      />
-    </div>
-
-  </div>
-</div>
-
-<div className="flex items-center my-10 justify-center px-4">
-  <div className="max-w-5xl flex flex-col md:flex-row rounded-xl overflow-hidden shadow-md">
-    
-    {/* Left Side */}
-    <div className="bg-red-600 text-white p-6 md:w-1/2 flex flex-col justify-between">
-      <div>
-        <h2 className="text-4xl md:text-7xl font-barber leading-tight md:leading-wide">
-          Grab & GO
-        </h2>
-        <p className="mt-3 text-xs md:text-sm leading-relaxed">
-                Perfect for busy days and hungry moments, Saada Halwai’s
-      Grab & Go brings  Indian flavours to your  hands in minutes.
-      From spicy chaats to hearty curries and  sweet mithai, every bite is
-      fresh, authentic, and ready when you are.
-        </p>
-      </div>
-
-      <div className="flex items-baseline justify-between ">
-        {/* Custom Button */}
-        <button className="font-barber text-sm md:text-xl bg-white text-red-600 py-2 px-6 md:px-10 rounded-lg shadow-lg hover:transition duration-300 ease-in-out transform hover:scale-105">
-          KNOW MORE
-        </button>
-
-        {/* Glasses Icon */}
-        <div>
-          <img src={bag} alt="Glasses" className="w-12 md:w-36" />
+          {/* Left Side (Black Image) */}
+          <div className="md:w-1/2 w-full bg-black flex items-center justify-center">
+            <img
+              src={CorporateEvents}
+              alt="Wedding & Events"
+              className="object-cover w-full h-full"
+            />
+          </div>
         </div>
       </div>
-    </div>
 
-    {/* Right Side */}
-    <div className="md:w-1/2 w-full bg-black flex items-center justify-center">
-      <img
-        src={GrabandGo}
-        alt="Wedding & Events"
-        className="object-cover w-full h-full"
-      />
-    </div>
+      <div className="flex items-center my-10 justify-center px-4">
+        <div className="max-w-5xl flex flex-col md:flex-row rounded-xl overflow-hidden shadow-md">
+          {/* Left Side */}
+          <div className="bg-red-600 text-white p-6 md:w-1/2 flex flex-col justify-between">
+            <div>
+              <h2 className="text-4xl md:text-7xl font-barber leading-tight md:leading-wide">
+                Grab & GO
+              </h2>
+              <p className="mt-3 text-xs md:text-sm leading-relaxed">
+                Perfect for busy days and hungry moments, Saada Halwai’s Grab &
+                Go brings Indian flavours to your hands in minutes. From spicy
+                chaats to hearty curries and sweet mithai, every bite is fresh,
+                authentic, and ready when you are.
+              </p>
+            </div>
 
-  </div>
-</div>
+            <div className="flex items-baseline justify-between ">
+              {/* Custom Button */}
+              <button className="font-barber text-sm md:text-xl bg-white text-red-600 py-2 px-6 md:px-10 rounded-lg shadow-lg hover:transition duration-300 ease-in-out transform hover:scale-105">
+                KNOW MORE
+              </button>
 
+              {/* Glasses Icon */}
+              <div>
+                <img src={bag} alt="Glasses" className="w-12 md:w-36" />
+              </div>
+            </div>
+          </div>
 
+          {/* Right Side */}
+          <div className="md:w-1/2 w-full bg-black flex items-center justify-center">
+            <img
+              src={GrabandGo}
+              alt="Wedding & Events"
+              className="object-cover w-full h-full"
+            />
+          </div>
+        </div>
+      </div>
 
+      {/* ribbon */}
 
-
-
-
-
-
-
-
-
-              {/* ribbon */}
-
-            {/* ribbon */}
+      {/* ribbon */}
       <div className="relative  w-full h-[140px] overflow-visible bg-red-600">
         {/* Ribbon 1 - tilt left */}
         <div
@@ -453,89 +390,72 @@ authentic desi soul.
         />
       </div>
 
+      <section className="bg-red-600 mb-10 py-8 md:py-12 flex items-center justify-center">
+        <div className="relative max-w-4xl w-full flex justify-center">
+          {/* Cap image */}
+          <img src={Cap} alt="cap shape" className="w-full max-w-4xl h-auto" />
 
-          
+          {/* Content inside cap */}
+          <div className="absolute inset-1 md:inset-20 flex flex-col justify-between items-center px-3 sm:px-6 md:px-10 py-6 md:py-8 text-center">
+            {/* Heading at top */}
+            <h2 className="text-xl sm:text-3xl md:text-5xl lg:text-6xl leading-tight font-barber text-red-600 mb-4 md:mb-6">
+              CURRY <br className="hidden sm:block" /> CONFESSIONS
+            </h2>
 
-              <section className="bg-red-600 mb-10 py-8 md:py-12 flex items-center justify-center">
-  <div className="relative max-w-4xl w-full flex justify-center">
-    {/* Cap image */}
-    <img src={Cap} alt="cap shape" className="w-full max-w-4xl h-auto" />
-
-    {/* Content inside cap */}
-    <div className="absolute inset-10 md:inset-20 flex flex-col justify-between items-center px-3 sm:px-6 md:px-10 py-6 md:py-8 text-center">
-      {/* Heading at top */}
-      <h2 className="text-xl sm:text-3xl md:text-5xl lg:text-6xl leading-tight font-barber text-red-600 mb-4 md:mb-6">
-        CURRY <br className="hidden sm:block" /> CONFESSIONS
-      </h2>
-
-      {/* Testimonial text in center */}
-      <AnimatePresence mode="wait">
-        <motion.div
-          key={index}
-          initial={{ opacity: 0, x: 100 }}
-          animate={{ opacity: 1, x: 0 }}
-          exit={{ opacity: 0, x: -100 }}
-          transition={{ duration: 0.6 }}
-          className="flex-1 flex items-center justify-center"
-        >
-         <p
-  className="text-black 
+            {/* Testimonial text in center */}
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, x: 100 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: -100 }}
+                transition={{ duration: 0.6 }}
+                className="flex-1 flex items-center justify-center"
+              >
+                <p
+                  className="text-black 
              text-[10px] sm:text-xs md:text-base lg:text-lg 
              leading-snug sm:leading-relaxed 
              max-w-[85%] sm:max-w-md md:max-w-2xl 
              px-2 break-words text-center"
->
-  {testimonials[index].text}
-</p>
+                >
+                  {testimonials[index].text}
+                </p>
+              </motion.div>
+            </AnimatePresence>
 
-
-        </motion.div>
-      </AnimatePresence>
-
-      {/* Stars + Author + Location at bottom */}
-      <div className="mt-4 md:mt-6">
-        <div className="flex justify-center mb-2 text-red-600 text-xs sm:text-base">
-          {Array(testimonials[index].rating)
-            .fill(0)
-            .map((_, i) => (
-              <FaStar key={i} className="mx-0.5" />
-            ))}
+            {/* Stars + Author + Location at bottom */}
+            <div className="mt-4 md:mt-6">
+              <div className="flex justify-center mb-2 text-red-600 text-xs sm:text-base">
+                {Array(testimonials[index].rating)
+                  .fill(0)
+                  .map((_, i) => (
+                    <FaStar key={i} className="mx-0.5" />
+                  ))}
+              </div>
+              <div className="flex flex-col items-center">
+                <span className="text-red-600 text-sm sm:text-lg md:text-2xl font-extrabold uppercase">
+                  {testimonials[index].author}
+                </span>
+                <span className="text-black text-xs sm:text-base md:text-lg">
+                  {testimonials[index].location}
+                </span>
+              </div>
+            </div>
+          </div>
         </div>
-        <div className="flex flex-col items-center">
-          <span className="text-red-600 text-sm sm:text-lg md:text-2xl font-extrabold uppercase">
-            {testimonials[index].author}
-          </span>
-          <span className="text-black text-xs sm:text-base md:text-lg">
-            {testimonials[index].location}
-          </span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+      </section>
 
-
-
-
-
-
-  <section className="bg-red-600 text-white rounded-xl md:mx-auto mb-10 p-8 md:p-12 max-w-5xl mx-3 text-left">
-  <p className="text-xl md:text-4xl font- mb-2">Let’s Chat</p>
-  <h2 className="text-4xl md:text-7xl font-barber leading-tight md:leading-wide mb-6">
-    TELL US YOUR PLANS, <br className="hidden sm:block" /> 
-    WE’LL BRING THE PANS
-  </h2>
-  <button className="font-barber text-sm md:text-xl bg-white text-red-600 py-2 px-6 md:px-10 rounded-lg shadow-lg hover:transition duration-300 ease-in-out transform hover:scale-105 font-bold ">
-    KNOW MORE
-  </button>
-</section>
-
-
-
-
-            
-
-
+      <section className="bg-red-600 text-white rounded-xl md:mx-auto mb-10 p-8 md:p-12 max-w-5xl mx-3 text-left">
+        <p className="text-xl md:text-4xl font- mb-2">Let’s Chat</p>
+        <h2 className="text-4xl md:text-7xl font-barber leading-tight md:leading-wide mb-6">
+          TELL US YOUR PLANS, <br className="hidden sm:block" />
+          WE’LL BRING THE PANS
+        </h2>
+        <button className="font-barber text-sm md:text-xl bg-white text-red-600 py-2 px-6 md:px-10 rounded-lg shadow-lg hover:transition duration-300 ease-in-out transform hover:scale-105 font-bold ">
+          KNOW MORE
+        </button>
+      </section>
 
       <Footer />
     </>
