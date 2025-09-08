@@ -115,9 +115,66 @@ const HomePage = () => {
         </div>
       </div>
 
+
+
+
+
+
+            <div className="flex items-center justify-center bg-red-600 text-white p-4 pb-10">
+  {/* Text + Veggies Wrapper */}
+  <div className="relative inline-block font-barber my-6 text-center leading-snug text-2xl md:text-6xl">
+    <p>
+      WE KEEP IT REAL WITH VEGGIES <br />
+      AS FRESH AS YOUR CRAVINGS, <br />
+      SO EVERY DISH TASTES ALIVE.
+    </p>
+
+    {/* Turnip - top left of text */}
+    <motion.div
+      className="absolute -top-6 left-[20%] -translate-x-1/2 w-10 h-10 md:w-12 md:h-12"
+      animate={{ y: [0, -10, 0] }}
+      transition={{ repeat: Infinity, duration: 1.5 }}
+      whileHover={{ scale: 1.3, rotate: 10 }}
+    >
+      <img src={tumip} alt="Turnip" className="w-full h-full" />
+    </motion.div>
+
+    {/* Eggplant - bottom left of text */}
+    <motion.div
+      className="absolute bottom-0 left-3 -translate-x-full w-8 h-8 md:w-10 md:h-10"
+      animate={{ y: [0, -10, 0] }}
+      transition={{ repeat: Infinity, duration: 1.8 }}
+      whileHover={{ scale: 1.3, rotate: -10 }}
+    >
+      <img src={brinjal} alt="Eggplant" className="w-full h-full" />
+    </motion.div>
+
+    {/* Peas - touches "e" in 'tastes' */}
+    <motion.div
+      className="absolute bottom-2 right-20 translate-x-full w-10 h-10 md:w-12 md:h-12"
+      animate={{ y: [0, -10, 0] }}
+      transition={{ repeat: Infinity, duration: 1.6 }}
+      whileHover={{ scale: 1.3, rotate: 10 }}
+    >
+      <img src={peas} alt="Peas" className="w-full h-full" />
+    </motion.div>
+
+    {/* Carrot - mid right side of text */}
+    <motion.div
+      className="absolute right-4 top-6 translate-x-full -translate-y-1/2 w-10 h-10 md:w-12 md:h-12"
+      animate={{ y: [0, -10, 0] }}
+      transition={{ repeat: Infinity, duration: 1.7 }}
+      whileHover={{ scale: 1.3, rotate: -15 }}
+    >
+      <img src={carrot} alt="Carrot" className="w-full h-full" />
+    </motion.div>
+  </div>
+</div>
+
+
       {/* allooo mulli section */}
-      <div className="flex items-center justify-center bg-red-600 text-white p-4 pb-10">
-        <div className="relative font-barber my-6 text-center leading-snug text-3xl md:text-6xl">
+      {/* <div className="flex items-center justify-center bg-red-600 text-white p-4 pb-10">
+        <div className="relative font-barber my-6 text-center leading-snug text-2xl md:text-6xl">
           <p>
             WE KEEP IT REAL WITH VEGGIES <br />
             AS FRESH AS YOUR CRAVINGS, <br />
@@ -125,37 +182,30 @@ const HomePage = () => {
           </p>
 
           {/* Tumip */}
-          <motion.div
+          {/* <motion.div
             className="absolute w-12 h-12 top-[-30px] left-[26%]  -translate-x-1/2"
             animate={{ y: [0, -10, 0] }}
             transition={{ repeat: 0, duration: 0.3 }}
             whileHover={{ scale: 1.3, rotate: 10 }}
           >
             <img src={tumip} alt="Carrot" className="w-full h-full" />
-          </motion.div>
+          </motion.div> */}
 
           {/* Eggplant */}
-          <motion.div
-            className="absolute w-8 h-8 bottom-[30%] left-[2%] -translate-x-1/2"
-            animate={{ y: [0, -10, 0] }}
-            transition={{ repeat: 0, duration: 0.3 }}
-            whileHover={{ scale: 1.3, rotate: -10 }}
-          >
-            <img src={brinjal} alt="Eggplant" className="w-full h-full" />
-          </motion.div>
+          {/* <motion.div/v> */}
 
           {/* Chili */}
-          <motion.div
+          {/* <motion.div
             className="absolute w-12 h-12 bottom-[20%] right-[20%]"
             animate={{ y: [0, -10, 0] }}
             transition={{ repeat: 0, duration: 0.3 }}
             whileHover={{ scale: 1.3, rotate: 10 }}
           >
             <img src={peas} alt="Chili" className="w-full h-full" />
-          </motion.div>
+          </motion.div> */}
 
           {/* Radish */}
-          <motion.div
+          {/* <motion.div
             className="absolute w-12 h-12 top-[24%] right-[-10px]"
             animate={{ y: [0, -10, 0] }}
             transition={{ repeat: 0, duration: 0.3 }}
@@ -164,7 +214,7 @@ const HomePage = () => {
             <img src={carrot} alt="Radish" className="w-full h-full" />
           </motion.div>
         </div>
-      </div>
+      </div>  */}
 
       {/* ribbon */}
       <div className="relative w-full h-[140px] overflow-visible bg-white">
