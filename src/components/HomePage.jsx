@@ -156,69 +156,63 @@ const HomePage = () => {
               <img
                 src={WeddingsandEvents}
                 alt="Display of various Indian sweets and chaat dishes"
-                className="w-full h-auto rounded-xl shadow-lg"
+                className="w-6/7 h-auto rounded-xl shadow-lg mx-auto"
               />
+
               {/* </div> */}
             </div>
           </div>
         </div>
       </div>
 
-    
-           <div
-      ref={ref}
-      className="flex items-center justify-center bg-[#C20000] text-white p-4 pb-10"
-    >
-      <div className="relative inline-block font-lilita my-6 text-center leading-snug text-2xl md:text-6xl">
-        <p>
-          WE KEEP IT REAL WITH VEGGIES <br />
-          AS FRESH AS YOUR CRAVINGS, <br />
-          SO EVERY DISH TASTES ALIVE.
-        </p>
+      <div
+        ref={ref}
+        className="flex items-center justify-center bg-[#C20000] text-white p-4 pb-10"
+      >
+        <div className="relative inline-block font-lilita my-6 text-center leading-snug text-2xl md:text-6xl">
+          <p>
+            WE KEEP IT REAL WITH VEGGIES <br />
+            AS FRESH AS YOUR CRAVINGS, <br />
+            SO EVERY DISH TASTES ALIVE.
+          </p>
 
-        {/* Turnip */}
-        <motion.div
-          style={{ y: yTurnip, rotate: rTurnip, scale: sTurnip }}
-          className="absolute -top-2 left-[20%] -translate-x-1/2 w-12 h-12 md:w-16 md:h-16"
-          whileHover={{ scale: 1.4, rotate: 15 }}
-        >
-          <img src={tumip} alt="Turnip" className="w-full h-full" />
-        </motion.div>
+          {/* Turnip */}
+          <motion.div
+            style={{ y: yTurnip, rotate: rTurnip, scale: sTurnip }}
+            className="absolute -top-2 left-[20%] -translate-x-1/2 w-12 h-12 md:w-16 md:h-16"
+            whileHover={{ scale: 1.4, rotate: 15 }}
+          >
+            <img src={tumip} alt="Turnip" className="w-full h-full" />
+          </motion.div>
 
-        {/* Eggplant */}
-        <motion.div
-          style={{ y: yBrinjal, rotate: rBrinjal, scale: sBrinjal }}
-          className="absolute bottom-0 md:bottom-20 left-3 -translate-x-full w-10 h-10 md:w-12 md:h-12"
-          whileHover={{ scale: 1.4, rotate: -15 }}
-        >
-          <img src={brinjal} alt="Eggplant" className="w-full h-full" />
-        </motion.div>
+          {/* Eggplant */}
+          <motion.div
+            style={{ y: yBrinjal, rotate: rBrinjal, scale: sBrinjal }}
+            className="absolute bottom-0 md:bottom-20 left-3 -translate-x-full w-10 h-10 md:w-12 md:h-12"
+            whileHover={{ scale: 1.4, rotate: -15 }}
+          >
+            <img src={brinjal} alt="Eggplant" className="w-full h-full" />
+          </motion.div>
 
-        {/* Peas */}
-        <motion.div
-          style={{ y: yPeas, rotate: rPeas, scale: sPeas }}
-          className="absolute bottom-2 right-20 translate-x-full w-12 h-12 md:w-14 md:h-14"
-          whileHover={{ scale: 1.4, rotate: 20 }}
-        >
-          <img src={peas} alt="Peas" className="w-full h-full" />
-        </motion.div>
+          {/* Peas */}
+          <motion.div
+            style={{ y: yPeas, rotate: rPeas, scale: sPeas }}
+            className="absolute bottom-2 right-20 translate-x-full w-12 h-12 md:w-14 md:h-14"
+            whileHover={{ scale: 1.4, rotate: 20 }}
+          >
+            <img src={peas} alt="Peas" className="w-full h-full" />
+          </motion.div>
 
-        {/* Carrot */}
-        <motion.div
-          style={{ y: yCarrot, rotate: rCarrot, scale: sCarrot }}
-          className="absolute right-4 top-6 translate-x-full -translate-y-1/2 w-12 h-12 md:w-16 md:h-16"
-          whileHover={{ scale: 1.4, rotate: -20 }}
-        >
-          <img src={carrot} alt="Carrot" className="w-full h-full" />
-        </motion.div>
+          {/* Carrot */}
+          <motion.div
+            style={{ y: yCarrot, rotate: rCarrot, scale: sCarrot }}
+            className="absolute right-4 top-6 translate-x-full -translate-y-1/2 w-12 h-12 md:w-16 md:h-16"
+            whileHover={{ scale: 1.4, rotate: -20 }}
+          >
+            <img src={carrot} alt="Carrot" className="w-full h-full" />
+          </motion.div>
+        </div>
       </div>
-    </div>
-
-
-
-
-
-  
 
       {/* allooo mulli section */}
       {/* <div className="flex items-center justify-center bg-[#C20000] text-white p-4 pb-10">
@@ -230,7 +224,7 @@ const HomePage = () => {
           </p>
 
           {/* Tumip */}
-          {/* <motion.div
+      {/* <motion.div
             className="absolute w-12 h-12 top-[-30px] left-[26%]  -translate-x-1/2"
             animate={{ y: [0, -10, 0] }}
             transition={{ repeat: 0, duration: 0.3 }}
@@ -239,11 +233,11 @@ const HomePage = () => {
             <img src={tumip} alt="Carrot" className="w-full h-full" />
           </motion.div> */}
 
-          {/* Eggplant */}
-          {/* <motion.div/v> */}
+      {/* Eggplant */}
+      {/* <motion.div/v> */}
 
-          {/* Chili */}
-          {/* <motion.div
+      {/* Chili */}
+      {/* <motion.div
             className="absolute w-12 h-12 bottom-[20%] right-[20%]"
             animate={{ y: [0, -10, 0] }}
             transition={{ repeat: 0, duration: 0.3 }}
@@ -252,8 +246,8 @@ const HomePage = () => {
             <img src={peas} alt="Chili" className="w-full h-full" />
           </motion.div> */}
 
-          {/* Radish */}
-          {/* <motion.div
+      {/* Radish */}
+      {/* <motion.div
             className="absolute w-12 h-12 top-[24%] right-[-10px]"
             animate={{ y: [0, -10, 0] }}
             transition={{ repeat: 0, duration: 0.3 }}
@@ -526,33 +520,32 @@ const HomePage = () => {
 
             {/* Stars + Author + Location at bottom */}
             {/* Stars + Author + Location at bottom */}
-<AnimatePresence mode="wait">
-  <motion.div
-    key={index}
-    initial={{ opacity: 0, x: 100 }}
-    animate={{ opacity: 1, x: 0 }}
-    exit={{ opacity: 0, x: -100 }}
-    transition={{ duration: 0.6 }}
-    className="mt-4 md:mt-6"
-  >
-    <div className="flex justify-center mb-2 text-[#C20000] text-xs sm:text-base">
-      {Array(testimonials[index].rating)
-        .fill(0)
-        .map((_, i) => (
-          <FaStar key={i} className="mx-0.5" />
-        ))}
-    </div>
-    <div className="flex flex-col items-center">
-      <span className="text-[#C20000] text-sm sm:text-lg md:text-2xl font-extrabold uppercase">
-        {testimonials[index].author}
-      </span>
-      <span className="text-black text-xs sm:text-base md:text-lg">
-        {testimonials[index].location}
-      </span>
-    </div>
-  </motion.div>
-</AnimatePresence>
-
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, x: 100 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: -100 }}
+                transition={{ duration: 0.6 }}
+                className="mt-4 md:mt-6"
+              >
+                <div className="flex justify-center mb-2 text-[#C20000] text-xs sm:text-base">
+                  {Array(testimonials[index].rating)
+                    .fill(0)
+                    .map((_, i) => (
+                      <FaStar key={i} className="mx-0.5" />
+                    ))}
+                </div>
+                <div className="flex flex-col items-center">
+                  <span className="text-[#C20000] text-sm sm:text-lg md:text-2xl font-extrabold uppercase">
+                    {testimonials[index].author}
+                  </span>
+                  <span className="text-black text-xs sm:text-base md:text-lg">
+                    {testimonials[index].location}
+                  </span>
+                </div>
+              </motion.div>
+            </AnimatePresence>
           </div>
         </div>
       </section>
@@ -563,10 +556,9 @@ const HomePage = () => {
           TELL US YOUR PLANS, <br className="hidden sm:block" />
           WE’LL BRING THE PANS
         </h2>
-        <button
-  className="btn-lift font-lilita text-sm md:text-xl bg-white text-[#C20000] py-2 px-6 md:px-10 rounded-lg shadow-md">
-  <span className="btn-label">KNOW MORE</span>
-</button>
+        <button className="btn-lift font-lilita text-sm md:text-xl bg-white text-[#C20000] py-2 px-6 md:px-10 rounded-lg shadow-md">
+          <span className="btn-label">KNOW MORE</span>
+        </button>
       </section>
 
       <Footer />
