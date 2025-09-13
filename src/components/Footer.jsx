@@ -23,7 +23,7 @@ const Footer = () => {
     {/* Left Box: Flavors */}
     <div className="bg-white rounded-2xl shadow-lg p-6 flex items-center justify-center basis-3/4">
       
-      <h2 className="font-lilita pt-2 text-3xl md:text-7xl text-[#C20000] tracking-wide text-center items-center">
+      <h2 className="font-lilita pt-2 text-xl md:text-6xl text-[#C20000] tracking-wide text-center items-center">
         FLAVORS MADE WITH LOVE
       </h2>
     </div>
