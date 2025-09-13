@@ -1,66 +1,110 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Navbar.css";
 import { Link } from "react-router-dom";
-import headlogo from '../assets/icons/headlogo.svg';
-
+import headlogo from "../assets/icons/headlogo.svg";
+import { FaBars, FaTimes } from "react-icons/fa"; // hamburger & close icons
 
 const Navbar = () => {
-  return (
-    <nav className="w-full bg-red-600 flex justify-center items-center py-2">
-      <div className="bg-white w-11/12 max-w-7xl flex justify-between items-center rounded-full px-10 py-3 shadow-md relative">
-        {/* Left Links */}
-        {/* <ul className="flex items-center space-x-12 text-base font-bold text-black">
-          <li className="cursor-pointer">Home</li>
-          <li className="cursor-pointer">Our Story</li>
-          <li className="cursor-pointer">Menu</li>
-          <li className="cursor-pointer">Services</li>
-        </ul> */}
-              <ul className="flex items-center space-x-12 text-base font-bold text-black">
-        <li className="cursor-pointer">
-          <Link to="/">Home</Link>
-        </li>
-        <li className="cursor-pointer">
-          <Link to="/our-story">Our Story</Link>
-        </li>
-        <li className="cursor-pointer">
-          <Link to="/menu">Menu</Link>
-        </li>
-        <li className="cursor-pointer">
-          <Link to="/services">Services</Link>
-        </li>
-      </ul>
+  const [isOpen, setIsOpen] = useState(false);
 
+  return (
+    <nav className="w-full bg-[#C20000] flex justify-center items-center py-2">
+      <div className="bg-white w-11/12 max-w-7xl flex justify-between items-center rounded-full px-6 md:px-10 py-2 shadow-md relative">
+        {/* Left Links - Hidden on mobile */}
+        <ul className="hidden md:flex items-center space-x-12 text-base font-bold text-black">
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="/our-story">Our Story</Link>
+          </li>
+          <li>
+            <Link to="/menu">Menu</Link>
+          </li>
+          <li>
+            <Link to="/services">Services</Link>
+          </li>
+        </ul>
 
         {/* Logo */}
-      <div className="absolute left-1/2 -translate-x-1/2 -inset-y-0 -my-[12px] flex items-center">
-        <img
-          src={headlogo}
-          alt="Saada Halwai Logo"
-          className="h-full object-contain drop-shadow-lg transition-transform duration-300 hover:rotate-12"/>
-      </div>
+        <div className="absolute left-1/2 -translate-x-1/2 -my-[12px] flex items-center">
+          <img
+            src={headlogo}
+            alt="Saada Halwai Logo"
+            className="h-12 md:h-17 object-contain drop-shadow-lg bell-shiver"
+          />
+        </div>
 
-
-        {/* Right Links */}
-        <div className="flex items-center space-x-12">
-          {/* <ul className="flex items-center space-x-12 text-base font-bold text-black">
-            <li className="cursor-pointer">FAQs</li>
-            <li className="cursor-pointer">Contact</li>
-          </ul> */}
+        {/* Right Links + Button */}
+        <div className="hidden md:flex items-center space-x-12">
           <ul className="flex items-center space-x-12 text-base font-bold text-black">
-            <li className="cursor-pointer">
+            <li>
               <Link to="/faqs">FAQs</Link>
             </li>
-            <li className="cursor-pointer">
+            <li>
               <Link to="/contact">Contact</Link>
             </li>
           </ul>
-
-          <button className="bg-red-600 text-white text-sm font-bold px-5 py-2 rounded-full shadow hover:bg-red-700 transition">
+          <button className="bg-[#C20000] text-white text-sm font-bold px-5 py-2 rounded-full shadow hover:bg-red-700 transition">
             MAKE A BOOKING
           </button>
         </div>
+
+        {/* Hamburger (mobile only) */}
+        <div className="md:hidden flex items-center">
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="text-2xl text-[#C20000]"
+          >
+            {isOpen ? <FaTimes /> : <FaBars />}
+          </button>
+        </div>
       </div>
+
+      {/* Mobile Menu */}
+      {isOpen && (
+        <div className="absolute top-16 left-0 w-full bg-white shadow-md rounded-b-2xl md:hidden z-50">
+          <ul className="flex flex-col items-center space-y-4 py-6 text-base font-bold text-black">
+            <li>
+              <Link to="/" onClick={() => setIsOpen(false)}>
+                Home
+              </Link>
+            </li>
+            <li>
+              <Link to="/our-story" onClick={() => setIsOpen(false)}>
+                Our Story
+              </Link>
+            </li>
+            <li>
+              <Link to="/menu" onClick={() => setIsOpen(false)}>
+                Menu
+              </Link>
+            </li>
+            <li>
+              <Link to="/services" onClick={() => setIsOpen(false)}>
+                Services
+              </Link>
+            </li>
+            <li>
+              <Link to="/faqs" onClick={() => setIsOpen(false)}>
+                FAQs
+              </Link>
+            </li>
+            <li>
+              <Link to="/contact" onClick={() => setIsOpen(false)}>
+                Contact
+              </Link>
+            </li>
+            <li>
+              <button className="bg-[#C20000] text-white text-sm font-bold px-5 py-2 rounded-full shadow hover:bg-red-700 transition">
+                MAKE A BOOKING
+              </button>
+            </li>
+          </ul>
+        </div>
+      )}
     </nav>
   );
-}
-export default Navbar
+};
+
+export default Navbar;

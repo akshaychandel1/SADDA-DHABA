@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import "./HomePage.css";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion,useScroll, useTransform, AnimatePresence } from "framer-motion";
 import { FaStar } from "react-icons/fa";
 import carrot from "../assets/icons/carrot.svg";
 import brinjal from "../assets/icons/brinjal.svg";
@@ -22,7 +22,12 @@ import textthink from "../assets/icons/textthink.svg";
 import WeddingsandEvents from "../assets/icons/WeddingsandEvents.jpg";
 import GrabandGo from "../assets/icons/GrabandGo.jpg";
 import CorporateEvents from "../assets/icons/CorporateEvents.jpg";
+import dow from "../assets/icons/dow.jpg";
 import Cap from "../assets/icons/Cap.svg";
+import EmblaCarousel from './carousel/EmblaCarousel'
+import './carousel/css/embla.css'
+
+
 
 const testimonials = [
   {
@@ -46,6 +51,36 @@ const testimonials = [
 ];
 
 const HomePage = () => {
+  const SLIDES = [
+  { src: dow, alt: "Weddings and Events" },
+  { src: dow, alt: "Weddings and Events" },
+  { src: dow, alt: "Weddings and Events" },
+  { src: dow, alt: "Weddings and Events" },
+  { src: dow, alt: "Weddings and Events" },
+  { src: dow, alt: "Weddings and Events" },
+  { src: dow, alt: "Weddings and Events" },
+];
+ const OPTIONS = {
+    align: 'start', // This centers the active slide
+    loop: true,
+    slidesToScroll: 1,
+    skipSnaps: false, // Ensures the carousel snaps to each slide
+  };
+
+
+  const ref = useRef(null);
+
+  // Track scroll progress relative to this section
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start end", "end start"], // when section enters/leaves viewport
+  });
+
+  // Map scroll progress to Y movement
+  const yTurnip = useTransform(scrollYProgress, [0, 1], [0, -50]);
+  const yBrinjal = useTransform(scrollYProgress, [0, 1], [0, -30]);
+  const yPeas = useTransform(scrollYProgress, [0, 1], [0, -40]);
+  const yCarrot = useTransform(scrollYProgress, [0, 1], [0, -60]);
   const [index, setIndex] = useState(0);
 
   useEffect(() => {
@@ -59,7 +94,7 @@ const HomePage = () => {
     <>
       <Navbar />
 
-      <div className="bg-red-600  text-white  overflow-hidden">
+      <div className="bg-[#C20000]  text-white  overflow-hidden">
         <div className="relative container mx-auto px-1 py-12 md:py-20 text-center">
           {/* Header Content */}
           <div className=" mx-auto md:mb-60">
@@ -71,14 +106,14 @@ const HomePage = () => {
               is cheeky, tasty, and made to impress. Ready to be served with
               flair.
             </p>
-            <button className="font-barber mt-6 mb-26 bg-white text-red-600 font-bold py-2 px-10 rounded-lg shadow-lg hover: transition duration-300 ease-in-out transform hover:scale-105">
-              EXPLORE MENU
+            <button className="mt-6 mb-26 bg-white text-[#C20000] font-bold py-2 px-6 rounded-lg shadow-lg hover: transition duration-1 ease-in-out transform hover:scale-105">
+              <span className="pt-10">EXPLORE MENU</span>
             </button>
           </div>
 
           {/* Mascot and Food Display Section */}
-          <div className="relative mt-16 md:mt-24">
-            <div className="absolute -top-30 md:-top-70 left-1/2 -translate-x-1/2 z-20 w-48 md:w-140">
+          <div className="relative mt-2 md:mt-24">
+            <div className="absolute -top-22 md:-top-78 left-1/2 -translate-x-1/2 z-20 w-48 md:w-[54%]">
               <img
                 src={HalfCharacter}
                 alt="Happy Halwai Mascot"
@@ -86,7 +121,7 @@ const HomePage = () => {
               />
 
               {/* Speech Bubble */}
-              <div className="absolute -top-7 md:top-4 -right-18 md:-right-32 w-28 md:w-52">
+              <div className="absolute top-2 md:top-8 -right-3 md:-right-3 w-16 md:w-42">
                 <div className="relative ">
                   <img src={textthink} alt="" />
                   <div className="absolute left-0 -bottom-2  transform rotate-45 -translate-x-2"></div>
@@ -94,15 +129,15 @@ const HomePage = () => {
               </div>
             </div>
 
-            <div className="absolute -top-10 md:-top-10 left-1/2 -translate-x-[150%] md:-translate-x-[270%] z-50">
-              <img src={Hand} alt="Hand" className="w-20 md:w-30" />
+            <div className="absolute -top-4 md:-top-10 left-1/2 -translate-x-[300%] md:-translate-x-[270%] z-50">
+              <img src={Hand} alt="Hand" className="w-11 md:w-30" />
             </div>
-            <div className="absolute -top-10 md:-top-10 left-1/2 translate-x-[70%] md:translate-x-[180%] z-50">
-              <img src={HandRight} alt="Hand" className="w-20 md:w-29" />
+            <div className="absolute -top-4 md:-top-10 left-1/2 translate-x-[200%] md:translate-x-[180%] z-50">
+              <img src={HandRight} alt="Hand" className="w-11 md:w-29" />
             </div>
 
             {/* White background card for food */}
-            {/* <div className="absolute  md:pt-28 pb-10 shadow-2xl relative z-10"> */}
+            {/* <div className="absolute  md:pt-28 pb-10 shadow-2xl z-10"> */}
             <div className="relative z-30 md:mx-6">
               <img
                 src={WeddingsandEvents}
@@ -115,65 +150,64 @@ const HomePage = () => {
         </div>
       </div>
 
-
-
-
-
-
-            <div className="flex items-center justify-center bg-red-600 text-white p-4 pb-10">
-  {/* Text + Veggies Wrapper */}
-  <div className="relative inline-block font-barber my-6 text-center leading-snug text-2xl md:text-6xl">
-    <p>
-      WE KEEP IT REAL WITH VEGGIES <br />
-      AS FRESH AS YOUR CRAVINGS, <br />
-      SO EVERY DISH TASTES ALIVE.
-    </p>
-
-    {/* Turnip - top left of text */}
-    <motion.div
-      className="absolute -top-6 left-[20%] -translate-x-1/2 w-10 h-10 md:w-12 md:h-12"
-      animate={{ y: [0, -10, 0] }}
-      transition={{ repeat: Infinity, duration: 1.5 }}
-      whileHover={{ scale: 1.3, rotate: 10 }}
+    
+        <div
+      ref={ref}
+      className="flex items-center justify-center bg-[#C20000] text-white p-4 pb-10"
     >
-      <img src={tumip} alt="Turnip" className="w-full h-full" />
-    </motion.div>
+      <div className="relative inline-block font-barber my-6 text-center leading-snug text-2xl md:text-6xl">
+        <p>
+          WE KEEP IT REAL WITH VEGGIES <br />
+          AS FRESH AS YOUR CRAVINGS, <br />
+          SO EVERY DISH TASTES ALIVE.
+        </p>
 
-    {/* Eggplant - bottom left of text */}
-    <motion.div
-      className="absolute bottom-0 left-3 -translate-x-full w-8 h-8 md:w-10 md:h-10"
-      animate={{ y: [0, -10, 0] }}
-      transition={{ repeat: Infinity, duration: 1.8 }}
-      whileHover={{ scale: 1.3, rotate: -10 }}
-    >
-      <img src={brinjal} alt="Eggplant" className="w-full h-full" />
-    </motion.div>
+        {/* Turnip */}
+        <motion.div
+          style={{ y: yTurnip }}
+          className="absolute -top-2 left-[20%] -translate-x-1/2 w-10 h-10 md:w-12 md:h-12"
+          whileHover={{ scale: 1.3, rotate: 10 }}
+        >
+          <img src={tumip} alt="Turnip" className="w-full h-full" />
+        </motion.div>
 
-    {/* Peas - touches "e" in 'tastes' */}
-    <motion.div
-      className="absolute bottom-2 right-20 translate-x-full w-10 h-10 md:w-12 md:h-12"
-      animate={{ y: [0, -10, 0] }}
-      transition={{ repeat: Infinity, duration: 1.6 }}
-      whileHover={{ scale: 1.3, rotate: 10 }}
-    >
-      <img src={peas} alt="Peas" className="w-full h-full" />
-    </motion.div>
+        {/* Eggplant */}
+        <motion.div
+          style={{ y: yBrinjal }}
+          className="absolute bottom-0 md:bottom-20 left-3 -translate-x-full w-8 h-8 md:w-10 md:h-10"
+          whileHover={{ scale: 1.3, rotate: -10 }}
+        >
+          <img src={brinjal} alt="Eggplant" className="w-full h-full" />
+        </motion.div>
 
-    {/* Carrot - mid right side of text */}
-    <motion.div
-      className="absolute right-4 top-6 translate-x-full -translate-y-1/2 w-10 h-10 md:w-12 md:h-12"
-      animate={{ y: [0, -10, 0] }}
-      transition={{ repeat: Infinity, duration: 1.7 }}
-      whileHover={{ scale: 1.3, rotate: -15 }}
-    >
-      <img src={carrot} alt="Carrot" className="w-full h-full" />
-    </motion.div>
-  </div>
-</div>
+        {/* Peas */}
+        <motion.div
+          style={{ y: yPeas }}
+          className="absolute bottom-2 right-20 translate-x-full w-10 h-10 md:w-12 md:h-12"
+          whileHover={{ scale: 1.3, rotate: 10 }}
+        >
+          <img src={peas} alt="Peas" className="w-full h-full" />
+        </motion.div>
 
+        {/* Carrot */}
+        <motion.div
+          style={{ y: yCarrot }}
+          className="absolute right-4 top-6 translate-x-full -translate-y-1/2 w-10 h-10 md:w-12 md:h-12"
+          whileHover={{ scale: 1.3, rotate: -15 }}
+        >
+          <img src={carrot} alt="Carrot" className="w-full h-full" />
+        </motion.div>
+      </div>
+    </div>
+
+
+
+
+
+  
 
       {/* allooo mulli section */}
-      {/* <div className="flex items-center justify-center bg-red-600 text-white p-4 pb-10">
+      {/* <div className="flex items-center justify-center bg-[#C20000] text-white p-4 pb-10">
         <div className="relative font-barber my-6 text-center leading-snug text-2xl md:text-6xl">
           <p>
             WE KEEP IT REAL WITH VEGGIES <br />
@@ -246,17 +280,17 @@ const HomePage = () => {
       </div>
 
       <section className="bg-white py-16 mb-16 px-6">
-        <h2 className="text-center font-barber tracking-wide text-4xl md:text-6xl  text-red-600 mb-10">
+        <h2 className="text-center font-barber tracking-wide text-4xl md:text-6xl  text-[#C20000] mb-10">
           WHAT MAKES SAADA HALWAI BETTER?
         </h2>
 
         <div className="grid md:grid-cols-3 gap-4 text-center max-w-4xl mx-auto">
           <div>
             <img src={chopping} alt="Halwai" className="mx-auto w-26 h-26" />
-            <h3 className="mt-4 text-xl font-barber text-red-600">
+            <h3 className="mt-4 text-xl font-barber text-[#C20000]">
               HALWAI AT HEARTS
             </h3>
-            <p className="mt-2 text-red-600 text-sm">
+            <p className="mt-2 text-[#C20000] text-sm">
               We’re not just another caterer, we’re halwai by tradition, serving
               Britain with authentic desi soul.
             </p>
@@ -264,10 +298,10 @@ const HomePage = () => {
 
           <div>
             <img src={cover} alt="Dish" className="mx-auto w-26 h-26" />
-            <h3 className="mt-4 text-xl font-barber  text-red-600">
+            <h3 className="mt-4 text-xl font-barber  text-[#C20000]">
               PANI PURI TO POSH
             </h3>
-            <p className="mt-2 text-red-600 text-sm">
+            <p className="mt-2 text-[#C20000] text-sm">
               Street-style chaats, royal curries, and mithai magic all styled to
               impress UK weddings, events, and celebrations.
             </p>
@@ -275,10 +309,10 @@ const HomePage = () => {
 
           <div>
             <img src={pan} alt="Stove" className="mx-auto w-26 h-26" />
-            <h3 className="mt-4 text-xl font-barber text-red-600">
+            <h3 className="mt-4 text-xl font-barber text-[#C20000]">
               HOT OFF THE STOVE
             </h3>
-            <p className="mt-2 text-red-600 text-sm">
+            <p className="mt-2 text-[#C20000] text-sm">
               Cooked fresh right here in the UK, so every bite carries the
               warmth of India without losing a minute of flavour.
             </p>
@@ -288,10 +322,12 @@ const HomePage = () => {
 
       {/* Carousel Container */}
 
+      <EmblaCarousel slides={SLIDES} options={OPTIONS} />
+
       <div className="flex items-center my-10 justify-center px-4">
         <div className="max-w-5xl flex flex-col md:flex-row rounded-xl overflow-hidden shadow-md">
           {/* Left Side */}
-          <div className="bg-red-600 text-white p-6 md:w-1/2 flex flex-col justify-between">
+          <div className="bg-[#C20000] text-white p-6 md:w-1/2 flex flex-col justify-between">
             <div>
               <h2 className="text-4xl md:text-7xl font-barber leading-tight md:leading-wide">
                 WEDDING & EVENTS
@@ -307,7 +343,7 @@ const HomePage = () => {
 
             <div className="flex items-baseline justify-between">
               {/* Custom Button */}
-              <button className="font-barber text-sm md:text-xl bg-white text-red-600 py-2 px-6 md:px-10 rounded-lg shadow-lg hover:transition duration-300 ease-in-out transform hover:scale-105">
+              <button className="font-barber text-sm md:text-xl bg-white text-[#C20000] py-2 px-6 md:px-10 rounded-lg shadow-lg transition-transform duration-300 ease-in-out transform hover:scale-105">
                 KNOW MORE
               </button>
 
@@ -332,7 +368,7 @@ const HomePage = () => {
       <div className="flex items-center my-10 justify-center px-4">
         <div className="max-w-5xl flex flex-col md:flex-row-reverse rounded-xl overflow-hidden shadow-md">
           {/* Right Side (Red Content) */}
-          <div className="bg-red-600 text-white p-6 md:w-1/2 flex flex-col justify-between">
+          <div className="bg-[#C20000] text-white p-6 md:w-1/2 flex flex-col justify-between">
             <div className="text-right">
               <h2 className="text-4xl md:text-7xl font-barber leading-tight md:leading-wide">
                 Corporate Events
@@ -352,7 +388,7 @@ const HomePage = () => {
               <img src={suit} alt="Suit" className="w-12 md:w-36" />
 
               {/* Button (moves right, below text) */}
-              <button className="font-barber text-sm md:text-xl pb-2 bg-white text-red-600 py-2 px-6 md:px-10 rounded-lg shadow-lg hover:transition duration-300 ease-in-out transform hover:scale-105">
+              <button className="font-barber text-sm md:text-xl pb-2 bg-white text-[#C20000] py-2 px-6 md:px-10 rounded-lg shadow-lg transition-transform duration-300 ease-in-out transform hover:scale-105">
                 KNOW MORE
               </button>
             </div>
@@ -372,7 +408,7 @@ const HomePage = () => {
       <div className="flex items-center my-10 justify-center px-4">
         <div className="max-w-5xl flex flex-col md:flex-row rounded-xl overflow-hidden shadow-md">
           {/* Left Side */}
-          <div className="bg-red-600 text-white p-6 md:w-1/2 flex flex-col justify-between">
+          <div className="bg-[#C20000] text-white p-6 md:w-1/2 flex flex-col justify-between">
             <div>
               <h2 className="text-4xl md:text-7xl font-barber leading-tight md:leading-wide">
                 Grab & GO
@@ -387,7 +423,7 @@ const HomePage = () => {
 
             <div className="flex items-baseline justify-between ">
               {/* Custom Button */}
-              <button className="font-barber text-sm md:text-xl bg-white text-red-600 py-2 px-6 md:px-10 rounded-lg shadow-lg hover:transition duration-300 ease-in-out transform hover:scale-105">
+              <button className="font-barber text-sm md:text-xl bg-white text-[#C20000] py-2 px-6 md:px-10 rounded-lg shadow-lg transition-transform duration-10 ease-in-out transform hover:scale-105">
                 KNOW MORE
               </button>
 
@@ -412,7 +448,7 @@ const HomePage = () => {
       {/* ribbon */}
 
       {/* ribbon */}
-      <div className="relative  w-full h-[140px] overflow-visible bg-red-600">
+      <div className="relative  w-full h-[140px] overflow-visible bg-[#C20000]">
         {/* Ribbon 1 - tilt left */}
         <div
           className="absolute  left-1/2 mt-[-59px] top-1/2 w-[160%] h-10 -translate-x-1/2 -translate-y-1/2 bg-repeat-x"
@@ -440,15 +476,15 @@ const HomePage = () => {
         />
       </div>
 
-      <section className="bg-red-600 mb-10 py-8 md:py-12 flex items-center justify-center">
+      <section className="bg-[#C20000] mb-10 py-8 md:py-12 flex items-center justify-center">
         <div className="relative max-w-4xl w-full flex justify-center">
           {/* Cap image */}
           <img src={Cap} alt="cap shape" className="w-full max-w-4xl h-auto" />
 
           {/* Content inside cap */}
-          <div className="absolute inset-1 md:inset-20 flex flex-col justify-between items-center px-3 sm:px-6 md:px-10 py-6 md:py-8 text-center">
+          <div className="absolute inset-6 md:inset-20 flex flex-col justify-between items-center px-3 sm:px-6 md:px-10 py-6 md:py-8 text-center">
             {/* Heading at top */}
-            <h2 className="text-xl sm:text-3xl md:text-5xl lg:text-6xl leading-tight font-barber text-red-600 mb-4 md:mb-6">
+            <h2 className="text-xl sm:text-3xl md:text-5xl lg:text-6xl leading-tight font-barber text-[#C20000] mb-4 md:mb-6">
               CURRY <br className="hidden sm:block" /> CONFESSIONS
             </h2>
 
@@ -475,36 +511,48 @@ const HomePage = () => {
             </AnimatePresence>
 
             {/* Stars + Author + Location at bottom */}
-            <div className="mt-4 md:mt-6">
-              <div className="flex justify-center mb-2 text-red-600 text-xs sm:text-base">
-                {Array(testimonials[index].rating)
-                  .fill(0)
-                  .map((_, i) => (
-                    <FaStar key={i} className="mx-0.5" />
-                  ))}
-              </div>
-              <div className="flex flex-col items-center">
-                <span className="text-red-600 text-sm sm:text-lg md:text-2xl font-extrabold uppercase">
-                  {testimonials[index].author}
-                </span>
-                <span className="text-black text-xs sm:text-base md:text-lg">
-                  {testimonials[index].location}
-                </span>
-              </div>
-            </div>
+            {/* Stars + Author + Location at bottom */}
+<AnimatePresence mode="wait">
+  <motion.div
+    key={index}
+    initial={{ opacity: 0, x: 100 }}
+    animate={{ opacity: 1, x: 0 }}
+    exit={{ opacity: 0, x: -100 }}
+    transition={{ duration: 0.6 }}
+    className="mt-4 md:mt-6"
+  >
+    <div className="flex justify-center mb-2 text-[#C20000] text-xs sm:text-base">
+      {Array(testimonials[index].rating)
+        .fill(0)
+        .map((_, i) => (
+          <FaStar key={i} className="mx-0.5" />
+        ))}
+    </div>
+    <div className="flex flex-col items-center">
+      <span className="text-[#C20000] text-sm sm:text-lg md:text-2xl font-extrabold uppercase">
+        {testimonials[index].author}
+      </span>
+      <span className="text-black text-xs sm:text-base md:text-lg">
+        {testimonials[index].location}
+      </span>
+    </div>
+  </motion.div>
+</AnimatePresence>
+
           </div>
         </div>
       </section>
 
-      <section className="bg-red-600 text-white rounded-xl md:mx-auto mb-10 p-8 md:p-12 max-w-5xl mx-3 text-left">
+      <section className="bg-[#C20000] text-white rounded-xl md:mx-auto mb-10 p-8 md:p-12 max-w-5xl mx-3 text-left">
         <p className="text-xl md:text-4xl font- mb-2">Let’s Chat</p>
         <h2 className="text-4xl md:text-7xl font-barber leading-tight md:leading-wide mb-6">
           TELL US YOUR PLANS, <br className="hidden sm:block" />
           WE’LL BRING THE PANS
         </h2>
-        <button className="font-barber text-sm md:text-xl bg-white text-red-600 py-2 px-6 md:px-10 rounded-lg shadow-lg hover:transition duration-300 ease-in-out transform hover:scale-105 font-bold ">
-          KNOW MORE
-        </button>
+        <button
+  className="btn-lift font-bold text-sm md:text-xl bg-white text-[#C20000] py-2 px-6 md:px-10 rounded-lg shadow-md">
+  <span className="btn-label">KNOW MORE</span>
+</button>
       </section>
 
       <Footer />

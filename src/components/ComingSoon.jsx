@@ -54,7 +54,7 @@ export default function ComingSoon() {
   };
 
   return (
-    <div className="flex flex-col min-h-screen m-2 pt-5 pb-5 items-center rounded-4xl justify-center bg-red-600 text-white">
+    <div className="flex flex-col min-h-screen m-2 pt-5 pb-5 items-center rounded-4xl justify-center bg-[#C20000] text-white">
       {/* Logo / Title */}
       <img className="w-52"
               src={LogoText} 
@@ -162,12 +162,12 @@ export default function ComingSoon() {
 
          <button
   type="submit"
-  className="items-center font-barber tracking-wider w-full bg-white py-3 rounded-full font-bold text-lg text-red-600 hover:bg-gray-100 transition flex items-center justify-center h-[48px]"
+  className="items-center font-barber tracking-wider w-full bg-white py-3 rounded-full font-bold text-lg text-[#C20000] hover:bg-gray-100 transition flex items-center justify-center h-[48px]"
   disabled={loading}
 >
   {loading ? (
     <svg
-      className="animate-spin h-5 w-5 text-red-600"
+      className="animate-spin h-5 w-5 text-[#C20000]"
       xmlns="http://www.w3.org/2000/svg"
       fill="none"
       viewBox="0 0 24 24"
@@ -194,7 +194,7 @@ export default function ComingSoon() {
 
           {/* <button
             type="submit"
-            className="font-barber tracking-wider w-full bg-red-600 text-white py-3 rounded-full font-bold text-lg hover:bg-red-700 transition"
+            className="font-barber tracking-wider w-full bg-[#C20000] text-white py-3 rounded-full font-bold text-lg hover:bg-red-700 transition"
           >
             LET&apos;S GET COOKING
           </button> */}

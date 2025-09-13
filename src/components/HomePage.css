@@ -1,11 +1,5 @@
-/* @keyframes scroll-ribbon {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-50%);
-  }
-} */
+/* override Tailwind's red-600 with your custom shade */
+
 @keyframes ribbon-marquee {
   from { background-position-x: 0; }
   to   { background-position-x: -1000px; } /* big value for endless scroll */

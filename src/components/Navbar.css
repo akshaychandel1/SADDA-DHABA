@@ -1,11 +1,14 @@
-/* In App.css or global CSS */
-@keyframes shiver {
-  0%, 100% { transform: rotate(0deg); }
-  25% { transform: rotate(2deg); }
-  50% { transform: rotate(-2deg); }
-  75% { transform: rotate(1deg); }
+@keyframes bell-shiver {
+  0%   { transform: rotate(0); }
+  15%  { transform: rotate(-15deg); }
+  30%  { transform: rotate(10deg); }
+  45%  { transform: rotate(-10deg); }
+  60%  { transform: rotate(6deg); }
+  75%  { transform: rotate(-4deg); }
+  100% { transform: rotate(0); }
 }
 
-.shiver:hover {
-  animation: shiver 0.3s infinite;
+.bell-shiver:hover {
+  animation: bell-shiver 0.8s ease-in-out;
+  transform-origin: top center; /* makes it swing like a bell */
 }

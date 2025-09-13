@@ -7,14 +7,14 @@ import Illustration from '../assets/icons/Illustration.svg';
 const SocialIcon = ({ href, children }) => (
   <a
     href={href}
-    className="text-red-600 hover:text-red-700 transition-colors duration-300">
+    className="text-[#C20000] hover:text-red-700 transition-colors duration-300">
     {children}
   </a>
 );
 
 const Footer = () => {
   return (
-    <div className="relative bg-red-600 overflow-hidden">
+    <div className="relative bg-[#C20000] overflow-hidden">
       <footer className="relative z-10 pt-12"> 
        <div className="container mx-auto px-4 sm:px-6 lg:px-8 space-y-4">
     {/* Row 1 */}
@@ -23,7 +23,7 @@ const Footer = () => {
     {/* Left Box: Flavors */}
     <div className="bg-white rounded-2xl shadow-lg p-6 flex items-center justify-center basis-3/4">
       
-      <h2 className="font-barber pt-2 text-3xl md:text-7xl text-red-600 tracking-wide text-center items-center">
+      <h2 className="font-barber pt-2 text-3xl md:text-7xl text-[#C20000] tracking-wide text-center items-center">
         FLAVORS MADE WITH LOVE
       </h2>
     </div>
@@ -51,7 +51,7 @@ const Footer = () => {
               </div>
             </div>
            <div className="bg-white rounded-2xl shadow-lg p-4 flex items-center justify-center basis-3/4">
-  <h3 className="font-barber text-lg md:text-4xl pt-2 text-red-600 tracking-wide text-center md:text-left">
+  <h3 className="font-barber text-lg md:text-4xl pt-2 text-[#C20000] tracking-wide text-center md:text-left">
     RING UP YOUR CRAVINGS: +44 79442 96922
   </h3>
 </div>
