@@ -47,6 +47,22 @@
 .embla__slide.slot-4 {
   height: 18rem; /* Small slots */
 }
+@media (max-width: 768px) {
+  .embla {
+    --slide-size: 33.333%; /* 3 visible slides */
+  }
+
+  /* Reset all first */
+  .embla__slide {
+    height: 20rem; /* default small */
+  }
+
+  /* Make 1st and 3rd bigger */
+  .embla__slide.slot-1,
+  .embla__slide.slot-3 {
+    height: 18rem;
+  }
+}
 
 
 /* ================================

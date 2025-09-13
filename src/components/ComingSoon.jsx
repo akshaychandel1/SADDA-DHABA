@@ -59,10 +59,10 @@ export default function ComingSoon() {
       <img className="w-52"
               src={LogoText} 
               alt="Logo Text"  />
-      {/* <h1 className="font-barber text-5xl">SAADA HALWAI</h1> */}
+      {/* <h1 className="font-lilita text-5xl">SAADA HALWAI</h1> */}
       <br />
       {/* Main Heading */}
-      <h2 className="font-barber tracking-wide text-6xl md:text-8xl text-center">
+      <h2 className="font-lilita tracking-wide text-6xl md:text-8xl text-center">
         COOKING UP MAGIC
       </h2>
 
@@ -79,7 +79,7 @@ export default function ComingSoon() {
       <span className="
       flex items-center">
         {Array.from({ length: 20 }).map((_, i) => (
-          <span key={i} className="font-barber flex items-center text-sm sm:text-base md:text-lg mr-4">
+          <span key={i} className="font-lilita flex items-center text-sm sm:text-base md:text-lg mr-4">
             <img 
               src={CharacterHead} 
               alt="Character Head" 
@@ -97,7 +97,7 @@ export default function ComingSoon() {
     <div className="marquee marquee-right">
       <span className="flex items-center">
         {Array.from({ length: 20 }).map((_, i) => (
-          <span key={i} className="font-barber flex items-center text-sm sm:text-base md:text-lg mr-4">
+          <span key={i} className="font-lilita flex items-center text-sm sm:text-base md:text-lg mr-4">
             <img 
               src={CharacterHead} 
               alt="Character Head" 
@@ -162,7 +162,7 @@ export default function ComingSoon() {
 
          <button
   type="submit"
-  className="items-center font-barber tracking-wider w-full bg-white py-3 rounded-full font-bold text-lg text-[#C20000] hover:bg-gray-100 transition flex items-center justify-center h-[48px]"
+  className="items-center font-lilita tracking-wider w-full bg-white py-3 rounded-full font-bold text-lg text-[#C20000] hover:bg-gray-100 transition flex items-center justify-center h-[48px]"
   disabled={loading}
 >
   {loading ? (
@@ -194,7 +194,7 @@ export default function ComingSoon() {
 
           {/* <button
             type="submit"
-            className="font-barber tracking-wider w-full bg-[#C20000] text-white py-3 rounded-full font-bold text-lg hover:bg-red-700 transition"
+            className="font-lilita tracking-wider w-full bg-[#C20000] text-white py-3 rounded-full font-bold text-lg hover:bg-red-700 transition"
           >
             LET&apos;S GET COOKING
           </button> */}
