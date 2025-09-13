@@ -69,18 +69,32 @@ const HomePage = () => {
 
 
   const ref = useRef(null);
-
-  // Track scroll progress relative to this section
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset: ["start end", "end start"], // when section enters/leaves viewport
+    offset: ["start center", "end center"],
   });
 
-  // Map scroll progress to Y movement
-  const yTurnip = useTransform(scrollYProgress, [0, 1], [0, -50]);
-  const yBrinjal = useTransform(scrollYProgress, [0, 1], [0, -30]);
-  const yPeas = useTransform(scrollYProgress, [0, 1], [0, -40]);
-  const yCarrot = useTransform(scrollYProgress, [0, 1], [0, -60]);
+  // Turnip
+  const yTurnip = useTransform(scrollYProgress, [0, 1], [0, 50]);
+  const rTurnip = useTransform(scrollYProgress, [0, 1], [0, 90]);
+  const sTurnip = useTransform(scrollYProgress, [0, 1], [1, 1.3]);
+
+  // Brinjal
+  const yBrinjal = useTransform(scrollYProgress, [0, 1], [30, -50]);
+  const rBrinjal = useTransform(scrollYProgress, [0, 1], [0, -80]);
+  const sBrinjal = useTransform(scrollYProgress, [0, 1], [1, 1.2]);
+
+  // Peas
+  const yPeas = useTransform(scrollYProgress, [0, 1], [-20, 30]);
+  const rPeas = useTransform(scrollYProgress, [0, 1], [0, 90]);
+  const sPeas = useTransform(scrollYProgress, [0, 1], [1, 1.25]);
+
+  // Carrot
+  const yCarrot = useTransform(scrollYProgress, [0, 1], [40, -40]);
+  const rCarrot = useTransform(scrollYProgress, [0, 1], [0, -75]);
+  const sCarrot = useTransform(scrollYProgress, [0, 1], [1, 1.2]);
+
+
   const [index, setIndex] = useState(0);
 
   useEffect(() => {
@@ -151,7 +165,7 @@ const HomePage = () => {
       </div>
 
     
-        <div
+           <div
       ref={ref}
       className="flex items-center justify-center bg-[#C20000] text-white p-4 pb-10"
     >
@@ -164,36 +178,36 @@ const HomePage = () => {
 
         {/* Turnip */}
         <motion.div
-          style={{ y: yTurnip }}
-          className="absolute -top-2 left-[20%] -translate-x-1/2 w-10 h-10 md:w-12 md:h-12"
-          whileHover={{ scale: 1.3, rotate: 10 }}
+          style={{ y: yTurnip, rotate: rTurnip, scale: sTurnip }}
+          className="absolute -top-2 left-[20%] -translate-x-1/2 w-12 h-12 md:w-16 md:h-16"
+          whileHover={{ scale: 1.4, rotate: 15 }}
         >
           <img src={tumip} alt="Turnip" className="w-full h-full" />
         </motion.div>
 
         {/* Eggplant */}
         <motion.div
-          style={{ y: yBrinjal }}
-          className="absolute bottom-0 md:bottom-20 left-3 -translate-x-full w-8 h-8 md:w-10 md:h-10"
-          whileHover={{ scale: 1.3, rotate: -10 }}
+          style={{ y: yBrinjal, rotate: rBrinjal, scale: sBrinjal }}
+          className="absolute bottom-0 md:bottom-20 left-3 -translate-x-full w-10 h-10 md:w-12 md:h-12"
+          whileHover={{ scale: 1.4, rotate: -15 }}
         >
           <img src={brinjal} alt="Eggplant" className="w-full h-full" />
         </motion.div>
 
         {/* Peas */}
         <motion.div
-          style={{ y: yPeas }}
-          className="absolute bottom-2 right-20 translate-x-full w-10 h-10 md:w-12 md:h-12"
-          whileHover={{ scale: 1.3, rotate: 10 }}
+          style={{ y: yPeas, rotate: rPeas, scale: sPeas }}
+          className="absolute bottom-2 right-20 translate-x-full w-12 h-12 md:w-14 md:h-14"
+          whileHover={{ scale: 1.4, rotate: 20 }}
         >
           <img src={peas} alt="Peas" className="w-full h-full" />
         </motion.div>
 
         {/* Carrot */}
         <motion.div
-          style={{ y: yCarrot }}
-          className="absolute right-4 top-6 translate-x-full -translate-y-1/2 w-10 h-10 md:w-12 md:h-12"
-          whileHover={{ scale: 1.3, rotate: -15 }}
+          style={{ y: yCarrot, rotate: rCarrot, scale: sCarrot }}
+          className="absolute right-4 top-6 translate-x-full -translate-y-1/2 w-12 h-12 md:w-16 md:h-16"
+          whileHover={{ scale: 1.4, rotate: -20 }}
         >
           <img src={carrot} alt="Carrot" className="w-full h-full" />
         </motion.div>
