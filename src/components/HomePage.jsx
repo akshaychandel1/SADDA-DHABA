@@ -30,6 +30,7 @@ import Img3 from "../assets/icons/Img3.jpg";
 import Img4 from "../assets/icons/Img4.jpg";
 import Img5 from "../assets/icons/Img5.jpg";
 import Img6 from "../assets/icons/Img6.jpg";
+import samosa from "../assets/icons/samosa.jpg";
 import EmblaCarousel from './carousel/EmblaCarousel'
 import './carousel/css/embla.css'
 
@@ -159,9 +160,9 @@ const HomePage = () => {
 
             {/* White background card for food */}
             {/* <div className="absolute  md:pt-28 pb-10 shadow-2xl z-10"> */}
-   <div className="relative z-30 md:mx-6 aspect-[7/4]">
+<div className="relative z-30 md:mx-6 aspect-[7/4]">
   <img
-    src={Img4}
+    src={samosa}
     alt="Display of various Indian sweets and chaat dishes"
     className="w-full h-full object-cover object-center rounded-xl shadow-lg mx-auto"
   />
