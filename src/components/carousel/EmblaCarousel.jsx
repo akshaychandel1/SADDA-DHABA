@@ -6,7 +6,7 @@ import "./css/embla.css";
 const EmblaCarousel = ({ 
   slides, 
   options = { loop: true, containScroll: "keepSnaps" }, 
-  autoScrollOptions = { speed: 2, stopOnInteraction: false} 
+  autoScrollOptions = { speed: 1, stopOnInteraction: false} 
 }) => {
   const [emblaRef, emblaApi] = useEmblaCarousel(options, [
     AutoScroll(autoScrollOptions),
