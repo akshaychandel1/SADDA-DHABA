@@ -560,7 +560,7 @@ const HomePage = () => {
         </div>
       </section>
 
-      <section className="2xl:max-w-[80%] bg-[#C20000] text-white rounded-[3rem] md:mx-auto mb-10 p-8 md:p-12  mx-3 text-left">
+      <section className="2xl:max-w-[80%] md:w-1/2 bg-[#C20000] text-white rounded-[3rem] md:mx-auto mb-10 p-8 md:p-12  mx-3 text-left">
         <p className="text-xl md:text-5xl mb-2">Let’s Chat</p>
         <h2 className="text-4xl 2xl:mb-42 md:text-7xl font-barber leading-tight md:leading-wide mb-6">
           TELL US YOUR PLANS, <br className="hidden sm:block" />
