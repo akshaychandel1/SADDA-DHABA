@@ -1,11 +1,23 @@
-import React from "react";
+import React, { useEffect } from "react";
 import useEmblaCarousel from "embla-carousel-react";
+import AutoScroll from "embla-carousel-auto-scroll";
 import "./css/embla.css";
 
-const EmblaCarousel = ({ slides, options = { loop: true, containScroll: "keepSnaps" } }) => {
-  const [emblaRef] = useEmblaCarousel(options);
+const EmblaCarousel = ({ 
+  slides, 
+  options = { loop: true, containScroll: "keepSnaps" }, 
+  autoScrollOptions = { speed: 2, stopOnInteraction: false} 
+}) => {
+  const [emblaRef, emblaApi] = useEmblaCarousel(options, [
+    AutoScroll(autoScrollOptions),
+  ]);
 
-
+  // Debug: Check if auto scroll is working
+  useEffect(() => {
+    if (emblaApi) {
+      console.log("Embla initialized with auto scroll");
+    }
+  }, [emblaApi]);
 
   return (
     <div className="embla">
