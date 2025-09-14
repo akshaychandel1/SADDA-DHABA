@@ -75,9 +75,9 @@ const HomePage = () => {
   });
 
   // Turnip
-  const yTurnip = useTransform(scrollYProgress, [0, 1], [0, 50]);
-  const rTurnip = useTransform(scrollYProgress, [0, 1], [0, 90]);
-  const sTurnip = useTransform(scrollYProgress, [0, 1], [1, 1.3]);
+  const yTurnip = useTransform(scrollYProgress, [0, 1], [-30, -30]);
+  const rTurnip = useTransform(scrollYProgress, [0, 1], [0, -10]);
+  const sTurnip = useTransform(scrollYProgress, [0, 1], [1, 1.1]);
 
   // Brinjal
   const yBrinjal = useTransform(scrollYProgress, [0, 1], [30, -50]);
@@ -112,7 +112,7 @@ const HomePage = () => {
         <div className="relative container mx-auto px-1 py-12 md:py-20 text-center">
           {/* Header Content */}
           <div className=" mx-auto md:mb-60">
-            <h1 className="text-4xl font-lilita md:text-8xl tracking-tight mb-3">
+            <h1 className="text-4xl font-barber md:text-8xl tracking-wide mb-3">
               YOUR HALWAI'S IN TOWN
             </h1>
             <p className="text-base md:text-lg text-red-100">
@@ -120,19 +120,21 @@ const HomePage = () => {
               is cheeky, tasty, and made to impress. Ready to be served with
               flair.
             </p>
-            <button className="mt-6 mb-26 bg-white text-[#C20000] font-lilita py-2 px-6 rounded-lg shadow-lg hover: transition duration-1 ease-in-out transform hover:scale-105">
-              <span className="pt-10">EXPLORE MENU</span>
-            </button>
+            {/* Custom Button */} 
+              <button className="mt-6 mb-26 2xl:mb-44 font-lilita text-lg md:text-2xl bg-white text-[#C20000] py-4 px-10 md:px-16 rounded-xl shadow-xl transition-transform duration-300 ease-in-out transform hover:scale-110">
+  KNOW MORE
+</button>
           </div>
 
           {/* Mascot and Food Display Section */}
-          <div className="relative mt-2 md:mt-24">
-            <div className="absolute -top-22 md:-top-78 left-1/2 -translate-x-1/2 z-20 w-48 md:w-[54%]">
-              <img
-                src={HalfCharacter}
-                alt="Happy Halwai Mascot"
-                className="z-0"
-              />
+          <div className="relative mt-2 md:mt-24 2xl:mt-58">
+            <div className="absolute -top-23 md:-top-80 2xl:-top-96 left-1/2 -translate-x-1/2 z-20 w-48 md:w-[54%]">
+            <img
+              src={HalfCharacter}
+              alt="Happy Halwai Mascot"
+              className="z-0"
+            />
+
 
               {/* Speech Bubble */}
               <div className="absolute top-2 md:top-8 -right-3 md:-right-3 w-16 md:w-42">
@@ -169,7 +171,7 @@ const HomePage = () => {
         ref={ref}
         className="flex items-center justify-center bg-[#C20000] text-white p-4 pb-10"
       >
-        <div className="relative inline-block font-lilita my-6 text-center leading-snug text-2xl md:text-6xl">
+        <div className="relative inline-block font-barber my-6 text-center leading-snug text-2xl md:text-6xl">
           <p>
             WE KEEP IT REAL WITH VEGGIES <br />
             AS FRESH AS YOUR CRAVINGS, <br />
@@ -288,7 +290,7 @@ const HomePage = () => {
       </div>
 
       <section className="bg-white py-16 mb-16 px-6">
-        <h2 className="text-center font-lilita tracking-wide text-4xl md:text-6xl  text-[#C20000] mb-10">
+        <h2 className="text-center font-barber tracking-wide text-4xl md:text-6xl  text-[#C20000] mb-10">
           WHAT MAKES SAADA HALWAI BETTER?
         </h2>
 
@@ -332,12 +334,12 @@ const HomePage = () => {
 
       <EmblaCarousel slides={SLIDES} options={OPTIONS} />
 
-      <div className="flex items-center my-10 justify-center px-4">
-        <div className="max-w-5xl flex flex-col md:flex-row rounded-xl overflow-hidden shadow-md">
+      <div className="flex items-center my-10 justify-center px-2">
+        <div className="max-w-[80%] flex flex-col md:flex-row rounded-3xl md:rounded-[3rem] overflow-hidden shadow-md">
           {/* Left Side */}
           <div className="bg-[#C20000] text-white p-6 md:w-1/2 flex flex-col justify-between">
             <div>
-              <h2 className="text-4xl md:text-7xl font-lilita leading-tight md:leading-wide">
+              <h2 className="text-4xl md:text-7xl font-barber leading-tight md:leading-wide">
                 WEDDING & EVENTS
               </h2>
               <p className="mt-3 text-xs md:text-sm leading-relaxed">
@@ -351,13 +353,14 @@ const HomePage = () => {
 
             <div className="flex items-baseline justify-between">
               {/* Custom Button */}
-              <button className="font-lilita text-sm md:text-xl bg-white text-[#C20000] py-2 px-6 md:px-10 rounded-lg shadow-lg transition-transform duration-300 ease-in-out transform hover:scale-105">
-                KNOW MORE
-              </button>
+              <button className="font-lilita text-lg md:text-2xl bg-white text-[#C20000] py-2 px-6 md:py-4 md:px-16 rounded-xl shadow-xl transition-transform duration-300 ease-in-out transform hover:scale-110">
+  KNOW MORE
+</button>
+
 
               {/* Glasses Icon */}
               <div>
-                <img src={wine} alt="Glasses" className="w-12 md:w-36" />
+                <img src={wine} alt="Glasses" className="w-12 md:w-40" />
               </div>
             </div>
           </div>
@@ -374,11 +377,11 @@ const HomePage = () => {
       </div>
 
       <div className="flex items-center my-10 justify-center px-4">
-        <div className="max-w-5xl flex flex-col md:flex-row-reverse rounded-xl overflow-hidden shadow-md">
+        <div className="max-w-[80%] flex flex-col md:flex-row-reverse rounded-3xl md:rounded-[3rem] overflow-hidden shadow-md">
           {/* Right Side (Red Content) */}
           <div className="bg-[#C20000] text-white p-6 md:w-1/2 flex flex-col justify-between">
             <div className="text-right">
-              <h2 className="text-4xl md:text-7xl font-lilita leading-tight md:leading-wide">
+              <h2 className="text-4xl md:text-7xl font-barber leading-tight md:leading-wide">
                 Corporate Events
               </h2>
               <p className="mt-3 text-xs md:text-sm leading-relaxed">
@@ -393,12 +396,12 @@ const HomePage = () => {
             {/* Icon + Button separated */}
             <div className="flex items-baseline justify-between ">
               {/* Suit Icon (stays left) */}
-              <img src={suit} alt="Suit" className="w-12 md:w-36" />
+              <img src={suit} alt="Suit" className="w-12 md:w-40" />
 
               {/* Button (moves right, below text) */}
-              <button className="font-lilita text-sm md:text-xl pb-2 bg-white text-[#C20000] py-2 px-6 md:px-10 rounded-lg shadow-lg transition-transform duration-300 ease-in-out transform hover:scale-105">
-                KNOW MORE
-              </button>
+              <button className="font-lilita text-lg md:text-2xl bg-white text-[#C20000] py-2 px-6 md:py-4 md:px-16 rounded-xl shadow-xl transition-transform duration-300 ease-in-out transform hover:scale-110">
+  KNOW MORE
+</button>
             </div>
           </div>
 
@@ -414,11 +417,11 @@ const HomePage = () => {
       </div>
 
       <div className="flex items-center my-10 justify-center px-4">
-        <div className="max-w-5xl flex flex-col md:flex-row rounded-xl overflow-hidden shadow-md">
+        <div className="max-w-[80%] flex flex-col md:flex-row rounded-3xl md:rounded-[3rem] overflow-hidden shadow-md">
           {/* Left Side */}
           <div className="bg-[#C20000] text-white p-6 md:w-1/2 flex flex-col justify-between">
             <div>
-              <h2 className="text-4xl md:text-7xl font-lilita leading-tight md:leading-wide">
+              <h2 className="text-4xl md:text-7xl font-barber leading-tight md:leading-wide">
                 Grab & GO
               </h2>
               <p className="mt-3 text-xs md:text-sm leading-relaxed">
@@ -431,9 +434,9 @@ const HomePage = () => {
 
             <div className="flex items-baseline justify-between ">
               {/* Custom Button */}
-              <button className="font-lilita text-sm md:text-xl bg-white text-[#C20000] py-2 px-6 md:px-10 rounded-lg shadow-lg transition-transform duration-10 ease-in-out transform hover:scale-105">
-                KNOW MORE
-              </button>
+              <button className="font-lilita text-lg md:text-2xl bg-white text-[#C20000] py-2 px-6 md:py-4 md:px-16 rounded-xl shadow-xl transition-transform duration-300 ease-in-out transform hover:scale-110">
+  KNOW MORE
+</button>
 
               {/* Glasses Icon */}
               <div>
@@ -492,7 +495,7 @@ const HomePage = () => {
           {/* Content inside cap */}
           <div className="absolute inset-6 md:inset-20 flex flex-col justify-between items-center px-3 sm:px-6 md:px-10 py-6 md:py-8 text-center">
             {/* Heading at top */}
-            <h2 className="text-xl sm:text-3xl md:text-5xl lg:text-6xl leading-tight font-lilita text-[#C20000] mb-4 md:mb-6">
+            <h2 className="text-xl sm:text-3xl md:text-7xl lg:text-7xl leading-tight font-barber text-[#C20000] mb-4 md:mb-6">
               CURRY <br className="hidden sm:block" /> CONFESSIONS
             </h2>
 
@@ -550,15 +553,15 @@ const HomePage = () => {
         </div>
       </section>
 
-      <section className="bg-[#C20000] text-white rounded-xl md:mx-auto mb-10 p-8 md:p-12 max-w-5xl mx-3 text-left">
-        <p className="text-xl md:text-4xl font- mb-2">Let’s Chat</p>
-        <h2 className="text-4xl md:text-7xl font-lilita leading-tight md:leading-wide mb-6">
+      <section className="2xl:max-w-[80%] bg-[#C20000] text-white rounded-[3rem] md:mx-auto mb-10 p-8 md:p-12 mx-3 text-left">
+        <p className="text-xl md:text-5xl mb-2">Let’s Chat</p>
+        <h2 className="text-4xl md:text-7xl font-barber leading-tight md:leading-wide mb-6">
           TELL US YOUR PLANS, <br className="hidden sm:block" />
           WE’LL BRING THE PANS
         </h2>
-        <button className="btn-lift font-lilita text-sm md:text-xl bg-white text-[#C20000] py-2 px-6 md:px-10 rounded-lg shadow-md">
-          <span className="btn-label">KNOW MORE</span>
-        </button>
+        <button className="font-lilita text-lg md:text-2xl bg-white text-[#C20000] py-2 px-6 md:py-4 md:px-16 rounded-xl shadow-xl transition-transform duration-300 ease-in-out transform hover:scale-110">
+  KNOW MORE
+</button>
       </section>
 
       <Footer />

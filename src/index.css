@@ -5,6 +5,13 @@
 /*  Custom Font Faces        */
 /* ------------------------- */
 @font-face {
+  font-family: "Barberchop";
+  src: url("./assets/fonts/Barberchop.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
   font-family: "LilitaOne";
   src: url("./assets/fonts/LilitaOne-Regular.ttf") format("truetype");
   font-weight: normal;
@@ -40,6 +47,7 @@
 @theme inline {
   /* Fonts */
   --font-lilita: "LilitaOne", sans-serif;
+   --font-barber: "Barberchop", sans-serif;
   --font-lato: "Lato", sans-serif;
 
   /* Radius */

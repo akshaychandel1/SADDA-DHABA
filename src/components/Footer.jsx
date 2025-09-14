@@ -21,15 +21,15 @@ const Footer = () => {
   <div className="flex flex-col md:flex-row gap-4">
     
     {/* Left Box: Flavors */}
-    <div className="bg-white rounded-2xl shadow-lg p-6 flex items-center justify-center basis-3/4">
+    <div className="bg-white rounded-3xl md:rounded-[3rem] shadow-lg p-6 flex items-center justify-center basis-3/4">
       
-      <h2 className="font-lilita pt-2 text-xl md:text-6xl text-[#C20000] tracking-wide text-center items-center">
+      <h2 className="font-barber pt-2 text-3xl md:text-6xl text-[#C20000] tracking-wide text-center items-center">
         FLAVORS MADE WITH LOVE
       </h2>
     </div>
 
     {/* Right Box: Logo */}
-          <div className="bg-white rounded-2xl shadow-lg flex items-center justify-center basis-1/4">
+          <div className="bg-white rounded-3xl md:rounded-[3rem]  shadow-lg flex items-center justify-center basis-1/4">
         <img
           src={cartoon}
           alt="Saada Halwai Logo"
@@ -41,7 +41,7 @@ const Footer = () => {
 
           {/* Row 2 */}
           <div className="flex flex-col md:flex-row gap-4">
-            <div className="bg-white rounded-2xl shadow-lg p-4 flex items-center justify-center basis-1/4">
+            <div className="bg-white rounded-2xl md:rounded-[2rem]  shadow-lg p-4 flex items-center justify-center basis-1/4">
               <div className="flex items-center space-x-6">
                 <SocialIcon href="#"><FaFacebookF size={28} /></SocialIcon>
                 <SocialIcon href="#"><FaInstagram size={28} /></SocialIcon>
@@ -50,8 +50,8 @@ const Footer = () => {
 
               </div>
             </div>
-           <div className="bg-white rounded-2xl shadow-lg p-4 flex items-center justify-center basis-3/4">
-  <h3 className="font-lilita text-lg md:text-4xl pt-2 text-[#C20000] tracking-wide text-center md:text-left">
+           <div className="bg-white rounded-3xl md:rounded-[2rem]  shadow-lg p-4 flex items-center justify-center basis-3/4">
+  <h3 className="font-barber text-lg md:text-4xl 2xl:text-5xl pt-2 text-[#C20000] tracking-wide text-center md:text-left">
     RING UP YOUR CRAVINGS: +44 79442 96922
   </h3>
 </div>
@@ -59,7 +59,7 @@ const Footer = () => {
           </div>
 
           {/* Navigation */}
-          <div className="bg-white rounded-2xl shadow-lg p-3">
+          <div className="bg-white rounded-3xl md:rounded-[1.5rem]  shadow-lg p-3">
             <nav className="flex flex-wrap justify-center md:justify-around items-center text-sm font-bold text-gray-900">
                 <a href="#" className="px-3 py-2  rounded-md ">Home</a>
                 <a href="#" className="px-3 py-2  rounded-md ">Our Story</a>
@@ -74,7 +74,7 @@ const Footer = () => {
           
 
           {/* Bottom Bar */}
-          <div className="mt-8 p-6 border border-white rounded-xl flex flex-col sm:flex-row justify-between items-center text-xs text-white font-medium">
+          <div className="mt-8 p-6 border border-white rounded-3xl md:rounded-[1.5rem] flex flex-col sm:flex-row justify-between items-center text-xs text-white font-medium">
             <a href="#" className="hover:underline py-1 sm:py-0">Privacy Policy</a>
             <p className="py-1 sm:py-0">&copy; 2024 Saada Halwai. All Rights Reserved.</p>
             <a href="#" className="hover:underline py-1 sm:py-0">Terms & Conditions</a>
