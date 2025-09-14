@@ -24,6 +24,12 @@ import GrabandGo from "../assets/icons/GrabandGo.jpg";
 import CorporateEvents from "../assets/icons/CorporateEvents.jpg";
 import dow from "../assets/icons/dow.jpg";
 import Cap from "../assets/icons/Cap.svg";
+import Img1 from "../assets/icons/Img1.jpg";
+import Img2 from "../assets/icons/Img2.jpg";
+import Img3 from "../assets/icons/Img3.jpg";
+import Img4 from "../assets/icons/Img4.jpg";
+import Img5 from "../assets/icons/Img5.jpg";
+import Img6 from "../assets/icons/Img6.jpg";
 import EmblaCarousel from './carousel/EmblaCarousel'
 import './carousel/css/embla.css'
 
@@ -52,13 +58,12 @@ const testimonials = [
 
 const HomePage = () => {
   const SLIDES = [
-  { src: dow, alt: "Weddings and Events" },
-  { src: dow, alt: "Weddings and Events" },
-  { src: dow, alt: "Weddings and Events" },
-  { src: dow, alt: "Weddings and Events" },
-  { src: dow, alt: "Weddings and Events" },
-  { src: dow, alt: "Weddings and Events" },
-  { src: dow, alt: "Weddings and Events" },
+  { src: Img1, alt: "Weddings and Events" },
+  { src: Img2, alt: "Weddings and Events" },
+  { src: Img3, alt: "Weddings and Events" },
+  { src: Img4, alt: "Weddings and Events" },
+  { src: Img5, alt: "Weddings and Events" },
+  { src: Img6, alt: "Weddings and Events" },
 ];
  const OPTIONS = {
     align: 'start', // This centers the active slide
@@ -121,8 +126,8 @@ const HomePage = () => {
               flair.
             </p>
             {/* Custom Button */} 
-              <button className="mt-6 mb-26 2xl:mb-44 font-lilita text-lg md:text-2xl bg-white text-[#C20000] py-4 px-10 md:px-16 rounded-xl shadow-xl transition-transform duration-300 ease-in-out transform hover:scale-110">
-  KNOW MORE
+              <button className="mt-6 mb-26 2xl:mb-44 font-lilita text-lg md:text-2xl 2xl:text-4xl bg-white text-[#C20000] py-4 px-10 md:px-16 rounded-xl shadow-xl transition-transform duration-300 ease-in-out transform hover:scale-110">
+  EXPLORE MENU
 </button>
           </div>
 
@@ -137,8 +142,8 @@ const HomePage = () => {
 
 
               {/* Speech Bubble */}
-              <div className="absolute top-2 md:top-8 -right-3 md:-right-3 w-16 md:w-42">
-                <div className="relative ">
+              <div className="absolute top-2 md:top-8 2xl:top-14 -right-3 md:-right-3 2xl:right- w-16 md:w-42 2xl:w-62">
+                <div className="relative  ">
                   <img src={textthink} alt="" />
                   <div className="absolute left-0 -bottom-2  transform rotate-45 -translate-x-2"></div>
                 </div>
@@ -154,12 +159,14 @@ const HomePage = () => {
 
             {/* White background card for food */}
             {/* <div className="absolute  md:pt-28 pb-10 shadow-2xl z-10"> */}
-            <div className="relative z-30 md:mx-6">
-              <img
-                src={WeddingsandEvents}
-                alt="Display of various Indian sweets and chaat dishes"
-                className="w-6/7 h-auto rounded-xl shadow-lg mx-auto"
-              />
+   <div className="relative z-30 md:mx-6 aspect-[7/4]">
+  <img
+    src={Img4}
+    alt="Display of various Indian sweets and chaat dishes"
+    className="w-full h-full object-cover object-center rounded-xl shadow-lg mx-auto"
+  />
+
+
 
               {/* </div> */}
             </div>
@@ -171,7 +178,7 @@ const HomePage = () => {
         ref={ref}
         className="flex items-center justify-center bg-[#C20000] text-white p-4 pb-10"
       >
-        <div className="relative inline-block font-barber my-6 text-center leading-snug text-2xl md:text-6xl">
+        <div className="font-barber relative inline-block my-6 text-center leading-snug text-2xl md:text-6xl">
           <p>
             WE KEEP IT REAL WITH VEGGIES <br />
             AS FRESH AS YOUR CRAVINGS, <br />
@@ -289,7 +296,7 @@ const HomePage = () => {
         />
       </div>
 
-      <section className="bg-white py-16 mb-16 px-6">
+      <section className="bg-white space-y-20 py-16 mb-16 px-6">
         <h2 className="text-center font-barber tracking-wide text-4xl md:text-6xl  text-[#C20000] mb-10">
           WHAT MAKES SAADA HALWAI BETTER?
         </h2>
@@ -334,10 +341,10 @@ const HomePage = () => {
 
       <EmblaCarousel slides={SLIDES} options={OPTIONS} />
 
-      <div className="flex items-center my-10 justify-center px-2">
-        <div className="max-w-[80%] flex flex-col md:flex-row rounded-3xl md:rounded-[3rem] overflow-hidden shadow-md">
+      <div className="flex items-center 2xl:my-50 justify-center px-2">
+        <div className="max-w-[80%] 2xl:h-[700px] flex flex-col md:flex-row rounded-3xl md:rounded-[3rem] overflow-hidden shadow-md">
           {/* Left Side */}
-          <div className="bg-[#C20000] text-white p-6 md:w-1/2 flex flex-col justify-between">
+          <div className="bg-[#C20000] text-white p-6 2xl:p-14 md:w-1/2 flex flex-col justify-between">
             <div>
               <h2 className="text-4xl md:text-7xl font-barber leading-tight md:leading-wide">
                 WEDDING & EVENTS
@@ -353,7 +360,7 @@ const HomePage = () => {
 
             <div className="flex items-baseline justify-between">
               {/* Custom Button */}
-              <button className="font-lilita text-lg md:text-2xl bg-white text-[#C20000] py-2 px-6 md:py-4 md:px-16 rounded-xl shadow-xl transition-transform duration-300 ease-in-out transform hover:scale-110">
+              <button className="font-lilita text-lg md:text-2xl bg-white text-[#C20000] py-2 px-6 md:py-4 md:px-16 2xl:text-4xl rounded-xl shadow-xl transition-transform duration-300 ease-in-out transform hover:scale-110">
   KNOW MORE
 </button>
 
@@ -376,10 +383,10 @@ const HomePage = () => {
         </div>
       </div>
 
-      <div className="flex items-center my-10 justify-center px-4">
-        <div className="max-w-[80%] flex flex-col md:flex-row-reverse rounded-3xl md:rounded-[3rem] overflow-hidden shadow-md">
+      <div className="flex items-center my-10 2xl:mb-50 justify-center px-4">
+        <div className="max-w-[80%] 2xl:h-[700px] flex flex-col md:flex-row-reverse rounded-3xl md:rounded-[3rem] overflow-hidden shadow-md">
           {/* Right Side (Red Content) */}
-          <div className="bg-[#C20000] text-white p-6 md:w-1/2 flex flex-col justify-between">
+          <div className="bg-[#C20000] text-white p-6 2xl:p-14 md:w-1/2 flex flex-col justify-between">
             <div className="text-right">
               <h2 className="text-4xl md:text-7xl font-barber leading-tight md:leading-wide">
                 Corporate Events
@@ -399,7 +406,7 @@ const HomePage = () => {
               <img src={suit} alt="Suit" className="w-12 md:w-40" />
 
               {/* Button (moves right, below text) */}
-              <button className="font-lilita text-lg md:text-2xl bg-white text-[#C20000] py-2 px-6 md:py-4 md:px-16 rounded-xl shadow-xl transition-transform duration-300 ease-in-out transform hover:scale-110">
+              <button className="font-lilita text-lg md:text-2xl bg-white text-[#C20000] py-2 px-6 md:py-4 md:px-16 2xl:text-4xl rounded-xl shadow-xl transition-transform duration-300 ease-in-out transform hover:scale-110">
   KNOW MORE
 </button>
             </div>
@@ -416,10 +423,10 @@ const HomePage = () => {
         </div>
       </div>
 
-      <div className="flex items-center my-10 justify-center px-4">
+      <div className="flex items-center my-10 2xl:my-30 justify-center px-4">
         <div className="max-w-[80%] flex flex-col md:flex-row rounded-3xl md:rounded-[3rem] overflow-hidden shadow-md">
           {/* Left Side */}
-          <div className="bg-[#C20000] text-white p-6 md:w-1/2 flex flex-col justify-between">
+          <div className="bg-[#C20000] 2xl:h-[700px]  text-white p-6 2xl:p-14 md:w-1/2 flex flex-col justify-between">
             <div>
               <h2 className="text-4xl md:text-7xl font-barber leading-tight md:leading-wide">
                 Grab & GO
@@ -434,7 +441,7 @@ const HomePage = () => {
 
             <div className="flex items-baseline justify-between ">
               {/* Custom Button */}
-              <button className="font-lilita text-lg md:text-2xl bg-white text-[#C20000] py-2 px-6 md:py-4 md:px-16 rounded-xl shadow-xl transition-transform duration-300 ease-in-out transform hover:scale-110">
+              <button className="font-lilita text-lg md:text-2xl bg-white text-[#C20000] py-2 px-6 md:py-4 md:px-16 2xl:text-4xl rounded-xl shadow-xl transition-transform duration-300 ease-in-out transform hover:scale-110">
   KNOW MORE
 </button>
 
@@ -553,13 +560,13 @@ const HomePage = () => {
         </div>
       </section>
 
-      <section className="2xl:max-w-[80%] bg-[#C20000] text-white rounded-[3rem] md:mx-auto mb-10 p-8 md:p-12 mx-3 text-left">
+      <section className="2xl:max-w-[80%] bg-[#C20000] text-white rounded-[3rem] md:mx-auto mb-10 p-8 md:p-12  mx-3 text-left">
         <p className="text-xl md:text-5xl mb-2">Let’s Chat</p>
-        <h2 className="text-4xl md:text-7xl font-barber leading-tight md:leading-wide mb-6">
+        <h2 className="text-4xl 2xl:mb-42 md:text-7xl font-barber leading-tight md:leading-wide mb-6">
           TELL US YOUR PLANS, <br className="hidden sm:block" />
           WE’LL BRING THE PANS
         </h2>
-        <button className="font-lilita text-lg md:text-2xl bg-white text-[#C20000] py-2 px-6 md:py-4 md:px-16 rounded-xl shadow-xl transition-transform duration-300 ease-in-out transform hover:scale-110">
+        <button className="font-lilita text-lg md:text-2xl bg-white text-[#C20000] py-2 px-6 md:py-4 md:px-16 2xl:text-4xl rounded-xl shadow-xl transition-transform duration-300 ease-in-out transform hover:scale-110">
   KNOW MORE
 </button>
       </section>
