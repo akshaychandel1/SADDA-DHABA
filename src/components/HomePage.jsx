@@ -31,6 +31,7 @@ import Img4 from "../assets/icons/Img4.jpg";
 import Img5 from "../assets/icons/Img5.jpg";
 import Img6 from "../assets/icons/Img6.jpg";
 import samosa from "../assets/icons/samosa.jpg";
+import Call from "../assets/icons/Call.png";
 import EmblaCarousel from './carousel/EmblaCarousel'
 import './carousel/css/embla.css'
 
@@ -87,17 +88,17 @@ const HomePage = () => {
 
   // Brinjal
   const yBrinjal = useTransform(scrollYProgress, [0, 1], [30, -50]);
-  const rBrinjal = useTransform(scrollYProgress, [0, 1], [0, -80]);
+  const rBrinjal = useTransform(scrollYProgress, [0, 1], [0, 0]);
   const sBrinjal = useTransform(scrollYProgress, [0, 1], [1, 1.2]);
 
   // Peas
-  const yPeas = useTransform(scrollYProgress, [0, 1], [-20, 30]);
-  const rPeas = useTransform(scrollYProgress, [0, 1], [0, 90]);
+  const yPeas = useTransform(scrollYProgress, [0, 1], [30, -40]);
+  const rPeas = useTransform(scrollYProgress, [0, 1], [0, 0]);
   const sPeas = useTransform(scrollYProgress, [0, 1], [1, 1.25]);
 
   // Carrot
-  const yCarrot = useTransform(scrollYProgress, [0, 1], [40, -40]);
-  const rCarrot = useTransform(scrollYProgress, [0, 1], [0, -75]);
+  const yCarrot = useTransform(scrollYProgress, [0, 1], [-40, 40]);
+  const rCarrot = useTransform(scrollYProgress, [0, 1], [0, 0]);
   const sCarrot = useTransform(scrollYProgress, [0, 1], [1, 1.2]);
 
 
@@ -127,14 +128,14 @@ const HomePage = () => {
               flair.
             </p>
             {/* Custom Button */} 
-              <button className="mt-6 mb-26 2xl:mb-44 font-lilita text-lg md:text-2xl 2xl:text-4xl bg-white text-[#C20000] py-4 px-10 md:px-16 rounded-xl shadow-xl transition-transform duration-300 ease-in-out transform hover:scale-110">
+              <button className="mt-6 mb-26 2xl:mb-48 font-lilita text-lg md:text-2xl 2xl:text-4xl bg-white text-[#C20000] py-2 px-10 md:px-10 rounded-3xl shadow-xl transition-transform duration-300 ease-in-out transform hover:scale-110">
   EXPLORE MENU
 </button>
           </div>
 
           {/* Mascot and Food Display Section */}
           <div className="relative mt-2 md:mt-24 2xl:mt-58">
-            <div className="absolute -top-23 md:-top-80 2xl:-top-96 left-1/2 -translate-x-1/2 z-20 w-48 md:w-[54%]">
+            <div className=" absolute -top-23 md:-top-80 2xl:-top-93 left-1/2 -translate-x-1/2 z-20 w-48 md:w-[54%]">
             <img
               src={HalfCharacter}
               alt="Happy Halwai Mascot"
@@ -143,7 +144,7 @@ const HomePage = () => {
 
 
               {/* Speech Bubble */}
-              <div className="absolute top-2 md:top-8 2xl:top-14 -right-3 md:-right-3 2xl:right- w-16 md:w-42 2xl:w-62">
+              <div className="absolute top-2 md:top-8 2xl:top-14 -right-3 md:-right-3 2xl:-right-8 w-16 md:w-42 2xl:w-62">
                 <div className="relative  ">
                   <img src={textthink} alt="" />
                   <div className="absolute left-0 -bottom-2  transform rotate-45 -translate-x-2"></div>
@@ -151,21 +152,22 @@ const HomePage = () => {
               </div>
             </div>
 
-            <div className="absolute -top-4 md:-top-10 left-1/2 -translate-x-[300%] md:-translate-x-[270%] z-50">
+            <div className="absolute -top-4 md:-top-10 left-1/2 -translate-x-[300%] md:-translate-x-[390%] z-50">
               <img src={Hand} alt="Hand" className="w-11 md:w-30" />
             </div>
-            <div className="absolute -top-4 md:-top-10 left-1/2 translate-x-[200%] md:translate-x-[180%] z-50">
+            <div className="absolute -top-4 md:-top-10 left-1/2 translate-x-[200%] md:translate-x-[310%] z-50">
               <img src={HandRight} alt="Hand" className="w-11 md:w-29" />
             </div>
 
             {/* White background card for food */}
             {/* <div className="absolute  md:pt-28 pb-10 shadow-2xl z-10"> */}
-<div className="relative z-30 md:mx-6 aspect-[7/4]">
+<div className="relative z-30 ">
   <img
     src={samosa}
     alt="Display of various Indian sweets and chaat dishes"
-    className="w-full h-full object-cover object-center rounded-xl shadow-lg mx-auto"
+    className="w-full object-cover object-center rounded-[2rem] shadow-lg mx-auto"
   />
+
 
 
 
@@ -177,9 +179,9 @@ const HomePage = () => {
 
       <div
         ref={ref}
-        className="flex items-center justify-center bg-[#C20000] text-white p-4 pb-10"
+        className="pt-6 2xl:pt-28 2xl:pb-38 flex items-center justify-center bg-[#C20000] text-white p-2 pb-10"
       >
-        <div className="font-barber relative inline-block my-6 text-center leading-snug text-2xl md:text-6xl">
+        <div className="font-barber relative inline-block my-6 text-center leading-snug text-2xl md:text-8xl">
           <p>
             WE KEEP IT REAL WITH VEGGIES <br />
             AS FRESH AS YOUR CRAVINGS, <br />
@@ -189,8 +191,8 @@ const HomePage = () => {
           {/* Turnip */}
           <motion.div
             style={{ y: yTurnip, rotate: rTurnip, scale: sTurnip }}
-            className="absolute -top-2 left-[20%] -translate-x-1/2 w-12 h-12 md:w-16 md:h-16"
-            whileHover={{ scale: 1.4, rotate: 15 }}
+            className="absolute -top-6 left-[23%] -translate-x-1/2 w-12 h-12 md:w-22 md:h-22"
+            whileHover={{ scale: 1.4, rotate: 0 }}
           >
             <img src={tumip} alt="Turnip" className="w-full h-full" />
           </motion.div>
@@ -198,8 +200,8 @@ const HomePage = () => {
           {/* Eggplant */}
           <motion.div
             style={{ y: yBrinjal, rotate: rBrinjal, scale: sBrinjal }}
-            className="absolute bottom-0 md:bottom-20 left-3 -translate-x-full w-10 h-10 md:w-12 md:h-12"
-            whileHover={{ scale: 1.4, rotate: -15 }}
+            className="absolute bottom-0 md:bottom-18 left-9 -translate-x-full w-10 h-10 md:w-18 md:h-18"
+            whileHover={{ scale: 1.4, rotate: 50 }}
           >
             <img src={brinjal} alt="Eggplant" className="w-full h-full" />
           </motion.div>
@@ -207,7 +209,7 @@ const HomePage = () => {
           {/* Peas */}
           <motion.div
             style={{ y: yPeas, rotate: rPeas, scale: sPeas }}
-            className="absolute bottom-2 right-20 translate-x-full w-12 h-12 md:w-14 md:h-14"
+            className="absolute bottom-19 right-80 translate-x-full w-12 h-12 md:w-20 md:h-20"
             whileHover={{ scale: 1.4, rotate: 20 }}
           >
             <img src={peas} alt="Peas" className="w-full h-full" />
@@ -216,8 +218,8 @@ const HomePage = () => {
           {/* Carrot */}
           <motion.div
             style={{ y: yCarrot, rotate: rCarrot, scale: sCarrot }}
-            className="absolute right-4 top-6 translate-x-full -translate-y-1/2 w-12 h-12 md:w-16 md:h-16"
-            whileHover={{ scale: 1.4, rotate: -20 }}
+            className="absolute right-10 top-20 translate-x-full -translate-y-1/2 w-12 h-12 md:w-24 md:h-24"
+            whileHover={{ scale: 1.4, rotate: 2 }}
           >
             <img src={carrot} alt="Carrot" className="w-full h-full" />
           </motion.div>
@@ -272,43 +274,43 @@ const HomePage = () => {
       <div className="relative w-full h-[140px] overflow-visible bg-white">
         {/* Ribbon 1 - tilt left */}
         <div
-          className="absolute left-1/2 mt-[-59px] top-1/2 w-[160%] h-10 -translate-x-1/2 -translate-y-1/2 bg-repeat-x"
+          className="absolute left-1/2  mt-[-59px] top-1/2 w-[360%]  h-6 2xl:h-16 -translate-x-1/2 -translate-y-1/2 bg-repeat-x"
           style={{
             backgroundImage: `url(${ribbon})`,
             backgroundSize: "auto 100%",
             transform: "rotate(-2deg)", // tilt to bottom-left
             animation: "ribbon-marquee 18s linear infinite",
-            filter: "drop-shadow(0 6px 8px rgba(0,0,0,0.25))",
+            filter: "drop-shadow(0 10px 12px rgba(0,0,0,0.25))",
             willChange: "background-position",
           }}
         />
 
         {/* Ribbon 2 - tilt right */}
         <div
-          className="absolute mt-[-40px] left-1/2 top-1/2 w-[160%] h-10 -translate-x-1/2 -translate-y-1/2 bg-repeat-x"
+          className="absolute mt-[-40px] left-1/2 top-1/2 w-[360%] h-6 2xl:h-16 -translate-x-1/2 -translate-y-1/2 bg-repeat-x"
           style={{
             backgroundImage: `url(${ribbon})`,
             backgroundSize: "auto 100%",
             transform: "rotate(2deg)", // tilt to bottom-right
             animation: "ribbon-marquee 22s linear infinite reverse",
-            filter: "drop-shadow(0 6px 8px rgba(0,0,0,0.25))",
+            filter: "drop-shadow(0 10px 12px rgba(0,0,0,0.25))",
             willChange: "background-position",
           }}
         />
       </div>
 
-      <section className="bg-white space-y-20 py-16 mb-16 px-6">
-        <h2 className="text-center font-barber tracking-wide text-4xl md:text-6xl  text-[#C20000] mb-10">
+      <section className="bg-white sm:py-6 2xl:py-16 mb-16 px-6">
+        <h2 className="text-center font-barber tracking-wide text-4xl md:text-6xl 2xl:text-7xl  text-[#C20000] mb-10">
           WHAT MAKES SAADA HALWAI BETTER?
         </h2>
 
-        <div className="grid md:grid-cols-3 gap-4 text-center max-w-4xl mx-auto">
+        <div className="grid md:grid-cols-3 gap-12 text-center max-w-5xl mx-auto">
           <div>
             <img src={chopping} alt="Halwai" className="mx-auto w-26 h-26" />
-            <h3 className="mt-4 text-xl font-lilita text-[#C20000]">
+            <h3 className="mt-4 text-xl 2xl:text-2xl font-barber tracking tracking-wide text-[#C20000]">
               HALWAI AT HEARTS
             </h3>
-            <p className="mt-2 text-[#C20000] text-sm">
+            <p className="mt-2 text-[#C20000] text-sm md:text-xl">
               We’re not just another caterer, we’re halwai by tradition, serving
               Britain with authentic desi soul.
             </p>
@@ -316,10 +318,10 @@ const HomePage = () => {
 
           <div>
             <img src={cover} alt="Dish" className="mx-auto w-26 h-26" />
-            <h3 className="mt-4 text-xl font-lilita  text-[#C20000]">
+            <h3 className="mt-4 text-xl 2xl:text-2xl font-barber tracking tracking-wide text-[#C20000]">
               PANI PURI TO POSH
             </h3>
-            <p className="mt-2 text-[#C20000] text-sm">
+            <p className="mt-2 text-[#C20000] text-sm md:text-xl">
               Street-style chaats, royal curries, and mithai magic all styled to
               impress UK weddings, events, and celebrations.
             </p>
@@ -327,10 +329,10 @@ const HomePage = () => {
 
           <div>
             <img src={pan} alt="Stove" className="mx-auto w-26 h-26" />
-            <h3 className="mt-4 text-xl font-lilita text-[#C20000]">
+            <h3 className="mt-4 text-xl 2xl:text-2xl font-barber tracking tracking-wide text-[#C20000]">
               HOT OFF THE STOVE
             </h3>
-            <p className="mt-2 text-[#C20000] text-sm">
+            <p className="mt-2 text-[#C20000] text-sm md:text-xl">
               Cooked fresh right here in the UK, so every bite carries the
               warmth of India without losing a minute of flavour.
             </p>
@@ -340,129 +342,139 @@ const HomePage = () => {
 
       {/* Carousel Container */}
 
-      <EmblaCarousel slides={SLIDES} options={OPTIONS} />
+      <EmblaCarousel
+       slides={SLIDES} options={OPTIONS} />
 
-      <div className="flex items-center 2xl:my-50 justify-center px-2">
-        <div className="max-w-[80%] 2xl:h-[700px] flex flex-col md:flex-row rounded-3xl md:rounded-[3rem] overflow-hidden shadow-md">
-          {/* Left Side */}
-          <div className="bg-[#C20000] text-white p-6 2xl:p-14 md:w-1/2 flex flex-col justify-between">
-            <div>
-              <h2 className="text-4xl md:text-7xl font-barber leading-tight md:leading-wide">
-                WEDDING & EVENTS
-              </h2>
-              <p className="mt-3 text-xs md:text-sm leading-relaxed">
-                From grand weddings to lively celebrations, Saada Halwai serves
-                the soul of India with every plate. Think sizzling street-style
-                chaats, rich royal curries, and decadent mithai, all crafted
-                fresh in the UK to keep the flavour authentic and your guests
-                smiling.
-              </p>
-            </div>
+      <div className="flex items-center justify-center px-2 my-10 md:my-20 2xl:my-50">
+  <div className="max-w-[80%] border-5 border-[#C20000] flex flex-col md:flex-row rounded-3xl md:rounded-[3rem] overflow-hidden shadow-md 2xl:h-[700px]">
+    
+    {/* Left Side */}
+    <div className="bg-[#C20000] text-white p-6 sm:p-8 md:p-10 2xl:p-14 md:w-1/2 flex flex-col justify-between">
+      <div>
+        <h2 className="text-3xl sm:text-4xl md:text-6xl 2xl:text-8xl font-barber leading-tight md:leading-wide text-center md:text-left">
+          WEDDING & EVENTS
+        </h2>
+        <p className="mt-3 text-sm sm:text-base md:text-sm 2xl:text-lg leading-relaxed text-center md:text-left">
+          From grand weddings to lively celebrations, Saada Halwai serves
+          the soul of India with every plate. Think sizzling street-style
+          chaats, rich royal curries, and decadent mithai, all crafted
+          fresh in the UK to keep the flavour authentic and your guests
+          smiling.
+        </p>
+      </div>
 
-            <div className="flex items-baseline justify-between">
-              {/* Custom Button */}
-              <button className="font-lilita text-lg md:text-2xl bg-white text-[#C20000] py-2 px-6 md:py-4 md:px-16 2xl:text-4xl rounded-xl shadow-xl transition-transform duration-300 ease-in-out transform hover:scale-110">
-  KNOW MORE
-</button>
+      {/* Button + Icon */}
+      <div className="flex flex-col md:flex-row items-center justify-between mt-6 md:mt-0 space-y-4 md:space-y-0">
+        {/* Custom Button */}
+        <button className="2xl:mt-40 font-lilita text-lg sm:text-xl md:text-2xl 2xl:text-4xl bg-white text-[#C20000] py-2 px-8 sm:px-10 md:px-8 2xl:px-12 rounded-2xl shadow-xl transition-transform duration-300 ease-in-out transform hover:scale-110">
+          KNOW MORE
+        </button>
 
-
-              {/* Glasses Icon */}
-              <div>
-                <img src={wine} alt="Glasses" className="w-12 md:w-40" />
-              </div>
-            </div>
-          </div>
-
-          {/* Right Side */}
-          <div className="md:w-1/2 w-full bg-black flex items-center justify-center">
-            <img
-              src={WeddingsandEvents}
-              alt="Wedding & Events"
-              className="object-cover w-full h-full"
-            />
-          </div>
+        {/* Glasses Icon */}
+        <div>
+          <img src={wine} alt="Glasses" className="w-10 sm:w-14 md:w-36 2xl:w-46" />
         </div>
       </div>
+    </div>
+
+    {/* Right Side */}
+    <div className="md:w-1/2 w-full bg-black flex items-center justify-center">
+      <img
+        src={WeddingsandEvents}
+        alt="Wedding & Events"
+        className="object-cover w-full h-full"
+      />
+    </div>
+  </div>
+</div>
+
 
       <div className="flex items-center my-10 2xl:mb-50 justify-center px-4">
-        <div className="max-w-[80%] 2xl:h-[700px] flex flex-col md:flex-row-reverse rounded-3xl md:rounded-[3rem] overflow-hidden shadow-md">
-          {/* Right Side (Red Content) */}
-          <div className="bg-[#C20000] text-white p-6 2xl:p-14 md:w-1/2 flex flex-col justify-between">
-            <div className="text-right">
-              <h2 className="text-4xl md:text-7xl font-barber leading-tight md:leading-wide">
-                Corporate Events
-              </h2>
-              <p className="mt-3 text-xs md:text-sm leading-relaxed">
-                Make your corporate events unforgettable with Saada Halwai. From
-                vibrant chaats to rich curries and indulgent mithai, we serve
-                authentic Indian flavours with a polished touch. Freshly cooked
-                in the UK, our catering keeps guests impressed and conversations
-                flowing.
-              </p>
-            </div>
-
-            {/* Icon + Button separated */}
-            <div className="flex items-baseline justify-between ">
-              {/* Suit Icon (stays left) */}
-              <img src={suit} alt="Suit" className="w-12 md:w-40" />
-
-              {/* Button (moves right, below text) */}
-              <button className="font-lilita text-lg md:text-2xl bg-white text-[#C20000] py-2 px-6 md:py-4 md:px-16 2xl:text-4xl rounded-xl shadow-xl transition-transform duration-300 ease-in-out transform hover:scale-110">
-  KNOW MORE
-</button>
-            </div>
-          </div>
-
-          {/* Left Side (Black Image) */}
-          <div className="md:w-1/2 w-full bg-black flex items-center justify-center">
-            <img
-              src={CorporateEvents}
-              alt="Wedding & Events"
-              className="object-cover w-full h-full"
-            />
-          </div>
-        </div>
+  <div className="max-w-[80%] border-5 border-[#C20000] flex flex-col md:flex-row-reverse rounded-3xl md:rounded-[3rem] overflow-hidden shadow-md 2xl:h-[700px]">
+    
+    {/* Right Side (Red Content) */}
+    <div className="bg-[#C20000] text-white p-6 sm:p-8 md:p-10 2xl:p-14 md:w-1/2 flex flex-col justify-between">
+      <div className="text-center md:text-right">
+        <h2 className="text-3xl sm:text-4xl md:text-7xl 2xl:text-8xl font-barber leading-tight md:leading-wide">
+          Corporate Events
+        </h2>
+        <p className="mt-3 text-sm sm:text-base md:text-sm 2xl:text-lg leading-relaxed">
+          Make your corporate events unforgettable with Saada Halwai. From
+          vibrant chaats to rich curries and indulgent mithai, we serve
+          authentic Indian flavours with a polished touch. Freshly cooked
+          in the UK, our catering keeps guests impressed and conversations
+          flowing.
+        </p>
       </div>
 
-      <div className="flex items-center my-10 2xl:my-30 justify-center px-4">
-        <div className="max-w-[80%] flex flex-col md:flex-row rounded-3xl md:rounded-[3rem] overflow-hidden shadow-md">
-          {/* Left Side */}
-          <div className="bg-[#C20000] 2xl:h-[700px]  text-white p-6 2xl:p-14 md:w-1/2 flex flex-col justify-between">
-            <div>
-              <h2 className="text-4xl md:text-7xl font-barber leading-tight md:leading-wide">
-                Grab & GO
-              </h2>
-              <p className="mt-3 text-xs md:text-sm leading-relaxed">
-                Perfect for busy days and hungry moments, Saada Halwai’s Grab &
-                Go brings Indian flavours to your hands in minutes. From spicy
-                chaats to hearty curries and sweet mithai, every bite is fresh,
-                authentic, and ready when you are.
-              </p>
-            </div>
+      {/* Icon + Button */}
+      <div className="flex flex-col md:flex-row items-center md:items-baseline justify-between mt-6 md:mt-0 space-y-4 md:space-y-0">
+        {/* Suit Icon */}
+        <img src={suit} alt="Suit" className="w-10 sm:w-14 md:w-36 2xl:w-46" />
 
-            <div className="flex items-baseline justify-between ">
-              {/* Custom Button */}
-              <button className="font-lilita text-lg md:text-2xl bg-white text-[#C20000] py-2 px-6 md:py-4 md:px-16 2xl:text-4xl rounded-xl shadow-xl transition-transform duration-300 ease-in-out transform hover:scale-110">
-  KNOW MORE
-</button>
+        {/* Button */}
+        <button className="font-lilita text-lg sm:text-xl md:text-2xl 2xl:text-4xl bg-white text-[#C20000] py-2 px-8 sm:px-10 md:px-8 2xl:px-12 rounded-2xl shadow-xl transition-transform duration-300 ease-in-out transform hover:scale-110">
+          KNOW MORE
+        </button>
+      </div>
+    </div>
 
-              {/* Glasses Icon */}
-              <div>
-                <img src={bag} alt="Glasses" className="w-12 md:w-36" />
-              </div>
-            </div>
-          </div>
+    {/* Left Side (Black Image) */}
+    <div className="md:w-1/2 w-full bg-black flex items-center justify-center">
+      <img
+        src={CorporateEvents}
+        alt="Corporate Events"
+        className="object-cover w-full h-full"
+      />
+    </div>
+  </div>
+</div>
 
-          {/* Right Side */}
-          <div className="md:w-1/2 w-full bg-black flex items-center justify-center">
-            <img
-              src={GrabandGo}
-              alt="Wedding & Events"
-              className="object-cover w-full h-full"
-            />
-          </div>
+
+
+
+     <div className="flex items-center my-10 2xl:my-30 justify-center px-4">
+  <div className="max-w-[80%] border-5 border-[#C20000] flex flex-col md:flex-row rounded-3xl md:rounded-[3rem] overflow-hidden shadow-md 2xl:h-[700px]">
+    
+    {/* Left Side */}
+    <div className="bg-[#C20000] text-white p-6 sm:p-8 md:p-10 2xl:p-14 md:w-1/2 flex flex-col justify-between">
+      <div className="text-center md:text-left">
+        <h2 className="text-3xl sm:text-4xl md:text-6xl 2xl:text-8xl font-barber leading-tight md:leading-wide">
+          Grab & GO
+        </h2>
+        <p className="mt-3 text-sm sm:text-base md:text-sm 2xl:text-lg leading-relaxed">
+          Perfect for busy days and hungry moments, Saada Halwai’s Grab & Go
+          brings Indian flavours to your hands in minutes. From spicy chaats
+          to hearty curries and sweet mithai, every bite is fresh, authentic,
+          and ready when you are.
+        </p>
+      </div>
+
+      {/* Button + Icon */}
+      <div className="flex flex-col md:flex-row items-center justify-between mt-6 md:mt-0 space-y-4 md:space-y-0">
+        {/* Custom Button */}
+        <button className="2xl:mt-52 font-lilita text-lg sm:text-xl md:text-2xl 2xl:text-4xl bg-white text-[#C20000] py-2 px-8 sm:px-10 md:px-8 2xl:px-12 rounded-2xl shadow-xl transition-transform duration-300 ease-in-out transform hover:scale-110">
+          KNOW MORE
+        </button>
+
+        {/* Bag Icon */}
+        <div>
+          <img src={bag} alt="Bag" className="w-10 sm:w-14 md:w-36 2xl:w-46" />
         </div>
       </div>
+    </div>
+
+    {/* Right Side */}
+    <div className="md:w-1/2 w-full bg-black flex items-center justify-center">
+      <img
+        src={GrabandGo}
+        alt="Grab & Go"
+        className="object-cover w-full h-full"
+      />
+    </div>
+  </div>
+</div>
+
 
       {/* ribbon */}
 
@@ -470,26 +482,26 @@ const HomePage = () => {
       <div className="relative  w-full h-[140px] overflow-visible bg-[#C20000]">
         {/* Ribbon 1 - tilt left */}
         <div
-          className="absolute  left-1/2 mt-[-59px] top-1/2 w-[160%] h-10 -translate-x-1/2 -translate-y-1/2 bg-repeat-x"
+          className="absolute  left-1/2 mt-[-59px] top-1/2 w-[360%] h-6 2xl:h-16 -translate-x-1/2 -translate-y-1/2 bg-repeat-x"
           style={{
             backgroundImage: `url(${ribbon})`,
             backgroundSize: "auto 100%",
             transform: "rotate(-2deg)", // tilt to bottom-left
             animation: "ribbon-marquee 18s linear infinite",
-            filter: "drop-shadow(0 6px 8px rgba(0,0,0,0.25))",
+            filter: "drop-shadow(0 10px 12px rgba(0,0,0,0.25))",
             willChange: "background-position",
           }}
         />
 
         {/* Ribbon 2 - tilt right */}
         <div
-          className="absolute  mt-[-40px] left-1/2 top-1/2 w-[160%] h-10 -translate-x-1/2 -translate-y-1/2 bg-repeat-x"
+          className="absolute  mt-[-40px] left-1/2 top-1/2 w-[360%] h-6 2xl:h-16 -translate-x-1/2 -translate-y-1/2 bg-repeat-x"
           style={{
             backgroundImage: `url(${ribbon})`,
             backgroundSize: "auto 100%",
             transform: "rotate(2deg)", // tilt to bottom-right
             animation: "ribbon-marquee 22s linear infinite reverse",
-            filter: "drop-shadow(0 6px 8px rgba(0,0,0,0.25))",
+            filter: "drop-shadow(0 10px 12px rgba(0,0,0,0.25))",
             willChange: "background-position",
           }}
         />
@@ -503,7 +515,7 @@ const HomePage = () => {
           {/* Content inside cap */}
           <div className="absolute inset-6 md:inset-20 flex flex-col justify-between items-center px-3 sm:px-6 md:px-10 py-6 md:py-8 text-center">
             {/* Heading at top */}
-            <h2 className="text-xl sm:text-3xl md:text-7xl lg:text-7xl leading-tight font-barber text-[#C20000] mb-4 md:mb-6">
+            <h2 className="text-xl sm:text-3xl md:text-7xl 2xl:text-8xl leading-tight font-barber text-[#C20000]">
               CURRY <br className="hidden sm:block" /> CONFESSIONS
             </h2>
 
@@ -540,7 +552,7 @@ const HomePage = () => {
                 transition={{ duration: 0.6 }}
                 className="mt-4 md:mt-6"
               >
-                <div className="flex justify-center mb-2 text-[#C20000] text-xs sm:text-base">
+                <div className="flex justify-center  text-[#C20000] text-xs sm:text-base">
                   {Array(testimonials[index].rating)
                     .fill(0)
                     .map((_, i) => (
@@ -548,7 +560,7 @@ const HomePage = () => {
                     ))}
                 </div>
                 <div className="flex flex-col items-center">
-                  <span className="text-[#C20000] text-sm sm:text-lg md:text-2xl font-extrabold uppercase">
+                  <span className="text-[#C20000] 2xl:m-2 font-barber text-sm sm:text-lg md:text-3xl  uppercase">
                     {testimonials[index].author}
                   </span>
                   <span className="text-black text-xs sm:text-base md:text-lg">
@@ -561,16 +573,58 @@ const HomePage = () => {
         </div>
       </section>
 
-      <section className="2xl:max-w-[80%] md:w-1/2 bg-[#C20000] text-white rounded-[3rem] md:mx-auto mb-10 p-8 md:p-12  mx-3 text-left">
-        <p className="text-xl md:text-5xl mb-2">Let’s Chat</p>
-        <h2 className="text-4xl 2xl:mb-42 md:text-7xl font-barber leading-tight md:leading-wide mb-6">
-          TELL US YOUR PLANS, <br className="hidden sm:block" />
-          WE’LL BRING THE PANS
-        </h2>
-        <button className="font-lilita text-lg md:text-2xl bg-white text-[#C20000] py-2 px-6 md:py-4 md:px-16 2xl:text-4xl rounded-xl shadow-xl transition-transform duration-300 ease-in-out transform hover:scale-110">
-  KNOW MORE
-</button>
-      </section>
+    <section className="w-[80%] bg-[#C20000] text-white rounded-[3rem] flex flex-col md:flex-row items-stretch justify-between mx-auto overflow-hidden my-16 md:my-32">
+  {/* Left Side */}
+  <div className="flex-1 px-6 py-10 text-center md:text-left md:pl-20">
+    <p className="text-xl md:text-5xl my-7">LET’S CHAT</p>
+    <h2 className="text-3xl sm:text-4xl md:text-6xl 2xl:text-8xl font-barber ">
+      TELL US YOUR PLANS, <br />
+      WE’LL BRING THE PANS
+    </h2>
+
+    <button className="mt-8 2xl:mt-56 md:mt-24 ml-0 md:ml-12 2xl:ml-8 font-lilita text-lg md:text-2xl 2xl:text-4xl bg-white text-[#C20000] py-2 px-8 md:px-12 2xl:px-20 rounded-2xl 2xl:rounded-[1rem] shadow-xl transition-transform duration-300 ease-in-out transform hover:scale-110">
+      CALL US
+    </button>
+  </div>
+
+  {/* Right Side Image */}
+  <div className="flex-shrink-0 flex justify-center md:justify-end items-end mt-6 md:mt-0 2xl:mt-6  2xl:pr-8">
+    <img
+      src={Call} // replace with your actual image path
+      alt="Chef Illustration"
+      className="w-[200px] sm:w-[260px] md:w-[360px] lg:w-[550px] object-contain"
+    />
+  </div>
+</section>
+
+
+
+
+
+
+{/* <section className="2xl:max-w-[80%] bg-[#C20000] text-white rounded-[3rem] md:mx-auto my-30 p-8 md:p-12 mx-3">
+  <div className="flex flex-col md:flex-row justify-between">
+
+    <div className="text-left flex-1 md:pr-6">
+      <p className="text-xl md:text-5xl mb-2">Let’s Chat</p>
+      <h2 className="text-4xl 2xl:mb-42 md:text-8xl font-barber leading-tight md:leading-wide mb-6">
+        TELL US YOUR PLANS, <br className="hidden sm:block" />
+        WE’LL BRING THE PANS
+      </h2>
+      <button className="font-lilita text-lg md:text-2xl 2xl:text-4xl bg-white text-[#C20000] py-2 px-10 md:px-12 2xl:px-16 rounded-2xl shadow-xl transition-transform duration-300 ease-in-out transform hover:scale-110">
+        CALL US
+      </button>
+    </div>
+
+
+    <div className="pb-0 flex-shrink-0 self-end">
+      <img src={Call} alt="calling" className="w-28 md:w-40 lg:w-70 2xl:w-130" />
+    </div>
+  </div>
+</section> */}
+
+
+
 
       <Footer />
     </>

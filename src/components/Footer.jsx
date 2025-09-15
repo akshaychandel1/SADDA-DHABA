@@ -1,13 +1,15 @@
-import React from 'react';
-import { FaFacebookF, FaInstagram, FaTwitter, FaTiktok } from 'react-icons/fa';
-import cartoon from '../assets/icons/cartoon.svg';
-import Illustration from '../assets/icons/Illustration.svg';
+import React from "react";
+import { FaFacebookF, FaInstagram, FaTwitter, FaTiktok } from "react-icons/fa";
+import cartoon from "../assets/icons/cartoon.svg";
+import des from "../assets/icons/des.svg";       // Desktop footer image
+import BottomMOB from "../assets/icons/BottomMOB.svg"; // Mobile footer image
 
 // Social icon helper
 const SocialIcon = ({ href, children }) => (
   <a
     href={href}
-    className="text-[#C20000] hover:text-red-700 transition-colors duration-300">
+    className="text-[#C20000] hover:text-red-700 transition-colors duration-300"
+  >
     {children}
   </a>
 );
@@ -15,79 +17,110 @@ const SocialIcon = ({ href, children }) => (
 const Footer = () => {
   return (
     <div className="relative bg-[#C20000] overflow-hidden">
-      <footer className="relative z-10 pt-12"> 
-       <div className="container mx-auto px-4 sm:px-6 lg:px-8 space-y-4">
-    {/* Row 1 */}
-  <div className="flex flex-col md:flex-row gap-4">
-    
-    {/* Left Box: Flavors */}
-    <div className="bg-white rounded-3xl md:rounded-[3rem] shadow-lg p-6 flex items-center justify-center basis-3/4">
-      
-      <h2 className="font-barber pt-2 text-3xl md:text-6xl text-[#C20000] tracking-wide text-center items-center">
-        FLAVORS MADE WITH LOVE
-      </h2>
-    </div>
+      <footer className="relative z-10 pt-12">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
 
-    {/* Right Box: Logo */}
-          <div className="bg-white rounded-3xl md:rounded-[3rem]  shadow-lg flex items-center justify-center basis-1/4">
-        <img
-          src={cartoon}
-          alt="Saada Halwai Logo"
-          className="w-46 md:w-80 "
-        />
-      </div>
-  </div>
+          {/* Row 1: Flavors + Logo (Desktop only) */}
+          <div className="hidden md:flex flex-row gap-4">
+            {/* Flavors */}
+            <div className="bg-white rounded-[3rem] shadow-lg p-6 flex items-center justify-center flex-1">
+              <h2 className="font-barber text-6xl 2xl:text-7xl text-[#C20000] tracking-wide text-center">
+                FLAVORS MADE WITH LOVE
+              </h2>
+            </div>
 
+            {/* Logo */}
+            <div className="bg-white rounded-[2rem] shadow-lg flex items-center justify-center w-auto">
+              <img src={cartoon} alt="Saada Halwai Logo" className="w-56" />
+            </div>
+          </div>
 
-          {/* Row 2 */}
-          <div className="flex flex-col md:flex-row gap-4">
-            <div className="bg-white rounded-2xl md:rounded-[2rem]  shadow-lg p-4 flex items-center justify-center basis-1/4">
+          {/* Row 1 (Mobile version) → Flavors alone */}
+          <div className="md:hidden bg-white rounded-3xl shadow-lg p-3 flex items-center justify-center">
+            <h2 className="font-barber text-2xl text-[#C20000] tracking-wide text-center">
+              FLAVORS MADE WITH LOVE
+            </h2>
+          </div>
+
+          {/* Row 2: Logo + Socials (Mobile only) */}
+          <div className="md:hidden flex flex-row gap-4">
+            {/* Logo */}
+            <div className="bg-white rounded-2xl shadow-lg flex items-center justify-center flex-1">
+              <img src={cartoon} alt="Saada Halwai Logo" className="w-24" />
+            </div>
+            {/* Socials */}
+            <div className="bg-white rounded-2xl shadow-lg p-3 flex items-center justify-center flex-1">
+              <div className="flex items-center space-x-4">
+                <SocialIcon href="#"><FaFacebookF size={24} /></SocialIcon>
+                <SocialIcon href="#"><FaInstagram size={24} /></SocialIcon>
+                <SocialIcon href="#"><FaTwitter size={24} /></SocialIcon>
+                <SocialIcon href="#"><FaTiktok size={24} /></SocialIcon>
+              </div>
+            </div>
+          </div>
+
+          {/* Row 2: Socials + Contact (Desktop only) */}
+          <div className="hidden md:flex flex-row gap-4">
+            {/* Socials */}
+            <div className="bg-white rounded-[2rem] shadow-lg p-4 flex items-center justify-center w-1/4">
               <div className="flex items-center space-x-6">
                 <SocialIcon href="#"><FaFacebookF size={28} /></SocialIcon>
                 <SocialIcon href="#"><FaInstagram size={28} /></SocialIcon>
                 <SocialIcon href="#"><FaTwitter size={28} /></SocialIcon>
                 <SocialIcon href="#"><FaTiktok size={28} /></SocialIcon>
-
               </div>
             </div>
-           <div className="bg-white rounded-3xl md:rounded-[2rem]  shadow-lg p-4 flex items-center justify-center basis-3/4">
-  <h3 className="font-barber text-lg md:text-4xl 2xl:text-5xl pt-2 text-[#C20000] tracking-wide text-center md:text-left">
-    RING UP YOUR CRAVINGS: +44 79442 96922
-  </h3>
-</div>
+            {/* Contact */}
+            <div className="bg-white rounded-[2rem] shadow-lg p-4 flex items-center justify-center flex-1">
+              <h3 className="font-barber text-4xl 2xl:text-5xl text-[#C20000] tracking-wide text-left">
+                RING UP YOUR CRAVINGS: +44 79442 96922
+              </h3>
+            </div>
+          </div>
 
+          {/* Row 3: Contact (Mobile only) */}
+          <div className="md:hidden bg-white rounded-2xl shadow-lg p-3 flex items-center justify-center">
+            <h3 className="font-barber text-mg text-[#C20000] tracking-wide text-center">
+              RING UP YOUR CRAVINGS: +44 79442 96922
+            </h3>
           </div>
 
           {/* Navigation */}
-          <div className="bg-white rounded-3xl md:rounded-[1.5rem]  shadow-lg p-3">
-            <nav className="flex flex-wrap justify-center md:justify-around items-center text-sm font-bold text-gray-900">
-                <a href="#" className="px-3 py-2  rounded-md ">Home</a>
-                <a href="#" className="px-3 py-2  rounded-md ">Our Story</a>
-                <a href="#" className="px-3 py-2  rounded-md ">Menu</a>
-                <a href="#" className="px-3 py-2  rounded-md ">Services</a>
-                <a href="#" className="px-3 py-2  rounded-md ">FAQs</a>
-                <a href="#" className="px-3 py-2  rounded-md ">Contact</a>
-                <a href="#" className="px-3 py-2  rounded-md ">Make A Booking</a>
+          <div className="bg-white rounded-3xl md:rounded-[1.5rem] shadow-lg p-3">
+            <nav className="flex flex-wrap justify-center md:justify-around items-center text-sm md:text-mg font-bold text-gray-900">
+              <a href="#" className="px-3 py-2">Home</a>
+              <a href="#" className="px-3 py-2">Our Story</a>
+              <a href="#" className="px-3 py-2">Menu</a>
+              <a href="#" className="px-3 py-2">Services</a>
+              <a href="#" className="px-3 py-2">FAQs</a>
+              <a href="#" className="px-3 py-2">Contact</a>
+              <a href="#" className="px-3 py-2">Make A Booking</a>
             </nav>
-            </div>
-
-          
+          </div>
 
           {/* Bottom Bar */}
-          <div className="mt-8 p-4 border-3 border-white rounded-3xl md:rounded-[1.5rem] flex flex-col sm:flex-row justify-between items-center text-xs text-white font-medium">
-            <a href="#" className="hover:underline py-1 sm:py-0">Privacy Policy</a>
-            <p className="py-1 sm:py-0">&copy; 2024 Saada Halwai. All Rights Reserved.</p>
-            <a href="#" className="hover:underline py-1 sm:py-0">Terms & Conditions</a>
+          <div className="mt-4 p-2 border border-white rounded-lg flex flex-row justify-between items-center text-[8px] sm:text-[10px] md:text-xs text-white font-medium space-x-2">
+            <a href="#" className="hover:underline">Privacy Policy</a>
+            <p className="whitespace-nowrap">&copy; 2025 Saada Halwai. All Rights Reserved.</p>
+            <a href="#" className="hover:underline">Terms & Conditions</a>
           </div>
         </div>
-        {/* Background Layer */}
-       <div className=" flex justify-center left-0 w-full text-center select-none z-0 relative">
-      <img
-        src={Illustration}
-        alt="Halwai Mascot"
-        className="pt-2"
-      />
-    </div>
+
+        {/* Footer Mascot Image */}
+        <div className="flex justify-center w-full text-center select-none z-0 relative">
+          {/* Desktop Image */}
+          <img
+            src={des}
+            alt="Halwai Mascot Desktop"
+            className="hidden md:block pt-2 w-full"
+          />
+          {/* Mobile Image */}
+          <img
+            src={BottomMOB}
+            alt="Halwai Mascot Mobile"
+            className="block md:hidden pt-2 w-full max-w-xs"
+          />
+        </div>
       </footer>
     </div>
   );
