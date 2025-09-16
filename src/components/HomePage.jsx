@@ -164,7 +164,7 @@ const HomePage = () => {
     className="mt-6 mb-26 2xl:mb-48 font-lilita text-lg md:text-2xl 2xl:text-4xl bg-white text-[#C20000] py-2 px-10 md:px-10 rounded-3xl shadow-xl transition-transform duration-300 ease-in-out transform hover:scale-110"
     initial={{ opacity: 0, y: 20, scale: 0.95 }}
     animate={{ opacity: 1, y: 0, scale: 1 }}
-    transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1], delay: 0.4 }}
+    transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
   >
     EXPLORE MENU
   </motion.button>
