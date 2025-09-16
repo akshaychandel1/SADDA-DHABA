@@ -448,7 +448,7 @@ const HomePage = () => {
           Make your corporate events unforgettable with Saada Halwai. From
           vibrant chaats to rich curries and indulgent mithai, we serve
           authentic Indian flavours with a polished touch. Freshly cooked
-          in the UK, our catering <br/> keeps guests impressed and conversations
+          in the UK, our catering keeps guests impressed and conversations
           flowing.
         </p>
       </div>
