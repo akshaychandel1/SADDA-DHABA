@@ -410,7 +410,7 @@ const HomePage = () => {
       </div>
 
       {/* Button + Icon stacked vertically */}
-      <div className="flex flex-row items-baseline justify-between mt-6 space-y-4 md:mt-0">
+      <div className="flex flex-row items-baseline justify-between space-y-4 md:mt-0">
         {/* Custom Button */}
         <button className="font-lilita text-lg sm:text-xl md:text-2xl 2xl:text-4xl bg-white text-[#C20000] py-2 px-8 sm:px-10 md:px-8 2xl:px-12 rounded-2xl shadow-xl transition-transform duration-300 ease-in-out transform hover:scale-110">
           KNOW MORE
@@ -455,7 +455,7 @@ const HomePage = () => {
       </div>
 
       {/* Icon + Button */}
-      <div className="flex flex-row md:flex-row items-center md:items-baseline justify-between mt-6 md:mt-0 md:space-y-0">
+      <div className="flex flex-row md:flex-row items-baseline md:items-baseline justify-between md:mt-0 md:space-y-0">
         {/* Suit Icon */}
         <img src={suit} alt="Suit" className="w-18 sm:w-38 md:w-36 2xl:w-46" />
 
@@ -498,7 +498,7 @@ const HomePage = () => {
       </div>
 
       {/* Button + Icon */}
-      <div className="flex flex-row md:flex-row items-center justify-between mt-6 md:mt-0 md:space-y-0">
+      <div className="flex flex-row md:flex-row items-baseline justify-between md:mt-0 md:space-y-0">
         {/* Custom Button */}
         <button className="2xl:mt-52 font-lilita text-lg sm:text-xl md:text-2xl 2xl:text-4xl bg-white text-[#C20000] py-2 px-8 sm:px-10 md:px-8 2xl:px-12 rounded-2xl shadow-xl transition-transform duration-300 ease-in-out transform hover:scale-110">
           KNOW MORE
