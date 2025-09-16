@@ -43,7 +43,7 @@ const Footer = () => {
           </div>
 
           {/* Row 1 (Mobile version) → Flavors alone */}
-          <div className="md:hidden bg-white rounded-3xl shadow-lg p-3 flex items-center justify-center">
+          <div className="md:hidden bg-white rounded-3xl shadow-lg p-3 flex items-center justify-between">
             <h2 className="font-barber text-3xl text-[#C20000] tracking-wide text-center">
               FLAVORS MADE WITH LOVE
             </h2>
