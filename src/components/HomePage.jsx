@@ -400,7 +400,7 @@ const HomePage = () => {
         <h2 className="text-3xl sm:text-4xl md:text-6xl 2xl:text-8xl font-barber leading-tight md:leading-wide text-center md:text-left">
           WEDDING & EVENTS
         </h2>
-        <p className="mt-2 text-sm sm:text-base md:text-sm 2xl:text-[22px] leading-relaxed text-center md:text-left">
+        <p className="mt-2 text-sm sm:text-base md:text-sm 2xl:text-[21px] leading-relaxed text-center md:text-left">
           From grand weddings to lively celebrations, Saada Halwai serves
           the soul of India with every plate. Think sizzling street-style
           chaats, rich royal curries, and decadent mithai, all crafted
@@ -445,7 +445,7 @@ const HomePage = () => {
         <h2 className="text-3xl sm:text-4xl md:text-7xl 2xl:text-8xl font-barber leading-tight md:leading-wide">
           Corporate Events
         </h2>
-        <p className="mt-2 text-sm sm:text-base md:text-sm 2xl:text-[22px] leading-relaxed">
+        <p className="mt-2 text-sm sm:text-base md:text-sm 2xl:text-[21px] leading-relaxed">
           Make your corporate events unforgettable with Saada Halwai. From
           vibrant chaats to rich curries and indulgent mithai, we serve
           authentic Indian flavours with a polished touch. Freshly cooked
@@ -489,7 +489,7 @@ const HomePage = () => {
         <h2 className="text-3xl sm:text-4xl md:text-6xl 2xl:text-8xl font-barber leading-tight md:leading-wide">
           Grab & GO
         </h2>
-        <p className="mt-2 text-sm sm:text-base md:text-sm 2xl:text-[22px] leading-relaxed">
+        <p className="mt-2 text-sm sm:text-base md:text-sm 2xl:text-[21px] leading-relaxed">
           Perfect for busy days and hungry moments, Saada Halwai’s Grab & Go
           brings Indian flavours to your hands in minutes. From spicy chaats
           to hearty curries and sweet mithai, every bite is fresh, authentic,
