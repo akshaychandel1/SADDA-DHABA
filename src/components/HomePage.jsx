@@ -409,10 +409,10 @@ const HomePage = () => {
         </p>
       </div>
 
-      {/* Button + Icon */}
-      <div className="flex flex-row md:flex-row items-center justify-between mt-6 md:mt-0 md:space-y-0">
+      {/* Button + Icon stacked vertically */}
+      <div className="flex flex-col items-center justify-center mt-6 space-y-4 md:mt-0">
         {/* Custom Button */}
-        <button className="2xl:mt-40 font-lilita text-lg sm:text-xl md:text-2xl 2xl:text-4xl bg-white text-[#C20000] py-2 px-8 sm:px-10 md:px-8 2xl:px-12 rounded-2xl shadow-xl transition-transform duration-300 ease-in-out transform hover:scale-110">
+        <button className="font-lilita text-lg sm:text-xl md:text-2xl 2xl:text-4xl bg-white text-[#C20000] py-2 px-8 sm:px-10 md:px-8 2xl:px-12 rounded-2xl shadow-xl transition-transform duration-300 ease-in-out transform hover:scale-110">
           KNOW MORE
         </button>
 
@@ -433,6 +433,7 @@ const HomePage = () => {
     </div>
   </div>
 </div>
+
 
 
       <div className="flex items-center my-10 2xl:mb-50 justify-center px-4">
