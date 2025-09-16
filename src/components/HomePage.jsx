@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
+import { useInView } from "react-intersection-observer";
 import "./HomePage.css";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
@@ -111,28 +112,66 @@ const HomePage = () => {
     return () => clearInterval(interval);
   }, []);
 
+  const { scrollRef , inView } = useInView({
+    triggerOnce: true,
+    threshold: 0.3, // start animation when 30% visible
+  });
+
+  const containerVariants = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.2, // animate children one by one
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: "easeOut" } },
+  };
+
   return (
     <>
       <Navbar />
 
       <div className="bg-[#C20000]  text-white  overflow-hidden">
         <div className="relative container mx-auto px-1 py-12 md:py-20 text-center">
-          {/* Header Content */}
-          <div className=" mx-auto md:mb-60">
-            <h1 className="text-4xl font-barber md:text-8xl tracking-wide mb-3">
-              YOUR HALWAI'S IN TOWN
-            </h1>
-            <p className="text-base md:text-lg text-red-100">
-              Straight from the streets of India to your celebrations,every bite
-              is cheeky, tasty, and made to impress. Ready to be served with
-              flair.
-            </p>
-            {/* Custom Button */} 
-              <button className="mt-6 mb-26 2xl:mb-48 font-lilita text-lg md:text-2xl 2xl:text-4xl bg-white text-[#C20000] py-2 px-10 md:px-10 rounded-3xl shadow-xl transition-transform duration-300 ease-in-out transform hover:scale-110">
-  EXPLORE MENU
-</button>
-          </div>
+  {/* Header Content */}
+    <motion.div className="mx-auto md:mb-60 text-center">
+  {/* H1 */}
+  <motion.h1
+    className="text-4xl font-barber md:text-8xl tracking-wide mb-3"
+    initial={{ opacity: 0, y: 40 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }} // smooth ease-out cubic
+  >
+    YOUR HALWAI'S IN TOWN
+  </motion.h1>
 
+  {/* Paragraph */}
+  <motion.p
+    className="text-base md:text-lg text-red-100"
+    initial={{ opacity: 0, y: 30 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
+  >
+    Straight from the streets of India to your celebrations, every bite is cheeky, tasty, and made to impress. Ready to be served with flair.
+  </motion.p>
+
+  {/* Button */}
+  <motion.button
+    className="mt-6 mb-26 2xl:mb-48 font-lilita text-lg md:text-2xl 2xl:text-4xl bg-white text-[#C20000] py-2 px-10 md:px-10 rounded-3xl shadow-xl transition-transform duration-300 ease-in-out transform hover:scale-110"
+    initial={{ opacity: 0, y: 20, scale: 0.95 }}
+    animate={{ opacity: 1, y: 0, scale: 1 }}
+    transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1], delay: 0.4 }}
+  >
+    EXPLORE MENU
+  </motion.button>
+</motion.div>
+
+
+         
           {/* Mascot and Food Display Section */}
           <div className="relative mt-2 md:mt-24 2xl:mt-58">
             <div className=" absolute -top-23 md:-top-80 2xl:-top-93 left-1/2 -translate-x-1/2 z-20 w-48 md:w-[54%]">
@@ -161,7 +200,7 @@ const HomePage = () => {
 
             {/* White background card for food */}
             {/* <div className="absolute  md:pt-28 pb-10 shadow-2xl z-10"> */}
-<div className="relative z-30 ">
+<div className="relative z-30 px-4 md:px-6 2xl:px-0 ">
   <img
     src={samosa}
     alt="Display of various Indian sweets and chaat dishes"
@@ -341,12 +380,19 @@ const HomePage = () => {
       </section>
 
       {/* Carousel Container */}
-
-      <EmblaCarousel
+          <div className="relative">
+  <motion.div
+    initial={{ opacity: 0 }}
+    whileInView={{ opacity: 1 }}
+  >
+    <EmblaCarousel
        slides={SLIDES} options={OPTIONS} />
+  </motion.div>
+</div>
+      
 
       <div className="flex items-center justify-center px-2 my-10 md:my-20 2xl:my-50">
-  <div className="max-w-[80%] border-5 border-[#C20000] flex flex-col md:flex-row rounded-3xl md:rounded-[3rem] overflow-hidden shadow-md 2xl:h-[700px]">
+  <div className="w-[95%] md:max-w-[80%] border-5 border-[#C20000] flex flex-col md:flex-row rounded-3xl md:rounded-[3rem] overflow-hidden shadow-md 2xl:h-[700px]">
     
     {/* Left Side */}
     <div className="bg-[#C20000] text-white p-6 sm:p-8 md:p-10 2xl:p-14 md:w-1/2 flex flex-col justify-between">
@@ -364,7 +410,7 @@ const HomePage = () => {
       </div>
 
       {/* Button + Icon */}
-      <div className="flex flex-col md:flex-row items-center justify-between mt-6 md:mt-0 space-y-4 md:space-y-0">
+      <div className="flex flex-row md:flex-row items-center justify-between mt-6 md:mt-0 md:space-y-0">
         {/* Custom Button */}
         <button className="2xl:mt-40 font-lilita text-lg sm:text-xl md:text-2xl 2xl:text-4xl bg-white text-[#C20000] py-2 px-8 sm:px-10 md:px-8 2xl:px-12 rounded-2xl shadow-xl transition-transform duration-300 ease-in-out transform hover:scale-110">
           KNOW MORE
@@ -372,7 +418,7 @@ const HomePage = () => {
 
         {/* Glasses Icon */}
         <div>
-          <img src={wine} alt="Glasses" className="w-10 sm:w-14 md:w-36 2xl:w-46" />
+          <img src={wine} alt="Glasses" className="w-18 sm:w-14 md:w-36 2xl:w-46" />
         </div>
       </div>
     </div>
@@ -390,7 +436,7 @@ const HomePage = () => {
 
 
       <div className="flex items-center my-10 2xl:mb-50 justify-center px-4">
-  <div className="max-w-[80%] border-5 border-[#C20000] flex flex-col md:flex-row-reverse rounded-3xl md:rounded-[3rem] overflow-hidden shadow-md 2xl:h-[700px]">
+  <div className="w-[99%] md:max-w-[80%] border-5 border-[#C20000] flex flex-col md:flex-row-reverse rounded-3xl md:rounded-[3rem] overflow-hidden shadow-md 2xl:h-[700px]">
     
     {/* Right Side (Red Content) */}
     <div className="bg-[#C20000] text-white p-6 sm:p-8 md:p-10 2xl:p-14 md:w-1/2 flex flex-col justify-between">
@@ -408,9 +454,9 @@ const HomePage = () => {
       </div>
 
       {/* Icon + Button */}
-      <div className="flex flex-col md:flex-row items-center md:items-baseline justify-between mt-6 md:mt-0 space-y-4 md:space-y-0">
+      <div className="flex flex-row md:flex-row items-center md:items-baseline justify-between mt-6 md:mt-0 md:space-y-0">
         {/* Suit Icon */}
-        <img src={suit} alt="Suit" className="w-10 sm:w-14 md:w-36 2xl:w-46" />
+        <img src={suit} alt="Suit" className="w-18 sm:w-38 md:w-36 2xl:w-46" />
 
         {/* Button */}
         <button className="font-lilita text-lg sm:text-xl md:text-2xl 2xl:text-4xl bg-white text-[#C20000] py-2 px-8 sm:px-10 md:px-8 2xl:px-12 rounded-2xl shadow-xl transition-transform duration-300 ease-in-out transform hover:scale-110">
@@ -434,7 +480,7 @@ const HomePage = () => {
 
 
      <div className="flex items-center my-10 2xl:my-30 justify-center px-4">
-  <div className="max-w-[80%] border-5 border-[#C20000] flex flex-col md:flex-row rounded-3xl md:rounded-[3rem] overflow-hidden shadow-md 2xl:h-[700px]">
+  <div className="w-[99%] md:max-w-[80%] border-5 border-[#C20000] flex flex-col md:flex-row rounded-3xl md:rounded-[3rem] overflow-hidden shadow-md 2xl:h-[700px]">
     
     {/* Left Side */}
     <div className="bg-[#C20000] text-white p-6 sm:p-8 md:p-10 2xl:p-14 md:w-1/2 flex flex-col justify-between">
@@ -451,7 +497,7 @@ const HomePage = () => {
       </div>
 
       {/* Button + Icon */}
-      <div className="flex flex-col md:flex-row items-center justify-between mt-6 md:mt-0 space-y-4 md:space-y-0">
+      <div className="flex flex-row md:flex-row items-center justify-between mt-6 md:mt-0 md:space-y-0">
         {/* Custom Button */}
         <button className="2xl:mt-52 font-lilita text-lg sm:text-xl md:text-2xl 2xl:text-4xl bg-white text-[#C20000] py-2 px-8 sm:px-10 md:px-8 2xl:px-12 rounded-2xl shadow-xl transition-transform duration-300 ease-in-out transform hover:scale-110">
           KNOW MORE
@@ -459,7 +505,7 @@ const HomePage = () => {
 
         {/* Bag Icon */}
         <div>
-          <img src={bag} alt="Bag" className="w-10 sm:w-14 md:w-36 2xl:w-46" />
+          <img src={bag} alt="Bag" className="w-18 sm:w-14 md:w-36 2xl:w-46" />
         </div>
       </div>
     </div>
@@ -515,7 +561,7 @@ const HomePage = () => {
           {/* Content inside cap */}
           <div className="absolute inset-6 md:inset-20 flex flex-col justify-between items-center px-3 sm:px-6 md:px-10 py-6 md:py-8 text-center">
             {/* Heading at top */}
-            <h2 className="text-xl sm:text-3xl md:text-7xl 2xl:text-8xl leading-tight font-barber text-[#C20000]">
+            <h2 className="text-2xl sm:text-3xl md:text-7xl 2xl:text-8xl leading-tight font-barber text-[#C20000]">
               CURRY <br className="hidden sm:block" /> CONFESSIONS
             </h2>
 
@@ -573,7 +619,7 @@ const HomePage = () => {
         </div>
       </section>
 
-    <section className="w-[80%] bg-[#C20000] text-white rounded-[3rem] flex flex-col md:flex-row items-stretch justify-between mx-auto overflow-hidden my-16 md:my-32">
+    <section className="w-[95%] md:max-w-[80%] bg-[#C20000] text-white rounded-[3rem] flex flex-col md:flex-row items-stretch justify-between mx-auto overflow-hidden my-16 md:my-32">
   {/* Left Side */}
   <div className="flex-1 px-6 py-10 text-center md:text-left md:pl-20">
     <p className="text-xl md:text-5xl my-7">LET’S CHAT</p>
@@ -588,7 +634,7 @@ const HomePage = () => {
   </div>
 
   {/* Right Side Image */}
-  <div className="flex-shrink-0 flex justify-center md:justify-end items-end mt-6 md:mt-0 2xl:mt-6  2xl:pr-8">
+  <div className="flex-shrink-0 flex justify-center md:justify-end items-end mt-2 md:mt-0 2xl:mt-6  2xl:pr-8">
     <img
       src={Call} // replace with your actual image path
       alt="Chef Illustration"
