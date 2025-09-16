@@ -395,7 +395,7 @@ const HomePage = () => {
   <div className="w-[95%] md:max-w-[84%] border-5 border-[#C20000] flex flex-col md:flex-row rounded-3xl md:rounded-[3rem] overflow-hidden shadow-md 2xl:h-[700px]">
     
     {/* Left Side */}
-    <div className="bg-[#C20000] text-white p-6 sm:p-8 md:p-10 2xl:p-14 md:w-1/2 flex flex-col justify-between">
+    <div className="bg-[#C20000] text-white p-6 sm:p-8 md:p-10 2xl:p-10 md:w-1/2 flex flex-col justify-between">
       <div>
         <h2 className="text-3xl sm:text-4xl md:text-6xl 2xl:text-8xl font-barber leading-tight md:leading-wide text-center md:text-left">
           WEDDING & EVENTS
@@ -439,7 +439,7 @@ const HomePage = () => {
   <div className="w-[99%] md:max-w-[84%] border-5 border-[#C20000] flex flex-col md:flex-row-reverse rounded-3xl md:rounded-[3rem] overflow-hidden shadow-md 2xl:h-[700px]">
     
     {/* Right Side (Red Content) */}
-    <div className="bg-[#C20000] text-white p-6 sm:p-8 md:p-10 2xl:p-14 md:w-1/2 flex flex-col justify-between">
+    <div className="bg-[#C20000] text-white p-6 sm:p-8 md:p-10 2xl:p-10 md:w-1/2 flex flex-col justify-between">
       <div className="text-center md:text-right">
         <h2 className="text-3xl sm:text-4xl md:text-7xl 2xl:text-8xl font-barber leading-tight md:leading-wide">
           Corporate Events
@@ -459,7 +459,7 @@ const HomePage = () => {
         <img src={suit} alt="Suit" className="w-18 sm:w-38 md:w-36 2xl:w-46" />
 
         {/* Button */}
-        <button className="font-lilita text-lg sm:text-xl md:text-2xl 2xl:text-4xl bg-white text-[#C20000] py-2 px-8 sm:px-10 md:px-8 2xl:px-12 rounded-2xl shadow-xl transition-transform duration-300 ease-in-out transform hover:scale-110">
+        <button className="font-lilita text-lg sm:text-xl md:text-2xl 2xl:text-4xl bg-white text-[#C20000] py-2 px-[15%] sm:px-10 md:px-8 2xl:px-12 rounded-2xl shadow-xl transition-transform duration-300 ease-in-out transform hover:scale-110">
           KNOW MORE
         </button>
       </div>
@@ -483,7 +483,7 @@ const HomePage = () => {
   <div className="w-[99%] md:max-w-[84%] border-5 border-[#C20000] flex flex-col md:flex-row rounded-3xl md:rounded-[3rem] overflow-hidden shadow-md 2xl:h-[700px]">
     
     {/* Left Side */}
-    <div className="bg-[#C20000] text-white p-6 sm:p-8 md:p-10 2xl:p-14 md:w-1/2 flex flex-col justify-between">
+    <div className="bg-[#C20000] text-white p-6 sm:p-8 md:p-10 2xl:p-10 md:w-1/2 flex flex-col justify-between">
       <div className="text-center md:text-left">
         <h2 className="text-3xl sm:text-4xl md:text-6xl 2xl:text-8xl font-barber leading-tight md:leading-wide">
           Grab & GO
