@@ -392,7 +392,7 @@ const HomePage = () => {
       
 
       <div className="flex items-center justify-center px-2 my-10 md:my-20 2xl:my-50">
-  <div className="w-[95%] md:max-w-[80%] border-5 border-[#C20000] flex flex-col md:flex-row rounded-3xl md:rounded-[3rem] overflow-hidden shadow-md 2xl:h-[700px]">
+  <div className="w-[95%] md:max-w-[84%] border-5 border-[#C20000] flex flex-col md:flex-row rounded-3xl md:rounded-[3rem] overflow-hidden shadow-md 2xl:h-[700px]">
     
     {/* Left Side */}
     <div className="bg-[#C20000] text-white p-6 sm:p-8 md:p-10 2xl:p-14 md:w-1/2 flex flex-col justify-between">
@@ -436,7 +436,7 @@ const HomePage = () => {
 
 
       <div className="flex items-center my-10 2xl:mb-50 justify-center px-4">
-  <div className="w-[99%] md:max-w-[80%] border-5 border-[#C20000] flex flex-col md:flex-row-reverse rounded-3xl md:rounded-[3rem] overflow-hidden shadow-md 2xl:h-[700px]">
+  <div className="w-[99%] md:max-w-[84%] border-5 border-[#C20000] flex flex-col md:flex-row-reverse rounded-3xl md:rounded-[3rem] overflow-hidden shadow-md 2xl:h-[700px]">
     
     {/* Right Side (Red Content) */}
     <div className="bg-[#C20000] text-white p-6 sm:p-8 md:p-10 2xl:p-14 md:w-1/2 flex flex-col justify-between">
@@ -480,7 +480,7 @@ const HomePage = () => {
 
 
      <div className="flex items-center my-10 2xl:my-30 justify-center px-4">
-  <div className="w-[99%] md:max-w-[80%] border-5 border-[#C20000] flex flex-col md:flex-row rounded-3xl md:rounded-[3rem] overflow-hidden shadow-md 2xl:h-[700px]">
+  <div className="w-[99%] md:max-w-[84%] border-5 border-[#C20000] flex flex-col md:flex-row rounded-3xl md:rounded-[3rem] overflow-hidden shadow-md 2xl:h-[700px]">
     
     {/* Left Side */}
     <div className="bg-[#C20000] text-white p-6 sm:p-8 md:p-10 2xl:p-14 md:w-1/2 flex flex-col justify-between">
