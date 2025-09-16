@@ -154,7 +154,7 @@ const HomePage = () => {
     className="text-base md:text-lg text-red-100"
     initial={{ opacity: 0, y: 30 }}
     animate={{ opacity: 1, y: 0 }}
-    transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1], delay: 0 }}
+    transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
   >
     Straight from the streets of India to your celebrations, every bite is cheeky, tasty, and made to impress. Ready to be served with flair.
   </motion.p>
@@ -162,9 +162,9 @@ const HomePage = () => {
   {/* Button */}
   <motion.button
     className="mt-6 mb-26 2xl:mb-48 font-lilita text-lg md:text-2xl 2xl:text-4xl bg-white text-[#C20000] py-2 px-10 md:px-10 rounded-3xl shadow-xl transition-transform duration-300 ease-in-out transform hover:scale-110"
-    initial={{ opacity: 0, y: 20, scale: 1 }}
+    initial={{ opacity: 0, y: 20, scale: 0.99 }}
     animate={{ opacity: 1, y: 0, scale: 1 }}
-    transition={{ duration: 1, ease: [0.22, 1, 0.36, 1], delay: 0 }}
+    transition={{ duration: 1, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
   >
     EXPLORE MENU
   </motion.button>
