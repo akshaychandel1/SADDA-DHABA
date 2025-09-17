@@ -89,17 +89,17 @@ const HomePage = () => {
   const sTurnip = useTransform(scrollYProgress, [0, 1], [1, 1.1]);
 
   // Brinjal
-  const yBrinjal = useTransform(scrollYProgress, [0, 1], [10, -10]);
+  const yBrinjal = useTransform(scrollYProgress, [0, 1], [20, -20]);
   const rBrinjal = useTransform(scrollYProgress, [0, 1], [0, 0]);
   const sBrinjal = useTransform(scrollYProgress, [0, 1], [1, 1.1]);
 
   // Peas
-  const yPeas = useTransform(scrollYProgress, [0, 1], [10, -10]);
+  const yPeas = useTransform(scrollYProgress, [0, 1], [20, -20]);
   const rPeas = useTransform(scrollYProgress, [0, 1], [0, 0]);
   const sPeas = useTransform(scrollYProgress, [0, 1], [1, 1.1]);
 
   // Carrot
-  const yCarrot = useTransform(scrollYProgress, [0, 1], [-10, 10]);
+  const yCarrot = useTransform(scrollYProgress, [0, 1], [-20, 20]);
   const rCarrot = useTransform(scrollYProgress, [0, 1], [0, 0]);
   const sCarrot = useTransform(scrollYProgress, [0, 1], [1, 1.1]);
 
