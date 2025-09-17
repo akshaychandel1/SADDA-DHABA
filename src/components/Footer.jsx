@@ -97,18 +97,40 @@ const Footer = () => {
             </h3>
           </div>
 
-          {/* Navigation */}
-          <div className="bg-white rounded-3xl md:rounded-[1.5rem] shadow-lg p-3">
-            <nav className="flex flex-wrap justify-center md:justify-around items-center text-sm md:text-lg font-bold text-gray-900">
-              <a href="#" className="px-3 py-2">Home</a>
-              <a href="#" className="px-3 py-2">Our Story</a>
-              <a href="#" className="px-3 py-2">Menu</a>
-              <a href="#" className="px-3 py-2">Services</a>
-              <a href="#" className="px-3 py-2">FAQs</a>
-              <a href="#" className="px-3 py-2">Contact</a>
-              <a href="#" className="px-3 py-2">Make A Booking</a>
-            </nav>
-          </div>
+          {/* Navigation for Desktop */}
+<div className="hidden md:block bg-white rounded-3xl shadow-lg p-3">
+  <nav className="flex flex-wrap justify-around items-center text-lg font-bold text-gray-900">
+    <a href="#" className="px-3 py-2">Home</a>
+    <a href="#" className="px-3 py-2">Our Story</a>
+    <a href="#" className="px-3 py-2">Menu</a>
+    <a href="#" className="px-3 py-2">Services</a>
+    <a href="#" className="px-3 py-2">FAQs</a>
+    <a href="#" className="px-3 py-2">Contact</a>
+    <a href="#" className="px-3 py-2">Make A Booking</a>
+  </nav>
+</div>
+
+{/* Navigation for Mobile */}
+{/* Navigation for Mobile */}
+<div className="md:hidden bg-white rounded-xl shadow-lg p-4">
+  <nav className="flex flex-col items-center text-base font-bold text-gray-900 space-y-3">
+    {/* First row */}
+    <ul className="flex justify-between w-full">
+      <li><a href="#" className="px-2">Home</a></li>
+      <li><a href="#" className="px-2">Our Story</a></li>
+      <li><a href="#" className="px-2">Menu</a></li>
+      <li><a href="#" className="px-2">Services</a></li>
+    </ul>
+
+    {/* Second row */}
+    <ul className="flex justify-around w-full">
+      <li><a href="#" className="px-2">FAQs</a></li>
+      <li><a href="#" className="px-2">Contact</a></li>
+      <li><a href="#" className="px-2">Booking</a></li>
+    </ul>
+  </nav>
+</div>
+
 
           {/* Bottom Bar */}
           <div className="mt-4 p-2 border border-white rounded-lg flex flex-row justify-between items-center text-[8px] sm:text-[10px] md:text-sm text-white font-medium space-x-2">
