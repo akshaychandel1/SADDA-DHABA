@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./Navbar.css";
 import { Link } from "react-router-dom";
 import headlogo from "../assets/icons/headlogo.svg";
-import { FaBars, FaTimes } from "react-icons/fa"; // hamburger & close icons
+import { FaPhoneAlt, FaBars, FaTimes } from "react-icons/fa"; // hamburger & close icons
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -52,20 +52,27 @@ const Navbar = () => {
           </button>
         </div>
 
-        {/* Hamburger (mobile only) */}
-        <div className="md:hidden flex items-center">
+        {/* Mobile Nav */}
+         {/* Mobile Nav */}
+        <div className="md:hidden flex items-center justify-between w-full">
+          {/* Hamburger (left) */}
           <button
             onClick={() => setIsOpen(!isOpen)}
             className="text-2xl text-[#C20000]"
           >
             {isOpen ? <FaTimes /> : <FaBars />}
           </button>
+
+          {/* Phone Icon (right on mobile) */}
+          <a href="tel:+447944296922" className="text-2xl text-[#C20000]">
+            <FaPhoneAlt />
+          </a>
         </div>
       </div>
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="absolute top-16 left-0 w-full bg-white shadow-md rounded-b-2xl md:hidden z-950">
+        <div className="absolute mt-1 top-16 left-0 w-full bg-white shadow-md rounded-b-2xl md:hidden z-950">
           <ul className="flex flex-col items-center space-y-4 py-6 text-base font-bold text-black">
             <li>
               <Link to="/" onClick={() => setIsOpen(false)}>

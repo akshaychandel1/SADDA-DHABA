@@ -1,5 +1,6 @@
 import { FaFacebookF, FaInstagram, FaTwitter, FaTiktok } from "react-icons/fa";
 import React from "react";
+import { useEffect, useState } from "react"
 import { useInView } from "react-intersection-observer";
 import { motion } from "framer-motion";
 import cartoon from "../assets/icons/cartoon.svg";
@@ -17,13 +18,22 @@ const SocialIcon = ({ href, children }) => (
 );
 
 const Footer = () => {
+  const [is1440, setIs1440] = useState(false)
+
+  useEffect(() => {
+    const checkSize = () => setIs1440(window.innerWidth <= 1440)
+    checkSize()
+    window.addEventListener("resize", checkSize)
+    return () => window.removeEventListener("resize", checkSize)
+  }, [])
+
   const { ref, inView } = useInView({
     triggerOnce: true,
     threshold: 0.4,
   });
 
   return (
-    <div className="relative bg-[#C20000] overflow-hidden">
+    <div className="relative 2xl:mx-2 rounded-t-[50px] bg-[#C20000] overflow-hidden">
       <footer className="relative z-10 pt-12">
         <div className="container mx-auto max-w-full px-4 sm:px-6 lg:px-8 space-y-6">
 
@@ -112,25 +122,49 @@ const Footer = () => {
         {/* Footer Mascot Image */}
         <div className="flex justify-center w-full text-center select-none z-0 relative overflow-visible">
           {/* Desktop Images */}
-          <div className="hidden mt-22 md:block relative w-full">
-            <motion.img src={footdesk} alt="Halwai Mascot Desktop" className="w-full" initial={{ y: 200, opacity: 1}}
-              whileInView={{ y: 0, opacity: 1 }}
-              transition={{ duration: 1, ease: "easeOut" }}
-              viewport={{ once: true, amount: 0.3 }} />
-            
-            <motion.img
-              src={charfoot}
-              alt="Halwai Mascot Character"
-              className="absolute bottom-0 left-1/2 -translate-x-[58%] w-full max-w-[633px]" 
-              initial={{ y: 370, opacity: 1}}
-              whileInView={{ y: 0, opacity: 1 }}
-              transition={{ duration: 1, ease: "easeOut", delay: 1 }}
-              // viewport={{ once: true, amount: 0.3 }}
-            />
-          </div>
+         
+         <div className="hidden md:block relative w-full min-h-[400px]">
+  {/* Background footer image */}
+  <motion.img
+    src={footdesk}
+    alt="Halwai Mascot Desktop"
+    className="w-full h-auto absolute bottom-0 left-0 z-0"
+    initial={{ y: is1440 ? 120 : 200, opacity: 1 }}
+    whileInView={{ y: 0, opacity: 1 }}
+    transition={{ duration: 1, ease: "easeOut" }}
+    viewport={{ once: true, amount: 0.3 }}
+  />
+
+  {/* Character mascot */}
+  <motion.img
+    src={charfoot}
+    alt="Halwai Mascot Character"
+    className="absolute bottom-0 left-1/2 -translate-x-[58%] w-full max-w-[633px] z-10"
+    initial={{ y: is1440 ? 120 : 150, opacity: 0 }}
+    whileInView={{ y: 0, opacity: 1 }}
+    transition={{ duration: 1, ease: "easeOut", delay: 0.5 }}
+    viewport={{ once: true, amount: 0.3 }}
+  />
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
           {/* Mobile Image */}
-          <div ref={ref} className="relative block md:hidden w-full max-w-xs mx-auto overflow-visible">
+          <div ref={ref} className="relative mt-2 block md:hidden w-full max-w-xs mx-auto overflow-visible">
             <motion.img
     src={footmob}
     alt="Halwai Mascot Mobile Base"
@@ -145,7 +179,7 @@ const Footer = () => {
               className="absolute left-1/2 bottom-0 -translate-x-1/2 w-[66%] z-50 pointer-events-none"
               initial={{ y: 150, opacity: 1 }}
               animate={inView ? { y: 0, opacity: 1 } : {}}
-              transition={{ duration: 0.7, ease: "easeOut", delay: 1 }}
+              transition={{ duration: 0.7, ease: "easeOut", delay: 0.6 }}
             />
           </div>
         </div>
