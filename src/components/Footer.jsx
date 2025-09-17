@@ -30,20 +30,20 @@ const Footer = () => {
           {/* Row 1: Flavors + Logo (Desktop only) */}
           <div className="hidden md:flex flex-row gap-4 lg:gap-6"> {/* increased gap for iPad */}
             {/* Flavors */}
-            <div className="bg-white rounded-[3rem] shadow-lg p-6 flex items-center justify-center flex-1 lg:p-8">
+            <div className=" bg-white rounded-[3rem] shadow-lg p-6 flex items-center justify-center flex-1 lg:p-8">
               <h2 className="font-barber text-6xl lg:text-7xl 2xl:text-8xl text-[#C20000] tracking-wide text-center">
                 FLAVORS MADE WITH LOVE
               </h2>
             </div>
 
             {/* Logo */}
-            <div className="bg-white rounded-[2rem] shadow-lg flex items-center justify-center w-auto lg:w-1/3">
-              <img src={cartoon} alt="Saada Halwai Logo" className="w-56 lg:w-72 2xl:w-96" />
+            <div className="bg-white rounded-[2rem] shadow-lg flex items-center justify-center w-auto ">
+              <img src={cartoon} alt="Saada Halwai Logo" className="w-56 lg:w-72 2xl:w-106" />
             </div>
           </div>
 
           {/* Row 1 (Mobile version) → Flavors alone */}
-          <div className="md:hidden bg-white rounded-3xl shadow-lg p-3 flex items-center justify-between">
+          <div className="md:hidden bg-white rounded-3xl shadow-lg p-3 flex items-center justify-center">
             <h2 className="font-barber text-3xl text-[#C20000] tracking-wide text-center">
               FLAVORS MADE WITH LOVE
             </h2>
@@ -67,7 +67,7 @@ const Footer = () => {
           {/* Row 2: Socials + Contact (Desktop + iPad) */}
           <div className="hidden md:flex flex-row gap-4 lg:gap-6 items-center"> {/* added lg adjustments */}
             <div className="bg-white rounded-[2rem] shadow-lg p-4 flex items-center justify-center w-1/4 lg:w-1/3">
-              <div className="flex items-center space-x-6 lg:space-x-4">
+              <div className="flex items-center py-4 space-x-6 lg:space-x-16">
                 <SocialIcon href="#"><FaFacebookF size={50} /></SocialIcon>
                 <SocialIcon href="#"><FaInstagram size={50} /></SocialIcon>
                 <SocialIcon href="#"><FaTwitter size={50} /></SocialIcon>
@@ -75,7 +75,7 @@ const Footer = () => {
               </div>
             </div>
             <div className="bg-white rounded-[2rem] shadow-lg p-4 flex items-center justify-center flex-1 lg:flex-1">
-              <h3 className="font-barber text-4xl lg:text-5xl 2xl:text-6xl text-[#C20000] tracking-wide text-left">
+              <h3 className="font-barber py-4 text-4xl lg:text-5xl 2xl:text-6xl text-[#C20000] tracking-wide text-left">
                 RING UP YOUR CRAVINGS: +44 79442 96922
               </h3>
             </div>
@@ -113,28 +113,39 @@ const Footer = () => {
         <div className="flex justify-center w-full text-center select-none z-0 relative overflow-visible">
           {/* Desktop Images */}
           <div className="hidden mt-22 md:block relative w-full">
-            <img src={footdesk} alt="Halwai Mascot Desktop" className="w-full" />
+            <motion.img src={footdesk} alt="Halwai Mascot Desktop" className="w-full" initial={{ y: 200, opacity: 1}}
+              whileInView={{ y: 0, opacity: 1 }}
+              transition={{ duration: 1, ease: "easeOut" }}
+              viewport={{ once: true, amount: 0.3 }} />
+            
             <motion.img
               src={charfoot}
               alt="Halwai Mascot Character"
               className="absolute bottom-0 left-1/2 -translate-x-[58%] w-full max-w-[633px]" 
-              initial={{ y: 200, opacity: 1}}
+              initial={{ y: 370, opacity: 1}}
               whileInView={{ y: 0, opacity: 1 }}
-              transition={{ duration: 1, ease: "easeOut" }}
-              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 1, ease: "easeOut", delay: 1 }}
+              // viewport={{ once: true, amount: 0.3 }}
             />
           </div>
 
           {/* Mobile Image */}
           <div ref={ref} className="relative block md:hidden w-full max-w-xs mx-auto overflow-visible">
-            <img src={footmob} alt="Halwai Mascot Mobile Base" className="relative w-full mt-2 h-auto block" />
+            <motion.img
+    src={footmob}
+    alt="Halwai Mascot Mobile Base"
+    className="w-full h-auto"
+    initial={{ y: 100, opacity: 1 }}   // 👈 hidden + slide up
+    animate={inView ? { y: 0, opacity: 1 } : {}}
+    transition={{ duration: 0.7, ease: "easeOut" }}
+  />
             <motion.img
               src={charfoot}
               alt="Halwai Mascot Mobile Overlay"
               className="absolute left-1/2 bottom-0 -translate-x-1/2 w-[66%] z-50 pointer-events-none"
               initial={{ y: 150, opacity: 1 }}
               animate={inView ? { y: 0, opacity: 1 } : {}}
-              transition={{ duration: 0.7, ease: "easeOut" }}
+              transition={{ duration: 0.7, ease: "easeOut", delay: 1 }}
             />
           </div>
         </div>
