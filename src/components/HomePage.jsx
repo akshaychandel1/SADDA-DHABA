@@ -417,7 +417,7 @@ const HomePage = () => {
       </div>
 
       <div className="flex flex-row items-baseline justify-between space-y-2 sm:space-y-4 md:mt-0">
-        <button className="font-lilita text-base sm:text-xl md:text-lg 2xl:text-4xl bg-white text-[#C20000] py-2 px-6 sm:px-10 md:px-6 2xl:px-12 rounded-2xl shadow-xl transition-transform duration-300 ease-in-out transform hover:scale-110">
+        <button className="font-lilita text-base sm:text-xl md:text-lg 2xl:text-4xl bg-white text-[#C20000] py-2 px-6 sm:px-10 md:px-6 2xl:px-12 rounded-2xl shadow-xl transition-transform duration-300 ease-in-out transform hover:scale-110 hover:bg-[#C20000] hover:text-white">
           KNOW MORE
         </button>
         <div>
