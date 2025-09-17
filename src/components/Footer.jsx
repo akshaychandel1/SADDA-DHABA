@@ -36,7 +36,6 @@ const Footer = () => {
     <div className="relative 2xl:mx-2 2xl:rounded-t-[60px] bg-[#C20000] overflow-hidden">
       <footer className="relative z-10 pt-8">
         <div className="container mx-auto max-w-full px-4 sm:px-6 lg:px-8 space-y-6">
-\
           {/* Row 1: Flavors + Logo (Desktop only) */}
           <div className="hidden md:flex flex-row gap-4 lg:gap-6"> {/* increased gap for iPad */}
             {/* Flavors */}
