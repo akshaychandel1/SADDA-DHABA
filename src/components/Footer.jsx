@@ -129,7 +129,7 @@ const Footer = () => {
     src={footdesk}
     alt="Halwai Mascot Desktop"
     className="w-full h-auto absolute bottom-0 left-0 z-0"
-    initial={{ y: is1440 ? 120 : 200, opacity: 1 }}
+    initial={{ y: is1440 ? 120 : 100, opacity: 1 }}
     whileInView={{ y: 0, opacity: 1 }}
     transition={{ duration: 1, ease: "easeOut" }}
     viewport={{ once: true, amount: 0.3 }}

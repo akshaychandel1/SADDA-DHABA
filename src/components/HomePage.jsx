@@ -395,7 +395,7 @@ const HomePage = () => {
 
       <div className="flex items-center justify-center px-2 my-10 sm:my-10 md:my-20 2xl:my-50">
   <motion.div
-    className="w-[95%] md:max-w-[90%] border-5 border-[#C20000] flex flex-col md:flex-row rounded-3xl md:rounded-[3rem] overflow-hidden shadow-md 2xl:h-[700px]"
+    className="w-[95%] md:max-w-[84%] border-5 border-[#C20000] flex flex-col md:flex-row rounded-3xl md:rounded-[3rem] overflow-hidden shadow-md 2xl:h-[700px]"
     initial={{ x: -200, opacity: 1 }}
     whileInView={{ x: 0, opacity: 1 }}
     transition={{ duration: 0.8, ease: "easeOut" }}
