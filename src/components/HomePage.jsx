@@ -393,149 +393,139 @@ const HomePage = () => {
         </motion.div>
       </div>
 
-      <div className="flex items-center justify-center px-2 my-10 sm:my-10 md:my-20 2xl:my-50">
+      <div className="flex items-center justify-center px-4 py-10 sm:py-12 md:py-16 2xl:py-24 3xl:py-28">
   <motion.div
-    className="w-[95%] md:max-w-[84%] border-5 border-[#C20000] flex flex-col md:flex-row rounded-3xl md:rounded-[3rem] overflow-hidden shadow-md 2xl:h-[700px]"
+    className="w-full md:w-[95%] lg:max-w-[84%] border-[5px] border-[#C20000] flex flex-col md:flex-row rounded-3xl md:rounded-[3rem] overflow-hidden shadow-md"
     initial={{ x: -200, opacity: 1 }}
     whileInView={{ x: 0, opacity: 1 }}
     transition={{ duration: 0.8, ease: "easeOut" }}
     viewport={{ once: true, amount: 0.3 }}
   >
     {/* Left Side */}
-    <div className="bg-[#C20000] text-white p-4 sm:p-8 md:p-10 2xl:p-10 md:w-1/2 flex flex-col justify-between">
+    <div className="bg-[#C20000] text-white p-6 sm:p-8 md:p-10 lg:p-12 2xl:p-16 3xl:p-20 flex flex-col justify-between md:w-1/2 h-auto md:h-[700px]">
       <div>
-        <h2 className="text-2xl sm:text-4xl md:text-5xl 2xl:text-8xl font-barber leading-tight md:leading-snug text-center md:text-left">
+        <h2 className="text-3xl sm:text-4xl md:text-7xl 2xl:text-8xl font-barber leading-tight md:leading-wide">
           WEDDING & EVENTS
         </h2>
-        <p className="mt-2 text-sm sm:text-base md:text-sm 2xl:text-[21px] leading-relaxed text-center md:text-left">
-          From grand weddings to lively celebrations, Saada Halwai serves
-          the soul of India with every plate. Think sizzling street-style
-          chaats, rich royal curries, and decadent mithai, all crafted
-          fresh in the UK to keep the flavour authentic and your guests
-          smiling.
+        <p className="mt-4 text-sm sm:text-base md:text-sm lg:text-base 2xl:text-[21px] 3xl:text-xl leading-relaxed text-center md:text-left">
+          From grand weddings to lively celebrations, Saada Halwai serves the soul of
+          India with every plate. Think sizzling street-style chaats, rich royal curries,
+          and decadent mithai, all crafted fresh in the UK to keep the flavour
+          authentic and your guests smiling.
         </p>
       </div>
 
-      <div className="flex flex-row items-baseline justify-between ">
-        <button className="font-lilita text-base sm:text-xl md:text-lg 2xl:text-4xl bg-white text-[#C20000] py-2 px-6 sm:px-10 md:px-6 2xl:px-12 rounded-2xl shadow-xl transition-transform duration-300 ease-in-out transform hover:scale-110 ">
+      <div className="flex items-baseline justify-between mt-6 md:mt-auto">
+        <button className="whitespace-nowrap font-lilita text-sm sm:text-base md:text-lg lg:text-xl 2xl:text-3xl 3xl:text-4xl bg-white text-[#C20000] py-2 px-4 sm:px-6 md:px-6 lg:px-8 2xl:px-12 3xl:px-14 rounded-2xl shadow-xl transition-transform duration-300 ease-in-out transform hover:scale-110">
           KNOW MORE
         </button>
-        <div>
-          <img
-            src={wine}
-            alt="Glasses"
-            className="w-10 sm:w-14 md:w-30 2xl:w-46"
-          />
-        </div>
+        <img
+          src={wine}
+          alt="Glasses"
+          className="w-18 sm:w-38 md:w-36 2xl:w-40"
+        />
       </div>
     </div>
 
     {/* Right Side */}
-    <div className="md:w-1/2 w-full bg-black flex items-center justify-center">
+    <div className="md:w-1/2 w-full h-64 sm:h-80 md:h-[700px] bg-black flex items-center justify-center">
       <img
         src={WeddingsandEvents}
         alt="Wedding & Events"
-        className="object-cover w-full h-full 2xl:h-[700px]"
+        className="object-cover w-full h-full"
       />
     </div>
   </motion.div>
 </div>
 
 
-      <div className="flex items-center my-10 2xl:mb-50 justify-center px-4">
-        <motion.div
-          className="w-[99%] md:max-w-[84%] border-5 border-[#C20000] flex flex-col md:flex-row-reverse rounded-3xl md:rounded-[3rem] overflow-hidden shadow-md 2xl:h-[700px]"
-          initial={{ x: 200, opacity: 1 }} // 👈 slide in from right
-          whileInView={{ x: 0, opacity: 1 }} // 👈 move into place
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          viewport={{ once: true, amount: 0.3 }} // 👈 trigger once when 30% visible
-        >
-          {/* Right Side (Red Content) */}
-          <div className="bg-[#C20000] text-white p-6 sm:p-8 md:p-10 2xl:p-10 md:w-1/2 flex flex-col justify-between">
-            <div className="text-center md:text-right">
-              <h2 className="text-3xl sm:text-4xl md:text-7xl 2xl:text-8xl font-barber leading-tight md:leading-wide">
-                Corporate Events
-              </h2>
-              <p className="mt-2 text-sm sm:text-base md:text-sm 2xl:text-[21px] leading-relaxed">
-                Make your corporate events unforgettable with Saada Halwai. From
-                vibrant chaats to rich curries and indulgent mithai, we serve
-                authentic Indian flavours with a polished touch. Freshly cooked
-                in the UK, our catering keeps guests impressed and conversations
-                flowing.
-              </p>
-            </div>
 
-            {/* Icon + Button */}
-            <div className="flex flex-row md:flex-row items-baseline md:items-baseline justify-between md:mt-0 md:space-y-0">
-              <img
-                src={suit}
-                alt="Suit"
-                className="w-18 sm:w-38 md:w-36 2xl:w-46"
-              />
-              <button className="font-lilita text-lg sm:text-xl md:text-2xl 2xl:text-4xl bg-white text-[#C20000] py-2 px-[15%] sm:px-10 md:px-8 2xl:px-12 rounded-2xl shadow-xl transition-transform duration-300 ease-in-out transform hover:scale-110">
-                KNOW MORE
-              </button>
-            </div>
-          </div>
 
-          {/* Left Side (Black Image) */}
-          <div className="md:w-1/2 w-full bg-black flex items-center justify-center">
-            <img
-              src={CorporateEvents}
-              alt="Corporate Events"
-              className="object-cover w-full h-full"
-            />
-          </div>
-        </motion.div>
+      <div className="flex items-center justify-center px-4 py-10 sm:py-12 md:py-16 2xl:py-24 3xl:py-28">
+  <motion.div
+    className="w-full md:w-[95%] lg:max-w-[84%] border-[5px] border-[#C20000] flex flex-col md:flex-row-reverse rounded-3xl md:rounded-[3rem] overflow-hidden shadow-md"
+    initial={{ x: 200, opacity: 1 }}
+    whileInView={{ x: 0, opacity: 1 }}
+    transition={{ duration: 0.8, ease: "easeOut" }}
+    viewport={{ once: true, amount: 0.3 }}
+  >
+    {/* Right Side (Red Content) */}
+    <div className="bg-[#C20000] text-white p-6 sm:p-8 md:p-10 lg:p-12 2xl:p-16 3xl:p-20 flex flex-col justify-between md:w-1/2 h-auto md:h-[700px]">
+      <div>
+        <h2 className="text-3xl sm:text-4xl md:text-7xl 2xl:text-8xl font-barber leading-tight md:leading-wide text-center md:text-right">
+          Corporate Events
+        </h2>
+        <p className="mt-4 text-sm sm:text-base md:text-sm lg:text-base 2xl:text-[21px] 3xl:text-xl leading-relaxed text-center md:text-right">
+          Make your corporate events unforgettable with Saada Halwai. From vibrant chaats to rich curries and indulgent mithai, we serve authentic Indian flavours with a polished touch. Freshly cooked in the UK, our catering keeps guests impressed and conversations flowing.
+        </p>
       </div>
 
-      <div className="flex items-center my-10 2xl:my-30 justify-center px-4">
-        <motion.div
-          className="w-[99%] md:max-w-[84%] border-5 border-[#C20000] flex flex-col md:flex-row rounded-3xl md:rounded-[3rem] overflow-hidden shadow-md 2xl:h-[700px]"
-          initial={{ x: -200, opacity: 1 }} // 👈 start off-screen left
-          whileInView={{ x: 0, opacity: 1 }} // 👈 slide into place
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          viewport={{ once: true, amount: 0.3 }} // 👈 trigger once when 30% visible
-        >
-          {/* Left Side */}
-          <div className="bg-[#C20000] text-white  sm:p-8 md:p-10 2xl:p-10 md:w-1/2 flex flex-col justify-between">
-            <div className="text-center md:text-left">
-              <h2 className="text-3xl sm:text-4xl md:text-6xl 2xl:text-8xl font-barber  md:leading-wide">
-                Grab & GO
-              </h2>
-              <p className="mt-2 text-sm sm:text-base md:text-sm 2xl:text-[21px] leading-relaxed">
-                Perfect for busy days and hungry moments, Saada Halwai’s Grab &
-                Go brings Indian flavours to your hands in minutes. From spicy
-                chaats to hearty curries and sweet mithai, every bite is fresh,
-                authentic, and ready when you are.
-              </p>
-            </div>
-
-            {/* Button + Icon */}
-            <div className="flex flex-row md:flex-row items-baseline justify-between">
-              <button className="2xl:mt-52 font-lilita text-lg sm:text-xl md:text-2xl 2xl:text-4xl bg-white text-[#C20000] py-2 px-8 sm:px-10 md:px-8 2xl:px-12 rounded-2xl shadow-xl transition-transform duration-300 ease-in-out transform hover:scale-110">
-                KNOW MORE
-              </button>
-              <div>
-                <img
-                  src={bag}
-                  alt="Bag"
-                  className="w-18 sm:w-14 md:w-36 2xl:w-46"
-                />
-              </div>
-            </div>
-          </div>
-
-          {/* Right Side */}
-          <div className="md:w-1/2 w-full bg-black flex items-center justify-center">
-            <img
-              src={GrabandGo}
-              alt="Grab & Go"
-              className="object-cover w-full h-full"
-            />
-          </div>
-        </motion.div>
+      <div className="flex items-baseline justify-between mt-6 md:mt-auto">
+        <img
+          src={suit}
+          alt="Suit"
+          className="w-18 sm:w-38 md:w-36 2xl:w-40"
+        />
+        <button className="whitespace-nowrap font-lilita text-sm sm:text-base md:text-lg lg:text-xl 2xl:text-3xl 3xl:text-4xl bg-white text-[#C20000] py-2 px-4 sm:px-6 md:px-6 lg:px-8 2xl:px-12 3xl:px-14 rounded-2xl shadow-xl transition-transform duration-300 ease-in-out transform hover:scale-110">
+          KNOW MORE
+        </button>
       </div>
+    </div>
+
+    {/* Left Side (Black Image) */}
+    <div className="md:w-1/2 w-full h-64 sm:h-80 md:h-[700px] bg-black flex items-center justify-center">
+      <img
+        src={CorporateEvents}
+        alt="Corporate Events"
+        className="object-cover w-full h-full"
+      />
+    </div>
+  </motion.div>
+</div>
+
+
+      <div className="flex items-center justify-center px-4 py-10 sm:py-12 md:py-16 2xl:py-24 3xl:py-28">
+  <motion.div
+    className="w-full md:w-[95%] lg:max-w-[84%] border-[5px] border-[#C20000] flex flex-col md:flex-row rounded-3xl md:rounded-[3rem] overflow-hidden shadow-md"
+    initial={{ x: -200, opacity: 1 }}
+    whileInView={{ x: 0, opacity: 1 }}
+    transition={{ duration: 0.8, ease: "easeOut" }}
+    viewport={{ once: true, amount: 0.3 }}
+  >
+    {/* Left Side */}
+    <div className="bg-[#C20000] text-white p-6 sm:p-8 md:p-10 lg:p-12 2xl:p-16 3xl:p-20 flex flex-col justify-between md:w-1/2 h-auto md:h-[700px]">
+      <div>
+        <h2 className="text-3xl sm:text-4xl md:text-7xl 2xl:text-8xl font-barber leading-tight md:leading-wide">
+          Grab & GO
+        </h2>
+        <p className="mt-4 text-sm sm:text-base md:text-sm lg:text-base 2xl:text-[21px] 3xl:text-xl leading-relaxed text-center md:text-left">
+          Perfect for busy days and hungry moments, Saada Halwai’s Grab & Go brings Indian flavours to your hands in minutes. From spicy chaats to hearty curries and sweet mithai, every bite is fresh, authentic, and ready when you are.
+        </p>
+      </div>
+
+      <div className="flex items-baseline justify-between mt-6 md:mt-auto">
+        <button className="whitespace-nowrap font-lilita text-sm sm:text-base md:text-lg lg:text-xl 2xl:text-3xl 3xl:text-4xl bg-white text-[#C20000] py-2 px-4 sm:px-6 md:px-6 lg:px-8 2xl:px-12 3xl:px-14 rounded-2xl shadow-xl transition-transform duration-300 ease-in-out transform hover:scale-110">
+          KNOW MORE
+        </button>
+        <img
+          src={bag}
+          alt="Bag"
+          className="w-18 sm:w-38 md:w-36 2xl:w-40"
+        />
+      </div>
+    </div>
+
+    {/* Right Side */}
+    <div className="md:w-1/2 w-full h-64 sm:h-80 md:h-[700px] bg-black flex items-center justify-center">
+      <img
+        src={GrabandGo}
+        alt="Grab & Go"
+        className="object-cover w-full h-full"
+      />
+    </div>
+  </motion.div>
+</div>
+
 
       {/* ribbon */}
 

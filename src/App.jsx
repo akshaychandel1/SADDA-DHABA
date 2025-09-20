@@ -4,6 +4,7 @@ import Lenis from "@studio-freight/lenis"
 import './App.css'
 import ComingSoon from './components/ComingSoon'
 import HomePage from './components/HomePage'
+import OurStory from './components/OurStory';
 
 
 function App() {
@@ -12,8 +13,8 @@ function App() {
     <>
       <Routes>
         <Route path="/" element={<HomePage />} />
-        {/* <Route path="/about" element={<About />} />
-        <Route path="/contact" element={<Contact />} /> */}
+         <Route path="/our-story" element={<OurStory />} />
+        {/* <Route path="/contact" element={<Contact />} /> */}
       </Routes>
       
      </>
