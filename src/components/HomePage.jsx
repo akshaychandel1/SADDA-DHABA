@@ -422,7 +422,7 @@ const HomePage = () => {
         <img
           src={wine}
           alt="Glasses"
-          className="w-18 sm:w-38 md:w-36 2xl:w-40"
+          className="w-[72px] sm:w-[152px] md:w-[144px] 2xl:w-[152px] 3xl:w-[136px]"
         />
       </div>
     </div>
@@ -464,7 +464,7 @@ const HomePage = () => {
         <img
           src={suit}
           alt="Suit"
-          className="w-18 sm:w-38 md:w-36 2xl:w-38"
+          className="w-[72px] sm:w-[152px] md:w-[144px] 2xl:w-[152px] 3xl:w-[136px]"
         />
         <button className="whitespace-nowrap font-lilita text-sm sm:text-base md:text-lg lg:text-xl 2xl:text-3xl 3xl:text-4xl bg-white text-[#C20000] py-2 px-4 sm:px-6 md:px-6 lg:px-8 2xl:px-12 3xl:px-14 rounded-2xl shadow-xl transition-transform duration-300 ease-in-out transform hover:scale-110">
           KNOW MORE
@@ -510,7 +510,7 @@ const HomePage = () => {
         <img
           src={bag}
           alt="Bag"
-          className="w-18 sm:w-38 md:w-36 2xl:w-40"
+          className="w-[72px] sm:w-[152px] md:w-[144px] 2xl:w-[152px] 3xl:w-[136px]"
         />
       </div>
     </div>
