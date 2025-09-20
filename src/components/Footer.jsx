@@ -133,7 +133,7 @@ const Footer = () => {
 
 
           {/* Bottom Bar */}
-          <div className="mt-4 p-2 border border-white rounded-lg flex flex-row justify-between items-center text-[8px] sm:text-[10px] md:text-sm text-white font-medium space-x-2">
+          <div className="mt-4 p-2 border border-white rounded-lg flex flex-row justify-between items-center text-[8px] sm:text-[10px] md:text-sm text-white 2xl:px-8 font-medium space-x-2">
             <a href="#" className="hover:underline">Privacy Policy</a>
             <p className="whitespace-nowrap">&copy; 2025 Saada Halwai. All Rights Reserved.</p>
             <a href="#" className="hover:underline">Terms & Conditions</a>

@@ -9,10 +9,10 @@ const Navbar = () => {
 
   return (
     <nav className="w-full bg-[#C20000] flex justify-center items-center pt-6 md:pt-8">
-      <div className="bg-white w-11/12 max-w-7xl flex justify-between items-center rounded-full px-6 md:px-10 h-3xl py-2 shadow-md relative">
+      <div className="bg-white w-11/12 max-w-7xl flex justify-between items-center rounded-full px-6 md:px-10 h-xl py-4 shadow-md relative">
         {/* Left Links - Hidden on mobile */}
         {/* Left Links - Hidden on mobile */}
-<ul className="hidden md:flex items-center space-x-12 text-base text-black">
+<ul className="hidden md:flex items-center font-bold space-x-12 text-base text-black">
   <li>
     <Link to="/" className="hover:text-red-600">Home</Link>
   </li>
@@ -38,7 +38,7 @@ const Navbar = () => {
         </div>
 
         {/* Right Links + Button */}
-        <div className="hidden md:flex items-center space-x-12">
+        <div className="hidden md:flex font-bold items-center space-x-12">
           <ul className="flex items-center space-x-12 text-base text-black">
             <li>
               <Link className="hover:text-red-600" to="/faqs">FAQs</Link>
@@ -47,7 +47,7 @@ const Navbar = () => {
               <Link className="hover:text-red-600" to="/contact">Contact</Link>
             </li>
           </ul>
-          <button className="bg-[#C20000] text-white text-sm font-bold px-5 py-2 rounded-full shadow hover:bg-red-700 transition">
+          <button className="bg-[#C20000] text-white text-sm font-lilita px-5 py-2 font-light rounded-full shadow hover:bg-red-600 transition">
             MAKE A BOOKING
           </button>
         </div>
@@ -105,7 +105,7 @@ const Navbar = () => {
               </Link>
             </li>
             <li>
-              <button className="bg-[#C20000] text-white text-sm font-bold px-5 py-2 rounded-full shadow hover:bg-red-700 transition">
+              <button className="bg-[#C20000] text-white text-sm font-lilita font-light px-5 py-2 rounded-full shadow hover:bg-red-700 transition">
                 MAKE A BOOKING
               </button>
             </li>

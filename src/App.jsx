@@ -1,11 +1,12 @@
 import { Routes, Route, Link } from 'react-router-dom';
-
+import React, { useEffect } from "react"
+import Lenis from "@studio-freight/lenis"
 import './App.css'
 import ComingSoon from './components/ComingSoon'
 import HomePage from './components/HomePage'
 
+
 function App() {
-  
 
   return (
     <>

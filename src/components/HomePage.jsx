@@ -139,7 +139,7 @@ const HomePage = () => {
     <>
       <Navbar />
 
-      <div className="bg-[#C20000]  text-white  overflow-hidden">
+      <div className="bg-[#C20000]  text-white  overflow-hidden -mb-px">
         <div className="relative container mx-auto px-1 py-12 md:py-20 text-center">
           {/* Header Content */}
           <motion.div className="mx-auto md:mb-60 text-center">
@@ -175,7 +175,7 @@ const HomePage = () => {
 
             {/* Button */}
             <motion.button
-              className="mt-6 mb-26 2xl:mb-48 font-lilita text-lg md:text-2xl 2xl:text-4xl bg-white text-[#C20000] py-2 px-10 md:px-10 rounded-3xl shadow-xl transition-transform duration-300 ease-in-out transform hover:scale-110"
+              className="mt-6 mb-26 2xl:mb-48 font-lilita text-lg md:text-2xl 2xl:text-4xl bg-white text-[#C20000] py-2 px-8 md:px-10 rounded-3xl shadow-xl transition-transform duration-300 ease-in-out transform hover:scale-110"
               initial={{ opacity: 0, y: 20, scale: 0.99 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
               transition={{ duration: 1, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
@@ -186,7 +186,7 @@ const HomePage = () => {
 
           {/* Mascot and Food Display Section */}
           <div className="relative mt-2 md:mt-24 2xl:mt-58">
-            <div className=" absolute -top-23 md:-top-80 2xl:-top-93 left-1/2 -translate-x-1/2 z-20 w-48 md:w-[54%]">
+            <div className=" absolute -top-23 md:-top-80 2xl:-top-100 left-1/2 -translate-x-1/2 z-20 w-48 md:w-[54%]">
               <img
                 src={HalfCharacter}
                 alt="Happy Halwai Mascot"
@@ -196,8 +196,8 @@ const HomePage = () => {
               {/* Speech Bubble */}
               <div className="absolute top-2 md:top-8 2xl:top-14 -right-3 md:-right-3 2xl:-right-8 w-16 md:w-42 2xl:w-62">
                 <div className="relative  ">
-                  <img src={textthink} alt="" />
-                  <div className="absolute left-0 -bottom-2  transform rotate-45 -translate-x-2"></div>
+                  <img src={textthink} alt=""  className="bell-shiver"/>
+                  <div className="absolute left-0 -bottom-2  transform rotate-45 -translate-x-2 "></div>
                 </div>
               </div>
             </div>
@@ -327,7 +327,7 @@ const HomePage = () => {
 
       <section className="bg-white sm:py-6 2xl:py-16 mb-16 px-6">
         <motion.h2
-          className="text-center font-barber tracking-wide text-4xl md:text-6xl 2xl:text-7xl text-[#C20000] mb-10"
+          className="text-center font-barber tracking-wide text-4xl md:text-6xl 2xl:text-8xl text-[#C20000] mb-10"
           initial={{ y: -100, opacity: 0 }} // 👈 start above
           whileInView={{ y: 0, opacity: 1 }} // 👈 slide down into place
           transition={{ duration: 0.8, ease: "easeOut" }}
@@ -335,18 +335,18 @@ const HomePage = () => {
         >
           WHAT MAKES SAADA HALWAI BETTER?
         </motion.h2>
-        <div className="grid md:grid-cols-3 gap-12 text-center max-w-5xl mx-auto">
+        <div className="grid md:grid-cols-3 gap-14 text-center max-w-7xl mx-auto">
           <motion.div
             initial={{ x: -150, opacity: 0 }} // 👈 start left
             whileInView={{ x: 0, opacity: 1 }} // 👈 slide into place
             transition={{ duration: 0.8, ease: "easeOut" }}
             viewport={{ once: true, amount: 0.3 }} // 👈 animate once when in view
           >
-            <img src={chopping} alt="Halwai" className="mx-auto w-26 h-26" />
-            <h3 className="mt-4 text-xl 2xl:text-2xl font-barber tracking-wide text-[#C20000]">
+            <img src={chopping} alt="Halwai" className="mx-auto w-40 h-40" />
+            <h3 className="mt-4 text-xl 2xl:text-3xl font-barber tracking-wide text-[#C20000]">
               HALWAI AT HEARTS
             </h3>
-            <p className="mt-2 text-[#C20000] text-sm md:text-xl">
+            <p className="mt-2 text-[#C20000] text-sm md:text-xl 2xl:text-2xl">
               We’re not just another caterer, we’re halwai by tradition, serving
               Britain with authentic desi soul.
             </p>
@@ -358,11 +358,11 @@ const HomePage = () => {
             transition={{ duration: 0.8, ease: "easeOut" }}
             viewport={{ once: true, amount: 0.3 }} // 👈 animate once when visible
           >
-            <img src={cover} alt="Dish" className="mx-auto w-26 h-26" />
+            <img src={cover} alt="Dish" className="mx-auto w-40 h-40" />
             <h3 className="mt-4 text-xl 2xl:text-2xl font-barber tracking-wide text-[#C20000]">
               PANI PURI TO POSH
             </h3>
-            <p className="mt-2 text-[#C20000] text-sm md:text-xl">
+            <p className="mt-2 text-[#C20000] text-sm md:text-xl 2xl:text-2xl">
               Street-style chaats, royal curries, and mithai magic all styled to
               impress UK weddings, events, and celebrations.
             </p>
@@ -374,11 +374,11 @@ const HomePage = () => {
             transition={{ duration: 0.8, ease: "easeOut" }}
             viewport={{ once: true, amount: 0.3 }} // 👈 animate once when visible
           >
-            <img src={pan} alt="Stove" className="mx-auto w-26 h-26" />
+            <img src={pan} alt="Stove" className="mx-auto w-40 h-40" />
             <h3 className="mt-4 text-xl 2xl:text-2xl font-barber tracking-wide text-[#C20000]">
               HOT OFF THE STOVE
             </h3>
-            <p className="mt-2 text-[#C20000] text-sm md:text-xl">
+            <p className="mt-2 text-[#C20000] text-sm md:text-xl 2xl:text-2xl">
               Cooked fresh right here in the UK, so every bite carries the
               warmth of India without losing a minute of flavour.
             </p>
@@ -416,7 +416,7 @@ const HomePage = () => {
         </p>
       </div>
 
-      <div className="flex flex-row items-baseline justify-between space-y-2 sm:space-y-4 md:mt-0">
+      <div className="flex flex-row items-baseline justify-between ">
         <button className="font-lilita text-base sm:text-xl md:text-lg 2xl:text-4xl bg-white text-[#C20000] py-2 px-6 sm:px-10 md:px-6 2xl:px-12 rounded-2xl shadow-xl transition-transform duration-300 ease-in-out transform hover:scale-110 ">
           KNOW MORE
         </button>
@@ -498,9 +498,9 @@ const HomePage = () => {
           viewport={{ once: true, amount: 0.3 }} // 👈 trigger once when 30% visible
         >
           {/* Left Side */}
-          <div className="bg-[#C20000] text-white p-6 sm:p-8 md:p-10 2xl:p-10 md:w-1/2 flex flex-col justify-between">
+          <div className="bg-[#C20000] text-white  sm:p-8 md:p-10 2xl:p-10 md:w-1/2 flex flex-col justify-between">
             <div className="text-center md:text-left">
-              <h2 className="text-3xl sm:text-4xl md:text-6xl 2xl:text-8xl font-barber leading-tight md:leading-wide">
+              <h2 className="text-3xl sm:text-4xl md:text-6xl 2xl:text-8xl font-barber  md:leading-wide">
                 Grab & GO
               </h2>
               <p className="mt-2 text-sm sm:text-base md:text-sm 2xl:text-[21px] leading-relaxed">
@@ -512,7 +512,7 @@ const HomePage = () => {
             </div>
 
             {/* Button + Icon */}
-            <div className="flex flex-row md:flex-row items-baseline justify-between md:mt-0 md:space-y-0">
+            <div className="flex flex-row md:flex-row items-baseline justify-between">
               <button className="2xl:mt-52 font-lilita text-lg sm:text-xl md:text-2xl 2xl:text-4xl bg-white text-[#C20000] py-2 px-8 sm:px-10 md:px-8 2xl:px-12 rounded-2xl shadow-xl transition-transform duration-300 ease-in-out transform hover:scale-110">
                 KNOW MORE
               </button>
@@ -540,10 +540,10 @@ const HomePage = () => {
       {/* ribbon */}
 
       {/* ribbon */}
-      <div className="relative  w-full h-[140px] overflow-visible bg-[#C20000]">
+      <div className="relative  w-full h-[140px] overflow-visible bg-[#C20000] -mb-px">
         {/* Ribbon 1 - tilt left */}
         <div
-          className="absolute  left-1/2 mt-[-59px] top-1/2 w-[360%] h-6 2xl:h-16 -translate-x-1/2 -translate-y-1/2 bg-repeat-x"
+          className="absolute  left-1/2 mt-[-59px] top-1/2 w-[360%] h-6 2xl:h-18 -translate-x-1/2 -translate-y-1/2 bg-repeat-x"
           style={{
             backgroundImage: `url(${ribbon})`,
             backgroundSize: "auto 100%",
@@ -556,7 +556,7 @@ const HomePage = () => {
 
         {/* Ribbon 2 - tilt right */}
         <div
-          className="absolute  mt-[-40px] left-1/2 top-1/2 w-[360%] h-6 2xl:h-16 -translate-x-1/2 -translate-y-1/2 bg-repeat-x"
+          className="absolute  mt-[-40px] left-1/2 top-1/2 w-[360%] h-6 2xl:h-18 -translate-x-1/2 -translate-y-1/2 bg-repeat-x"
           style={{
             backgroundImage: `url(${ribbon})`,
             backgroundSize: "auto 100%",
@@ -568,10 +568,10 @@ const HomePage = () => {
         />
       </div>
 
-      <section className="bg-[#C20000] mb-10 py-8 md:py-12 flex items-center justify-center">
+      <section className="bg-[#C20000]  py-8 md:pt-12 md:pb-22 flex items-center justify-center">
         <div className="relative max-w-4xl w-full flex justify-center">
           {/* Cap image */}
-          <img src={Cap} alt="cap shape" className="w-full max-w-4xl h-auto" />
+          <img src={Cap} alt="cap shape" className="w-full max-w-4xl h-auto animate-slow-spin"  style={{ animation: "spin 40s linear infinite" }} />
 
           {/* Content inside cap */}
           <div className="absolute inset-6 md:inset-20 flex flex-col justify-between items-center px-3 sm:px-6 md:px-10 py-6 md:py-8 text-center">
@@ -601,8 +601,6 @@ const HomePage = () => {
                 </p>
               </motion.div>
             </AnimatePresence>
-
-            {/* Stars + Author + Location at bottom */}
             {/* Stars + Author + Location at bottom */}
             <AnimatePresence mode="wait">
               <motion.div
@@ -642,14 +640,14 @@ const HomePage = () => {
         viewport={{ once: true, amount: 0.3 }} // 👈 trigger once when 30% visible
       >
         {/* Left Side */}
-        <div className="flex-1 px-6 py-10 text-center md:text-left md:pl-20">
+        <div className="flex-1 py-10 text-center md:text-left md:ml-12">
           <p className="text-xl md:text-5xl my-7">LET’S CHAT</p>
           <h2 className="text-3xl sm:text-4xl md:text-6xl 2xl:text-8xl font-barber ">
             TELL US YOUR PLANS, <br />
             WE’LL BRING THE PANS
           </h2>
 
-          <button className="mt-8 2xl:mt-56 md:mt-24 ml-0 md:ml-12 2xl:ml-8 font-lilita text-lg md:text-2xl 2xl:text-4xl bg-white text-[#C20000] py-2 px-8 md:px-12 2xl:px-20 rounded-2xl 2xl:rounded-[1rem] shadow-xl transition-transform duration-300 ease-in-out transform hover:scale-110">
+          <button className="mt-8 2xl:mt-56 md:mt-20 font-lilita text-lg md:text-2xl 2xl:text-4xl bg-white text-[#C20000] py-2 px-8 md:px-12 2xl:px-20 rounded-2xl 2xl:rounded-[1rem] shadow-xl transition-transform duration-300 ease-in-out transform hover:scale-110">
             CALL US
           </button>
         </div>
