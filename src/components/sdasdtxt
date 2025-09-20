@@ -175,11 +175,10 @@ const HomePage = () => {
 
             {/* Button */}
             <motion.button
-              className="mt-6 mb-26 2xl:mb-48 bottom-6 sm:bottom-8 md:bottom-12 left-4 sm:left-6 md:left-12 whitespace-nowrap font-barber text-sm sm:text-base md:text-lg lg:text-xl 2xl:text-3xl 3xl:text-4xl bg-white text-[#C20000] px-4 sm:px-6 md:px-10 pt-2 sm:pt-3 md:pt-4 pb-1 sm:pb-2 md:pb-3 rounded-2xl shadow-xl leading-[1.2] transition-transform duration-300 ease-in-out transform hover:scale-110"
-              initial={{ opacity: 0, y: 30, scale: 0.95 }}
-              whileInView={{ opacity: 1, y: 0, scale: 1 }}
-              transition={{ duration: 0.8, ease: "easeOut" }}
-              viewport={{ once: true }}
+              className="mt-6 mb-26 2xl:mb-48 font-lilita text-lg md:text-2xl 2xl:text-4xl bg-white text-[#C20000] py-2 px-8 md:px-10 rounded-3xl shadow-xl transition-transform duration-300 ease-in-out transform hover:scale-110"
+              initial={{ opacity: 0, y: 20, scale: 0.99 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              transition={{ duration: 1, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
             >
               EXPLORE MENU
             </motion.button>
@@ -197,7 +196,7 @@ const HomePage = () => {
               {/* Speech Bubble */}
               <div className="absolute top-2 md:top-8 2xl:top-14 -right-3 md:-right-3 2xl:-right-8 w-16 md:w-42 2xl:w-62">
                 <div className="relative  ">
-                  <img src={textthink} alt=""  className="bell-shiver"/>
+                  <img src={textthink} alt="" className="bell-shiver" />
                   <div className="absolute left-0 -bottom-2  transform rotate-45 -translate-x-2 "></div>
                 </div>
               </div>
@@ -238,64 +237,57 @@ const HomePage = () => {
 
           {/* Turnip */}
           <motion.div
-  style={{ y: yTurnip, rotate: rTurnip, scale: sTurnip }}
-  className="absolute 
+            style={{ y: yTurnip, rotate: rTurnip, scale: sTurnip }}
+            className="absolute 
              top-1 sm:-top-8 md:-top-3 
              left-[21%] sm:left-[25%] md:left-[22%] 2xl:left-[23%] 
              -translate-x-1/2 
              w-8 h-8 sm:w-12 sm:h-12 md:w-16 md:h-16 lg:w-24 lg:h-24"
-  whileInView={{ scale: 1.1, rotate: 2 }}
->
-  <img src={tumip} alt="Turnip" className="w-full h-full" />
-</motion.div>
+            whileInView={{ scale: 1.1, rotate: 2 }}
+          >
+            <img src={tumip} alt="Turnip" className="w-full h-full" />
+          </motion.div>
 
-{/* Eggplant */}
-<motion.div
-  style={{ y: yBrinjal, rotate: rBrinjal, scale: sBrinjal }}
-  className="absolute 
+          {/* Eggplant */}
+          <motion.div
+            style={{ y: yBrinjal, rotate: rBrinjal, scale: sBrinjal }}
+            className="absolute 
              bottom-1 sm:bottom-10 md:bottom-12
              left-4 sm:left-12 md:left-12 
              -translate-x-full 
              w-8 h-8 sm:w-12 sm:h-12 md:w-16 md:h-16 lg:w-18 lg:h-18"
-  whileHover={{ scale: 1.1, rotate: 50 }}
->
-  <img src={brinjal} alt="Eggplant" className="w-full h-full" />
-</motion.div>
+            whileHover={{ scale: 1.1, rotate: 50 }}
+          >
+            <img src={brinjal} alt="Eggplant" className="w-full h-full" />
+          </motion.div>
 
-{/* Peas */}
-<motion.div
-  style={{ y: yPeas, rotate: rPeas, scale: sPeas }}
-  className="absolute 
+          {/* Peas */}
+          <motion.div
+            style={{ y: yPeas, rotate: rPeas, scale: sPeas }}
+            className="absolute 
              bottom-4 sm:bottom-20 md:bottom-14 
              right-20 sm:right-20 md:right-50 lg:right-80 
              translate-x-full 
              w-8 h-8 sm:w-12 sm:h-12 md:w-16 md:h-16 lg:w-20 lg:h-20"
-  whileHover={{ scale: 1.2, rotate: 20 }}
->
-  <img src={peas} alt="Peas" className="w-full h-full" />
-</motion.div>
+            whileHover={{ scale: 1.2, rotate: 20 }}
+          >
+            <img src={peas} alt="Peas" className="w-full h-full" />
+          </motion.div>
 
-{/* Carrot */}
-<motion.div
-  style={{ y: yCarrot, rotate: rCarrot, scale: sCarrot }}
-  className="absolute 
+          {/* Carrot */}
+          <motion.div
+            style={{ y: yCarrot, rotate: rCarrot, scale: sCarrot }}
+            className="absolute 
              right-4 sm:right-8 md:right-12 lg:right-16 
              top-6 sm:top-12 md:top-16 
              translate-x-full -translate-y-1/2 
              w-8 h-8 sm:w-12 sm:h-12 md:w-16 md:h-16 lg:w-24 lg:h-24"
-  whileHover={{ scale: 1.2, rotate: 2 }}
->
-  <img src={carrot} alt="Carrot" className="w-full h-full" />
-</motion.div>
+            whileHover={{ scale: 1.2, rotate: 2 }}
+          >
+            <img src={carrot} alt="Carrot" className="w-full h-full" />
+          </motion.div>
         </div>
       </div>
-
-      
-
-
-
-
-
 
       {/* ribbon */}
       <div className="relative w-full h-[140px] overflow-visible bg-white">
@@ -402,131 +394,18 @@ const HomePage = () => {
           transition={{ duration: 0.8, ease: "easeOut" }}
           viewport={{ once: true, amount: 0.3 }}
         >
-          {/* Left Side */}
-          <div className="bg-[#C20000] text-white p-6 sm:p-8 md:p-10 lg:p-12 2xl:p-14 flex flex-col justify-between md:w-1/2 h-auto md:h-[700px]">
+          {/* Left Side (Text + Button + Bag) */}
+          <div className="bg-[#C20000] text-white p-6 sm:p-8 md:p-10 lg:p-12 2xl:p-12 flex flex-col justify-start md:w-1/2 h-auto md:h-[700px] relative">
             <div>
-              <h2 className="text-3xl sm:text-4xl md:text-7xl 2xl:text-8xl font-barber leading-[1.2] md:leading-wide  text-center md:text-left">
+              <h2 className="text-3xl sm:text-4xl md:text-7xl 2xl:text-8xl font-barber leading-[1.2] md:leading-wide text-center md:text-left">
                 WEDDING & EVENTS
               </h2>
-              <p className="mt-2 text-sm sm:text-base md:text-sm lg:text-base 2xl:text-[21px] leading-relaxed text-center md:text-left">
+              <p className="mt-3 text-sm sm:text-base md:text-sm lg:text-base 2xl:text-[21px] leading-relaxed text-center md:text-left mb-32 sm:48">
                 From grand weddings to lively celebrations, Saada Halwai serves
                 the soul of India with every plate. Think sizzling street-style
                 chaats, rich royal curries, and decadent mithai, all crafted
                 fresh in the UK to keep the flavour authentic and your guests
                 smiling.
-              </p>
-            </div>
-
-            {/* Button + Image with Reveal Animation */}
-            <motion.div
-              className="flex items-baseline justify-between mt-6 md:mt-auto"
-              initial={{ opacity: 0, y: 30, scale: 0.95 }}
-              whileInView={{ opacity: 1, y: 0, scale: 1 }}
-              transition={{ duration: 0.8, ease: "easeOut" }}
-              viewport={{ once: true }}
-            >
-              <button className="whitespace-nowrap font-barber text-sm sm:text-base md:text-lg lg:text-xl 2xl:text-3xl bg-white text-[#C20000] px-4 sm:px-6 md:px-10 pt-2 sm:pt-3 md:pt-4 pb-1 sm:pb-2 md:pb-3 rounded-2xl shadow-xl leading-[1.2] transition-transform duration-300 ease-in-out transform hover:scale-110">
-                KNOW MORE
-              </button>
-
-              <img
-                src={wine}
-                alt="Glasses"
-                className="w-[72px] sm:w-[120px] md:w-[144px] 2xl:w-[152px]"
-              />
-            </motion.div>
-          </div>
-
-          {/* Right Side */}
-          <div className="md:w-1/2 w-full h-64 sm:h-80 md:h-[700px] bg-black flex items-center justify-center">
-            <img
-              src={WeddingsandEvents}
-              alt="Wedding & Events"
-              className="object-cover w-full h-full"
-            />
-          </div>
-        </motion.div>
-      </div>
-
-
-
-              <div className="flex items-center justify-center px-4 sm:px-6 lg:px-8 py-8 sm:py-10 md:py-12 2xl:py-16">
-        <motion.div
-          className="w-full md:w-[95%] lg:max-w-[84%] border-[5px] border-[#C20000] flex flex-col md:flex-row-reverse rounded-3xl md:rounded-[3rem] overflow-hidden shadow-md"
-          initial={{ x: 200, opacity: 1 }}
-          whileInView={{ x: 0, opacity: 1 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          viewport={{ once: true, amount: 0.3 }}
-        >
-          {/* Left Side (Text + Button) */}
-          <div className="bg-[#C20000] text-white p-6 sm:p-8 md:p-10 lg:p-12 2xl:p-12 flex flex-col justify-between md:w-1/2 h-auto md:h-[700px]">
-            <div>
-              <h2 className="text-3xl sm:text-4xl md:text-7xl 2xl:text-8xl font-barber leading-[1.2] md:leading-wide text-center md:text-right">
-                Corporate Events
-              </h2>
-              <p className="mt-3 text-sm sm:text-base md:text-sm lg:text-base 2xl:text-[21px] leading-relaxed text-center md:text-right">
-                Make your corporate events unforgettable with Saada Halwai. From
-                vibrant chaats to rich curries and indulgent mithai, we serve
-                authentic Indian flavours with a polished touch. Freshly cooked
-                in the UK, our catering keeps guests impressed and conversations
-                flowing.
-              </p>
-            </div>
-
-            {/* Button + Suit Image */}
-            <motion.div
-              className="flex items-baseline justify-between mt-6 md:mt-auto"
-              initial={{ opacity: 0, y: 30, scale: 0.95 }}
-              whileInView={{ opacity: 1, y: 0, scale: 1 }}
-              transition={{ duration: 0.8, ease: "easeOut" }}
-              viewport={{ once: true }}
-            >
-              <img
-                src={suit}
-                alt="Suit"
-                className="w-[72px] sm:w-[152px] md:w-[144px] 2xl:w-[152px] 3xl:w-[136px]"
-              />
-              <button className="whitespace-nowrap font-barber text-sm sm:text-base md:text-lg lg:text-xl 2xl:text-3xl 3xl:text-4xl bg-white text-[#C20000] px-4 sm:px-6 md:px-10 pt-2 sm:pt-3 md:pt-4 pb-1 sm:pb-2 md:pb-3 rounded-2xl shadow-xl leading-[1.2] transition-transform duration-300 ease-in-out transform hover:scale-110">
-                KNOW MORE
-              </button>
-            </motion.div>
-          </div>
-
-          {/* Right Side (Image) */}
-          <div className="md:w-1/2 w-full h-64 sm:h-80 md:h-[700px] bg-black flex items-center justify-center">
-            <img
-              src={CorporateEvents}
-              alt="Corporate Events"
-              className="object-cover w-full h-full"
-            />
-          </div>
-        </motion.div>
-      </div>
-
-
-
-      
-
-
-     <div className="flex items-center justify-center px-4 sm:px-6 lg:px-8 py-8 sm:py-10 md:py-12 2xl:py-16">
-        <motion.div
-          className="w-full md:w-[95%] lg:max-w-[84%] border-[5px] border-[#C20000] flex flex-col md:flex-row rounded-3xl md:rounded-[3rem] overflow-hidden shadow-md"
-          initial={{ x: -200, opacity: 1 }}
-          whileInView={{ x: 0, opacity: 1 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          viewport={{ once: true, amount: 0.3 }}
-        >
-          {/* Left Side (Text + Button + Bag) */}
-          <div className="bg-[#C20000] text-white p-6 sm:p-8 md:p-10 lg:p-12 2xl:p-12 flex flex-col justify-start md:w-1/2 h-auto md:h-[700px] relative">
-            <div>
-              <h2 className="text-3xl sm:text-4xl md:text-7xl 2xl:text-8xl font-barber leading-[1.2] md:leading-wide text-center md:text-left">
-                Grab & GO
-              </h2>
-              <p className="mt-3 text-sm sm:text-base md:text-sm lg:text-base 2xl:text-[21px] leading-relaxed text-center md:text-left mb-32 sm:48">
-                Perfect for busy days and hungry moments, Saada Halwai’s Grab &
-                Go brings Indian flavours to your hands in minutes. From spicy
-                chaats to hearty curries and sweet mithai, every bite is fresh,
-                authentic, and ready when you are.
               </p>
             </div>
 
@@ -543,8 +422,8 @@ const HomePage = () => {
 
             {/* Bag image fixed bottom-right */}
             <motion.img
-              src={bag}
-              alt="Bag"
+              src={wine}
+              alt="Glasses"
               className="absolute bottom-6 sm:bottom-8 md:bottom-12 right-4 sm:right-6 md:right-12 w-[72px] sm:w-[152px] md:w-[144px] 2xl:w-[152px] 3xl:w-[136px]"
               initial={{ opacity: 0, y: 30, scale: 0.95 }}
               whileInView={{ opacity: 1, y: 0, scale: 1 }}
@@ -556,14 +435,72 @@ const HomePage = () => {
           {/* Right Side (Main Image) */}
           <div className="md:w-1/2 w-full h-64 sm:h-80 md:h-[700px] bg-black flex items-center justify-center">
             <img
-              src={GrabandGo}
-              alt="Grab & Go"
+              src={WeddingsandEvents}
+              alt="Wedding & Events"
               className="object-cover w-full h-full"
             />
           </div>
         </motion.div>
       </div>
 
+      <div className="flex items-center justify-center px-4 sm:px-6 lg:px-8 py-8 sm:py-10 md:py-12 2xl:py-16">
+        <motion.div
+          className="w-full md:w-[95%] lg:max-w-[84%] border-[5px] border-[#C20000] flex flex-col md:flex-row-reverse rounded-3xl md:rounded-[3rem] overflow-hidden shadow-md"
+          initial={{ x: 200, opacity: 1 }}
+          whileInView={{ x: 0, opacity: 1 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          viewport={{ once: true, amount: 0.3 }}
+        >
+          {/* Right Side (Text + Button + Suit) */}
+          <div className="bg-[#C20000] text-white p-6 sm:p-8 md:p-10 lg:p-12 2xl:p-12 flex flex-col justify-start md:w-1/2 h-auto md:h-[700px] relative">
+            <div>
+              <h2 className="text-3xl sm:text-4xl md:text-7xl 2xl:text-8xl font-barber leading-[1.2] md:leading-wide text-center md:text-right">
+                Corporate Events
+              </h2>
+              <p className="mt-3 text-sm sm:text-base md:text-sm lg:text-base 2xl:text-[21px] leading-relaxed text-center md:text-right mb-32 sm:48">
+                Make your corporate events unforgettable with Saada Halwai. From
+                vibrant chaats to rich curries and indulgent mithai, we serve
+                authentic Indian flavours with a polished touch. Freshly cooked
+                in the UK, our catering keeps guests impressed and conversations
+                flowing.
+              </p>
+            </div>
+
+            {/* Button fixed bottom-left of text section */}
+            <motion.button
+              className="absolute bottom-6 sm:bottom-8 md:bottom-12 right-4 sm:right-6 md:right-12 whitespace-nowrap font-barber text-sm sm:text-base md:text-lg lg:text-xl 2xl:text-3xl 3xl:text-4xl bg-white text-[#C20000] px-4 sm:px-6 md:px-10 pt-2 sm:pt-3 md:pt-4 pb-1 sm:pb-2 md:pb-3 rounded-2xl shadow-xl leading-[1.2] transition-transform duration-300 ease-in-out transform hover:scale-110"
+              initial={{ opacity: 0, y: 30, scale: 0.95 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+              viewport={{ once: true }}
+            >
+              KNOW MORE
+            </motion.button>
+
+            {/* Suit image fixed bottom-right of text section */}
+            <motion.img
+              src={suit}
+              alt="Suit"
+              className="absolute bottom-6 sm:bottom-8 md:bottom-12 left-4 sm:left-6 md:left-12 w-[72px] sm:w-[152px] md:w-[144px] 2xl:w-[152px] 3xl:w-[136px]"
+              initial={{ opacity: 0, y: 30, scale: 0.95 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+              viewport={{ once: true }}
+            />
+          </div>
+
+          {/* Left Side (Main Image) */}
+          <div className="md:w-1/2 w-full h-64 sm:h-80 md:h-[700px] bg-black flex items-center justify-center">
+            <img
+              src={CorporateEvents}
+              alt="Corporate Events"
+              className="object-cover w-full h-full"
+            />
+          </div>
+        </motion.div>
+      </div>
+
+      
 
       {/* ribbon */}
 
@@ -596,113 +533,8 @@ const HomePage = () => {
         />
       </div>
 
-      <section className="bg-[#C20000]  py-8 md:pt-12 md:pb-36 flex items-center justify-center">
-        <div className="relative max-w-4xl w-full flex justify-center">
-          {/* Cap image */}
-          <img
-            src={Cap}
-            alt="cap shape"
-            className="w-full max-w-4xl h-auto animate-slow-spin"
-            style={{ animation: "spin 40s linear infinite" }}
-          />
+      
 
-          {/* Content inside cap */}
-          <div className="absolute inset-6 md:inset-20 flex flex-col justify-between items-center px-3 sm:px-6 md:px-10 py-6 md:py-8 text-center">
-            {/* Heading at top */}
-            <h2 className="text-2xl sm:text-3xl md:text-7xl 2xl:text-8xl leading-tight font-barber text-[#C20000]">
-              CURRY <br className="hidden sm:block" /> CONFESSIONS
-            </h2>
-
-            {/* Testimonial text in center */}
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, x: 100 }}
-                animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: -100 }}
-                transition={{ duration: 0.6 }}
-                className="flex-1 flex items-center justify-center"
-              >
-                <p
-                  className="text-black 
-             text-[10px] sm:text-xs md:text-base lg:text-lg 
-             leading-snug sm:leading-relaxed 
-             max-w-[85%] sm:max-w-md md:max-w-2xl 
-             px-2 break-words text-center"
-                >
-                  {testimonials[index].text}
-                </p>
-              </motion.div>
-            </AnimatePresence>
-            {/* Stars + Author + Location at bottom */}
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, x: 100 }}
-                animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: -100 }}
-                transition={{ duration: 0.6 }}
-                className="mt-4 md:mt-6"
-              >
-                <div className="flex justify-center  text-[#C20000] text-xs sm:text-base">
-                  {Array(testimonials[index].rating)
-                    .fill(0)
-                    .map((_, i) => (
-                      <FaStar key={i} className="mx-0.5" />
-                    ))}
-                </div>
-                <div className="flex flex-col items-center">
-                  <span className="text-[#C20000] 2xl:m-2 font-barber text-sm sm:text-lg md:text-3xl  uppercase">
-                    {testimonials[index].author}
-                  </span>
-                  <span className="text-black text-xs sm:text-base md:text-lg">
-                    {testimonials[index].location}
-                  </span>
-                </div>
-              </motion.div>
-            </AnimatePresence>
-          </div>
-        </div>
-      </section>
-
-      <motion.section
-        className="w-[95%] md:max-w-[80%] bg-[#C20000] text-white rounded-[3rem] flex flex-col md:flex-row items-stretch justify-between mx-auto overflow-hidden my-16 md:my-32"
-        initial={{ y: 150, opacity: 1 }}
-        whileInView={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
-        viewport={{ once: true, amount: 0.3 }}
-      >
-        {/* Left Side (Text + Button) */}
-        <div className="flex-1 py-10 text-center md:text-left md:ml-12 relative">
-          <div>
-            <p className="text-xl md:text-5xl md:mb-6 mb-6">LET’S CHAT</p>
-            <h2 className="text-3xl sm:text-4xl md:text-6xl 2xl:text-8xl font-barber md:leading-[1.2] text-center md:text-left mb-6">
-              TELL US YOUR PLANS, <br />
-              WE’LL BRING THE PANS
-            </h2>
-          </div>
-
-          {/* Button fixed bottom-left on desktop, centered on mobile */}
-          <motion.button
-            className="absolute md:bottom-12 md:left-22 left-1/2 transform -translate-x-1/2 md:transform-none whitespace-nowrap font-barber text-sm sm:text-base md:text-lg lg:text-xl 2xl:text-3xl 3xl:text-4xl bg-white text-[#C20000] px-4 sm:px-6 md:px-10 pt-2 sm:pt-3 md:pt-4 pb-1 sm:pb-2 md:pb-3 rounded-2xl shadow-xl leading-[1.2] transition-transform duration-300 ease-in-out transform hover:scale-110"
-            initial={{ opacity: 0, y: 30, scale: 0.95 }}
-            whileInView={{ opacity: 1, y: 0, scale: 1 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            viewport={{ once: true }}
-          >
-            CALL US
-          </motion.button>
-        </div>
-
-        {/* Right Side Image */}
-        <div className="md:w-1/3 w-3/4 md:h-[640px] h-[320px] pr-4 sm:pr-6 md:pr-12 flex justify-center md:justify-center items-center md:items-end mt-4">
-          <img
-            src={Call}
-            alt="Chef Illustration"
-            className="w-full h-auto object-contain"
-          />
-        </div>
-      </motion.section>
       <Footer />
     </>
   );
