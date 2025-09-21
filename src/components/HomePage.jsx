@@ -187,7 +187,7 @@ const HomePage = () => {
 
           {/* Mascot and Food Display Section */}
           <div className="relative mt-2 md:mt-24 2xl:mt-58">
-            <div className=" absolute -top-23 md:-top-80 2xl:-top-100 left-1/2 -translate-x-1/2 z-20 w-48 md:w-[54%]">
+            <div className=" absolute -top-23 md:-top-80 2xl:-top-95 left-1/2 -translate-x-1/2 z-20 w-48 md:w-[54%]">
               <img
                 src={HalfCharacter}
                 alt="Happy Halwai Mascot"
@@ -240,8 +240,8 @@ const HomePage = () => {
           <motion.div
   style={{ y: yTurnip, rotate: rTurnip, scale: sTurnip }}
   className="absolute 
-             top-1 sm:-top-8 md:-top-3 
-             left-[21%] sm:left-[25%] md:left-[22%] 2xl:left-[23%] 
+             top-1 sm:-top-8 md:-top-3 2xl:-top-8
+             left-[21%] sm:left-[25%] md:left-[22%] 2xl:left-[22%] 
              -translate-x-1/2 
              w-8 h-8 sm:w-12 sm:h-12 md:w-16 md:h-16 lg:w-24 lg:h-24"
   whileInView={{ scale: 1.1, rotate: 2 }}
@@ -360,7 +360,7 @@ const HomePage = () => {
             viewport={{ once: true, amount: 0.3 }} // 👈 animate once when visible
           >
             <img src={cover} alt="Dish" className="mx-auto w-40 h-40" />
-            <h3 className="mt-4 text-xl 2xl:text-2xl font-barber tracking-wide text-[#C20000]">
+            <h3 className="mt-4 text-xl font-barber tracking-wide 2xl:text-3xl text-[#C20000]">
               PANI PURI TO POSH
             </h3>
             <p className="mt-2 text-[#C20000] text-sm md:text-xl 2xl:text-2xl">
@@ -376,7 +376,7 @@ const HomePage = () => {
             viewport={{ once: true, amount: 0.3 }} // 👈 animate once when visible
           >
             <img src={pan} alt="Stove" className="mx-auto w-40 h-40" />
-            <h3 className="mt-4 text-xl 2xl:text-2xl font-barber tracking-wide text-[#C20000]">
+            <h3 className="mt-4 text-xl 2xl:text-3xl font-barber tracking-wide text-[#C20000]">
               HOT OFF THE STOVE
             </h3>
             <p className="mt-2 text-[#C20000] text-sm md:text-xl 2xl:text-2xl">
@@ -502,12 +502,7 @@ const HomePage = () => {
           </div>
         </motion.div>
       </div>
-
-
-
       
-
-
      <div className="flex items-center justify-center px-4 sm:px-6 lg:px-8 py-8 sm:py-10 md:py-12 2xl:py-16 2xl:mb-22">
         <motion.div
           className="w-full md:w-[95%] lg:max-w-[84%] border-[5px] border-[#C20000] flex flex-col md:flex-row rounded-3xl md:rounded-[3rem] overflow-hidden shadow-md"
