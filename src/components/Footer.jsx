@@ -1,5 +1,6 @@
 import { FaFacebookF, FaInstagram, FaTwitter, FaTiktok } from "react-icons/fa";
 import React from "react";
+import { Link } from "react-router-dom";
 import { useEffect, useState } from "react"
 import { useInView } from "react-intersection-observer";
 import { motion } from "framer-motion";
@@ -100,13 +101,13 @@ const Footer = () => {
           {/* Navigation for Desktop */}
 <div className="hidden md:block bg-white rounded-3xl shadow-lg p-3">
   <nav className="flex flex-wrap justify-around items-center text-lg font-bold text-gray-900">
-    <a href="#" className="px-3 py-2">Home</a>
-    <a href="#" className="px-3 py-2">Our Story</a>
-    <a href="#" className="px-3 py-2">Menu</a>
-    <a href="#" className="px-3 py-2">Services</a>
-    <a href="#" className="px-3 py-2">FAQs</a>
-    <a href="#" className="px-3 py-2">Contact</a>
-    <a href="#" className="px-3 py-2">Make A Booking</a>
+     <Link to="/" className="px-3 py-2">Home</Link>
+      <Link to="/our-story" className="px-3 py-2">Our Story</Link>
+      <Link to="/menu" className="px-3 py-2">Menu</Link>
+      <Link to="/services" className="px-3 py-2">Services</Link>
+      <Link to="/faqs" className="px-3 py-2">FAQs</Link>
+      <Link to="/contact" className="px-3 py-2">Contact</Link>
+      <Link to="/booking" className="px-3 py-2">Make A Booking</Link>
   </nav>
 </div>
 
