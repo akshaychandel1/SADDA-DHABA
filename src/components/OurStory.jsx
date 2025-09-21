@@ -112,7 +112,7 @@ const OurStory = () => {
         <img
           src={Vector3}
           alt="Vector 3"
-          className="absolute -top-[6%] left-[8%] w-362 h-[124%] opacity-100"
+          className="absolute -top-[8%] left-[8%] w-360 h-[125%] opacity-100"
         />
         <div className="pt-120 flex flex-col justify-center items-center">
           <div className=" items-center h-[728px] max-w-6xl ">
