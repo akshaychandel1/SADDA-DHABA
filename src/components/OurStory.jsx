@@ -178,7 +178,7 @@ const OurStory = () => {
             </p>
           </div>
         </div>
-<div className="mt-140"></div>
+<div className="mt-40"></div>
 
 
     <motion.section
