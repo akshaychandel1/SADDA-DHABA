@@ -211,13 +211,14 @@ const OurStory = () => {
             </div>
     
             {/* Right Side Image */}
-            <div className="md:w-1/3 w-3/4 md:h-[640px] h-[320px] pr-4 sm:pr-6 md:pr-12 flex justify-center md:justify-center items-center md:items-end mt-4">
-              <img
-                src={Call}
-                alt="Chef Illustration"
-                className="w-full h-auto object-contain"
-              />
-            </div>
+           <div className="w-full md:w-1/3 h-[320px] md:h-[640px] flex justify-center items-center md:items-end mt-4 md:pr-12">
+  <img
+    src={Call}
+    alt="Chef Illustration"
+    className="max-w-[75%] md:max-w-full h-auto object-contain"
+  />
+</div>
+
           </motion.section>
        </div>
 
