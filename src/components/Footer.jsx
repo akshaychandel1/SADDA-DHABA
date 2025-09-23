@@ -117,17 +117,17 @@ const Footer = () => {
   <nav className="flex flex-col items-center text-base font-bold text-gray-900 space-y-3">
     {/* First row */}
     <ul className="flex justify-between w-full">
-  <li><Link href="/" className="px-2">Home</Link></li>
-  <li><Link href="/our-story" className="px-2">Our Story</Link></li>
-  <li><Link href="/menu" className="px-2">Menu</Link></li>
-  <li><Link href="/services" className="px-2">Services</Link></li>
+  <li><Link to="/" className="px-2">Home</Link></li>
+  <li><Link to="/our-story" className="px-2">Our Story</Link></li>
+  <li><Link to="/menu" className="px-2">Menu</Link></li>
+  <li><Link to="/services" className="px-2">Services</Link></li>
 </ul>
 
 {/* Second row */}
   <ul className="flex justify-around w-full">
-  <li><Link href="/faqs" className="px-2">FAQs</Link></li>
-  <li><Link href="/contact" className="px-2">Contact</Link></li>
-  <li><Link href="/booking" className="px-2">Booking</Link></li>
+  <li><Link to="/faqs" className="px-2">FAQs</Link></li>
+  <li><Link to="/contact" className="px-2">Contact</Link></li>
+  <li><Link to="/booking" className="px-2">Booking</Link></li>
   </ul>
   </nav>
 </div>
