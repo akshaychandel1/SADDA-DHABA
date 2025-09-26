@@ -290,78 +290,89 @@ const WeddingEvent = () => {
 
 
 {/* Top Border (flipped) */}
-<section className="my-16">
+<motion.section
+  className="my-16"
+  initial={{ opacity: 1, y: 100 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.8 }}
+>
   <img
-  src={border}
-  alt="top border"
-  className="w-full rotate-180 -my-0.5"
-/>
+    src={border}
+    alt="top border"
+    className="w-full rotate-180 -my-0.5"
+  />
 
-{/* Main Section */}
-<div className="bg-[#C20000] text-white py-20 px-4 text-center">
-  <h2 className="font-barber tracking-wider text-4xl md:text-6xl 2xl:text-8xl font-bold mb-2">
-    NUMBERS THAT TELL OUR STORY
-  </h2>
-  <p className="text-sm md:text-xl 2xl:text-2xl mb-10">
-    Every celebration we cater is more than just food—it’s memories, <br />
-    milestones, and moments we’re proud to share.
-  </p>
+  {/* Main Section */}
+  <div className="bg-[#C20000] text-white py-20 px-4 text-center">
+    <h2 className="font-barber tracking-wider text-4xl md:text-6xl 2xl:text-8xl font-bold mb-2">
+      NUMBERS THAT TELL OUR STORY
+    </h2>
+    <p className="text-sm md:text-xl 2xl:text-2xl mb-10">
+      Every celebration we cater is more than just food—it’s memories, <br />
+      milestones, and moments we’re proud to share.
+    </p>
 
-  <div className="grid grid-cols-1 md:grid-cols-3 gap-10 text-center">
-    {/* Plates Served */}
-    <motion.div
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6 }}
-    >
-      <div className="text-5xl md:text-6xl font-barber leading-tight">
-        <Counter target={10000} duration={1500} />
-      </div>
-      <p className="mt-3 text-base md:text-xl font-barber tracking-wide">
-        PLATES SERVED
-      </p>
-    </motion.div>
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-10 text-center">
+      {/* Plates Served */}
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+      >
+        <div className="text-5xl md:text-6xl font-barber leading-tight">
+          <Counter target={10000} duration={1500} />
+        </div>
+        <p className="mt-3 text-base md:text-xl font-barber tracking-wide">
+          PLATES SERVED
+        </p>
+      </motion.div>
 
-    {/* Weddings & Events */}
-    <motion.div
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6, delay: 0.2 }}
-    >
-      <div className="text-5xl md:text-6xl font-barber leading-tight">
-        <Counter target={500} duration={1500} />
-      </div>
-      <p className="mt-3 text-base md:text-xl font-barber tracking-wide">
-        WEDDINGS & EVENTS
-      </p>
-    </motion.div>
+      {/* Weddings & Events */}
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.2 }}
+      >
+        <div className="text-5xl md:text-6xl font-barber leading-tight">
+          <Counter target={500} duration={1500} />
+        </div>
+        <p className="mt-3 text-base md:text-xl font-barber tracking-wide">
+          WEDDINGS & EVENTS
+        </p>
+      </motion.div>
 
-    {/* Happy Guests */}
-    <motion.div
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6, delay: 0.4 }}
-    >
-      <div className="text-5xl md:text-6xl font-barber leading-wider">
-        <Counter target={5000} duration={1500} />
-      </div>
-      <p className="mt-3 text-base md:text-xl font-barber tracking-wide">
-        HAPPY GUESTS
-      </p>
-    </motion.div>
+      {/* Happy Guests */}
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.4 }}
+      >
+        <div className="text-5xl md:text-6xl font-barber leading-wider">
+          <Counter target={5000} duration={1500} />
+        </div>
+        <p className="mt-3 text-base md:text-xl font-barber tracking-wide">
+          HAPPY GUESTS
+        </p>
+      </motion.div>
+    </div>
   </div>
-</div>
 
-{/* Bottom Border (normal) */}
-<img
-  src={border}
-  alt="bottom border"
-  className="w-full -my-0.5"
-/>
-</section>
+  {/* Bottom Border (normal) */}
+  <img
+    src={border}
+    alt="bottom border"
+    className="w-full -my-0.5"
+  />
+</motion.section>
 
 
-<div className="w-full bg-white py-16 my-16 flex flex-col items-center text-center">
+
+<motion.div
+  className="w-full bg-white py-16 my-16 flex flex-col items-center text-center"
+  initial={{ opacity: 1, y: 50 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.8 }}
+>
   {/* Heading */}
   <h2 className="text-[#C20000] font-barber tracking-wider text-4xl md:text-6xl 2xl:text-8xl font-bold mb-2">
     WHERE CELEBRATIONS SHINE
@@ -433,13 +444,20 @@ const WeddingEvent = () => {
       </div>
     </div>
   </div>
-</div>
+</motion.div>
 
 
 
 
 
-    <div className="bg-[#C20000] text-white rounded-[3rem] px-6 sm:px-10 max-w-8xl mx-4 2xl:mx-20 text-center py-16 my-16">
+
+ <motion.div
+  className="bg-[#C20000] text-white rounded-[3rem] px-6 sm:px-10 max-w-8xl mx-4 2xl:mx-20 text-center py-16 my-16"
+  initial={{ y: 150, opacity: 1 }}
+  whileInView={{ y: 0, opacity: 1 }}
+  transition={{ duration: 0.8, ease: "easeOut" }}
+  viewport={{ once: true, amount: 0.3 }}
+>
   {/* Heading */}
   <h2 className="text-3xl sm:text-4xl md:text-5xl font-barber mb-10">
     HOW TO GET YOUR HALWAI FIX
@@ -497,10 +515,17 @@ const WeddingEvent = () => {
   </div>
 
   {/* CTA Button */}
-  <button className="mt-10 bg-white text-[#C20000] px-6 sm:px-8 md:px-12 py-2 sm:py-3 md:py-4 rounded-full font-barber font-semibold text-sm sm:text-base md:text-lg lg:text-xl shadow-xl transition-transform duration-300 ease-in-out transform hover:scale-110 hover:bg-gray-100">
+  <motion.button
+    className="mt-10 bg-white text-[#C20000] px-6 sm:px-8 md:px-12 py-2 sm:py-3 md:py-4 rounded-full font-barber font-semibold text-sm sm:text-base md:text-lg lg:text-xl shadow-xl transition-transform duration-300 ease-in-out transform hover:scale-110 hover:bg-gray-100"
+    initial={{ opacity: 0, y: 30, scale: 0.95 }}
+    whileInView={{ opacity: 1, y: 0, scale: 1 }}
+    transition={{ duration: 0.8, ease: "easeOut" }}
+    viewport={{ once: true }}
+  >
     PLACE YOUR ORDER
-  </button>
-</div>
+  </motion.button>
+</motion.div>
+
 
 
 
