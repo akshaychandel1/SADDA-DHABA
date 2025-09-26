@@ -1,0 +1,335 @@
+import React, { useState } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
+import Navbar from "./Navbar";
+import Footer from "./Footer";
+import useEmblaCarousel from "embla-carousel-react";
+import Autoplay from "embla-carousel-autoplay";
+
+// Replace with your actual paths
+import bookIcon from "../assets/icons/Calender.svg";
+import ringIcon from "../assets/icons/Ring.svg";
+import wed from "../assets/icons/WeddingsandEvents.jpg";
+
+import carrotIcon from "../assets/icons/carrot.svg";
+import eggplantIcon from "../assets/icons/brinjal.svg";
+import leafIcon from "../assets/icons/tumip.svg";
+import chiliIcon from "../assets/icons/peas.svg";
+
+
+
+// Replace with your actual images
+import dalMakhani from "../assets/icons/WeddingsandEvents.jpg";
+import butterMasala from "../assets/icons/WeddingsandEvents.jpg";
+import muttonRogan from "../assets/icons/WeddingsandEvents.jpg";
+
+const dishes = [
+  {
+    name: "DAL MAKHANI",
+    img: dalMakhani,
+    desc: "Rich lentils simmered overnight with butter & cream. A soulful classic that’s smooth, warm, and comforting.",
+  },
+  {
+    name: "PANEER BUTTER MASALA",
+    img: butterMasala,
+    desc: "The classic North Indian delight, mildly spiced and creamy. Perfect with naan, rice, or simply on its own.",
+  },
+  {
+    name: "MUTTON ROGAN JOSH",
+    img: muttonRogan,
+    desc: "Slow-cooked mutton in an aromatic Kashmiri-style curry. Bold, hearty, and full of depth in every spoonful.",
+  },
+];
+
+
+const WeddingEvent = () => {
+  const [active, setActive] = useState("MITHAAS");
+  const buttons = ["OCCASION", "MITHAAS", "MEMORIES"];
+
+  // Page scroll
+  const { scrollYProgress } = useScroll();
+
+  // Book animation
+  const yBook = useTransform(scrollYProgress, [0, 1], [30, -30]);
+  const rBook = useTransform(scrollYProgress, [0, 1], [0, -10]);
+  const sBook = useTransform(scrollYProgress, [0, 1], [1, 1.07]);
+
+  // Ring animation
+  const yRing = useTransform(scrollYProgress, [0, 1], [-20, 20]);
+  const rRing = useTransform(scrollYProgress, [0, 1], [0, 15]);
+  const sRing = useTransform(scrollYProgress, [0, 1], [1, 1.08]);
+
+  // Leaf animation
+  const yLeaf = useTransform(scrollYProgress, [0, 1], [10, -10]);
+  const rLeaf = useTransform(scrollYProgress, [0, 1], [0, 20]);
+  const sLeaf = useTransform(scrollYProgress, [0, 1], [1, 1.1]);
+
+  // Chili animation
+  const yChili = useTransform(scrollYProgress, [0, 1], [-10, 10]);
+  const rChili = useTransform(scrollYProgress, [0, 1], [0, -15]);
+  const sChili = useTransform(scrollYProgress, [0, 1], [1, 1.1]);
+
+  // Eggplant animation
+  const yEggplant = useTransform(scrollYProgress, [0, 1], [10, -10]);
+  const rEggplant = useTransform(scrollYProgress, [0, 1], [0, 15]);
+  const sEggplant = useTransform(scrollYProgress, [0, 1], [1, 1.08]);
+
+  // Carrot animation
+  const yCarrot = useTransform(scrollYProgress, [0, 1], [-10, 10]);
+  const rCarrot = useTransform(scrollYProgress, [0, 1], [0, -10]);
+  const sCarrot = useTransform(scrollYProgress, [0, 1], [1, 1.08]);
+
+
+   const [emblaRef, emblaApi] = useEmblaCarousel(
+    { loop: true, align: "center", skipSnaps: false },
+    [Autoplay({ delay: 3000, stopOnMouseEnter: true })]
+  );
+
+  const [selectedIndex, setSelectedIndex] = useState(0);
+
+  const onSelect = useCallback(() => {
+    if (!emblaApi) return;
+    setSelectedIndex(emblaApi.selectedScrollSnap());
+  }, [emblaApi]);
+
+  useEffect(() => {
+    if (!emblaApi) return;
+    emblaApi.on("select", onSelect);
+    onSelect();
+  }, [emblaApi, onSelect]);
+
+
+  return (
+    <>
+      <Navbar />
+
+      <section className="bg-[#C20000] text-white overflow-hidden -mb-px">
+  <div className="relative container mx-auto px-2 sm:px-4 py-12 md:py-20 text-center">
+    {/* Buttons */}
+    <motion.div
+      className="font-lilita flex flex-wrap justify-center gap-3 sm:gap-5 mb-6 sm:mb-10"
+      initial={{ opacity: 0, y: 30 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{
+        duration: 1.2,
+        ease: [0.22, 1, 0.36, 1],
+        delay: 0.1,
+      }}
+    >
+      {buttons.map((btn) => (
+        <button
+          key={btn}
+          onClick={() => setActive(btn)}
+          className={`px-4 sm:px-6 py-2 text-sm sm:text-base md:text-lg rounded-full transition-all duration-300 transform ${
+            active === btn
+              ? "bg-white text-[#C20000] scale-110"
+              : "bg-transparent border-2 border-white text-white hover:bg-white hover:text-[#C20000]"
+          }`}
+        >
+          {btn}
+        </button>
+      ))}
+    </motion.div>
+
+    {/* Title */}
+    <motion.h1
+      className="text-3xl sm:text-5xl md:text-7xl lg:text-8xl font-barber tracking-wide mb-3 leading-snug"
+      initial={{ opacity: 0, y: 40 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{
+        duration: 1.2,
+        ease: [0.22, 1, 0.36, 1],
+        delay: 0.2,
+      }}
+    >
+      PARTIES THAT TASTE
+      <br className="hidden sm:block" />
+
+      {/* LIKE HOMES with icons */}
+      <span className="relative inline-flex flex-wrap items-center justify-center gap-2 mt-2 text-center">
+        <motion.img
+          src={bookIcon}
+          alt="Book"
+          style={{ y: yBook, rotate: rBook, scale: sBook }}
+          className="block w-8 h-8 sm:w-10 sm:h-10 md:w-14 md:h-14 lg:w-20 lg:h-20"
+          whileHover={{ scale: 1.12, rotate: -15 }}
+        />
+        <span>LIKE</span>
+        <span>HOMES</span>
+        <motion.img
+          src={ringIcon}
+          alt="Ring"
+          style={{ y: yRing, rotate: rRing, scale: sRing }}
+          className="block w-8 h-8 sm:w-10 sm:h-10 md:w-14 md:h-14 lg:w-20 lg:h-20"
+          whileHover={{ scale: 1.15, rotate: 15 }}
+        />
+      </span>
+    </motion.h1>
+  </div>
+</section>
+
+
+
+
+
+
+      {/* Section 2 */}
+      {/* <img src="" alt="" /> */}
+
+
+
+      {/* Section 3 */}
+                  {/* Section 3 */}
+                <section className="relative py-16 bg-white">
+  <div className="container mx-auto px-4">
+    <div className="overflow-hidden shadow-xl rounded-full max-w-[90%] mx-auto">
+      <div className="relative w-full aspect-[1637/623]">
+        <img
+          src={wed}
+          alt="Buffet"
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+            {/* SECTION 4 */}
+
+            <div className="bg-white text-[#C20000] overflow-hidden -mb-px">
+  <div className="relative container mx-auto px-2 py-12 md:py-20 text-center">
+    <motion.div className="mx-auto text-center">
+      <motion.h1
+        className="font-barber relative my-6 leading-snug text-center text-2xl sm:text-4xl md:text-6xl 2xl:text-8xl tracking-wide mb-3 flex flex-col items-center gap-4"
+        initial={{ opacity: 0, y: 40 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{
+          duration: 1.2,
+          ease: [0.22, 1, 0.36, 1],
+          delay: 0.2,
+        }}
+      >
+        {/* First line */}
+        <span className="flex flex-wrap justify-center items-center gap-2">
+          FRESHNESS
+          <motion.img
+            src={leafIcon}
+            alt="Leaf"
+            style={{ y: yLeaf, rotate: rLeaf, scale: sLeaf }}
+            className="inline-block w-8 h-8 sm:w-12 sm:h-12 md:w-16 md:h-16 lg:w-20 lg:h-20"
+            whileHover={{ scale: 1.15, rotate: -15 }}
+          />
+          IS OUR SECRET SPICE,
+          <motion.img
+            src={chiliIcon}
+            alt="Chili"
+            style={{ y: yChili, rotate: rChili, scale: sChili }}
+            className="inline-block w-8 h-8 sm:w-12 sm:h-12 md:w-16 md:h-16 lg:w-20 lg:h-20"
+            whileHover={{ scale: 1.15, rotate: 15 }}
+          />
+        </span>
+
+        {/* Second line */}
+        <span className="flex flex-wrap justify-center items-center gap-2">
+          <motion.img
+            src={eggplantIcon}
+            alt="Eggplant"
+            style={{ y: yEggplant, rotate: rEggplant, scale: sEggplant }}
+            className="inline-block w-8 h-8 sm:w-12 sm:h-12 md:w-16 md:h-16 lg:w-20 lg:h-20"
+            whileHover={{ scale: 1.15, rotate: -10 }}
+          />
+          STRAIGHT FROM FARM
+          <motion.img
+            src={carrotIcon}
+            alt="Carrot"
+            style={{ y: yCarrot, rotate: rCarrot, scale: sCarrot }}
+            className="inline-block w-8 h-8 sm:w-12 sm:h-12 md:w-16 md:h-16 lg:w-20 lg:h-20"
+            whileHover={{ scale: 1.15, rotate: 10 }}
+          />
+          TO PLATE
+        </span>
+      </motion.h1>
+    </motion.div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+            <section className="bg-white text-center py-16 px-4">
+      {/* Section Header */}
+      <motion.h2
+        className="text-3xl md:text-5xl font-barber text-[#C20000] mb-4"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1 }}
+      >
+        HALWAI'S PICKS
+      </motion.h2>
+      <p className="text-gray-700 max-w-2xl mx-auto mb-10">
+        A handpicked collection straight from our kitchen to your plate.
+        <br />
+        The recipes we’re most proud to serve, crafted with love and tradition.
+      </p>
+
+      {/* Carousel */}
+      <div className="overflow-hidden" ref={emblaRef}>
+        <div className="flex">
+          {dishes.map((dish, index) => (
+            <div
+              className="flex-[0_0_100%] sm:flex-[0_0_80%] md:flex-[0_0_60%] lg:flex-[0_0_40%] px-4"
+              key={index}
+            >
+              <motion.div
+                className="flex flex-col items-center justify-center space-y-6"
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: index * 0.2 }}
+              >
+                <img
+                  src={dish.img}
+                  alt={dish.name}
+                  className="w-64 h-64 object-contain"
+                />
+                <h3 className="text-xl md:text-2xl font-bold text-[#C20000]">
+                  {dish.name}
+                </h3>
+                <p className="text-gray-600 max-w-md text-sm md:text-base">
+                  {dish.desc}
+                </p>
+              </motion.div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Explore Menu Button */}
+      <div className="mt-10">
+        <motion.button
+          className="bg-[#C20000] text-white font-semibold px-6 py-3 rounded-full shadow-lg hover:bg-red-700 transition"
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+        >
+          EXPLORE MENU
+        </motion.button>
+      </div>
+    </section>
+
+
+
+
+
+
+      <Footer />
+    </>
+  );
+};
+
+export default WeddingEvent;
