@@ -1,5 +1,7 @@
 import React from "react";
 import { AiFillCloseCircle } from "react-icons/ai";
+import { motion } from "framer-motion";
+import contactus from "../assets/icons/contactus.png"
 
 const ContactForm = ({ onClose }) => {
   return (
@@ -7,17 +9,20 @@ const ContactForm = ({ onClose }) => {
       {/* Popup Container */}
       <div
         className="
-          flex flex-col md:flex-row w-full md:w-[90%] lg:w-[85%] max-w-7xl 
+          flex flex-col md:flex-row w-full md:w-[70%] lg:w-[85%] max-w-7xl 
           rounded-[2rem] overflow-hidden bg-white shadow-xl relative
           max-h-screen
         "
       >
         {/* Left Side - Image */}
         <div className="flex-1 flex items-center justify-center bg-white p-1 md:p-2 lg:p-5">
-          <img
-            src="/your-image.png"
+          <motion.img
+            src={contactus}
             alt="Halwai"
-            className="w-full h-auto md:h-full object-contain"
+            className="w-full h-1/2 md:h-full object-cover object-top"
+            initial={{ y: 100, rotate: -15, opacity: 0 }}
+            animate={{ y: 0, rotate: 0, opacity: 1 }}
+            transition={{ type: "spring", stiffness: 80, damping: 15, duration: 1 }}
           />
         </div>
 
@@ -26,10 +31,7 @@ const ContactForm = ({ onClose }) => {
           className="
             flex-1 bg-[#C20000] text-white flex flex-col justify-start
             px-2 md:px-4 lg:px-12 py-3 md:py-5 lg:py-10
-            relative rounded-tr-[2rem] rounded-br-[2rem]
-            overflow-y-auto
-            max-h-[75vh] md:max-h-[70vh] lg:max-h-[75vh] 2xl:max-h-[80vh]
-          "
+            relative rounded-tr-[2rem] rounded-br-[2rem]"
         >
           {/* Close Button */}
           <button
