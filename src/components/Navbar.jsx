@@ -39,9 +39,12 @@ const Navbar = ({ onContactClick }) => {
               </button>
             </li>
           </ul>
-          <button className="bg-[#C20000] text-white text-sm font-lilita px-5 py-2 font-light rounded-full shadow hover:bg-red-600 transition">
-            MAKE A BOOKING
-          </button>
+          <Link to="/booking">
+  <button className="bg-[#C20000] text-white text-sm font-lilita px-5 py-2 font-light rounded-full shadow hover:bg-red-600 transition">
+    MAKE A BOOKING
+  </button>
+</Link>
+
         </div>
 
         {/* Mobile Nav */}
@@ -75,9 +78,11 @@ const Navbar = ({ onContactClick }) => {
               </button>
             </li>
             <li>
+              <Link to="/booking">
               <button className="bg-[#C20000] text-white text-sm font-lilita font-light px-5 py-2 rounded-full shadow hover:bg-red-700 transition">
                 MAKE A BOOKING
               </button>
+              </Link>
             </li>
           </ul>
         </div>

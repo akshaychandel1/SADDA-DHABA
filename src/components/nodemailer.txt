@@ -1,0 +1,33 @@
+const handleSubmit = async (e) => {
+  e.preventDefault();
+
+  const formData = {
+    fullName: e.target.fullName.value,
+    company: e.target.company.value,
+    email: e.target.email.value,
+    phone: e.target.phone.value,
+    guests: e.target.guests.value,
+    location: e.target.location.value,
+    dateTime: e.target.dateTime.value,
+    budget: selectedBudget,
+    services: selectedServices.join(", "),
+    notes: e.target.notes.value,
+  };
+
+  try {
+    const res = await fetch("http://localhost:5000/send-booking", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(formData),
+    });
+
+    const data = await res.json();
+    if (data.success) {
+      alert("Your booking request has been sent!");
+    } else {
+      alert("Oops, something went wrong.");
+    }
+  } catch (error) {
+    alert("Server error. Try again later.");
+  }
+};
