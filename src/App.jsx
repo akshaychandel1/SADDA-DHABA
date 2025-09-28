@@ -5,6 +5,7 @@ import ComingSoon from './components/ComingSoon'
 import HomePage from './components/HomePage'
 import OurStory from './components/OurStory';
 import WeddingEvent from "./components/WeddingEvent";
+import FAQPage from './components/FAQPage';
 
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
         <Route path="/" element={<HomePage />} />
          <Route path="/our-story" element={<OurStory />} />
          <Route path="/wedding-event" element={<WeddingEvent />} />
+         <Route path="/faqs" element={<FAQPage />} />
         {/* <Route path="/contact" element={<Contact />} /> */}
       </Routes>
       
