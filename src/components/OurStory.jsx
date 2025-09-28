@@ -1,5 +1,5 @@
 import React from "react";
-import Navbar from "./Navbar";
+
 import Footer from "./Footer";
 import { motion } from "framer-motion";
 import Call from "../assets/icons/Call.png";
@@ -16,7 +16,7 @@ import Vector4 from "../assets/icons/Vector4.svg";
 const OurStory = () => {
   return (
     <>
-      <Navbar />
+      
 
       <div className="w-full text-black overflow-hidden">
         {/* Hero Section */}
@@ -24,7 +24,7 @@ const OurStory = () => {
           <h1 className="text-white font-barber max-w-5xl text-3xl sm:text-5xl md:text-7xl lg:text-8xl 2xl:text-8xl 3xl:text-9xl tracking-wide mb-6 mx-auto">
             FROM DHABA TO DREAMS
           </h1>
-          <p className="text-white max-w-3xl mx-auto text-sm sm:text-base md:text-lg lg:text-xl 2xl:text-2xl">
+          <p className="text-base md:text-lg text-red-100 ">
             What began by the fires of a small dhaba grew into a legacy of
             flavor. Today, Saada Halwai carries this passion across borders,
             serving tradition with a modern twist.

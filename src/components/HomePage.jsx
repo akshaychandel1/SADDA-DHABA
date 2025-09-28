@@ -2,7 +2,6 @@ import React, { useState, useEffect, useRef } from "react";
 import { useInView } from "react-intersection-observer";
 import "./HomePage.css";
 import { Link } from "react-router-dom";
-import Navbar from "./Navbar";
 import Footer from "./Footer";
 import {
   motion,
@@ -138,7 +137,6 @@ const HomePage = () => {
 
   return (
     <>
-      <Navbar />
 
       <div className="bg-[#C20000]  text-white  overflow-hidden -mb-px">
         <div className="relative container mx-auto px-1 py-12 md:py-20 text-center">

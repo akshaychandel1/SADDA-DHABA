@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import { ChevronDown } from "lucide-react";
 import wed from "../assets/icons/WeddingsandEvents.jpg";
 import { FaFacebookF, FaInstagram, FaTwitter, FaTiktok } from "react-icons/fa";
-import Navbar from "./Navbar";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import charfoot from "../assets/icons/charfoot.svg";
@@ -69,14 +68,13 @@ export default function FAQPage() {
 
   return (
     <>
-      <Navbar />
       <div className="w-full bg-[#C20000] flex flex-col items-center text-white">
         {/* Header */}
         <div className="text-center mb-20 mt-10 px-4 max-w-9xl">
           <h1 className="text-3xl sm:text-5xl md:text-7xl lg:text-8xl font-barber tracking-wide mb-3 leading-snug font-bold">
             SPICY QUESTIONS, SWEET SOLUTIONS
           </h1>
-          <p className="text-sm opacity-80">
+          <p className="text-base md:text-lg text-red-100 ">
             Got questions about our food, bookings, or big fat desi feasts?
             <br />
             Don’t worry, your halwai has all the answers. From fresh produce to

@@ -1,7 +1,6 @@
 import React, { useEffect, useState, useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import useEmblaCarousel from "embla-carousel-react";
-import Navbar from "./Navbar";
 import Footer from "./Footer";
 
 // Replace with your actual paths
@@ -131,7 +130,6 @@ const WeddingEvent = () => {
 
   return (
     <>
-      <Navbar />
 
       {/* SECTION 1 */}
       <section className="bg-[#C20000] text-white overflow-hidden -mb-px">
