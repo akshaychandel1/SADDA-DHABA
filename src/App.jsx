@@ -6,12 +6,14 @@ import HomePage from './components/HomePage'
 import OurStory from './components/OurStory';
 import WeddingEvent from "./components/WeddingEvent";
 import FAQPage from './components/FAQPage';
+import ScrollToTop from "./ScrollToTop";
 
 
 function App() {
 
   return (
     <>
+     <ScrollToTop />
       <Routes>
         <Route path="/" element={<HomePage />} />
          <Route path="/our-story" element={<OurStory />} />
