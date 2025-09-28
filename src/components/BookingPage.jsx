@@ -68,7 +68,7 @@ const BookingPage = () => {
       <img
         src={rolling}
         alt="rolling"
-        className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[95%] max-w-7xl z-0"
+        className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[100%] max-w-8xl z-0"
       />
 
       {/* Content */}
@@ -104,7 +104,7 @@ const BookingPage = () => {
         </motion.p>
 
         {/* Form Card */}
-        <div className="bg-white border border-[#C20000] rounded-[2rem] shadow-xl p-10 max-w-3xl mx-auto mt-16">
+        <div className="bg-white border-3 border-[#C20000] rounded-[2rem] shadow-xl p-10 max-w-3xl mx-auto mt-16">
           <form
             className="space-y-6 mx-auto text-base text-black font-medium"
             onSubmit={handleSubmit}
