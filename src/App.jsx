@@ -10,6 +10,7 @@ import FAQPage from './components/FAQPage';
 import ContactForm from './components/ContactForm';
 import Navbar from './components/Navbar';
 import BookingPage from './components/BookingPage';
+import { Menu } from './components/Menu';
 
 function App() {
   const [showContact, setShowContact] = useState(false);
@@ -26,6 +27,7 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/our-story" element={<OurStory />} />
         <Route path="/wedding-event" element={<WeddingEvent />} />
+        <Route path="/menu" element={<Menu />} />
         <Route path="/faqs" element={<FAQPage />} />
         <Route path="/booking" element={<BookingPage />} />
         {/* Removed /contact route because popup opens instead */}
