@@ -7,7 +7,11 @@ import Footer from "./Footer";
 import bookIcon from "../assets/icons/Handshake.svg";
 import ringIcon from "../assets/icons/Dollar.svg";
 import wed from "../assets/icons/food-festive.jpg";
-
+import photo1 from "../assets/icons/photo1.jpg";
+import photo2 from "../assets/icons/photo2.jpeg";
+import photo3 from "../assets/icons/photo3.jpeg";
+import photo4 from "../assets/icons/photo4.jpg";
+import photo5 from "../assets/icons/photo5.jpeg";
 import carrotIcon from "../assets/icons/carrot.svg";
 import eggplantIcon from "../assets/icons/brinjal.svg";
 import leafIcon from "../assets/icons/tumip.svg";
@@ -381,6 +385,26 @@ const CorporateEvent = () => {
     Because memories taste better when shared.
   </p>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   {/* Wire + Hanging Photos */}
   <div className="relative w-full flex justify-center">
     {/* Curved wire (responsive) */}
@@ -407,7 +431,11 @@ const CorporateEvent = () => {
         className="hidden md:block relative w-24 h-28 md:w-40 md:h-40 bg-[#C20000] rounded-lg md:-top-4 2xl:-top-8"
         style={{ transform: "rotate(6deg)" }}
       >
-        <div className="absolute -top-4 left-1/2 -translate-x-1/2 w-2 md:w-3 h-6 md:h-9 bg-[#C20000] rounded-sm"></div>
+        <div className="absolute -top-4 left-1/2 -translate-x-1/2 w-2 md:w-3 h-6 md:h-9 bg-[#C20000] rounded-sm"></div><img
+        src={photo1}
+        alt="Photo 5"
+        className="w-full h-full border-2 border-[#C20000] rounded-lg object-cover"
+      />
       </div>
 
       {/* 2nd square */}
@@ -416,6 +444,11 @@ const CorporateEvent = () => {
         style={{ transform: "rotate(3deg)" }}
       >
         <div className="absolute -top-4 left-1/2 -translate-x-1/2 w-2 md:w-3 h-6 md:h-9 bg-[#C20000] rounded-sm"></div>
+        <img
+        src={photo2}
+        alt="Photo 5"
+        className="w-full h-full border-2 border-[#C20000] rounded-lg object-cover"
+      />
       </div>
 
       {/* 3rd square */}
@@ -424,6 +457,11 @@ const CorporateEvent = () => {
         style={{ transform: "rotate(0deg)" }}
       >
         <div className="absolute -top-4 left-1/2 -translate-x-1/2 w-2 md:w-3 h-6 md:h-9 bg-[#C20000] rounded-sm"></div>
+        <img
+        src={photo3}
+        alt="Photo 5"
+        className="w-full h-full border-2 border-[#C20000] rounded-lg object-cover"
+      />
       </div>
 
       {/* 4th square */}
@@ -432,6 +470,11 @@ const CorporateEvent = () => {
         style={{ transform: "rotate(-3deg)" }}
       >
         <div className="absolute -top-4 left-1/2 -translate-x-1/2 w-2 md:w-3 h-6 md:h-9 bg-[#C20000] rounded-sm"></div>
+        <img
+        src={photo4}
+        alt="Photo 5"
+        className="w-full h-full border-2 border-[#C20000] rounded-lg object-cover"
+      />
       </div>
 
       {/* 5th square */}
@@ -440,6 +483,11 @@ const CorporateEvent = () => {
         style={{ transform: "rotate(-6deg)" }}
       >
         <div className="absolute -top-4 left-1/2 -translate-x-1/2 w-2 md:w-3 h-6 md:h-9 bg-[#C20000] rounded-sm"></div>
+        <img
+        src={photo5}
+        alt="Photo 5"
+        className="w-full h-full border-2 border-[#C20000] rounded-lg object-cover"
+      />
       </div>
     </div>
   </div>
