@@ -11,6 +11,8 @@ import ContactForm from './components/ContactForm';
 import Navbar from './components/Navbar';
 import BookingPage from './components/BookingPage';
 import { Menu } from './components/Menu';
+import CorporateEvent from './components/CorporateEvent';
+import GrabAndGo from './components/GrabAndGo';
 
 function App() {
   const [showContact, setShowContact] = useState(false);
@@ -27,6 +29,8 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/our-story" element={<OurStory />} />
         <Route path="/wedding-event" element={<WeddingEvent />} />
+        <Route path="/corporate-event" element={<CorporateEvent />} />
+        <Route path="//grab-go" element={<GrabAndGo />} />
         <Route path="/menu" element={<Menu />} />
         <Route path="/faqs" element={<FAQPage />} />
         <Route path="/booking" element={<BookingPage />} />

@@ -487,9 +487,11 @@ const HomePage = () => {
                 alt="Suit"
                 className="w-[72px] sm:w-[152px] md:w-[144px] 2xl:w-[152px] 3xl:w-[136px]"
               />
+              <Link to="/corporate-event">
               <button className="whitespace-nowrap font-barber text-sm sm:text-base md:text-lg lg:text-xl 2xl:text-3xl 3xl:text-4xl bg-white text-[#C20000] px-5 sm:px-6 md:px-10 pt-2 sm:pt-3 md:pt-4 pb-1 sm:pb-2 md:pb-3 rounded-2xl shadow-xl leading-[1.2] transition-transform duration-300 ease-in-out transform hover:scale-110">
                 KNOW MORE
               </button>
+              </Link>
             </motion.div>
           </div>
 
@@ -527,6 +529,7 @@ const HomePage = () => {
             </div>
 
             {/* Button fixed bottom-left */}
+            <Link to="/grab-go">
             <motion.button
               className="absolute bottom-6 sm:bottom-8 md:bottom-12 left-4 sm:left-6 md:left-12 whitespace-nowrap font-barber text-sm sm:text-base md:text-lg lg:text-xl 2xl:text-3xl 3xl:text-4xl bg-white text-[#C20000] px-5 sm:px-6 md:px-10 pt-2 sm:pt-3 md:pt-4 pb-1 sm:pb-2 md:pb-3 rounded-2xl shadow-xl leading-[1.2] transition-transform duration-300 ease-in-out transform hover:scale-110"
               initial={{ opacity: 0, y: 30, scale: 0.95 }}
@@ -536,7 +539,7 @@ const HomePage = () => {
             >
               KNOW MORE
             </motion.button>
-
+            </Link>
             {/* Bag image fixed bottom-right */}
             <motion.img
               src={bag}
