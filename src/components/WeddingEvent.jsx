@@ -20,6 +20,13 @@ import menuborder from "../assets/icons/MenuBorderIcon.svg";
 import TestimonialCarousel from "./carousel/TestimonialCarousel";
 import Call from "../assets/icons/Call.png";
 
+
+import photo1 from "../assets/icons/photo-1.jpg";
+import photo2 from "../assets/icons/photo-2.jpeg";
+import photo3 from "../assets/icons/photo-3.jpeg";
+import photo4 from "../assets/icons/photo-4.jpeg";
+import photo5 from "../assets/icons/photo-5.jpeg";
+
 const testimonials = [
   {
     text: "Sadda Halwai turned our wedding into a feast to remember! Every dish was bursting with authentic flavors...",
@@ -379,7 +386,6 @@ const WeddingEvent = () => {
     A little peek at the parties we’ve sprinkled with mithas. <br />
     Because memories taste better when shared.
   </p>
-
   {/* Wire + Hanging Photos */}
   <div className="relative w-full flex justify-center">
     {/* Curved wire (responsive) */}
@@ -403,46 +409,71 @@ const WeddingEvent = () => {
     <div className="flex w-full justify-between relative z-10 mt-12 px-4 md:px-0">
       {/* 1st square */}
       <div
-        className="hidden md:block relative w-24 h-28 md:w-40 md:h-40 bg-[#C20000] rounded-lg md:-top-4 2xl:-top-8"
+        className="hidden md:block relative w-24 h-28 md:w-60 md:h-60 bg-[#C20000] rounded-lg md:-top-4 2xl:-top-7"
         style={{ transform: "rotate(6deg)" }}
       >
-        <div className="absolute -top-4 left-1/2 -translate-x-1/2 w-2 md:w-3 h-6 md:h-9 bg-[#C20000] rounded-sm"></div>
+        <div className="absolute -top-4 left-1/2 -translate-x-1/2 w-2 md:w-3 h-6 md:h-9 bg-[#C20000] rounded-sm"></div><img
+        src={photo1}
+        alt="Photo 5"
+        className="w-full h-full border-2 border-[#C20000] rounded-lg object-cover"
+      />
       </div>
 
       {/* 2nd square */}
       <div
-        className="relative w-24 h-28 md:w-40 md:h-40 bg-[#C20000] rounded-lg md:top-1 2xl:top-0 -top-2"
+        className="relative w-24 h-28 md:w-60 md:h-60 bg-[#C20000] rounded-lg md:top-1 2xl:top-1 -top-2"
         style={{ transform: "rotate(3deg)" }}
       >
         <div className="absolute -top-4 left-1/2 -translate-x-1/2 w-2 md:w-3 h-6 md:h-9 bg-[#C20000] rounded-sm"></div>
+        <img
+        src={photo2}
+        alt="Photo 5"
+        className="w-full h-full border-2 border-[#C20000] rounded-lg object-cover"
+      />
       </div>
 
       {/* 3rd square */}
       <div
-        className="relative w-24 h-28 md:w-40 md:h-40 bg-[#C20000] rounded-lg md:top-2 2xl:top-3 top-2"
+        className="relative w-24 h-28 md:w-60 md:h-60 bg-[#C20000] rounded-lg md:top-2 2xl:top-2 top-2"
         style={{ transform: "rotate(0deg)" }}
       >
         <div className="absolute -top-4 left-1/2 -translate-x-1/2 w-2 md:w-3 h-6 md:h-9 bg-[#C20000] rounded-sm"></div>
+        <img
+        src={photo3}
+        alt="Photo 5"
+        className="w-full h-full border-2 border-[#C20000] rounded-lg object-cover"
+      />
       </div>
 
       {/* 4th square */}
       <div
-        className="relative w-24 h-28 md:w-40 md:h-40 bg-[#C20000] rounded-lg md:top-1 2xl:top-0 -top-2"
+        className="relative w-24 h-28 md:w-60 md:h-60 bg-[#C20000] rounded-lg md:top-1 2xl:top-0 -top-2"
         style={{ transform: "rotate(-3deg)" }}
       >
         <div className="absolute -top-4 left-1/2 -translate-x-1/2 w-2 md:w-3 h-6 md:h-9 bg-[#C20000] rounded-sm"></div>
+        <img
+        src={photo4}
+        alt="Photo 5"
+        className="w-full h-full border-2 border-[#C20000] rounded-lg object-cover"
+      />
       </div>
 
       {/* 5th square */}
       <div
-        className="hidden md:block relative w-24 h-28 md:w-36 md:h-40 bg-[#C20000] rounded-lg md:-top-4 2xl:-top-8"
+        className="hidden md:block relative w-24 h-28 md:w-60 md:h-60 bg-[#C20000] rounded-lg md:-top-4 2xl:-top-7"
         style={{ transform: "rotate(-6deg)" }}
       >
         <div className="absolute -top-4 left-1/2 -translate-x-1/2 w-2 md:w-3 h-6 md:h-9 bg-[#C20000] rounded-sm"></div>
+        <img
+        src={photo5}
+        alt="Photo 5"
+        className="w-full h-full border-2 border-[#C20000] rounded-lg object-cover"
+      />
       </div>
     </div>
   </div>
 </motion.div>
+
 
 
 
