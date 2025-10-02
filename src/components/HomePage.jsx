@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { useInView } from "react-intersection-observer";
 import "./HomePage.css";
 import { Link } from "react-router-dom";
+
 import Footer from "./Footer";
 import {
   motion,
@@ -393,7 +394,7 @@ const HomePage = () => {
         </motion.div>
       </div>
 
-      <div className="flex items-center justify-center px-4 sm:px-6 lg:px-8 py-8 sm:py-10 md:py-12 2xl:py-16">
+      <div id="service" className="flex items-center justify-center px-4 sm:px-6 lg:px-8 py-8 sm:py-10 md:py-12 2xl:py-16">
         <motion.div
           className="w-full md:w-[95%] lg:max-w-[84%] border-[5px] border-[#C20000] flex flex-col md:flex-row rounded-3xl md:rounded-[3rem] overflow-hidden shadow-md"
           initial={{ x: -200, opacity: 1 }}

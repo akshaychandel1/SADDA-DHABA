@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 import headlogo from "../assets/icons/headlogo.svg";
 import menuIcon from "../assets/icons/menuIcon.svg";
 import { FaPhoneAlt, FaTimes } from "react-icons/fa"; // hamburger & close icons
+import { HashLink } from 'react-router-hash-link';
+
 
 const Navbar = ({ onContactClick }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -17,7 +19,9 @@ const Navbar = ({ onContactClick }) => {
           <li><Link to="/" className="hover:text-red-600">Home</Link></li>
           <li><Link to="/our-story" className="hover:text-red-600">Our Story</Link></li>
           <li><Link to="/menu" className="hover:text-red-600">Menu</Link></li>
-          <li><Link to="/services" className="hover:text-red-600">Services</Link></li>
+          <li>  <HashLink smooth to="/#service" className="hover:text-red-600">
+    Services
+  </HashLink></li>
         </ul>
 
         {/* Logo */}
@@ -66,7 +70,7 @@ const Navbar = ({ onContactClick }) => {
             <li><Link to="/" onClick={() => setIsOpen(false)}>Home</Link></li>
             <li><Link to="/our-story" onClick={() => setIsOpen(false)}>Our Story</Link></li>
             <li><Link to="/menu" onClick={() => setIsOpen(false)}>Menu</Link></li>
-            <li><Link to="/services" onClick={() => setIsOpen(false)}>Services</Link></li>
+            <li><HashLink to="/service" onClick={() => setIsOpen(false)}>Services</HashLink></li>
             <li><Link to="/faqs" onClick={() => setIsOpen(false)}>FAQs</Link></li>
             {/* Contact button in mobile menu */}
             <li>

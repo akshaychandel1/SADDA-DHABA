@@ -8,6 +8,7 @@ import cartoon from "../assets/icons/cartoon.svg";
 import footmob from "../assets/icons/footmob.svg";
 import footdesk from "../assets/icons/footdesk.svg";
 import charfoot from "../assets/icons/charfoot.svg";
+import { HashLink } from 'react-router-hash-link';
 
 const SocialIcon = ({ href, children }) => (
   <a
@@ -104,7 +105,9 @@ const Footer = () => {
      <Link to="/" className="px-3 py-2">Home</Link>
       <Link to="/our-story" className="px-3 py-2">Our Story</Link>
       <Link to="/menu" className="px-3 py-2">Menu</Link>
-      <Link to="/services" className="px-3 py-2">Services</Link>
+      <HashLink smooth to="/#service" className="hover:text-red-600">
+          Services
+        </HashLink>
       <Link to="/faqs" className="px-3 py-2">FAQs</Link>
       <Link to="/contact" className="px-3 py-2">Contact</Link>
       <Link to="/booking" className="px-3 py-2">Make A Booking</Link>
@@ -120,7 +123,9 @@ const Footer = () => {
   <li><Link to="/" className="px-2">Home</Link></li>
   <li><Link to="/our-story" className="px-2">Our Story</Link></li>
   <li><Link to="/menu" className="px-2">Menu</Link></li>
-  <li><Link to="/services" className="px-2">Services</Link></li>
+  <li><HashLink smooth to="/#service" className="hover:text-red-600">
+      Services
+    </HashLink></li>
 </ul>
 
 {/* Second row */}
