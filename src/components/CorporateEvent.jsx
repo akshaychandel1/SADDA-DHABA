@@ -2,6 +2,7 @@ import React, { useEffect, useState, useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import useEmblaCarousel from "embla-carousel-react";
 import Footer from "./Footer";
+import { Link } from "react-router-dom";
 
 // Replace with your actual paths
 import bookIcon from "../assets/icons/Handshake.svg";
@@ -541,15 +542,18 @@ const CorporateEvent = () => {
   </div>
 
   {/* CTA Button */}
+
+  <Link to="/booking">
   <motion.button
     className="mt-10 bg-white text-[#C20000] px-6 sm:px-8 md:px-12 py-2 sm:py-3 md:py-4 rounded-full font-barber font-semibold text-sm sm:text-base md:text-lg lg:text-xl shadow-xl transition-transform duration-300 ease-in-out transform hover:scale-110 hover:bg-gray-100"
     initial={{ opacity: 0, y: 30, scale: 0.95 }}
     whileInView={{ opacity: 1, y: 0, scale: 1 }}
     transition={{ duration: 0.8, ease: "easeOut" }}
     viewport={{ once: true }}
-  >
+    >
     PLACE YOUR ORDER
   </motion.button>
+    </Link>
 </motion.div>
 
 

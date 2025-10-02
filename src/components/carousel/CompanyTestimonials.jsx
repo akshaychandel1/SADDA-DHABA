@@ -59,9 +59,6 @@ export default function CompanyTestimonials() {
 
   return (
     <div className="w-full py-10 bg-white">
-      <h2 className="text-center text-3xl font-bold text-[#C20000] mb-8 tracking-wide">
-        THEY CRAVE IT!
-      </h2>
       <div className="overflow-hidden" ref={emblaRef}>
         <div className="flex items-center">
           {endorsements.map((item, i) => {

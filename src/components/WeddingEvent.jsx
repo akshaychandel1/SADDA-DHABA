@@ -26,6 +26,7 @@ import photo2 from "../assets/icons/photo-2.jpeg";
 import photo3 from "../assets/icons/photo-3.jpeg";
 import photo4 from "../assets/icons/photo-4.jpeg";
 import photo5 from "../assets/icons/photo-5.jpeg";
+import { Link } from "react-router-dom";
 
 const testimonials = [
   {
@@ -544,6 +545,7 @@ const WeddingEvent = () => {
   </div>
 
   {/* CTA Button */}
+  <Link to="/booking">
   <motion.button
     className="mt-10 bg-white text-[#C20000] px-6 sm:px-8 md:px-12 py-2 sm:py-3 md:py-4 rounded-full font-barber font-semibold text-sm sm:text-base md:text-lg lg:text-xl shadow-xl transition-transform duration-300 ease-in-out transform hover:scale-110 hover:bg-gray-100"
     initial={{ opacity: 0, y: 30, scale: 0.95 }}
@@ -553,6 +555,7 @@ const WeddingEvent = () => {
   >
     PLACE YOUR ORDER
   </motion.button>
+  </Link>
 </motion.div>
 
 

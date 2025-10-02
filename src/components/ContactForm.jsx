@@ -52,17 +52,17 @@ const ContactForm = ({ onClose }) => {
             <input
               type="text"
               placeholder="Your Name"
-              className="p-2 md:p-2 lg:p-3 rounded-2xl bg-white text-black placeholder-pink-500 w-full outline-none text-sm md:text-base lg:text-lg"
+              className="p-2 md:p-2 lg:p-3 rounded-2xl bg-white text-black placeholder-[#C20000] w-full outline-none text-sm md:text-base lg:text-lg"
             />
             <input
               type="email"
               placeholder="Your Mail"
-              className="p-2 md:p-2 lg:p-3 rounded-2xl bg-white text-black placeholder-pink-500 w-full outline-none text-sm md:text-base lg:text-lg"
+              className="p-2 md:p-2 lg:p-3 rounded-2xl bg-white text-black placeholder-[#C20000] w-full outline-none text-sm md:text-base lg:text-lg"
             />
             <textarea
               placeholder="Enter Your Message !"
               rows="4"
-              className="p-2 md:p-2 lg:p-3 rounded-2xl bg-white text-black placeholder-pink-500 w-full outline-none text-sm md:text-base lg:text-lg"
+              className="p-2 md:p-2 lg:p-3 rounded-2xl bg-white text-black placeholder-[#C20000] w-full outline-none text-sm md:text-base lg:text-lg"
             />
             <button
               type="submit"
