@@ -1,5 +1,5 @@
 import { Routes, Route } from 'react-router-dom';
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import './App.css';
 import ScrollToTop from "./ScrollToTop";
 import ComingSoon from './components/ComingSoon';
@@ -16,6 +16,12 @@ import GrabAndGo from './components/GrabAndGo';
 
 function App() {
   const [showContact, setShowContact] = useState(false);
+  useEffect(() => {
+  const handleOpenContact = () => setShowContact(true);
+  window.addEventListener("openContactPopup", handleOpenContact);
+  return () => window.removeEventListener("openContactPopup", handleOpenContact);
+}, []);
+
 
   return (
     <>
@@ -30,13 +36,13 @@ function App() {
         <Route path="/our-story" element={<OurStory />} />
         <Route path="/wedding-event" element={<WeddingEvent />} />
         <Route path="/corporate-event" element={<CorporateEvent />} />
-        <Route path="//grab-go" element={<GrabAndGo />} />
+        <Route path="/grab-go" element={<GrabAndGo />} />
         <Route path="/menu" element={<Menu />} />
         <Route path="/faqs" element={<FAQPage />} />
         <Route path="/booking" element={<BookingPage />} />
         {/* Removed /contact route because popup opens instead */}
       </Routes>
-
+     
       {/* Contact Form Popup */}
       {showContact && <ContactForm onClose={() => setShowContact(false)} />}
     </>

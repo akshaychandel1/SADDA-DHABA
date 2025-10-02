@@ -248,14 +248,41 @@ const GrabAndGo = () => {
             </div>
       
             {/* Navigation Links */}
-            <nav className="flex flex-wrap justify-center space-x-4 text-base 2xl:text-[21px] uppercase tracking-wide">
-              <a href="#" className="hover:underline">Weddings & Events</a>
-              <a href="#" className="hover:underline">Corporate</a>
-              <a href="#" className="hover:underline">Grab & Go</a>
-              <a href="#" className="hover:underline">Menu</a>
-              <a href="#" className="hover:underline">About Us</a>
-              <a href="#" className="hover:underline">Contact</a>
-            </nav>
+             <nav className="flex flex-wrap justify-center space-x-4 text-base 2xl:text-[21px] uppercase tracking-wide">
+                    <ul className="flex space-x-6">
+              <li>
+                <Link to="/wedding-event" className="hover:underline">
+                  Weddings & Events
+                </Link>
+              </li>
+              <li>
+                <Link to="/corporate-event" className="hover:underline">
+                  Corporate
+                </Link>
+              </li>
+              <li>
+                <Link to="/grab-go" className="hover:underline">
+                  Grab & Go
+                </Link>
+              </li>
+              <li>
+                <Link to="/menu" className="hover:underline">
+                  Menu
+                </Link>
+              </li>
+              <li>
+                <Link to="/our-story" className="hover:underline">
+                  About Us
+                </Link>
+              </li>
+              <li>
+                <button onClick={() => window.dispatchEvent(new Event("openContactPopup"))} className="hover:underline cursor-pointer">
+              Contact
+            </button>
+            
+              </li>
+            </ul>
+                  </nav>
       
             {/* Copyright */}
             <p className="2xl:text-[21px] text-base opacity-80 text-center px-4">

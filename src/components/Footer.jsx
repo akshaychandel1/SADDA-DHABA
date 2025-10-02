@@ -10,6 +10,7 @@ import footdesk from "../assets/icons/footdesk.svg";
 import charfoot from "../assets/icons/charfoot.svg";
 import { HashLink } from 'react-router-hash-link';
 
+
 const SocialIcon = ({ href, children }) => (
   <a
     href={href}
@@ -19,7 +20,14 @@ const SocialIcon = ({ href, children }) => (
   </a>
 );
 
-const Footer = () => {
+const Footer = ({ onContactClick }) => {
+  const [isOpen, setIsOpen] = useState(false);
+   useEffect(() => {
+    const handleOpenContact = () => setShowContact(true);
+    window.addEventListener("openContactPopup", handleOpenContact);
+    return () => window.removeEventListener("openContactPopup", handleOpenContact);
+  }, []);
+
   const [is1440, setIs1440] = useState(false)
 
   useEffect(() => {
@@ -100,19 +108,27 @@ const Footer = () => {
           </div>
 
           {/* Navigation for Desktop */}
-<div className="hidden md:block bg-white rounded-3xl shadow-lg p-3">
-  <nav className="flex flex-wrap justify-around items-center text-lg font-bold text-gray-900">
-     <Link to="/" className="px-3 py-2">Home</Link>
-      <Link to="/our-story" className="px-3 py-2">Our Story</Link>
-      <Link to="/menu" className="px-3 py-2">Menu</Link>
-      <HashLink smooth to="/#service" className="hover:text-red-600">
-          Services
-        </HashLink>
-      <Link to="/faqs" className="px-3 py-2">FAQs</Link>
-      <Link to="/contact" className="px-3 py-2">Contact</Link>
-      <Link to="/booking" className="px-3 py-2">Make A Booking</Link>
+          <div className="hidden md:block bg-white rounded-3xl shadow-lg p-3">
+  <nav className="text-lg font-bold text-gray-900">
+    <ul className="flex flex-wrap justify-around items-center">
+      <li><Link to="/" className="px-3 py-2">Home</Link></li>
+      <li><Link to="/our-story" className="px-3 py-2">Our Story</Link></li>
+      <li><Link to="/menu" className="px-3 py-2">Menu</Link></li>
+      <li><HashLink smooth to="/#service" className="hover:text-red-600 px-3 py-2">Services</HashLink></li>
+      <li><Link to="/faqs" className="px-3 py-2">FAQs</Link></li>
+      <li>
+              <button
+  onClick={() => window.dispatchEvent(new Event("openContactPopup"))}
+className="cursor-pointer">
+  Contact
+</button>
+
+            </li>
+      <li><Link to="/booking" className="px-3 py-2">Make A Booking</Link></li>
+    </ul>
   </nav>
 </div>
+
 
 {/* Navigation for Mobile */}
 {/* Navigation for Mobile */}
@@ -131,7 +147,13 @@ const Footer = () => {
 {/* Second row */}
   <ul className="flex justify-around w-full">
   <li><Link to="/faqs" className="px-2">FAQs</Link></li>
-  <li><Link to="/contact" className="px-2">Contact</Link></li>
+  <li>
+              <button
+  onClick={() => window.dispatchEvent(new Event("openContactPopup"))}
+>
+  Contact
+</button>
+            </li>
   <li><Link to="/booking" className="px-2">Booking</Link></li>
   </ul>
   </nav>

@@ -327,7 +327,7 @@ const WeddingEvent = () => {
 
 
 
-      <Footer />
+      <Footer onContactClick={handleContactClick} />
     </>
   );
 };
