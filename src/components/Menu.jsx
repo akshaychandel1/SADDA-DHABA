@@ -29,18 +29,15 @@ export function Menu() {
       const typeParam = selectedType === "VEGETARIAN" ? "VEG" : "NON VEG";
 
       const response = await axios.get(
-        `https://findshproducts-rlsrgzipqq-nw.a.run.app/?category=${encodeURIComponent(
-          categoryParam
+        `https://findshproducts-rlsrgzipqq-nw.a.run.app/?category=${encodeURIComponent(categoryParam
         )}&type=${encodeURIComponent(typeParam)}`
       );
 
       const allDishes = Array.isArray(response.data?.data) ? response.data.data : [];
-
-      const filtered = allDishes.filter((dish) =>
-        selectedType === "VEGETARIAN" ? dish.veg === true : dish.veg === false
-      );
-
-      setDishes(filtered);
+      // // const filtered = allDishes.filter((dish) =>
+      // //   selectedType === "VEGETARIAN" ? dish.veg === true : dish.veg === false
+      // );
+      setDishes(allDishes);
     } catch (error) {
       console.error("Failed to fetch menu:", error);
       setDishes([]);
@@ -48,7 +45,6 @@ export function Menu() {
       setLoading(false);
     }
   };
-
   fetchMenu();
 }, [selectedCategory, selectedType]);
 
@@ -92,7 +88,7 @@ export function Menu() {
         </div>
 
         {/* Type Toggle */}
-        <div className="inline-flex justify-center py-1.5 px-5 bg-white rounded-full gap-4 border border-[#C20000]">
+        <div className="inline-flex justify-center py-1.5 px-1.5 bg-white rounded-full gap-4 border border-[#C20000]">
   {types.map((type) => (
     <button
       key={type}
@@ -128,10 +124,10 @@ export function Menu() {
               <img
                 src={dish.image}
                 alt={dish.title}
-                className="w-full h-72 object-contain"
+                className="w-full h-72 2xl:h-112 object-contain"
               />
               <div className="p-4 flex flex-col items-center text-center">
-  <h3 className="text-xl font-bold">{dish.title}</h3>
+  <h2 className="text-xl font-bold">{dish.title}</h2>
   <p className="text-sm mt-1 text-[#C20000]">{dish.subtitle}</p>
 </div>
 
