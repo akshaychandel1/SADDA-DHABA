@@ -66,7 +66,7 @@ export function Menu() {
         </motion.h1>
 
         <motion.p
-          className="text-base md:text-lg text-red-100"
+          className="text-base font-lato md:text-lg text-red-100"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1], delay: 0.3 }}
