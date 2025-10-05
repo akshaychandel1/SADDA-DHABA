@@ -10,6 +10,7 @@ import { Link } from "react-router-dom";
 import cartoon from "../assets/icons/cartoon.svg";
 import faq from "../assets/icons/faq.jpeg";
 import footdesk from "../assets/icons/footdesk.svg";
+import Footer from "./Footer";
 
 const faqs = [
   {
@@ -146,122 +147,7 @@ export default function FAQPage() {
 
       
     
-     <div className="relative bg-[#C20000] overflow-visible">
-  {/* Arc over the footer */}
-  <div className="absolute top-0 left-0 right-0 -mt-16 overflow-hidden leading-[0] z-20">
-    <svg
-      className="relative block w-full h-16"
-      xmlns="http://www.w3.org/2000/svg"
-      preserveAspectRatio="none"
-      viewBox="0 0 100 100"
-    >
-      <path d="M0,100 C50,0 50,0 100,100 Z" fill="#C20000" />
-
-    </svg>
-  </div>
-
-  <footer className="relative bg-[#C20000] text-white pt-16 -mt-0.5
-    2xl:mx-2 2xl:rounded-t-[60px] overflow-hidden z-10">
-    {/* Top content (social + nav + text) */}
-    <div className="relative z-10 flex flex-col items-center space-y-6">
-      {/* Social Icons */}
-      <div className="flex space-x-6 text-4xl">
-        <a href="#" className="hover:text-gray-200"><FaFacebookF /></a>
-        <a href="#" className="hover:text-gray-200"><FaInstagram /></a>
-        <a href="#" className="hover:text-gray-200"><FaTwitter /></a>
-        <a href="#" className="hover:text-gray-200"><FaTiktok /></a>
-      </div>
-
-      {/* Navigation Links */}
-      <nav className="flex flex-wrap justify-center space-x-4 text-base 2xl:text-[21px] uppercase tracking-wide">
-        <ul className="flex flex-col space-y-5 sm:space-y-0 items-center sm:flex-row sm:space-x-6">
-  <li>
-    <Link to="/wedding-event" className="">
-      Weddings & Events
-    </Link>
-  </li>
-  <li>
-    <Link to="/corporate-event" className="">
-      Corporate
-    </Link>
-  </li>
-  <li>
-    <Link to="/grab-go" className="">
-      Grab & Go
-    </Link>
-  </li>
-  <li>
-    <Link to="/menu" className="">
-      Menu
-    </Link>
-  </li>
-  <li>
-    <Link to="/our-story" className="">
-      About Us
-    </Link>
-  </li>
-  <li
-     onClick={() => window.dispatchEvent(new Event("openContactPopup"))} className=" cursor-pointer">
-  Contact
-  </li>
-</ul>
-      </nav>
-
-      {/* Copyright */}
-      <p className="2xl:text-[21px] text-base opacity-80 text-center px-4">
-        2025 SAADA HALWAI, All rights reserved.
-      </p>
-    </div>
-
-    {/* Footer Mascot Image */}
-    <div className="flex justify-center w-full text-center select-none z-0 relative overflow-visible mt-6">
-      {/* Desktop Images */}
-      <div className="hidden md:block relative w-full min-h-[400px]">
-        {/* Background footer image */}
-        <motion.img
-          src={footdesk}
-          alt="Halwai Mascot Desktop"
-          className="w-full h-auto absolute bottom-0 left-0 z-0"
-          initial={{ y: is1440 ? 120 : 100, opacity: 1 }}
-          whileInView={{ y: 0, opacity: 1 }}
-          transition={{ duration: 1, ease: "easeOut" }}
-          viewport={{ once: true, amount: 0.3 }}
-        />
-
-        {/* Character mascot */}
-        <motion.img
-          src={charfoot}
-          alt="Halwai Mascot Character"
-          className="absolute bottom-0 left-1/2 -translate-x-[58%] w-full max-w-[633px] z-10"
-          initial={{ y: is1440 ? 120 : 150, opacity: 0 }}
-          whileInView={{ y: 0, opacity: 1 }}
-          transition={{ duration: 1, ease: "easeOut", delay: 0.5 }}
-          viewport={{ once: true, amount: 0.3 }}
-        />
-      </div>
-
-      {/* Mobile Image */}
-      <div ref={ref} className="relative mt-2 block md:hidden w-full max-w-xs mx-auto overflow-visible">
-        <motion.img
-          src={footmob}
-          alt="Halwai Mascot Mobile Base"
-          className="w-full h-auto"
-          initial={{ y: 100, opacity: 1 }}
-          animate={inView ? { y: 0, opacity: 1 } : {}}
-          transition={{ duration: 0.7, ease: "easeOut" }}
-        />
-        <motion.img
-          src={charfoot}
-          alt="Halwai Mascot Mobile Overlay"
-          className="absolute left-1/2 bottom-0 -translate-x-1/2 w-[66%] z-50 pointer-events-none"
-          initial={{ y: 150, opacity: 1 }}
-          animate={inView ? { y: 0, opacity: 1 } : {}}
-          transition={{ duration: 0.7, ease: "easeOut", delay: 0.6 }}
-        />
-      </div>
-    </div>
-  </footer>
-</div>
+<Footer />
 
     
     </>

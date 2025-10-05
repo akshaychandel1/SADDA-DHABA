@@ -83,7 +83,7 @@ const Footer = ({ onContactClick }) => {
     justify-items-center md:justify-items-start"
         >
           <Link to="/">Home</Link>
-          <Link to="/cart">Cart</Link>
+          <Link to="/#">Cart</Link>
           <Link to="/our-story">Our Story</Link>
           <Link to="/faqs">FAQs</Link>
           <Link to="/menu">Menu</Link>
