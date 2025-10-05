@@ -111,8 +111,29 @@ export function Menu() {
       {/* Dish Grid */}
       <div className="xl:mb-20 grid grid-cols-1 xl:px-16 sm:grid-cols-2 md:grid-cols-3 gap-8">
         {loading ? (
-          <p className="text-center col-span-3 flex justify-center items-center
-           text-[#C20000] text-lg">Loading...</p>
+          <div className="col-span-3 flex justify-center items-center">
+  <svg
+    className="animate-spin h-10 w-10 text-[#C20000]"
+    xmlns="http://www.w3.org/2000/svg"
+    fill="none"
+    viewBox="0 0 24 24"
+  >
+    <circle
+      className="opacity-25"
+      cx="12"
+      cy="12"
+      r="10"
+      stroke="currentColor"
+      strokeWidth="4"
+    ></circle>
+    <path
+      className="opacity-75"
+      fill="currentColor"
+      d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"
+    ></path>
+  </svg>
+</div>
+
         ) : dishes.length > 0 ? (
           dishes.map((dish, index) => (
             <motion.div
