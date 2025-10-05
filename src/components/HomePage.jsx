@@ -2,7 +2,6 @@ import React, { useState, useEffect, useRef } from "react";
 import { useInView } from "react-intersection-observer";
 import "./HomePage.css";
 import { Link } from "react-router-dom";
-
 import Footer from "./Footer";
 import {
   motion,
@@ -62,7 +61,9 @@ const testimonials = [
   },
 ];
 
-const HomePage = () => {
+const HomePage = ({ onContactClick }) => {
+  const [isOpen, setIsOpen] = useState(false);
+
   const SLIDES = [
     { src: Img1, alt: "Weddings and Events" },
     { src: Img2, alt: "Weddings and Events" },
@@ -686,6 +687,7 @@ const HomePage = () => {
 
           {/* Button fixed bottom-left on desktop, centered on mobile */}
           <motion.button
+           onClick={() => { onContactClick(); setIsOpen(false); }}
             className="absolute md:bottom-12 md:left-22 left-1/2 transform -translate-x-1/2 md:transform-none whitespace-nowrap font-barber text-sm sm:text-base md:text-lg lg:text-xl 2xl:text-3xl 3xl:text-4xl bg-white text-[#C20000] px-5 sm:px-6 md:px-10 pt-2 sm:pt-3 md:pt-4 pb-1 sm:pb-2 md:pb-3 rounded-2xl shadow-xl leading-[1.2] transition-transform duration-300 ease-in-out transform hover:scale-110"
             initial={{ opacity: 0, y: 30, scale: 0.95 }}
             whileInView={{ opacity: 1, y: 0, scale: 1 }}
@@ -706,7 +708,7 @@ const HomePage = () => {
 </div>
 
       </motion.section>
-      <Footer />
+      <Footer  onContactClick={() => setShowContact(true)} />
     </>
   );
 };

@@ -10,7 +10,7 @@ import footmob from "../assets/icons/footmob.svg";
 import footdesk from "../assets/icons/footdesk.svg";
 import charfoot from "../assets/icons/charfoot.svg";
 
-const Footer = () => {
+const Footer = ({ onContactClick }) => {
   const [showContact, setShowContact] = useState(false);
   const [is1440, setIs1440] = useState(false);
 
@@ -87,7 +87,11 @@ const Footer = () => {
           <Link to="/our-story">Our Story</Link>
           <Link to="/faqs">FAQs</Link>
           <Link to="/menu">Menu</Link>
-          <Link to="/contact">Contact</Link>
+        <li
+  onClick={() => window.dispatchEvent(new Event("openContactPopup"))}
+  className="list-none  cursor-pointer">
+  Contact
+</li>
           <HashLink smooth to="/#service">Services</HashLink>
           <Link to="/privacy-policy">Privacy Policy</Link>
           <Link to="/booking">Booking</Link>
@@ -95,21 +99,6 @@ const Footer = () => {
         </motion.div>
       </div>
 
-      {/* Popup */}
-      {showContact && (
-        <div className="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50">
-          <div className="bg-white text-black p-6 rounded-xl w-96 shadow-lg">
-            <h2 className="text-xl font-bold mb-4">Contact Us</h2>
-            <p className="mb-4">This is your contact popup.</p>
-            <button
-              onClick={() => setShowContact(false)}
-              className="bg-[#C20000] text-white px-4 py-2 rounded-lg"
-            >
-              Close
-            </button>
-          </div>
-        </div>
-      )}
 
       {/* Mascot Images */}
       <div className="flex justify-center w-full text-center select-none relative overflow-visible z-0">

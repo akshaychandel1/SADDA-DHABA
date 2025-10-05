@@ -174,37 +174,35 @@ export default function FAQPage() {
 
       {/* Navigation Links */}
       <nav className="flex flex-wrap justify-center space-x-4 text-base 2xl:text-[21px] uppercase tracking-wide">
-        <ul className="flex space-x-6">
+        <ul className="flex flex-col space-y-5 sm:space-y-0 items-center sm:flex-row sm:space-x-6">
   <li>
-    <Link to="/wedding-event" className="hover:underline">
+    <Link to="/wedding-event" className="">
       Weddings & Events
     </Link>
   </li>
   <li>
-    <Link to="/corporate-event" className="hover:underline">
+    <Link to="/corporate-event" className="">
       Corporate
     </Link>
   </li>
   <li>
-    <Link to="/grab-go" className="hover:underline">
+    <Link to="/grab-go" className="">
       Grab & Go
     </Link>
   </li>
   <li>
-    <Link to="/menu" className="hover:underline">
+    <Link to="/menu" className="">
       Menu
     </Link>
   </li>
   <li>
-    <Link to="/our-story" className="hover:underline">
+    <Link to="/our-story" className="">
       About Us
     </Link>
   </li>
-  <li>
-    <button onClick={() => window.dispatchEvent(new Event("openContactPopup"))} className="hover:underline cursor-pointer">
+  <li
+     onClick={() => window.dispatchEvent(new Event("openContactPopup"))} className=" cursor-pointer">
   Contact
-</button>
-
   </li>
 </ul>
       </nav>

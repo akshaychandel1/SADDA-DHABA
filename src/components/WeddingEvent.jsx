@@ -258,58 +258,61 @@ const WeddingEvent = () => {
 
 
 
+
+
       {/* SECTION 4 */}
-      <div className="bg-white text-[#C20000] overflow-hidden -mb-px">
-        <div className="relative container mx-auto px-2 py-12 md:py-20 text-center">
-          <motion.h1
-            className="font-barber relative my-6 leading-snug text-center text-2xl sm:text-4xl md:text-6xl 2xl:text-8xl tracking-wide mb-3 flex flex-col items-center gap-4"
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{
-              duration: 1.2,
-              ease: [0.22, 1, 0.36, 1],
-              delay: 0.2,
-            }}
-          >
-            <span className="flex flex-wrap justify-center items-center gap-2">
-              FRESHNESS
-              <motion.img
-                src={leafIcon}
-                alt="Leaf"
-                style={{ y: yLeaf, rotate: rLeaf, scale: sLeaf }}
-                className="inline-block w-8 h-8 sm:w-12 sm:h-12 md:w-16 md:h-16 lg:w-20 lg:h-20"
-                whileHover={{ scale: 1.15, rotate: -15 }}
-              />
-              IS OUR SECRET SPICE,
-              <motion.img
-                src={chiliIcon}
-                alt="Chili"
-                style={{ y: yChili, rotate: rChili, scale: sChili }}
-                className="inline-block w-8 h-8 sm:w-12 sm:h-12 md:w-16 md:h-16 lg:w-20 lg:h-20"
-                whileHover={{ scale: 1.15, rotate: 15 }}
-              />
-            </span>
-            <span className="flex flex-wrap justify-center items-center gap-2">
-              <motion.img
-                src={eggplantIcon}
-                alt="Eggplant"
-                style={{ y: yEggplant, rotate: rEggplant, scale: sEggplant }}
-                className="inline-block w-8 h-8 sm:w-12 sm:h-12 md:w-16 md:h-16 lg:w-20 lg:h-20"
-                whileHover={{ scale: 1.15, rotate: -10 }}
-              />
-              STRAIGHT FROM FARM
-              <motion.img
-                src={carrotIcon}
-                alt="Carrot"
-                style={{ y: yCarrot, rotate: rCarrot, scale: sCarrot }}
-                className="inline-block w-8 h-8 sm:w-12 sm:h-12 md:w-16 md:h-16 lg:w-20 lg:h-20"
-                whileHover={{ scale: 1.15, rotate: 0 }}
-              />
-              TO PLATE
-            </span>
-          </motion.h1>
-        </div>
-      </div>
+<div className="bg-white text-[#C20000] overflow-hidden -mb-px">
+  <div className="relative container mx-auto px-2 py-12 md:py-20 text-center">
+    <motion.h1
+      className="font-barber relative my-6 leading-snug text-center text-2xl sm:text-4xl md:text-6xl 2xl:text-8xl tracking-wide mb-3"
+      initial={{ opacity: 0, y: 40 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{
+        duration: 1.2,
+        ease: [0.22, 1, 0.36, 1],
+        delay: 0.2,
+      }}
+    >
+      FRESHNESS IS OUR SECRET SPICE, STRAIGHT FROM FARM TO PLATE
+
+      {/* Floating corner icons */}
+      <motion.img
+        src={leafIcon}
+        alt="Leaf"
+        className="absolute -top-2 left-0 w-12 h-12 sm:w-14 sm:h-14 md:w-20 md:h-20 lg:w-26 lg:h-26"
+        animate={{ y: [0, -10, 0], rotate: [0, -15, 0] }}
+        transition={{ duration: 2, repeat: Infinity, repeatType: "loop", ease: "easeInOut" }}
+        whileHover={{ scale: 1.15, rotate: -15 }}
+      />
+      <motion.img
+        src={chiliIcon}
+        alt="Chili"
+        className="absolute top-0 right-0 w-12 h-12 sm:w-14 sm:h-14 md:w-20 md:h-20 lg:w-26 lg:h-26"
+        animate={{ y: [0, -8, 0], rotate: [0, 15, 0] }}
+        transition={{ duration: 2.5, repeat: Infinity, repeatType: "loop", ease: "easeInOut" }}
+        whileHover={{ scale: 1.15, rotate: 15 }}
+      />
+      <motion.img
+        src={eggplantIcon}
+        alt="Eggplant"
+        className="absolute bottom-0 left-0 w-12 h-12 sm:w-14 sm:h-14 md:w-20 md:h-20 lg:w-26 lg:h-26"
+        animate={{ y: [0, 10, 0], rotate: [0, -10, 0] }}
+        transition={{ duration: 3, repeat: Infinity, repeatType: "loop", ease: "easeInOut" }}
+        whileHover={{ scale: 1.15, rotate: -10 }}
+      />
+      <motion.img
+        src={carrotIcon}
+        alt="Carrot"
+        className="absolute bottom-0 right-0 w-12 h-12 sm:w-14 sm:h-14 md:w-20 md:h-20 lg:w-26 lg:h-26"
+        animate={{ y: [0, 12, 0], rotate: [0, 10, 0] }}
+        transition={{ duration: 2.8, repeat: Infinity, repeatType: "loop", ease: "easeInOut" }}
+        whileHover={{ scale: 1.15, rotate: 0 }}
+      />
+    </motion.h1>
+  </div>
+</div>
+
+
 
 
 

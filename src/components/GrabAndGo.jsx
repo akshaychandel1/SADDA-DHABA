@@ -171,6 +171,7 @@ const GrabAndGo = () => {
 
           {/* Button fixed bottom-left on desktop, centered on mobile */}
           <motion.button
+          onClick={() => window.dispatchEvent(new Event("openContactPopup"))}
             className="absolute md:bottom-12 md:left-22 left-1/2 transform -translate-x-1/2 md:transform-none whitespace-nowrap font-barber text-sm sm:text-base md:text-lg lg:text-xl 2xl:text-3xl 3xl:text-4xl bg-white text-[#C20000] px-5 sm:px-6 md:px-10 pt-2 sm:pt-3 md:pt-4 pb-1 sm:pb-2 md:pb-3 rounded-2xl shadow-xl leading-[1.2] transition-transform duration-300 ease-in-out transform hover:scale-110"
             initial={{ opacity: 0, y: 30, scale: 0.95 }}
             whileInView={{ opacity: 1, y: 0, scale: 1 }}
@@ -248,41 +249,40 @@ const GrabAndGo = () => {
             </div>
       
             {/* Navigation Links */}
-             <nav className="flex flex-wrap justify-center space-x-4 text-base 2xl:text-[21px] uppercase tracking-wide">
-                    <ul className="flex space-x-6">
-              <li>
-                <Link to="/wedding-event" className="hover:underline">
-                  Weddings & Events
-                </Link>
-              </li>
-              <li>
-                <Link to="/corporate-event" className="hover:underline">
-                  Corporate
-                </Link>
-              </li>
-              <li>
-                <Link to="/grab-go" className="hover:underline">
-                  Grab & Go
-                </Link>
-              </li>
-              <li>
-                <Link to="/menu" className="hover:underline">
-                  Menu
-                </Link>
-              </li>
-              <li>
-                <Link to="/our-story" className="hover:underline">
-                  About Us
-                </Link>
-              </li>
-              <li>
-                <button onClick={() => window.dispatchEvent(new Event("openContactPopup"))} className="hover:underline cursor-pointer">
-              Contact
-            </button>
-            
-              </li>
-            </ul>
-                  </nav>
+             {/* Navigation Links */}
+                   <nav className="flex flex-wrap justify-center space-x-4 text-base 2xl:text-[21px] uppercase tracking-wide">
+                     <ul className="flex flex-col space-y-5 sm:space-y-0 items-center sm:flex-row sm:space-x-6">
+               <li>
+                 <Link to="/wedding-event" className="">
+                   Weddings & Events
+                 </Link>
+               </li>
+               <li>
+                 <Link to="/corporate-event" className="">
+                   Corporate
+                 </Link>
+               </li>
+               <li>
+                 <Link to="/grab-go" className="">
+                   Grab & Go
+                 </Link>
+               </li>
+               <li>
+                 <Link to="/menu" className="">
+                   Menu
+                 </Link>
+               </li>
+               <li>
+                 <Link to="/our-story" className="">
+                   About Us
+                 </Link>
+               </li>
+               <li
+                  onClick={() => window.dispatchEvent(new Event("openContactPopup"))} className="cursor-pointer">
+               Contact
+               </li>
+             </ul>
+                   </nav>
       
             {/* Copyright */}
             <p className="2xl:text-[21px] text-base opacity-80 text-center px-4">
