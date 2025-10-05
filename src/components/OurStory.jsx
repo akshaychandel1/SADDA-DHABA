@@ -12,6 +12,11 @@ import Vector1 from "../assets/icons/Vector1.svg";
 import Vector2 from "../assets/icons/Vector2.svg";
 import Vector3 from "../assets/icons/Vector3.svg";
 import Vector4 from "../assets/icons/Vector4.svg";
+import FirstIllu from "../assets/icons/FirstIllustration.png";
+import SecIllu from "../assets/icons/SecondIlustration.png";
+import ThirdIllu from "../assets/icons/ThirdIllu.png";
+import FourthIllu from "../assets/icons/FourthIllu.png";
+import FifthIllu from "../assets/icons/FifthIllu.png";
 
 const OurStory = () => {
   return (
@@ -32,15 +37,30 @@ const OurStory = () => {
         </section>
 
         {/* First Image */}
-        <div className="flex flex-col justify-center items-center">
-          <div className="mt-6 w-full max-w-6xl h-auto px-4">
-            <img
-              src={FirstImage}
-              alt="Display of various Indian sweets and chaat dishes"
-              className="w-full h-auto object-cover object-center rounded-xl sm:rounded-2xl lg:rounded-[2rem] mx-auto"
-            />
-          </div>
-        </div>
+       <div className="flex flex-col justify-center items-center">
+  <div className="relative mt-6 w-full max-w-6xl h-auto px-4">
+    {/* Base Image */}
+    <img
+      src={FirstImage}
+      alt="Display of various Indian sweets and chaat dishes"
+      className="w-full h-auto object-cover object-center rounded-xl sm:rounded-2xl lg:rounded-[2rem] mx-auto"
+    />
+
+    {/* Overlay Mascot */}
+  <motion.img
+      src={FirstIllu}
+      alt="Mascot Illustration"
+      className="absolute right-20 sm:right-10 md:right-20 lg:right-32 bottom-4 sm:bottom-10 lg:bottom-14 w-20 sm:w-28 md:w-36 lg:w-56 h-auto object-contain z-10"
+      animate={{ y: [0, -20, 0] }} // 👈 float up & down
+      transition={{
+        duration: 2, // one full cycle (up + down)
+        repeat: Infinity, // loops forever
+        ease: "easeInOut", // smooth motion
+      }}
+    />
+  </div>
+</div>
+
 
         {/* Section 1 */}
         <div className="relative w-full max-w-[1920px] mx-auto min-h-[500px] sm:min-h-[600px] md:min-h-[720px] lg:min-h-[900px] 2xl:h-[1080px] px-4">
@@ -52,6 +72,7 @@ const OurStory = () => {
               Raised on the sound of sizzling tadkas, not lullabies..
             </p>
           </div>
+          
           <img
             src={Vector1}
             alt="Vector 1"
@@ -63,13 +84,29 @@ const OurStory = () => {
             "
           />
           <div className="pt-12 sm:pt-20 md:pt-28 lg:pt-32 2xl:pt-40 flex flex-col justify-center items-center">
-            <div className="items-center w-full max-w-7xl h-auto">
-              <img
-                src={SecondImage}
-                alt="Display of various Indian sweets and chaat dishes"
-                className="w-full h-auto object-cover object-center rounded-xl sm:rounded-2xl lg:rounded-[2rem] mx-auto"
-              />
-            </div>
+            <div className="relative items-center w-full max-w-7xl h-auto">
+  {/* Base Image */}
+  <img
+    src={SecondImage}
+    alt="Display of various Indian sweets and chaat dishes"
+    className="w-full h-auto object-cover object-center rounded-xl sm:rounded-2xl lg:rounded-[2rem] mx-auto"
+  />
+
+  {/* Floating Mascot */}
+  <motion.img
+    src={SecIllu}
+    alt="Mascot Illustration"
+    className="absolute left-10 sm:left-8 md:left-20 lg:left-26 bottom-4 sm:bottom-10 lg:bottom-14 
+               w-28 sm:w-32 md:w-36 lg:w-96 h-auto object-contain z-10"
+    animate={{ y: [0, -20, 0] }} // 👈 float up & down
+    transition={{
+      duration: 2, // one full cycle (up + down)
+      repeat: Infinity, // loops forever
+      ease: "easeInOut", // smooth motion
+    }}
+  />
+</div>
+
           </div>
         </div>
 
@@ -94,12 +131,23 @@ const OurStory = () => {
             "
           />
           <div className="pt-24 sm:pt-20 md:pt-50 lg:pt-62 xl:pt-82 2xl:pt-102 flex flex-col justify-center items-center">
-            <div className="items-center w-full max-w-6xl h-auto">
+            <div className="relative items-center w-full max-w-6xl h-auto">
               <img
                 src={ThirdImage}
                 alt="Display of various Indian sweets and chaat dishes"
                 className="w-full h-auto object-cover object-center rounded-xl sm:rounded-2xl lg:rounded-[2rem] mx-auto"
               />
+              <motion.img
+      src={ThirdIllu}
+      alt="Mascot Illustration"
+      className="absolute right-7 sm:right-10 md:right-20 lg:right-18 bottom-4 sm:bottom-10 lg:bottom-14 w-20 sm:w-28 md:w-36 lg:w-60 2xl:w-76 h-auto object-contain z-10"
+      animate={{ y: [0, -20, 0] }} // 👈 float up & down
+      transition={{
+        duration: 2, // one full cycle (up + down)
+        repeat: Infinity, // loops forever
+        ease: "easeInOut", // smooth motion
+      }}
+    />
             </div>
           </div>
         </div>
@@ -125,18 +173,28 @@ const OurStory = () => {
             "
           />
           <div className="pt-22 sm:pt-20 md:pt-28 lg:pt-46 2xl:pt-112 flex flex-col justify-center items-center">
-            <div className="items-center w-full max-w-6xl h-auto">
+            <div className="relative items-center w-full max-w-6xl h-auto">
               <img
                 src={FourthImage}
                 alt="Display of various Indian sweets and chaat dishes"
-                className="-mt-10 sm:-mt-20 md:-mt-28 lg:-mt-32 2xl:-mt-40 w-full h-auto object-cover object-center rounded-xl sm:rounded-2xl lg:rounded-[2rem] mx-auto"
+                className="-mt-10 sm:-mt-20 md:-mt-13 lg:-mt-32 2xl:-mt-40 w-full h-auto object-cover object-center rounded-xl sm:rounded-2xl lg:rounded-[2rem] mx-auto"
               />
+              <motion.img
+      src={FourthIllu}
+      alt="Mascot Illustration"
+      className="absolute right-1 sm:right-10 md:right-3 lg:right-16 2xl:right-1 -bottom-1 sm:bottom-10 md:-bottom-4 lg:-bottom-3 w-100 sm:w-28 md:w-180 lg:w-260 2xl:w-286 h-auto object-contain z-10"
+      animate={{ y: [0, -10, 0] }} // 👈 float up & down
+      transition={{
+        duration: 1.5, // one full cycle (up + down)
+        repeat: Infinity, // loops forever
+        ease: "easeInOut", // smooth motion
+      }}/>
             </div>
           </div>
         </div>
 
         {/* Section 4 */}
-        <div className="-mt-30 sm:mt-20 md:mt-28 lg:-mt-0 2xl:mt-35 relative w-full max-w-[1920px] mx-auto min-h-[500px] sm:min-h-[600px] md:min-h-[720px] lg:min-h-[900px] 2xl:h-[1080px] px-4">
+        <div className="-mt-30 sm:-mt-20 md:-mt-2 lg:-mt-0 2xl:mt-35 relative w-full max-w-[1920px] mx-auto min-h-[500px] sm:min-h-[600px] md:min-h-[720px] lg:min-h-[900px] 2xl:h-[1080px] px-4">
           <div className="w-full flex flex-col justify-center text-center px-2 sm:px-6">
             <h2 className="text-[#C20000] font-barber max-w-5xl text-2xl sm:text-4xl md:text-6xl lg:text-7xl 2xl:text-8xl 3xl:text-9xl tracking-wide mx-auto">
               From Ladle to Legacy
@@ -157,12 +215,26 @@ const OurStory = () => {
             "
           />
           <div className="pt-10 sm:pt-36 md:pt-52 lg:pt-32 2xl:pt-30 flex flex-col justify-center items-center">
-            <div className="items-center w-full max-w-6xl h-auto">
+            <div className="relative items-center w-full max-w-6xl h-auto">
               <img
                 src={FifthImage}
                 alt="Display of various Indian sweets and chaat dishes"
                 className="w-full h-auto object-cover object-center rounded-xl sm:rounded-2xl lg:rounded-[2rem] mx-auto"
               />
+                  <motion.img
+  src={FifthIllu}
+  alt="Mascot Illustration"
+  className="absolute left-1/2 bottom-4 sm:bottom-10 lg:bottom-14 
+             -translate-x-1/2 w-30 sm:w-38 md:w-48 lg:w-72 2xl:w-76 
+             h-auto object-contain z-10"
+  animate={{ y: [0, -10, 0] }} // 👈 float up & down
+  transition={{
+    duration: 2, // total up-down cycle
+    repeat: Infinity, // infinite loop
+    ease: "easeInOut", // smooth easing
+  }}
+/>
+
             </div>
           </div>
         </div>
