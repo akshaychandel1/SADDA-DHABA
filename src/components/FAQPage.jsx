@@ -8,6 +8,7 @@ import charfoot from "../assets/icons/charfoot.svg";
 import footmob from "../assets/icons/footmob.svg";
 import { Link } from "react-router-dom";
 import cartoon from "../assets/icons/cartoon.svg";
+import faq from "../assets/icons/faq.jpeg";
 import footdesk from "../assets/icons/footdesk.svg";
 
 const faqs = [
@@ -100,7 +101,7 @@ export default function FAQPage() {
           <div className="overflow-hidden shadow-xl rounded-[3rem] max-w-[100%] mx-auto">
             <div className="relative w-full aspect-[1637/623]">
               <img
-                src={wed}
+                src={faq}
                 alt="Buffet"
                 className="absolute inset-0 w-full h-full object-cover"
               />

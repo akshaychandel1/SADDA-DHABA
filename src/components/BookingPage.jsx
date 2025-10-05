@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import rolling from "../assets/icons/Rolling.svg";
+import Footer from "./Footer";
 
 const BookingPage = () => {
   const [selectedBudget, setSelectedBudget] = useState("");
@@ -58,6 +59,7 @@ const BookingPage = () => {
   };
 
   return (
+    <>
     <section className="relative">
       {/* Half red (top) and half white (bottom) background */}
       <div className="absolute inset-0">
@@ -245,6 +247,8 @@ const BookingPage = () => {
         </div>
       </div>
     </section>
+      <Footer />
+      </>
   );
 };
 

@@ -31,7 +31,7 @@ const ContactForm = ({ onClose }) => {
           className="
             flex-1 bg-[#C20000] text-white flex flex-col justify-start
             px-2 md:px-4 lg:px-12 py-3 md:py-5 lg:py-10
-            relative rounded-tr-[2rem] rounded-br-[2rem]"
+            relative rounded-tr-[2rem] rounded-br-[2rem]  overflow-y-auto max-h-[95vh]"
         >
           {/* Close Button */}
           <button

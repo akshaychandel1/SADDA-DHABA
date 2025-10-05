@@ -3,6 +3,7 @@ import { FaFacebookF, FaInstagram, FaTwitter, FaTiktok } from "react-icons/fa";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { Link } from "react-router-dom";
+import { HashLink } from 'react-router-hash-link';
 
 // Assets
 import footmob from "../assets/icons/footmob.svg";
@@ -76,8 +77,10 @@ const Footer = () => {
           initial={{ y: 0, opacity: 1 }}
           animate={inView ? { y: 0, opacity: 1 } : {}}
           transition={{ duration: 0.6, delay: 0.4 }}
-          className="flex-1 grid grid-cols-2 gap-x-6 gap-y-4 text-md mb-6 md:mb-0 xl:text-xl 
-                     text-center md:text-right justify-items-start md:justify-items-start "
+          className="flex-1 grid grid-cols-2 gap-x-6 gap-y-4 xl:gap-y-7 
+    text-md mb-6 md:mb-0 xl:text-xl
+    text-center md:text-right
+    justify-items-center md:justify-items-start"
         >
           <Link to="/">Home</Link>
           <Link to="/cart">Cart</Link>
@@ -85,7 +88,7 @@ const Footer = () => {
           <Link to="/faqs">FAQs</Link>
           <Link to="/menu">Menu</Link>
           <Link to="/contact">Contact</Link>
-          <Link to="/services">Services</Link>
+          <HashLink smooth to="/#service">Services</HashLink>
           <Link to="/privacy-policy">Privacy Policy</Link>
           <Link to="/booking">Booking</Link>
           <Link to="/terms">Terms & Conditions</Link>

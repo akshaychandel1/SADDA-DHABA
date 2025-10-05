@@ -204,7 +204,7 @@ const WeddingEvent = () => {
       </section>
 
       {/* SECTION 2 - Dhol */}
-      <section ref={sectionRef} className="bg-[#C20000] -mt-18 sm:-mt-30 lg:-mt-35 2xl:-mt-35">
+      {/* <section ref={sectionRef} className="bg-[#C20000] -mt-18 sm:-mt-30 lg:-mt-35 2xl:-mt-35">
         <div className="container mx-auto px-4">
           <motion.img
             src={Dhol}
@@ -213,7 +213,26 @@ const WeddingEvent = () => {
             style={{ y: yDhol }}
           />
         </div>
-      </section>
+      </section> */}
+      <section
+  ref={sectionRef}
+  className="bg-[#C20000] -mt-18 sm:-mt-30 lg:-mt-35 2xl:-mt-35"
+>
+  <div className="container mx-auto px-4">
+    <motion.img
+      src={Dhol}
+      alt="Centered PNG"
+      className="mx-auto w-26 sm:w-36 md:w-42 lg:w-48 2xl:w-76 object-contain"
+      animate={{ y: [0, -20, 0] }} // moves up and back
+      transition={{
+        duration: 2, // total cycle time
+        repeat: Infinity, // keeps looping
+        ease: "easeInOut", // smooth movement
+      }}
+    />
+  </div>
+</section>
+
 
       {/* SECTION 3 */}
 <section className="relative py-10 -mt-0.5 z-10">

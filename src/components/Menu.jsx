@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { motion } from "framer-motion";
+import Footer from "./Footer";
 
 const categories = ["MAIN COURSE", "RICE", "SALAD", "BREADS", "DESSERTS", "DRINKS", "STARTERS"];
 const types = ["VEGETARIAN", "NON-VEGETARIAN"];
@@ -106,9 +107,9 @@ export function Menu() {
 
       </motion.div>
 </div>
-<div className="mt-12">
+<div className="m-12">
       {/* Dish Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+      <div className="xl:mb-20 grid grid-cols-1 xl:px-16 sm:grid-cols-2 md:grid-cols-3 gap-8">
         {loading ? (
           <p className="text-center col-span-3 flex justify-center items-center
            text-[#C20000] text-lg">Loading...</p>
@@ -127,8 +128,8 @@ export function Menu() {
                 className="w-full h-72 2xl:h-112 object-contain"
               />
               <div className="p-4 flex flex-col items-center text-center">
-  <h2 className="text-xl font-bold">{dish.title}</h2>
-  <p className="text-sm mt-1 text-[#C20000]">{dish.subtitle}</p>
+  <h2 className="text-2xl font-barber tracking-wide">{dish.title}</h2>
+  <p className="text-lg mt-1 2xl:px-22 text-[#C20000]">{dish.subtitle}</p>
 </div>
 
             </motion.div>
@@ -140,6 +141,7 @@ export function Menu() {
         )}
       </div>
 </div>
+<Footer />
     </>
   );
 }
