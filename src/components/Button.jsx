@@ -18,8 +18,8 @@ const Button = () => {
         backgroundColor: "#C20000",
         color: "#fff",
         borderRadius: "50%",
-        width: "80px",
-        height: "80px",
+        width: "65px",
+        height: "65px",
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
@@ -28,7 +28,7 @@ const Button = () => {
         zIndex: 1000,
       }}
     >
-      <FaWhatsapp size={50} />
+      <FaWhatsapp size={45} />
     </a>
   );
 }

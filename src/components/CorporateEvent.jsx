@@ -100,7 +100,7 @@ const CorporateEvent = () => {
   const parallaxScale = useTransform(
     parallaxScrollYProgress,
     [0, 1],
-    [1, 1.3]
+    [1.05, 1]
   );
 
   const [emblaRef] = useEmblaCarousel({ loop: true, align: "center" });
