@@ -475,7 +475,7 @@ const WeddingEvent = () => {
     <div className="flex w-full justify-between relative z-10 mt-16 px-4 md:px-0">
       {/* 1st square */}
       <div
-        className="hidden md:block relative w-36 h-40 md:w-90 md:h-96 bg-[#C20000] rounded-lg md:-top-6 2xl:-top-10 animate-swing"
+        className="hidden md:block relative w-36 h-40 md:w-80 md:h-86 bg-[#C20000] rounded-lg md:-top-6 2xl:-top-10 animate-swing"
         style={{ transform: "rotate(6deg)", animationDelay: "0s" }}
       >
         <div className="absolute -top-5 left-1/2 -translate-x-1/2 w-3 md:w-4 h-8 md:h-12 bg-[#C20000] rounded-sm"></div>
@@ -488,7 +488,7 @@ const WeddingEvent = () => {
 
       {/* 2nd square */}
       <div
-        className="relative w-36 h-40 md:w-90 md:h-96 bg-[#C20000] rounded-lg md:top-2 2xl:top-2 -top-2 animate-swing"
+        className="relative w-36 h-40 md:w-80 md:h-86 bg-[#C20000] rounded-lg md:top-2 2xl:top-2 -top-2 animate-swing"
         style={{ transform: "rotate(3deg)", animationDelay: "0.2s" }}
       >
         <div className="absolute -top-8 left-1/2 -translate-x-1/2 w-3 md:w-4 h-8 md:h-12 bg-[#C20000] rounded-sm"></div>
@@ -501,7 +501,7 @@ const WeddingEvent = () => {
 
       {/* 3rd square */}
       <div
-        className="relative w-36 h-40 md:w-90 md:h-96 bg-[#C20000] rounded-lg md:top-4 2xl:top-4 top-2 animate-swing"
+        className="relative w-36 h-40 md:w-80 md:h-86 bg-[#C20000] rounded-lg md:top-4 2xl:top-4 top-2 animate-swing"
         style={{ transform: "rotate(0deg)", animationDelay: "0.4s" }}
       >
         <div className="absolute -top-7 left-1/2 -translate-x-1/2 w-3 md:w-4 h-8 md:h-12 bg-[#C20000] rounded-sm"></div>
@@ -514,7 +514,7 @@ const WeddingEvent = () => {
 
       {/* 4th square */}
       <div
-        className="relative w-36 h-40 md:w-90 md:h-96 bg-[#C20000] rounded-lg md:top-2 2xl:top-0 -top-2 animate-swing"
+        className="relative w-36 h-40 md:w-80 md:h-86 bg-[#C20000] rounded-lg md:top-2 2xl:top-0 -top-2 animate-swing"
         style={{ transform: "rotate(-3deg)", animationDelay: "0.6s" }}
       >
         <div className="absolute -top-8 left-1/2 -translate-x-1/2 w-3 md:w-4 h-8 md:h-12 bg-[#C20000] rounded-sm"></div>
@@ -527,7 +527,7 @@ const WeddingEvent = () => {
 
       {/* 5th square */}
       <div
-        className="hidden md:block relative w-36 h-40 md:w-90 md:h-96 bg-[#C20000] rounded-lg md:-top-6 2xl:-top-10 animate-swing"
+        className="hidden md:block relative w-36 h-40 md:w-80 md:h-86 bg-[#C20000] rounded-lg md:-top-6 2xl:-top-10 animate-swing"
         style={{ transform: "rotate(-6deg)", animationDelay: "0.8s" }}
       >
         <div className="absolute -top-5 left-1/2 -translate-x-1/2 w-3 md:w-4 h-8 md:h-12 bg-[#C20000] rounded-sm"></div>
