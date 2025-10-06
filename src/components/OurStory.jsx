@@ -37,10 +37,14 @@ const OurStory = ({ onContactClick }) => {
         <div className="flex flex-col justify-center items-center">
           <div className="relative mt-6 w-full max-w-6xl h-auto px-4">
             {/* Base Image */}
-            <img
+            <motion.img
               src={FirstImage}
               alt="Display of various Indian sweets and chaat dishes"
               className="w-full h-auto object-cover object-center rounded-xl sm:rounded-2xl lg:rounded-[2rem] mx-auto"
+              initial={{ opacity: 0, x: -200 }} // start off to the left and invisible
+              whileInView={{ opacity: 1, x: 0 }} // animate when in viewport
+              viewport={{ once: true, amount: 0.3 }} // only animate once when 30% visible
+              transition={{ duration: 1, ease: "easeOut" }}
             />
 
             {/* Overlay Mascot */}
@@ -82,10 +86,14 @@ const OurStory = ({ onContactClick }) => {
           <div className="pt-12 sm:pt-20 md:pt-28 lg:pt-32 2xl:pt-40 flex flex-col justify-center items-center">
             <div className="relative items-center w-full max-w-7xl h-auto">
               {/* Base Image */}
-              <img
+              <motion.img
                 src={SecondImage}
                 alt="Display of various Indian sweets and chaat dishes"
                 className="w-full h-auto object-cover object-center rounded-xl sm:rounded-2xl lg:rounded-[2rem] mx-auto"
+                initial={{ opacity: 1, x: 200 }} // start off to the right
+                whileInView={{ opacity: 1, x: 0 }} // animate when in viewport
+                viewport={{ once: true, amount: 0.3 }} // trigger once when 30% visible
+                transition={{ duration: 1, ease: "easeOut" }}
               />
 
               {/* Floating Mascot */}
@@ -127,10 +135,14 @@ const OurStory = ({ onContactClick }) => {
           />
           <div className="pt-24 sm:pt-20 md:pt-50 lg:pt-62 xl:pt-82 2xl:pt-102 flex flex-col justify-center items-center">
             <div className="relative items-center w-full max-w-6xl h-auto">
-              <img
+              <motion.img
                 src={ThirdImage}
                 alt="Display of various Indian sweets and chaat dishes"
                 className="w-full h-auto object-cover object-center rounded-xl sm:rounded-2xl lg:rounded-[2rem] mx-auto"
+                initial={{ opacity: 0, x: -200 }} // start off to the left
+                whileInView={{ opacity: 1, x: 0 }} // animate when in viewport
+                viewport={{ once: true, amount: 0.3 }} // trigger once when 30% visible
+                transition={{ duration: 1, ease: "easeOut" }}
               />
               <motion.img
                 src={ThirdIllu}
@@ -169,10 +181,14 @@ const OurStory = ({ onContactClick }) => {
           />
           <div className="pt-22 sm:pt-20 md:pt-28 lg:pt-46 2xl:pt-112 flex flex-col justify-center items-center">
             <div className="relative items-center w-full max-w-6xl h-auto">
-              <img
+              <motion.img
                 src={FourthImage}
                 alt="Display of various Indian sweets and chaat dishes"
                 className="-mt-10 sm:-mt-20 md:-mt-13 lg:-mt-32 2xl:-mt-40 w-full h-auto object-cover object-center rounded-xl sm:rounded-2xl lg:rounded-[2rem] mx-auto"
+                initial={{ opacity: 0, x: 200 }} // start off to the right
+                whileInView={{ opacity: 1, x: 0 }} // animate when in viewport
+                viewport={{ once: true, amount: 0.3 }} // trigger once when 30% visible
+                transition={{ duration: 1, ease: "easeOut" }}
               />
               <motion.img
                 src={FourthIllu}
@@ -212,10 +228,14 @@ const OurStory = ({ onContactClick }) => {
           />
           <div className="pt-10 sm:pt-36 md:pt-52 lg:pt-32 2xl:pt-30 flex flex-col justify-center items-center">
             <div className="relative items-center w-full max-w-6xl h-auto">
-              <img
+              <motion.img
                 src={FifthImage}
                 alt="Display of various Indian sweets and chaat dishes"
                 className="w-full h-auto object-cover object-center rounded-xl sm:rounded-2xl lg:rounded-[2rem] mx-auto"
+                initial={{ opacity: 0, x: -200 }} // start off to the left
+                whileInView={{ opacity: 1, x: 0 }} // animate when in viewport
+                viewport={{ once: true, amount: 0.3 }} // trigger once when 30% visible
+                transition={{ duration: 1, ease: "easeOut" }}
               />
               <motion.img
                 src={FifthIllu}

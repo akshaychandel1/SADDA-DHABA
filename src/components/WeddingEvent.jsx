@@ -377,7 +377,7 @@ const WeddingEvent = () => {
         />
 
         {/* Main Section */}
-        <div className="bg-[#C20000] text-white py-20 px-4 text-center">
+        <div className="bg-[#C20000] text-white py-32 px-4 text-center">
           <h2 className="font-barber tracking-wider text-4xl md:text-6xl 2xl:text-8xl font-bold mb-2">
             NUMBERS THAT TELL OUR STORY
           </h2>
@@ -394,7 +394,7 @@ const WeddingEvent = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <div className="text-5xl md:text-6xl font-barber leading-tight">
+              <div className="text-4xl md:text-6xl 2xl:text-8xl font-barber leading-tight">
                 <Counter target={10000} duration={1500} />
               </div>
               <p className="mt-3 text-base md:text-xl font-barber tracking-wide">
@@ -408,7 +408,7 @@ const WeddingEvent = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              <div className="text-5xl md:text-6xl font-barber leading-tight">
+              <div className="text-4xl md:text-6xl 2xl:text-8xl font-barber leading-tight">
                 <Counter target={500} duration={1500} />
               </div>
               <p className="mt-3 text-base md:text-xl font-barber tracking-wide">
@@ -422,7 +422,7 @@ const WeddingEvent = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
             >
-              <div className="text-5xl md:text-6xl font-barber leading-wider">
+              <div className="text-4xl md:text-6xl 2xl:text-8xl font-barber leading-wider">
                 <Counter target={5000} duration={1500} />
               </div>
               <p className="mt-3 text-base md:text-xl font-barber tracking-wide">
@@ -437,7 +437,7 @@ const WeddingEvent = () => {
       </motion.section>
 
       <motion.div
-        className="w-full bg-white py-16 my-16 flex flex-col items-center text-center"
+        className="w-full bg-white xl:my-48 py-16 my-16 flex flex-col items-center text-center"
         initial={{ opacity: 1, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
@@ -451,103 +451,122 @@ const WeddingEvent = () => {
           Because memories taste better when shared.
         </p>
         {/* Wire + Hanging Photos */}
-        <div className="relative w-full flex justify-center">
-          {/* Curved wire (responsive) */}
-          <svg
-            className="absolute top-0 left-0 w-full"
-            height="120"
-            viewBox="0 0 100 120"
-            preserveAspectRatio="none"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M0 0 Q50 100 100 0"
-              stroke="#C20000"
-              strokeWidth="4"
-              fill="transparent"
-            />
-          </svg>
+       <div className="relative w-full flex justify-center">
+  {/* Curved wire (responsive) */}
+  <svg
+    className="absolute top-0 left-0 w-full"
+    height="120"
+    viewBox="0 0 100 120"
+    preserveAspectRatio="none"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M0 0 Q50 100 100 0"
+      stroke="#C20000"
+      strokeWidth="4"
+      fill="transparent"
+    />
+  </svg>
 
-          {/* Hanging squares */}
-          <div className="flex w-full justify-between relative z-10 mt-12 px-4 md:px-0">
-            {/* 1st square */}
-            <div
-              className="hidden md:block relative w-24 h-28 md:w-60 md:h-60 bg-[#C20000] rounded-lg md:-top-4 2xl:-top-7"
-              style={{ transform: "rotate(6deg)" }}
-            >
-              <div className="absolute -top-4 left-1/2 -translate-x-1/2 w-2 md:w-3 h-6 md:h-9 bg-[#C20000] rounded-sm"></div>
-              <img
-                src={photo1}
-                alt="Photo 5"
-                className="w-full h-full border-2 border-[#C20000] rounded-lg object-cover"
-              />
-            </div>
+  {/* Hanging squares */}
+  <div className="flex w-full justify-between relative z-10 mt-12 px-4 md:px-0">
+    {/* 1st square */}
+    <div
+      className="hidden md:block relative w-24 h-28 md:w-60 md:h-60 bg-[#C20000] rounded-lg md:-top-4 2xl:-top-7 animate-swing"
+      style={{ transform: "rotate(6deg)", animationDelay: "0s" }}
+    >
+      <div className="absolute -top-4 left-1/2 -translate-x-1/2 w-2 md:w-3 h-6 md:h-9 bg-[#C20000] rounded-sm"></div>
+      <img
+        src={photo1}
+        alt="Photo 5"
+        className="w-full h-full border-2 border-[#C20000] rounded-lg object-cover"
+      />
+    </div>
 
-            {/* 2nd square */}
-            <div
-              className="relative w-24 h-28 md:w-60 md:h-60 bg-[#C20000] rounded-lg md:top-1 2xl:top-1 -top-2"
-              style={{ transform: "rotate(3deg)" }}
-            >
-              <div className="absolute -top-4 left-1/2 -translate-x-1/2 w-2 md:w-3 h-6 md:h-9 bg-[#C20000] rounded-sm"></div>
-              <img
-                src={photo2}
-                alt="Photo 5"
-                className="w-full h-full border-2 border-[#C20000] rounded-lg object-cover"
-              />
-            </div>
+    {/* 2nd square */}
+    <div
+      className="relative w-24 h-28 md:w-60 md:h-60 bg-[#C20000] rounded-lg md:top-1 2xl:top-1 -top-2 animate-swing"
+      style={{ transform: "rotate(3deg)", animationDelay: "0.2s" }}
+    >
+      <div className="absolute -top-4 left-1/2 -translate-x-1/2 w-2 md:w-3 h-6 md:h-9 bg-[#C20000] rounded-sm"></div>
+      <img
+        src={photo2}
+        alt="Photo 5"
+        className="w-full h-full border-2 border-[#C20000] rounded-lg object-cover"
+      />
+    </div>
 
-            {/* 3rd square */}
-            <div
-              className="relative w-24 h-28 md:w-60 md:h-60 bg-[#C20000] rounded-lg md:top-2 2xl:top-2 top-2"
-              style={{ transform: "rotate(0deg)" }}
-            >
-              <div className="absolute -top-4 left-1/2 -translate-x-1/2 w-2 md:w-3 h-6 md:h-9 bg-[#C20000] rounded-sm"></div>
-              <img
-                src={photo3}
-                alt="Photo 5"
-                className="w-full h-full border-2 border-[#C20000] rounded-lg object-cover"
-              />
-            </div>
+    {/* 3rd square */}
+    <div
+      className="relative w-24 h-28 md:w-60 md:h-60 bg-[#C20000] rounded-lg md:top-2 2xl:top-2 top-2 animate-swing"
+      style={{ transform: "rotate(0deg)", animationDelay: "0.4s" }}
+    >
+      <div className="absolute -top-4 left-1/2 -translate-x-1/2 w-2 md:w-3 h-6 md:h-9 bg-[#C20000] rounded-sm"></div>
+      <img
+        src={photo3}
+        alt="Photo 5"
+        className="w-full h-full border-2 border-[#C20000] rounded-lg object-cover"
+      />
+    </div>
 
-            {/* 4th square */}
-            <div
-              className="relative w-24 h-28 md:w-60 md:h-60 bg-[#C20000] rounded-lg md:top-1 2xl:top-0 -top-2"
-              style={{ transform: "rotate(-3deg)" }}
-            >
-              <div className="absolute -top-4 left-1/2 -translate-x-1/2 w-2 md:w-3 h-6 md:h-9 bg-[#C20000] rounded-sm"></div>
-              <img
-                src={photo4}
-                alt="Photo 5"
-                className="w-full h-full border-2 border-[#C20000] rounded-lg object-cover"
-              />
-            </div>
+    {/* 4th square */}
+    <div
+      className="relative w-24 h-28 md:w-60 md:h-60 bg-[#C20000] rounded-lg md:top-1 2xl:top-0 -top-2 animate-swing"
+      style={{ transform: "rotate(-3deg)", animationDelay: "0.6s" }}
+    >
+      <div className="absolute -top-4 left-1/2 -translate-x-1/2 w-2 md:w-3 h-6 md:h-9 bg-[#C20000] rounded-sm"></div>
+      <img
+        src={photo4}
+        alt="Photo 5"
+        className="w-full h-full border-2 border-[#C20000] rounded-lg object-cover"
+      />
+    </div>
 
-            {/* 5th square */}
-            <div
-              className="hidden md:block relative w-24 h-28 md:w-60 md:h-60 bg-[#C20000] rounded-lg md:-top-4 2xl:-top-7"
-              style={{ transform: "rotate(-6deg)" }}
-            >
-              <div className="absolute -top-4 left-1/2 -translate-x-1/2 w-2 md:w-3 h-6 md:h-9 bg-[#C20000] rounded-sm"></div>
-              <img
-                src={photo5}
-                alt="Photo 5"
-                className="w-full h-full border-2 border-[#C20000] rounded-lg object-cover"
-              />
-            </div>
-          </div>
-        </div>
+    {/* 5th square */}
+    <div
+      className="hidden md:block relative w-24 h-28 md:w-60 md:h-60 bg-[#C20000] rounded-lg md:-top-4 2xl:-top-7 animate-swing"
+      style={{ transform: "rotate(-6deg)", animationDelay: "0.8s" }}
+    >
+      <div className="absolute -top-4 left-1/2 -translate-x-1/2 w-2 md:w-3 h-6 md:h-9 bg-[#C20000] rounded-sm"></div>
+      <img
+        src={photo5}
+        alt="Photo 5"
+        className="w-full h-full border-2 border-[#C20000] rounded-lg object-cover"
+      />
+    </div>
+  </div>
+
+  <style jsx>{`
+    @keyframes swing {
+      0% {
+        transform: rotate(3deg);
+      }
+      50% {
+        transform: rotate(-3deg);
+      }
+      100% {
+        transform: rotate(3deg);
+      }
+    }
+    .animate-swing {
+      animation: swing 3s ease-in-out infinite;
+      transform-origin: top center;
+    }
+  `}</style>
+</div>
+
       </motion.div>
 
       <motion.div
-        className="bg-[#C20000] text-white rounded-[3rem] px-6 sm:px-10 max-w-8xl mx-4 2xl:mx-20 text-center py-16 my-16"
+        className="bg-[#C20000] text-white rounded-[3rem] px-6 sm:px-10 max-w-8xl mx-4 2xl:mx-20 text-center 2xl:py-20 py-16 my-16"
         initial={{ y: 150, opacity: 1 }}
         whileInView={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
         viewport={{ once: true, amount: 0.3 }}
       >
         {/* Heading */}
-        <h2 className="text-3xl sm:text-4xl md:text-5xl font-barber mb-10">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl  font-barber mb-16">
           HOW TO GET YOUR HALWAI FIX
         </h2>
 
@@ -605,7 +624,7 @@ const WeddingEvent = () => {
         {/* CTA Button */}
         <Link to="/booking">
           <motion.button
-            className="mt-10 bg-white text-[#C20000] px-6 sm:px-8 md:px-12 py-2 sm:py-3 md:py-4 rounded-full font-barber font-semibold text-sm sm:text-base md:text-lg lg:text-xl shadow-xl transition-transform duration-300 ease-in-out transform hover:scale-110 hover:bg-gray-100"
+            className="mt-10 bg-white 2xl:mt-16 text-[#C20000] px-6 sm:px-8 md:px-12 py-2 sm:py-3 md:py-4 rounded-full font-barber font-semibold text-sm sm:text-base md:text-lg lg:text-xl shadow-xl transition-transform duration-300 ease-in-out transform hover:scale-110 hover:bg-gray-100"
             initial={{ opacity: 0, y: 30, scale: 0.95 }}
             whileInView={{ opacity: 1, y: 0, scale: 1 }}
             transition={{ duration: 0.8, ease: "easeOut" }}

@@ -27,14 +27,40 @@ const BookingPage = () => {
     );
   };
 
+  const validateForm = (form) => {
+    const errors = [];
+
+    if (!form.fullName.value.trim()) errors.push("Full name is required.");
+    if (!form.email.value.trim()) errors.push("Email is required.");
+    else if (!/\S+@\S+\.\S+/.test(form.email.value))
+      errors.push("Please enter a valid email.");
+
+    if (!form.phone.value.trim())
+      errors.push("Phone number is required.");
+    else if (!/^[0-9+\s()-]{7,15}$/.test(form.phone.value))
+      errors.push("Please enter a valid phone number.");
+
+    if (!form.guests.value.trim() || form.guests.value <= 0)
+      errors.push("Please enter the number of guests.");
+
+    if (!form.location.value.trim()) errors.push("Location is required.");
+    if (!form.dateTime.value.trim()) errors.push("Date is required.");
+    if (!selectedBudget) errors.push("Please select a budget.");
+    if (selectedServices.length === 0)
+      errors.push("Please select at least one service.");
+
+    if (errors.length > 0) {
+      alert(errors.join("\n"));
+      return false;
+    }
+    return true;
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setLoading(true);
+    if (!validateForm(e.target)) return;
 
-    // Parse date safely
-    let rawDate = e.target.dateTime.value;
-    let parsedDate = new Date(rawDate);
-    let finalDate = isNaN(parsedDate) ? rawDate : parsedDate.toISOString();
+    setLoading(true);
 
     const formData = {
       name: e.target.fullName.value,
@@ -43,7 +69,7 @@ const BookingPage = () => {
       phone: e.target.phone.value,
       noOfGuest: e.target.guests.value,
       location: e.target.location.value,
-      date: finalDate,
+      date: e.target.dateTime.value,
       budget: selectedBudget,
       services: selectedServices.join(", "),
       message: e.target.notes.value,
@@ -57,10 +83,9 @@ const BookingPage = () => {
       );
 
       if (res.status === 200) {
-        // console.log(formData);
         setShowPopup(true);
         setTimeout(() => setShowPopup(false), 3000);
-        e.target.reset(); // reset form
+        e.target.reset();
         setSelectedBudget("");
         setSelectedServices([]);
       } else {
@@ -154,6 +179,7 @@ const BookingPage = () => {
                   name="phone"
                   type="tel"
                   placeholder="Phone No."
+                  required
                   className="border-2 border-[#C20000] rounded-full px-5 py-2 w-50 focus:outline-none"
                 />
               </div>
@@ -163,9 +189,16 @@ const BookingPage = () => {
                 <input
                   name="guests"
                   type="number"
+                  min="1"
+                  max="1500"
+                  required
                   placeholder="Number of Guests"
-                  className="border-2 border-[#C20000] rounded-full px-5 py-2 w-70 focus:outline-none text-center"
-                />
+                 className="border-2 border-[#C20000] rounded-full px-5 py-2 w-70 focus:outline-none text-center"
+  onInput={(e) => {
+    if (e.target.value.length > 4) {
+      e.target.value = e.target.value.slice(0, 4); // trim to 4 digits
+    }
+  }}/>
                 <span>guests</span>
               </div>
 
@@ -175,13 +208,15 @@ const BookingPage = () => {
                   name="location"
                   type="text"
                   placeholder="Location"
+                  required
                   className="border-2 border-[#C20000] rounded-full px-5 py-2 w-73 focus:outline-none"
                 />
                 <span>on</span>
+                {/* ✅ Replaced text input with date picker */}
                 <input
                   name="dateTime"
-                  type="text"
-                  placeholder="Date & Time (e.g., 2 Feb 2016 2 PM)"
+                  type="datetime-local"
+                  required
                   className="border-2 border-[#C20000] rounded-full px-5 py-2 w-73 focus:outline-none"
                 />
               </div>

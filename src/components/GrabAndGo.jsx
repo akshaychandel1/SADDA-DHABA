@@ -5,7 +5,7 @@ import logo from "../assets/icons/Asset12.svg";
 import "./HomePage.css";
 import Call from "../assets/icons/Call.png";
 import { useInView } from "react-intersection-observer";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { FaFacebookF, FaInstagram, FaTwitter, FaTiktok } from "react-icons/fa";
 import charfoot from "../assets/icons/charfoot.svg";
 import footmob from "../assets/icons/footmob.svg";
@@ -21,6 +21,15 @@ import {
 import Footer from "./Footer";
 
 const GrabAndGo = () => {
+  const samosaRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: samosaRef,
+    offset: ["start end", "end start"], // image starts moving as it enters the viewport
+  });
+
+  // You can tweak these transform values for different speeds
+  const y = useTransform(scrollYProgress, [0, 1], ["-10%", "10%"]);
+  const scale = useTransform(scrollYProgress, [0, 1], [1.05, 1]);
   const [is1440, setIs1440] = useState(false);
 
   useEffect(() => {
@@ -71,13 +80,18 @@ const GrabAndGo = () => {
               fresh.
             </motion.p>
 
-            <div className="relative z-30 mt-16 px-4 md:px-6 2xl:px-0 ">
-              <img
-                src={samosa}
-                alt="Display of various Indian sweets and chaat dishes"
-                className="w-full object-cover object-center rounded-[2rem] shadow-lg mx-auto"
-              />
-            </div>
+            <div
+      ref={samosaRef}
+      className="rounded-[2rem] relative z-30 mt-16 px-4 md:px-6 2xl:px-0 overflow-hidden"
+    >
+      <motion.img
+        src={samosa}
+        alt="Display of various Indian sweets and chaat dishes"
+        style={{ y, scale }}
+        transition={{ type: "spring", stiffness: 50 }}
+        className="w-full object-cover object-center rounded-[2rem] shadow-lg mx-auto"
+      />
+    </div>
           </motion.div>
         </div>
       </div>
