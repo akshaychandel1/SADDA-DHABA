@@ -15,6 +15,7 @@ import CorporateEvent from "./components/CorporateEvent";
 import GrabAndGo from "./components/GrabAndGo";
 import TermsAndConditions from "./components/TermsAndConditions";
 import PrivacyPolicy from "./components/PrivacyPolicy";
+import Button from "./components/Button";
 
 function App() {
   const [showContact, setShowContact] = useState(false);
@@ -55,6 +56,7 @@ function App() {
 
       {/* Contact Form Popup */}
       {showContact && <ContactForm onClose={() => setShowContact(false)} />}
+        <Button />
     </>
   );
 }

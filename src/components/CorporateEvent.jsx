@@ -202,8 +202,7 @@ const CorporateEvent = () => {
                 className="block w-8 h-8 sm:w-10 sm:h-10 md:w-14 md:h-14 lg:w-20 lg:h-20"
                 whileHover={{ scale: 1.12, rotate: -15 }}
               />
-              <span class="mr-2">INTO</span>
-              <span>MEMORIES</span>
+              <span>INTO MEMORIES</span>
               <motion.img
                 src={ringIcon}
                 alt="Ring"
