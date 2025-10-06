@@ -55,20 +55,19 @@ export default function FAQPage() {
   const [showContactPopup, setShowContactPopup] = useState(false);
 
   const [openIndex, setOpenIndex] = useState(null);
-   const [is1440, setIs1440] = useState(false)
-  
-    useEffect(() => {
-      const checkSize = () => setIs1440(window.innerWidth <= 1440)
-      checkSize()
-      window.addEventListener("resize", checkSize)
-      return () => window.removeEventListener("resize", checkSize)
-    }, [])
-  
-    const { ref, inView } = useInView({
-      triggerOnce: true,
-      threshold: 0.4,
-    });
+  const [is1440, setIs1440] = useState(false);
 
+  useEffect(() => {
+    const checkSize = () => setIs1440(window.innerWidth <= 1440);
+    checkSize();
+    window.addEventListener("resize", checkSize);
+    return () => window.removeEventListener("resize", checkSize);
+  }, []);
+
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+    threshold: 0.4,
+  });
 
   return (
     <>
@@ -145,11 +144,7 @@ export default function FAQPage() {
         </div>
       </div>
 
-      
-    
-<Footer />
-
-    
+      <Footer />
     </>
   );
 }

@@ -20,8 +20,6 @@ import FifthIllu from "../assets/icons/FifthIllu.png";
 const OurStory = ({ onContactClick }) => {
   return (
     <>
-      
-
       <div className="w-full text-black overflow-hidden">
         {/* Hero Section */}
         <section className="w-full flex flex-col justify-center bg-[#C20000] text-center py-12 sm:py-16 md:py-20 lg:py-24 px-4 sm:px-6">
@@ -36,30 +34,29 @@ const OurStory = ({ onContactClick }) => {
         </section>
 
         {/* First Image */}
-       <div className="flex flex-col justify-center items-center">
-  <div className="relative mt-6 w-full max-w-6xl h-auto px-4">
-    {/* Base Image */}
-    <img
-      src={FirstImage}
-      alt="Display of various Indian sweets and chaat dishes"
-      className="w-full h-auto object-cover object-center rounded-xl sm:rounded-2xl lg:rounded-[2rem] mx-auto"
-    />
+        <div className="flex flex-col justify-center items-center">
+          <div className="relative mt-6 w-full max-w-6xl h-auto px-4">
+            {/* Base Image */}
+            <img
+              src={FirstImage}
+              alt="Display of various Indian sweets and chaat dishes"
+              className="w-full h-auto object-cover object-center rounded-xl sm:rounded-2xl lg:rounded-[2rem] mx-auto"
+            />
 
-    {/* Overlay Mascot */}
-  <motion.img
-      src={FirstIllu}
-      alt="Mascot Illustration"
-      className="absolute right-20 sm:right-10 md:right-20 lg:right-32 bottom-4 sm:bottom-10 lg:bottom-14 w-20 sm:w-28 md:w-36 lg:w-56 h-auto object-contain z-10"
-      animate={{ y: [0, -20, 0] }} // 👈 float up & down
-      transition={{
-        duration: 2, // one full cycle (up + down)
-        repeat: Infinity, // loops forever
-        ease: "easeInOut", // smooth motion
-      }}
-    />
-  </div>
-</div>
-
+            {/* Overlay Mascot */}
+            <motion.img
+              src={FirstIllu}
+              alt="Mascot Illustration"
+              className="absolute right-20 sm:right-10 md:right-20 lg:right-32 bottom-4 sm:bottom-10 lg:bottom-14 w-20 sm:w-28 md:w-36 lg:w-56 h-auto object-contain z-10"
+              animate={{ y: [0, -20, 0] }} // 👈 float up & down
+              transition={{
+                duration: 2, // one full cycle (up + down)
+                repeat: Infinity, // loops forever
+                ease: "easeInOut", // smooth motion
+              }}
+            />
+          </div>
+        </div>
 
         {/* Section 1 */}
         <div className="relative w-full max-w-[1920px] mx-auto min-h-[500px] sm:min-h-[600px] md:min-h-[720px] lg:min-h-[900px] 2xl:h-[1080px] px-4">
@@ -71,7 +68,7 @@ const OurStory = ({ onContactClick }) => {
               Raised on the sound of sizzling tadkas, not lullabies..
             </p>
           </div>
-          
+
           <img
             src={Vector1}
             alt="Vector 1"
@@ -84,28 +81,27 @@ const OurStory = ({ onContactClick }) => {
           />
           <div className="pt-12 sm:pt-20 md:pt-28 lg:pt-32 2xl:pt-40 flex flex-col justify-center items-center">
             <div className="relative items-center w-full max-w-7xl h-auto">
-  {/* Base Image */}
-  <img
-    src={SecondImage}
-    alt="Display of various Indian sweets and chaat dishes"
-    className="w-full h-auto object-cover object-center rounded-xl sm:rounded-2xl lg:rounded-[2rem] mx-auto"
-  />
+              {/* Base Image */}
+              <img
+                src={SecondImage}
+                alt="Display of various Indian sweets and chaat dishes"
+                className="w-full h-auto object-cover object-center rounded-xl sm:rounded-2xl lg:rounded-[2rem] mx-auto"
+              />
 
-  {/* Floating Mascot */}
-  <motion.img
-    src={SecIllu}
-    alt="Mascot Illustration"
-    className="absolute left-10 sm:left-8 md:left-20 lg:left-26 bottom-4 sm:bottom-10 lg:bottom-14 
+              {/* Floating Mascot */}
+              <motion.img
+                src={SecIllu}
+                alt="Mascot Illustration"
+                className="absolute left-10 sm:left-8 md:left-20 lg:left-26 bottom-4 sm:bottom-10 lg:bottom-14 
                w-28 sm:w-32 md:w-36 lg:w-96 h-auto object-contain z-10"
-    animate={{ y: [0, -20, 0] }} // 👈 float up & down
-    transition={{
-      duration: 2, // one full cycle (up + down)
-      repeat: Infinity, // loops forever
-      ease: "easeInOut", // smooth motion
-    }}
-  />
-</div>
-
+                animate={{ y: [0, -20, 0] }} // 👈 float up & down
+                transition={{
+                  duration: 2, // one full cycle (up + down)
+                  repeat: Infinity, // loops forever
+                  ease: "easeInOut", // smooth motion
+                }}
+              />
+            </div>
           </div>
         </div>
 
@@ -137,16 +133,16 @@ const OurStory = ({ onContactClick }) => {
                 className="w-full h-auto object-cover object-center rounded-xl sm:rounded-2xl lg:rounded-[2rem] mx-auto"
               />
               <motion.img
-      src={ThirdIllu}
-      alt="Mascot Illustration"
-      className="absolute right-7 sm:right-10 md:right-20 lg:right-18 bottom-4 sm:bottom-10 lg:bottom-14 w-20 sm:w-28 md:w-36 lg:w-60 2xl:w-76 h-auto object-contain z-10"
-      animate={{ y: [0, -20, 0] }} // 👈 float up & down
-      transition={{
-        duration: 2, // one full cycle (up + down)
-        repeat: Infinity, // loops forever
-        ease: "easeInOut", // smooth motion
-      }}
-    />
+                src={ThirdIllu}
+                alt="Mascot Illustration"
+                className="absolute right-7 sm:right-10 md:right-20 lg:right-18 bottom-4 sm:bottom-10 lg:bottom-14 w-20 sm:w-28 md:w-36 lg:w-60 2xl:w-76 h-auto object-contain z-10"
+                animate={{ y: [0, -20, 0] }} // 👈 float up & down
+                transition={{
+                  duration: 2, // one full cycle (up + down)
+                  repeat: Infinity, // loops forever
+                  ease: "easeInOut", // smooth motion
+                }}
+              />
             </div>
           </div>
         </div>
@@ -179,15 +175,16 @@ const OurStory = ({ onContactClick }) => {
                 className="-mt-10 sm:-mt-20 md:-mt-13 lg:-mt-32 2xl:-mt-40 w-full h-auto object-cover object-center rounded-xl sm:rounded-2xl lg:rounded-[2rem] mx-auto"
               />
               <motion.img
-      src={FourthIllu}
-      alt="Mascot Illustration"
-      className="absolute right-1 sm:right-10 md:right-3 lg:right-16 2xl:right-1 -bottom-1 sm:bottom-10 md:-bottom-4 lg:-bottom-3 w-100 sm:w-28 md:w-180 lg:w-260 2xl:w-286 h-auto object-contain z-10"
-      animate={{ y: [0, -10, 0] }} // 👈 float up & down
-      transition={{
-        duration: 1.5, // one full cycle (up + down)
-        repeat: Infinity, // loops forever
-        ease: "easeInOut", // smooth motion
-      }}/>
+                src={FourthIllu}
+                alt="Mascot Illustration"
+                className="absolute right-1 sm:right-10 md:right-3 lg:right-16 2xl:right-1 -bottom-1 sm:bottom-10 md:-bottom-4 lg:-bottom-3 w-100 sm:w-28 md:w-180 lg:w-260 2xl:w-286 h-auto object-contain z-10"
+                animate={{ y: [0, -10, 0] }} // 👈 float up & down
+                transition={{
+                  duration: 1.5, // one full cycle (up + down)
+                  repeat: Infinity, // loops forever
+                  ease: "easeInOut", // smooth motion
+                }}
+              />
             </div>
           </div>
         </div>
@@ -220,20 +217,19 @@ const OurStory = ({ onContactClick }) => {
                 alt="Display of various Indian sweets and chaat dishes"
                 className="w-full h-auto object-cover object-center rounded-xl sm:rounded-2xl lg:rounded-[2rem] mx-auto"
               />
-                  <motion.img
-  src={FifthIllu}
-  alt="Mascot Illustration"
-  className="absolute left-1/2 bottom-4 sm:bottom-10 lg:bottom-14 
+              <motion.img
+                src={FifthIllu}
+                alt="Mascot Illustration"
+                className="absolute left-1/2 bottom-4 sm:bottom-10 lg:bottom-14 
              -translate-x-1/2 w-30 sm:w-38 md:w-48 lg:w-72 2xl:w-76 
              h-auto object-contain z-10"
-  animate={{ y: [0, -10, 0] }} // 👈 float up & down
-  transition={{
-    duration: 2, // total up-down cycle
-    repeat: Infinity, // infinite loop
-    ease: "easeInOut", // smooth easing
-  }}
-/>
-
+                animate={{ y: [0, -10, 0] }} // 👈 float up & down
+                transition={{
+                  duration: 2, // total up-down cycle
+                  repeat: Infinity, // infinite loop
+                  ease: "easeInOut", // smooth easing
+                }}
+              />
             </div>
           </div>
         </div>
@@ -249,50 +245,51 @@ const OurStory = ({ onContactClick }) => {
             </p>
           </div>
         </div>
-<div className="mt-25 lg:mt-80"></div>
+        <div className="mt-25 lg:mt-80"></div>
 
-
-    <motion.section
-            className="w-[95%] md:max-w-[80%] bg-[#C20000] text-white rounded-[3rem] flex flex-col md:flex-row items-stretch justify-between mx-auto overflow-hidden my-16 md:my-32"
-            initial={{ y: 150, opacity: 1 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            viewport={{ once: true, amount: 0.3 }}
-          >
-            {/* Left Side (Text + Button) */}
-            <div className="flex-1 py-10 text-center md:text-left md:ml-12 relative">
-              <div>
-                <p className="text-xl md:text-5xl md:mb-6 mb-6">LET’S CHAT</p>
-                <h2 className="text-3xl sm:text-4xl md:text-6xl 2xl:text-8xl font-barber md:leading-[1.2] text-center md:text-left mb-6">
-                  TELL US YOUR PLANS, <br />
-                  WE’LL BRING THE PANS
-                </h2>
-              </div>
-    
-              {/* Button fixed bottom-left on desktop, centered on mobile */}
-              <motion.button
-              onClick={() => { onContactClick(); setIsOpen(false); }}
-                className="absolute md:bottom-12 md:left-22 left-1/2 transform -translate-x-1/2 md:transform-none whitespace-nowrap font-barber text-sm sm:text-base md:text-lg lg:text-xl 2xl:text-3xl 3xl:text-4xl bg-white text-[#C20000] px-6 sm:px-6 md:px-10 pt-2 sm:pt-3 md:pt-4 pb-1 sm:pb-2 md:pb-3 rounded-2xl shadow-xl leading-[1.2] transition-transform duration-300 ease-in-out transform hover:scale-110"
-                initial={{ opacity: 0, y: 30, scale: 0.95 }}
-                whileInView={{ opacity: 1, y: 0, scale: 1 }}
-                transition={{ duration: 0.8, ease: "easeOut" }}
-                viewport={{ once: true }}
-              >
-                CALL US
-              </motion.button>
+        <motion.section
+          className="w-[95%] md:max-w-[80%] bg-[#C20000] text-white rounded-[3rem] flex flex-col md:flex-row items-stretch justify-between mx-auto overflow-hidden my-16 md:my-32"
+          initial={{ y: 150, opacity: 1 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          viewport={{ once: true, amount: 0.3 }}
+        >
+          {/* Left Side (Text + Button) */}
+          <div className="flex-1 py-10 text-center md:text-left md:ml-12 relative">
+            <div>
+              <p className="text-xl md:text-5xl md:mb-6 mb-6">LET’S CHAT</p>
+              <h2 className="text-3xl sm:text-4xl md:text-6xl 2xl:text-8xl font-barber md:leading-[1.2] text-center md:text-left mb-6">
+                TELL US YOUR PLANS, <br />
+                WE’LL BRING THE PANS
+              </h2>
             </div>
-    
-            {/* Right Side Image */}
-           <div className="w-full md:w-1/3 h-[320px] md:h-[640px] flex justify-center items-center md:items-end mt-4 md:pr-12">
-  <img
-    src={Call}
-    alt="Chef Illustration"
-    className="max-w-[75%] md:max-w-full h-auto object-contain"
-  />
-</div>
 
-          </motion.section>
-       </div>
+            {/* Button fixed bottom-left on desktop, centered on mobile */}
+            <motion.button
+              onClick={() => {
+                onContactClick();
+                setIsOpen(false);
+              }}
+              className="absolute md:bottom-12 md:left-22 left-1/2 transform -translate-x-1/2 md:transform-none whitespace-nowrap font-barber text-sm sm:text-base md:text-lg lg:text-xl 2xl:text-3xl 3xl:text-4xl bg-white text-[#C20000] px-6 sm:px-6 md:px-10 pt-2 sm:pt-3 md:pt-4 pb-1 sm:pb-2 md:pb-3 rounded-2xl shadow-xl leading-[1.2] transition-transform duration-300 ease-in-out transform hover:scale-110"
+              initial={{ opacity: 0, y: 30, scale: 0.95 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+              viewport={{ once: true }}
+            >
+              CALL US
+            </motion.button>
+          </div>
+
+          {/* Right Side Image */}
+          <div className="w-full md:w-1/3 h-[320px] md:h-[640px] flex justify-center items-center md:items-end mt-4 md:pr-12">
+            <img
+              src={Call}
+              alt="Chef Illustration"
+              className="max-w-[75%] md:max-w-full h-auto object-contain"
+            />
+          </div>
+        </motion.section>
+      </div>
 
       <Footer />
     </>

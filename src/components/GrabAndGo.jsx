@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 import samosa from "../assets/icons/house.jpg";
 import ribbon from "../assets/icons/ribbon.svg";
 import logo from "../assets/icons/Asset12.svg";
@@ -18,25 +18,25 @@ import {
   useTransform,
   AnimatePresence,
 } from "framer-motion";
-import Footer from './Footer';
+import Footer from "./Footer";
 
 const GrabAndGo = () => {
-  const [is1440, setIs1440] = useState(false)
-  
-    useEffect(() => {
-      const checkSize = () => setIs1440(window.innerWidth <= 1440)
-      checkSize()
-      window.addEventListener("resize", checkSize)
-      return () => window.removeEventListener("resize", checkSize)
-    }, [])
-  
-    const { ref, inView } = useInView({
-      triggerOnce: true,
-      threshold: 0.4,
-    });
+  const [is1440, setIs1440] = useState(false);
+
+  useEffect(() => {
+    const checkSize = () => setIs1440(window.innerWidth <= 1440);
+    checkSize();
+    window.addEventListener("resize", checkSize);
+    return () => window.removeEventListener("resize", checkSize);
+  }, []);
+
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+    threshold: 0.4,
+  });
   return (
     <>
-    <div className="bg-[#C20000]  text-white  overflow-hidden -mb-px">
+      <div className="bg-[#C20000]  text-white  overflow-hidden -mb-px">
         <div className="relative container mx-auto px-1 py-12 md:py-20 text-center">
           {/* Header Content */}
           <motion.div className="mx-auto md:mb-0 text-center">
@@ -51,7 +51,7 @@ const GrabAndGo = () => {
                 delay: 0.2,
               }} // smooth ease-out cubic
             >
-              Fresh Flavors On the Go 
+              Fresh Flavors On the Go
             </motion.h1>
 
             {/* Paragraph */}
@@ -65,7 +65,10 @@ const GrabAndGo = () => {
                 delay: 0.2,
               }}
             >
-              Whether it’s a quick bite or a single order, we’ve got you covered.<br /> Step in, pick your favorite, and enjoy happiness served fresh.
+              Whether it’s a quick bite or a single order, we’ve got you
+              covered.
+              <br /> Step in, pick your favorite, and enjoy happiness served
+              fresh.
             </motion.p>
 
             <div className="relative z-30 mt-16 px-4 md:px-6 2xl:px-0 ">
@@ -74,33 +77,38 @@ const GrabAndGo = () => {
                 alt="Display of various Indian sweets and chaat dishes"
                 className="w-full object-cover object-center rounded-[2rem] shadow-lg mx-auto"
               />
-          </div>
-</motion.div>
+            </div>
+          </motion.div>
         </div>
       </div>
 
       <section className="bg-[#C20000] text-white py-5 md:py-20 md:pb-40 items-center -mt-px  px-5 md:px-20 ">
-      <div className="container mx-auto flex flex-col  md:flex-row items-center justify-between gap-10">
-        {/* Left Side: Heading & Paragraph */}
-        <div className="md:w-2/3">
-          <h2 className="font-barber tracking-wide text-4xl md:text-6xl 2xl:text-8xl font-bold mb-6">
-            THE HALWAI WAY
-          </h2>
-          <p className="mt-2 md:text-xl 2xl:text-2xl text-base  leading-relaxed text-red-100">
-            Sadaq Halwai started with one simple idea – bring the magic of Indian street corners, wedding feasts, and mithai shops straight to the UK. With recipes passed down through generations, we serve chaats that remind you of bustling bazaars and curries rich enough for a royal table. Every dish is cooked fresh, keeping flavours real, spirits high, and memories plated.
-          </p>
-        </div>
+        <div className="container mx-auto flex flex-col  md:flex-row items-center justify-between gap-10">
+          {/* Left Side: Heading & Paragraph */}
+          <div className="md:w-2/3">
+            <h2 className="font-barber tracking-wide text-4xl md:text-6xl 2xl:text-8xl font-bold mb-6">
+              THE HALWAI WAY
+            </h2>
+            <p className="mt-2 md:text-xl 2xl:text-2xl text-base  leading-relaxed text-red-100">
+              Sadaq Halwai started with one simple idea – bring the magic of
+              Indian street corners, wedding feasts, and mithai shops straight
+              to the UK. With recipes passed down through generations, we serve
+              chaats that remind you of bustling bazaars and curries rich enough
+              for a royal table. Every dish is cooked fresh, keeping flavours
+              real, spirits high, and memories plated.
+            </p>
+          </div>
 
-        {/* Right Side: Logo */}
-        <div className="md:w-1/4 flex justify-center">
-          <img
-            src={logo}
-            alt="Sadaq Halwai Logo"
-            className="w-48 h-48 md:w-56 md:h-56 object-contain rounded-full border-4 border-white shadow-lg"
-          />
+          {/* Right Side: Logo */}
+          <div className="md:w-1/4 flex justify-center">
+            <img
+              src={logo}
+              alt="Sadaq Halwai Logo"
+              className="w-48 h-48 md:w-56 md:h-56 object-contain rounded-full border-4 border-white shadow-lg"
+            />
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
 
       {/* ribbon */}
       <div className="relative w-full h-[140px] overflow-visible bg-white">
@@ -131,29 +139,7 @@ const GrabAndGo = () => {
         />
       </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- <motion.section
+      <motion.section
         className="w-[95%] md:max-w-[80%] bg-[#C20000] text-white rounded-[3rem] flex flex-col md:flex-row items-stretch justify-between mx-auto overflow-hidden my-16 md:mb-32"
         initial={{ y: 150, opacity: 1 }}
         whileInView={{ y: 0, opacity: 1 }}
@@ -172,7 +158,7 @@ const GrabAndGo = () => {
 
           {/* Button fixed bottom-left on desktop, centered on mobile */}
           <motion.button
-          onClick={() => window.dispatchEvent(new Event("openContactPopup"))}
+            onClick={() => window.dispatchEvent(new Event("openContactPopup"))}
             className="absolute md:bottom-12 md:left-22 left-1/2 transform -translate-x-1/2 md:transform-none whitespace-nowrap font-barber text-sm sm:text-base md:text-lg lg:text-xl 2xl:text-3xl 3xl:text-4xl bg-white text-[#C20000] px-5 sm:px-6 md:px-10 pt-2 sm:pt-3 md:pt-4 pb-1 sm:pb-2 md:pb-3 rounded-2xl shadow-xl leading-[1.2] transition-transform duration-300 ease-in-out transform hover:scale-110"
             initial={{ opacity: 0, y: 30, scale: 0.95 }}
             whileInView={{ opacity: 1, y: 0, scale: 1 }}
@@ -185,53 +171,19 @@ const GrabAndGo = () => {
 
         {/* Right Side Image */}
         <div className="w-full md:w-1/3 h-[320px] md:h-[640px] flex justify-center items-center md:items-end mt-4 md:pr-12">
-  <img
-    src={Call}
-    alt="Chef Illustration"
-    className="max-w-[75%] md:max-w-full h-auto object-contain"
-  />
-</div>
-
+          <img
+            src={Call}
+            alt="Chef Illustration"
+            className="max-w-[75%] md:max-w-full h-auto object-contain"
+          />
+        </div>
       </motion.section>
 
+      <div className="relative bg-[#C20000] overflow-visible"></div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-       <div className="relative bg-[#C20000] overflow-visible">
-      
-      
-</div>
-
-<Footer />
-
+      <Footer />
     </>
-  )
-}
+  );
+};
 
-export default GrabAndGo
+export default GrabAndGo;

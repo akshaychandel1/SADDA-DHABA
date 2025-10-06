@@ -20,7 +20,6 @@ import menuborder from "../assets/icons/MenuBorderIcon.svg";
 import TestimonialCarousel from "./carousel/TestimonialCarousel";
 import Call from "../assets/icons/Call.png";
 
-
 import photo1 from "../assets/icons/photo-1.jpg";
 import photo2 from "../assets/icons/photo-2.jpeg";
 import photo3 from "../assets/icons/photo-3.jpeg";
@@ -34,12 +33,12 @@ const testimonials = [
     author: "Ananya & Rohan Mehta",
     location: "Delhi",
   },
-   {
+  {
     text: "Sadda Halwai turned our wedding into a feast to remember! Every dish was bursting with authentic flavors...",
     author: "Ananya & Rohan Mehta",
     location: "Delhi",
   },
-   {
+  {
     text: "Sadda Halwai turned our wedding into a feast to remember! Every dish was bursting with authentic flavors...",
     author: "Ananya & Rohan Mehta",
     location: "Delhi",
@@ -55,7 +54,6 @@ const testimonials = [
     location: "London",
   },
 ];
-
 
 const Counter = ({ target, duration }) => {
   const [count, setCount] = useState(0);
@@ -79,17 +77,31 @@ const Counter = ({ target, duration }) => {
 };
 
 const WeddingEvent = () => {
-
-    const photos = [
+  const photos = [
     "", // put image link here
     "", // put image link here
     "", // put image link here
     "", // put image link here
     "", // put image link here
   ];
+  const parallaxRef = useRef(null);
+  const { scrollYProgress: parallaxScrollYProgress } = useScroll({
+    target: parallaxRef,
+    offset: ["start end", "end start"],
+  });
+  const parallaxY = useTransform(
+    parallaxScrollYProgress,
+    [0, 1],
+    ["-20%", "20%"]
+  );
+  const parallaxScale = useTransform(
+    parallaxScrollYProgress,
+    [0, 1],
+    [1.05, 1]
+  );
 
   const [emblaRef] = useEmblaCarousel({ loop: true, align: "center" });
-
+  const ref = useRef(null);
 
   const [active, setActive] = useState("MITHAAS");
   const buttons = ["OCCASION", "MITHAAS", "MEMORIES"];
@@ -138,7 +150,6 @@ const WeddingEvent = () => {
 
   return (
     <>
-
       {/* SECTION 1 */}
       <section className="bg-[#C20000] text-white overflow-hidden -mb-px">
         <div className="relative container mx-auto px-2 sm:px-4 py-12 md:py-20 text-center">
@@ -215,394 +226,404 @@ const WeddingEvent = () => {
         </div>
       </section> */}
       <section
-  ref={sectionRef}
-  className="bg-[#C20000] -mt-18 sm:-mt-30 lg:-mt-35 2xl:-mt-35"
->
-  <div className="container mx-auto px-4">
-    <motion.img
-      src={Dhol}
-      alt="Centered PNG"
-      className="mx-auto w-26 sm:w-36 md:w-42 lg:w-48 2xl:w-76 object-contain"
-      animate={{ y: [0, -20, 0] }} // moves up and back
-      transition={{
-        duration: 2, // total cycle time
-        repeat: Infinity, // keeps looping
-        ease: "easeInOut", // smooth movement
-      }}
-    />
-  </div>
-</section>
-
+        ref={sectionRef}
+        className="bg-[#C20000] -mt-18 sm:-mt-30 lg:-mt-35 2xl:-mt-35"
+      >
+        <div className="container mx-auto px-4">
+          <motion.img
+            src={Dhol}
+            alt="Centered PNG"
+            className="mx-auto w-26 sm:w-36 md:w-42 lg:w-48 2xl:w-76 object-contain"
+            animate={{ y: [0, -20, 0] }} // moves up and back
+            transition={{
+              duration: 2, // total cycle time
+              repeat: Infinity, // keeps looping
+              ease: "easeInOut", // smooth movement
+            }}
+          />
+        </div>
+      </section>
 
       {/* SECTION 3 */}
-<section className="relative py-10 -mt-0.5 z-10">
-  {/* Half red, half white background */}
-  <div className="absolute inset-0 h-full w-full">
-    <div className="h-1/2 bg-[#C20000]"></div>  {/* top half red */}
-    <div className="h-1/2 bg-white"></div>      {/* bottom half white */}
-  </div>
+      <section
+        ref={parallaxRef}
+        className="relative py-10 -mt-0.5 z-10 overflow-hidden"
+      >
+        {/* Half red, half white background */}
+        <div className="absolute inset-0 h-full w-full">
+          <div className="h-1/2 bg-[#C20000]" /> {/* Top half red */}
+          <div className="h-1/2 bg-white" /> {/* Bottom half white */}
+        </div>
 
-  {/* Content */}
-  <div className="container mx-auto px-4 relative z-20">
-    <div className="overflow-hidden shadow-xl rounded-full max-w-[90%] mx-auto">
-      <div className="relative w-full aspect-[1637/623]">
-        <img
-          src={wed}
-          alt="Buffet"
-          className="absolute inset-0 w-full h-full object-cover"
-        />
-      </div>
-    </div>
-  </div>
-</section>
+        {/* Content */}
 
-
-
-
+        <div className="container mx-auto px-4 relative z-20">
+          <div className="overflow-hidden shadow-xl rounded-full max-w-[90%] mx-auto">
+            <motion.div
+              style={{ y: parallaxY, scale: parallaxScale }}
+              className="relative w-full aspect-[1637/623]"
+              transition={{ type: "spring", stiffness: 50 }}
+            >
+              <img
+                src={wed}
+                alt="Buffet"
+                className="absolute inset-0 w-full h-full object-cover"
+              />
+            </motion.div>
+          </div>
+        </div>
+      </section>
 
       {/* SECTION 4 */}
-<div className="bg-white text-[#C20000] overflow-hidden -mb-px">
-  <div className="relative container mx-auto px-2 py-12 md:py-20 text-center">
-    <motion.h1
-      className="font-barber relative my-6 leading-snug text-center text-2xl sm:text-4xl md:text-6xl 2xl:text-8xl tracking-wide mb-3"
-      initial={{ opacity: 0, y: 40 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{
-        duration: 1.2,
-        ease: [0.22, 1, 0.36, 1],
-        delay: 0.2,
-      }}
-    >
-      FRESHNESS IS OUR SECRET SPICE, STRAIGHT FROM FARM TO PLATE
-
-      {/* Floating corner icons */}
-      <motion.img
-        src={leafIcon}
-        alt="Leaf"
-        className="absolute -top-2 left-0 w-12 h-12 sm:w-14 sm:h-14 md:w-20 md:h-20 lg:w-26 lg:h-26"
-        animate={{ y: [0, -10, 0], rotate: [0, -15, 0] }}
-        transition={{ duration: 2, repeat: Infinity, repeatType: "loop", ease: "easeInOut" }}
-        whileHover={{ scale: 1.15, rotate: -15 }}
-      />
-      <motion.img
-        src={chiliIcon}
-        alt="Chili"
-        className="absolute top-0 right-0 w-12 h-12 sm:w-14 sm:h-14 md:w-20 md:h-20 lg:w-26 lg:h-26"
-        animate={{ y: [0, -8, 0], rotate: [0, 15, 0] }}
-        transition={{ duration: 2.5, repeat: Infinity, repeatType: "loop", ease: "easeInOut" }}
-        whileHover={{ scale: 1.15, rotate: 15 }}
-      />
-      <motion.img
-        src={eggplantIcon}
-        alt="Eggplant"
-        className="absolute bottom-0 left-0 w-12 h-12 sm:w-14 sm:h-14 md:w-20 md:h-20 lg:w-26 lg:h-26"
-        animate={{ y: [0, 10, 0], rotate: [0, -10, 0] }}
-        transition={{ duration: 3, repeat: Infinity, repeatType: "loop", ease: "easeInOut" }}
-        whileHover={{ scale: 1.15, rotate: -10 }}
-      />
-      <motion.img
-        src={carrotIcon}
-        alt="Carrot"
-        className="absolute bottom-0 right-0 w-12 h-12 sm:w-14 sm:h-14 md:w-20 md:h-20 lg:w-26 lg:h-26"
-        animate={{ y: [0, 12, 0], rotate: [0, 10, 0] }}
-        transition={{ duration: 2.8, repeat: Infinity, repeatType: "loop", ease: "easeInOut" }}
-        whileHover={{ scale: 1.15, rotate: 0 }}
-      />
-    </motion.h1>
-  </div>
-</div>
-
-
-
-
-
-
-{/* Top Border (flipped) */}
-<motion.section
-  className="my-16"
-  initial={{ opacity: 1, y: 100 }}
-  whileInView={{ opacity: 1, y: 0 }}
-  transition={{ duration: 0.8 }}
->
-  <img
-    src={border}
-    alt="top border"
-    className="w-full rotate-180 -my-0.5"
-  />
-
-  {/* Main Section */}
-  <div className="bg-[#C20000] text-white py-20 px-4 text-center">
-    <h2 className="font-barber tracking-wider text-4xl md:text-6xl 2xl:text-8xl font-bold mb-2">
-      NUMBERS THAT TELL OUR STORY
-    </h2>
-    <p className="text-sm md:text-xl 2xl:text-2xl mb-10">
-      Every celebration we cater is more than just food—it’s memories, <br />
-      milestones, and moments we’re proud to share.
-    </p>
-
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-10 text-center">
-      {/* Plates Served */}
-      <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
+      <div
+        ref={ref}
+        className="pt-6 2xl:pt-28 2xl:pb-38 flex items-center justify-center bg-white text-[#C20000] p-2 pb-10"
       >
-        <div className="text-5xl md:text-6xl font-barber leading-tight">
-          <Counter target={10000} duration={1500} />
+        <div className="font-barber relative inline-block my-6 text-center leading-snug text-2xl md:text-6xl 2xl:text-8xl">
+          <p>
+            FRESHNESS IS OUR SECRET SPICE, <br />
+            STRAIGHT FROM FARM TO PLATE
+          </p>
+
+          {/* Top Left - Leaf */}
+          <motion.div
+            className="absolute 
+                 top-1 sm:-top-8 md:-top-3 2xl:-top-8
+                 left-[21%] sm:left-[25%] md:left-[22%] 2xl:left-[22%]
+                 -translate-x-1/2 
+                 w-8 h-8 sm:w-12 sm:h-12 md:w-16 md:h-16 lg:w-24 lg:h-24"
+            animate={{ y: [0, -10, 0], rotate: [0, -15, 0] }}
+            transition={{
+              duration: 2,
+              repeat: Infinity,
+              repeatType: "loop",
+              ease: "easeInOut",
+            }}
+            whileHover={{ scale: 1.1, rotate: -15 }}
+          >
+            <img src={leafIcon} alt="Leaf" className="w-full h-full" />
+          </motion.div>
+
+          {/* Bottom Left - Eggplant */}
+          <motion.div
+            className="absolute 
+                 bottom-1 sm:bottom-10 md:bottom-12
+                 left-4 sm:left-12 md:left-12 
+                 -translate-x-full 
+                 w-8 h-8 sm:w-12 sm:h-12 md:w-16 md:h-16 lg:w-18 lg:h-18"
+            animate={{ y: [0, 10, 0], rotate: [0, -10, 0] }}
+            transition={{
+              duration: 3,
+              repeat: Infinity,
+              repeatType: "loop",
+              ease: "easeInOut",
+            }}
+            whileHover={{ scale: 1.15, rotate: -10 }}
+          >
+            <img src={eggplantIcon} alt="Eggplant" className="w-full h-full" />
+          </motion.div>
+
+          {/* Bottom Right - Carrot */}
+          <motion.div
+            className="absolute 
+                 bottom-4 sm:bottom-20 md:bottom-14 
+                 right-20 sm:right-20 md:right-50 lg:right-80 
+                 translate-x-full 
+                 w-8 h-8 sm:w-12 sm:h-12 md:w-16 md:h-16 lg:w-20 lg:h-20"
+            animate={{ y: [0, 12, 0], rotate: [0, 10, 0] }}
+            transition={{
+              duration: 2.8,
+              repeat: Infinity,
+              repeatType: "loop",
+              ease: "easeInOut",
+            }}
+            whileHover={{ scale: 1.15, rotate: 0 }}
+          >
+            <img src={carrotIcon} alt="Carrot" className="w-full h-full" />
+          </motion.div>
+
+          {/* Top Right - Chili */}
+          <motion.div
+            className="absolute 
+                 right-4 sm:right-8 md:right-12 lg:right-16 
+                 top-6 sm:top-12 md:top-16 
+                 translate-x-full -translate-y-1/2 
+                 w-8 h-8 sm:w-12 sm:h-12 md:w-16 md:h-16 lg:w-24 lg:h-24"
+            animate={{ y: [0, -8, 0], rotate: [0, 15, 0] }}
+            transition={{
+              duration: 2.5,
+              repeat: Infinity,
+              repeatType: "loop",
+              ease: "easeInOut",
+            }}
+            whileHover={{ scale: 1.1, rotate: 15 }}
+          >
+            <img src={chiliIcon} alt="Chili" className="w-full h-full" />
+          </motion.div>
         </div>
-        <p className="mt-3 text-base md:text-xl font-barber tracking-wide">
-          PLATES SERVED
+      </div>
+
+      {/* Top Border (flipped) */}
+      <motion.section
+        className="my-16"
+        initial={{ opacity: 1, y: 100 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+      >
+        <img
+          src={border}
+          alt="top border"
+          className="w-full rotate-180 -my-0.5"
+        />
+
+        {/* Main Section */}
+        <div className="bg-[#C20000] text-white py-20 px-4 text-center">
+          <h2 className="font-barber tracking-wider text-4xl md:text-6xl 2xl:text-8xl font-bold mb-2">
+            NUMBERS THAT TELL OUR STORY
+          </h2>
+          <p className="text-sm md:text-xl 2xl:text-2xl mb-10">
+            Every celebration we cater is more than just food—it’s memories,{" "}
+            <br />
+            milestones, and moments we’re proud to share.
+          </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10 text-center">
+            {/* Plates Served */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+            >
+              <div className="text-5xl md:text-6xl font-barber leading-tight">
+                <Counter target={10000} duration={1500} />
+              </div>
+              <p className="mt-3 text-base md:text-xl font-barber tracking-wide">
+                PLATES SERVED
+              </p>
+            </motion.div>
+
+            {/* Weddings & Events */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+            >
+              <div className="text-5xl md:text-6xl font-barber leading-tight">
+                <Counter target={500} duration={1500} />
+              </div>
+              <p className="mt-3 text-base md:text-xl font-barber tracking-wide">
+                WEDDINGS & EVENTS
+              </p>
+            </motion.div>
+
+            {/* Happy Guests */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+            >
+              <div className="text-5xl md:text-6xl font-barber leading-wider">
+                <Counter target={5000} duration={1500} />
+              </div>
+              <p className="mt-3 text-base md:text-xl font-barber tracking-wide">
+                HAPPY GUESTS
+              </p>
+            </motion.div>
+          </div>
+        </div>
+
+        {/* Bottom Border (normal) */}
+        <img src={border} alt="bottom border" className="w-full -my-0.5" />
+      </motion.section>
+
+      <motion.div
+        className="w-full bg-white py-16 my-16 flex flex-col items-center text-center"
+        initial={{ opacity: 1, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+      >
+        {/* Heading */}
+        <h2 className="text-[#C20000] font-barber tracking-wider text-4xl md:text-6xl 2xl:text-8xl font-bold mb-2">
+          WHERE CELEBRATIONS SHINE
+        </h2>
+        <p className="text-[#C20000] text-sm md:text-xl 2xl:text-2xl mb-10">
+          A little peek at the parties we’ve sprinkled with mithas. <br />
+          Because memories taste better when shared.
         </p>
+        {/* Wire + Hanging Photos */}
+        <div className="relative w-full flex justify-center">
+          {/* Curved wire (responsive) */}
+          <svg
+            className="absolute top-0 left-0 w-full"
+            height="120"
+            viewBox="0 0 100 120"
+            preserveAspectRatio="none"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M0 0 Q50 100 100 0"
+              stroke="#C20000"
+              strokeWidth="4"
+              fill="transparent"
+            />
+          </svg>
+
+          {/* Hanging squares */}
+          <div className="flex w-full justify-between relative z-10 mt-12 px-4 md:px-0">
+            {/* 1st square */}
+            <div
+              className="hidden md:block relative w-24 h-28 md:w-60 md:h-60 bg-[#C20000] rounded-lg md:-top-4 2xl:-top-7"
+              style={{ transform: "rotate(6deg)" }}
+            >
+              <div className="absolute -top-4 left-1/2 -translate-x-1/2 w-2 md:w-3 h-6 md:h-9 bg-[#C20000] rounded-sm"></div>
+              <img
+                src={photo1}
+                alt="Photo 5"
+                className="w-full h-full border-2 border-[#C20000] rounded-lg object-cover"
+              />
+            </div>
+
+            {/* 2nd square */}
+            <div
+              className="relative w-24 h-28 md:w-60 md:h-60 bg-[#C20000] rounded-lg md:top-1 2xl:top-1 -top-2"
+              style={{ transform: "rotate(3deg)" }}
+            >
+              <div className="absolute -top-4 left-1/2 -translate-x-1/2 w-2 md:w-3 h-6 md:h-9 bg-[#C20000] rounded-sm"></div>
+              <img
+                src={photo2}
+                alt="Photo 5"
+                className="w-full h-full border-2 border-[#C20000] rounded-lg object-cover"
+              />
+            </div>
+
+            {/* 3rd square */}
+            <div
+              className="relative w-24 h-28 md:w-60 md:h-60 bg-[#C20000] rounded-lg md:top-2 2xl:top-2 top-2"
+              style={{ transform: "rotate(0deg)" }}
+            >
+              <div className="absolute -top-4 left-1/2 -translate-x-1/2 w-2 md:w-3 h-6 md:h-9 bg-[#C20000] rounded-sm"></div>
+              <img
+                src={photo3}
+                alt="Photo 5"
+                className="w-full h-full border-2 border-[#C20000] rounded-lg object-cover"
+              />
+            </div>
+
+            {/* 4th square */}
+            <div
+              className="relative w-24 h-28 md:w-60 md:h-60 bg-[#C20000] rounded-lg md:top-1 2xl:top-0 -top-2"
+              style={{ transform: "rotate(-3deg)" }}
+            >
+              <div className="absolute -top-4 left-1/2 -translate-x-1/2 w-2 md:w-3 h-6 md:h-9 bg-[#C20000] rounded-sm"></div>
+              <img
+                src={photo4}
+                alt="Photo 5"
+                className="w-full h-full border-2 border-[#C20000] rounded-lg object-cover"
+              />
+            </div>
+
+            {/* 5th square */}
+            <div
+              className="hidden md:block relative w-24 h-28 md:w-60 md:h-60 bg-[#C20000] rounded-lg md:-top-4 2xl:-top-7"
+              style={{ transform: "rotate(-6deg)" }}
+            >
+              <div className="absolute -top-4 left-1/2 -translate-x-1/2 w-2 md:w-3 h-6 md:h-9 bg-[#C20000] rounded-sm"></div>
+              <img
+                src={photo5}
+                alt="Photo 5"
+                className="w-full h-full border-2 border-[#C20000] rounded-lg object-cover"
+              />
+            </div>
+          </div>
+        </div>
       </motion.div>
 
-      {/* Weddings & Events */}
       <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.2 }}
+        className="bg-[#C20000] text-white rounded-[3rem] px-6 sm:px-10 max-w-8xl mx-4 2xl:mx-20 text-center py-16 my-16"
+        initial={{ y: 150, opacity: 1 }}
+        whileInView={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        viewport={{ once: true, amount: 0.3 }}
       >
-        <div className="text-5xl md:text-6xl font-barber leading-tight">
-          <Counter target={500} duration={1500} />
+        {/* Heading */}
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-barber mb-10">
+          HOW TO GET YOUR HALWAI FIX
+        </h2>
+
+        {/* Grid Section */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-20">
+          {/* Pick Your Feast */}
+          <div className="flex flex-col items-center space-y-6">
+            <img
+              src={Menuborder}
+              alt="Pick Your Feast"
+              className="w-20 h-20 sm:w-28 sm:h-28 md:w-32 md:h-32"
+            />
+            <h3 className="font-barber text-lg sm:text-xl md:text-2xl">
+              PICK YOUR FEAST
+            </h3>
+            <p className="text-sm sm:text-base leading-relaxed max-w-xs">
+              Browse through our menu full of chaats, curries, and mithais.
+              Think of it as your ticket to India, plated fresh in the UK.
+            </p>
+          </div>
+
+          {/* Share Your Details */}
+          <div className="flex flex-col items-center space-y-6">
+            <img
+              src={ChatBorderIcon}
+              alt="Share Your Details"
+              className="w-20 h-20 sm:w-28 sm:h-28 md:w-32 md:h-32"
+            />
+            <h3 className="font-barber text-lg sm:text-xl md:text-2xl">
+              SHARE YOUR DETAILS
+            </h3>
+            <p className="text-sm sm:text-base leading-relaxed max-w-xs">
+              From guest count to venue vibes, just spill the beans. We’ll
+              tailor the spread so it feels made just for you.
+            </p>
+          </div>
+
+          {/* Sit Back & Savour */}
+          <div className="flex flex-col items-center space-y-6">
+            <img
+              src={menuborder}
+              alt="Sit Back & Savour"
+              className="w-20 h-20 sm:w-28 sm:h-28 md:w-32 md:h-32"
+            />
+            <h3 className="font-barber text-lg sm:text-xl md:text-2xl">
+              SIT BACK & SAVOUR
+            </h3>
+            <p className="text-sm sm:text-base leading-relaxed max-w-xs">
+              When the day arrives, we roll in with flavours and flair. You just
+              enjoy and we’ll make sure no plate leaves empty.
+            </p>
+          </div>
         </div>
-        <p className="mt-3 text-base md:text-xl font-barber tracking-wide">
-          WEDDINGS & EVENTS
-        </p>
+
+        {/* CTA Button */}
+        <Link to="/booking">
+          <motion.button
+            className="mt-10 bg-white text-[#C20000] px-6 sm:px-8 md:px-12 py-2 sm:py-3 md:py-4 rounded-full font-barber font-semibold text-sm sm:text-base md:text-lg lg:text-xl shadow-xl transition-transform duration-300 ease-in-out transform hover:scale-110 hover:bg-gray-100"
+            initial={{ opacity: 0, y: 30, scale: 0.95 }}
+            whileInView={{ opacity: 1, y: 0, scale: 1 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            viewport={{ once: true }}
+          >
+            PLACE YOUR ORDER
+          </motion.button>
+        </Link>
       </motion.div>
 
-      {/* Happy Guests */}
-      <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.4 }}
-      >
-        <div className="text-5xl md:text-6xl font-barber leading-wider">
-          <Counter target={5000} duration={1500} />
-        </div>
-        <p className="mt-3 text-base md:text-xl font-barber tracking-wide">
-          HAPPY GUESTS
-        </p>
-      </motion.div>
-    </div>
-  </div>
+      <section className="flex flex-col items-center ">
+        <h2 className="text-[#C20000] font-barber tracking-wider text-4xl md:text-6xl 2xl:text-8xl font-bold mb-6 text-center pt-16">
+          Tales from the Table!
+        </h2>
+        <TestimonialCarousel />
+      </section>
 
-  {/* Bottom Border (normal) */}
-  <img
-    src={border}
-    alt="bottom border"
-    className="w-full -my-0.5"
-  />
-</motion.section>
-
-
-
-<motion.div
-  className="w-full bg-white py-16 my-16 flex flex-col items-center text-center"
-  initial={{ opacity: 1, y: 50 }}
-  whileInView={{ opacity: 1, y: 0 }}
-  transition={{ duration: 0.8 }}
->
-  {/* Heading */}
-  <h2 className="text-[#C20000] font-barber tracking-wider text-4xl md:text-6xl 2xl:text-8xl font-bold mb-2">
-    WHERE CELEBRATIONS SHINE
-  </h2>
-  <p className="text-[#C20000] text-sm md:text-xl 2xl:text-2xl mb-10">
-    A little peek at the parties we’ve sprinkled with mithas. <br />
-    Because memories taste better when shared.
-  </p>
-  {/* Wire + Hanging Photos */}
-  <div className="relative w-full flex justify-center">
-    {/* Curved wire (responsive) */}
-    <svg
-      className="absolute top-0 left-0 w-full"
-      height="120"
-      viewBox="0 0 100 120"
-      preserveAspectRatio="none"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path
-        d="M0 0 Q50 100 100 0"
-        stroke="#C20000"
-        strokeWidth="4"
-        fill="transparent"
-      />
-    </svg>
-
-    {/* Hanging squares */}
-    <div className="flex w-full justify-between relative z-10 mt-12 px-4 md:px-0">
-      {/* 1st square */}
-      <div
-        className="hidden md:block relative w-24 h-28 md:w-60 md:h-60 bg-[#C20000] rounded-lg md:-top-4 2xl:-top-7"
-        style={{ transform: "rotate(6deg)" }}
-      >
-        <div className="absolute -top-4 left-1/2 -translate-x-1/2 w-2 md:w-3 h-6 md:h-9 bg-[#C20000] rounded-sm"></div><img
-        src={photo1}
-        alt="Photo 5"
-        className="w-full h-full border-2 border-[#C20000] rounded-lg object-cover"
-      />
-      </div>
-
-      {/* 2nd square */}
-      <div
-        className="relative w-24 h-28 md:w-60 md:h-60 bg-[#C20000] rounded-lg md:top-1 2xl:top-1 -top-2"
-        style={{ transform: "rotate(3deg)" }}
-      >
-        <div className="absolute -top-4 left-1/2 -translate-x-1/2 w-2 md:w-3 h-6 md:h-9 bg-[#C20000] rounded-sm"></div>
-        <img
-        src={photo2}
-        alt="Photo 5"
-        className="w-full h-full border-2 border-[#C20000] rounded-lg object-cover"
-      />
-      </div>
-
-      {/* 3rd square */}
-      <div
-        className="relative w-24 h-28 md:w-60 md:h-60 bg-[#C20000] rounded-lg md:top-2 2xl:top-2 top-2"
-        style={{ transform: "rotate(0deg)" }}
-      >
-        <div className="absolute -top-4 left-1/2 -translate-x-1/2 w-2 md:w-3 h-6 md:h-9 bg-[#C20000] rounded-sm"></div>
-        <img
-        src={photo3}
-        alt="Photo 5"
-        className="w-full h-full border-2 border-[#C20000] rounded-lg object-cover"
-      />
-      </div>
-
-      {/* 4th square */}
-      <div
-        className="relative w-24 h-28 md:w-60 md:h-60 bg-[#C20000] rounded-lg md:top-1 2xl:top-0 -top-2"
-        style={{ transform: "rotate(-3deg)" }}
-      >
-        <div className="absolute -top-4 left-1/2 -translate-x-1/2 w-2 md:w-3 h-6 md:h-9 bg-[#C20000] rounded-sm"></div>
-        <img
-        src={photo4}
-        alt="Photo 5"
-        className="w-full h-full border-2 border-[#C20000] rounded-lg object-cover"
-      />
-      </div>
-
-      {/* 5th square */}
-      <div
-        className="hidden md:block relative w-24 h-28 md:w-60 md:h-60 bg-[#C20000] rounded-lg md:-top-4 2xl:-top-7"
-        style={{ transform: "rotate(-6deg)" }}
-      >
-        <div className="absolute -top-4 left-1/2 -translate-x-1/2 w-2 md:w-3 h-6 md:h-9 bg-[#C20000] rounded-sm"></div>
-        <img
-        src={photo5}
-        alt="Photo 5"
-        className="w-full h-full border-2 border-[#C20000] rounded-lg object-cover"
-      />
-      </div>
-    </div>
-  </div>
-</motion.div>
-
-
-
-
-
-
-
- <motion.div
-  className="bg-[#C20000] text-white rounded-[3rem] px-6 sm:px-10 max-w-8xl mx-4 2xl:mx-20 text-center py-16 my-16"
-  initial={{ y: 150, opacity: 1 }}
-  whileInView={{ y: 0, opacity: 1 }}
-  transition={{ duration: 0.8, ease: "easeOut" }}
-  viewport={{ once: true, amount: 0.3 }}
->
-  {/* Heading */}
-  <h2 className="text-3xl sm:text-4xl md:text-5xl font-barber mb-10">
-    HOW TO GET YOUR HALWAI FIX
-  </h2>
-
-  {/* Grid Section */}
-  <div className="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-20">
-    {/* Pick Your Feast */}
-    <div className="flex flex-col items-center space-y-6">
-      <img
-        src={Menuborder}
-        alt="Pick Your Feast"
-        className="w-20 h-20 sm:w-28 sm:h-28 md:w-32 md:h-32"
-      />
-      <h3 className="font-barber text-lg sm:text-xl md:text-2xl">
-        PICK YOUR FEAST
-      </h3>
-      <p className="text-sm sm:text-base leading-relaxed max-w-xs">
-        Browse through our menu full of chaats, curries, and mithais. Think of
-        it as your ticket to India, plated fresh in the UK.
-      </p>
-    </div>
-
-    {/* Share Your Details */}
-    <div className="flex flex-col items-center space-y-6">
-      <img
-        src={ChatBorderIcon}
-        alt="Share Your Details"
-        className="w-20 h-20 sm:w-28 sm:h-28 md:w-32 md:h-32"
-      />
-      <h3 className="font-barber text-lg sm:text-xl md:text-2xl">
-        SHARE YOUR DETAILS
-      </h3>
-      <p className="text-sm sm:text-base leading-relaxed max-w-xs">
-        From guest count to venue vibes, just spill the beans. We’ll tailor the
-        spread so it feels made just for you.
-      </p>
-    </div>
-
-    {/* Sit Back & Savour */}
-    <div className="flex flex-col items-center space-y-6">
-      <img
-        src={menuborder}
-        alt="Sit Back & Savour"
-        className="w-20 h-20 sm:w-28 sm:h-28 md:w-32 md:h-32"
-      />
-      <h3 className="font-barber text-lg sm:text-xl md:text-2xl">
-        SIT BACK & SAVOUR
-      </h3>
-      <p className="text-sm sm:text-base leading-relaxed max-w-xs">
-        When the day arrives, we roll in with flavours and flair. You just enjoy
-        and we’ll make sure no plate leaves empty.
-      </p>
-    </div>
-  </div>
-
-  {/* CTA Button */}
-  <Link to="/booking">
-  <motion.button
-    className="mt-10 bg-white text-[#C20000] px-6 sm:px-8 md:px-12 py-2 sm:py-3 md:py-4 rounded-full font-barber font-semibold text-sm sm:text-base md:text-lg lg:text-xl shadow-xl transition-transform duration-300 ease-in-out transform hover:scale-110 hover:bg-gray-100"
-    initial={{ opacity: 0, y: 30, scale: 0.95 }}
-    whileInView={{ opacity: 1, y: 0, scale: 1 }}
-    transition={{ duration: 0.8, ease: "easeOut" }}
-    viewport={{ once: true }}
-  >
-    PLACE YOUR ORDER
-  </motion.button>
-  </Link>
-</motion.div>
-
-
-
-
-
-
-<section className="flex flex-col items-center ">
-  <h2 className="text-[#C20000] font-barber tracking-wider text-4xl md:text-6xl 2xl:text-8xl font-bold mb-6 text-center pt-16">
-    Tales from the Table!
-  </h2>
-  <TestimonialCarousel />
-</section>
-
-
-
-
-
-
-
-
-            
-
-
-<motion.section
+      <motion.section
         className="w-[95%] md:max-w-[80%] bg-[#C20000] text-white rounded-[3rem] flex flex-col md:flex-row items-stretch justify-between mx-auto overflow-hidden my-16 md:my-16"
         initial={{ y: 150, opacity: 1 }}
         whileInView={{ y: 0, opacity: 1 }}
@@ -633,18 +654,13 @@ const WeddingEvent = () => {
 
         {/* Right Side Image */}
         <div className="w-full md:w-1/3 h-[320px] md:h-[640px] flex justify-center items-center md:items-end mt-4 md:pr-12">
-  <img
-    src={Call}
-    alt="Chef Illustration"
-    className="max-w-[75%] md:max-w-full h-auto object-contain"
-  />
-</div>
-
+          <img
+            src={Call}
+            alt="Chef Illustration"
+            className="max-w-[75%] md:max-w-full h-auto object-contain"
+          />
+        </div>
       </motion.section>
-
-
-
-
 
       <Footer />
     </>

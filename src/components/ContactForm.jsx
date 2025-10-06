@@ -49,7 +49,12 @@ const ContactForm = ({ onClose }) => {
             className="w-full h-1/2 md:h-full object-cover object-top"
             initial={{ y: 100, rotate: -15, opacity: 0 }}
             animate={{ y: 0, rotate: 0, opacity: 1 }}
-            transition={{ type: "spring", stiffness: 80, damping: 15, duration: 1 }}
+            transition={{
+              type: "spring",
+              stiffness: 80,
+              damping: 15,
+              duration: 1,
+            }}
           />
         </div>
 
@@ -65,7 +70,9 @@ const ContactForm = ({ onClose }) => {
             YOUR HALWAI AWAITS
           </h1>
           <p className="text-xs md:text-sm lg:text-base mb-2 md:mb-3 lg:mb-6">
-            From chaats that spark conversations to curries that steal the spotlight, we’ve got the recipes to make your event unforgettable. Drop us a message and let’s start cooking up memories.
+            From chaats that spark conversations to curries that steal the
+            spotlight, we’ve got the recipes to make your event unforgettable.
+            Drop us a message and let’s start cooking up memories.
           </p>
 
           <form

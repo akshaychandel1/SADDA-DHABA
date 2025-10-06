@@ -3,7 +3,7 @@ import { FaFacebookF, FaInstagram, FaTwitter, FaTiktok } from "react-icons/fa";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { Link } from "react-router-dom";
-import { HashLink } from 'react-router-hash-link';
+import { HashLink } from "react-router-hash-link";
 
 // Assets
 import footmob from "../assets/icons/footmob.svg";
@@ -47,8 +47,12 @@ const Footer = ({ onContactClick }) => {
           className="flex-2 mb-8 md:mb-0 2xl:pl-38
            text-center md:text-left"
         >
-          <h3 className="font-barber  py-4 text-3xl lg:text-5xl 2xl:text-6xl tracking-wider text-left">RING UP YOUR CRAVINGS</h3>
-          <h2 className="font-barber py-4 text-4xl lg:text-7xl 2xl:text-8xl tracking-tight ">+44 79442 96922</h2>
+          <h3 className="font-barber  py-4 text-3xl lg:text-5xl 2xl:text-6xl tracking-wider text-left">
+            RING UP YOUR CRAVINGS
+          </h3>
+          <h2 className="font-barber py-4 text-4xl lg:text-7xl 2xl:text-8xl tracking-tight ">
+            +44 79442 96922
+          </h2>
 
           {/* Social Icons */}
           <div className="flex space-x-4 mt-4 justify-center md:justify-start">
@@ -87,18 +91,20 @@ const Footer = ({ onContactClick }) => {
           <Link to="/our-story">Our Story</Link>
           <Link to="/faqs">FAQs</Link>
           <Link to="/menu">Menu</Link>
-        <li
-  onClick={() => window.dispatchEvent(new Event("openContactPopup"))}
-  className="list-none  cursor-pointer">
-  Contact
-</li>
-          <HashLink smooth to="/#service">Services</HashLink>
+          <li
+            onClick={() => window.dispatchEvent(new Event("openContactPopup"))}
+            className="list-none  cursor-pointer"
+          >
+            Contact
+          </li>
+          <HashLink smooth to="/#service">
+            Services
+          </HashLink>
           <Link to="/privacy-policy">Privacy Policy</Link>
           <Link to="/booking">Booking</Link>
           <Link to="/terms">Terms & Conditions</Link>
         </motion.div>
       </div>
-
 
       {/* Mascot Images */}
       <div className="flex justify-center w-full text-center select-none relative overflow-visible z-0">

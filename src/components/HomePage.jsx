@@ -139,7 +139,6 @@ const HomePage = ({ onContactClick }) => {
 
   return (
     <>
-
       <div className="bg-[#C20000]  text-white  overflow-hidden -mb-px">
         <div className="relative container mx-auto px-1 py-12 md:py-20 text-center">
           {/* Header Content */}
@@ -176,15 +175,15 @@ const HomePage = ({ onContactClick }) => {
 
             {/* Button */}
             <Link to="/menu">
-            <motion.button
-              className="mt-6 mb-26 2xl:mb-48 bottom-6 sm:bottom-8 md:bottom-12 left-4 sm:left-6 md:left-12 whitespace-nowrap font-barber text-sm sm:text-base md:text-lg lg:text-xl 2xl:text-3xl 3xl:text-4xl bg-white text-[#C20000] px-5 sm:px-6 md:px-10 pt-2 sm:pt-3 md:pt-4 pb-1 sm:pb-2 md:pb-3 rounded-2xl shadow-xl leading-[1.2] transition-transform duration-300 ease-in-out transform hover:scale-110"
-              initial={{ opacity: 0, y: 30, scale: 0.95 }}
-              whileInView={{ opacity: 1, y: 0, scale: 1 }}
-              transition={{ duration: 0.8, ease: "easeOut" }}
-              viewport={{ once: true }}
-            >
-              EXPLORE MENU
-            </motion.button>
+              <motion.button
+                className="mt-6 mb-26 2xl:mb-48 bottom-6 sm:bottom-8 md:bottom-12 left-4 sm:left-6 md:left-12 whitespace-nowrap font-barber text-sm sm:text-base md:text-lg lg:text-xl 2xl:text-3xl 3xl:text-4xl bg-white text-[#C20000] px-5 sm:px-6 md:px-10 pt-2 sm:pt-3 md:pt-4 pb-1 sm:pb-2 md:pb-3 rounded-2xl shadow-xl leading-[1.2] transition-transform duration-300 ease-in-out transform hover:scale-110"
+                initial={{ opacity: 0, y: 30, scale: 0.95 }}
+                whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                transition={{ duration: 0.8, ease: "easeOut" }}
+                viewport={{ once: true }}
+              >
+                EXPLORE MENU
+              </motion.button>
             </Link>
           </motion.div>
 
@@ -200,7 +199,7 @@ const HomePage = ({ onContactClick }) => {
               {/* Speech Bubble */}
               <div className="absolute top-2 md:top-8 2xl:top-14 -right-3 md:-right-3 2xl:-right-8 w-16 md:w-42 2xl:w-62">
                 <div className="relative  ">
-                  <img src={textthink} alt=""  className="bell-shiver"/>
+                  <img src={textthink} alt="" className="bell-shiver" />
                   <div className="absolute left-0 -bottom-2  transform rotate-45 -translate-x-2 "></div>
                 </div>
               </div>
@@ -241,64 +240,57 @@ const HomePage = ({ onContactClick }) => {
 
           {/* Turnip */}
           <motion.div
-  style={{ y: yTurnip, rotate: rTurnip, scale: sTurnip }}
-  className="absolute 
+            style={{ y: yTurnip, rotate: rTurnip, scale: sTurnip }}
+            className="absolute 
              top-1 sm:-top-8 md:-top-3 2xl:-top-8
              left-[21%] sm:left-[25%] md:left-[22%] 2xl:left-[22%] 
              -translate-x-1/2 
              w-8 h-8 sm:w-12 sm:h-12 md:w-16 md:h-16 lg:w-24 lg:h-24"
-  whileInView={{ scale: 1.1, rotate: 2 }}
->
-  <img src={tumip} alt="Turnip" className="w-full h-full" />
-</motion.div>
+            whileInView={{ scale: 1.1, rotate: 2 }}
+          >
+            <img src={tumip} alt="Turnip" className="w-full h-full" />
+          </motion.div>
 
-{/* Eggplant */}
-<motion.div
-  style={{ y: yBrinjal, rotate: rBrinjal, scale: sBrinjal }}
-  className="absolute 
+          {/* Eggplant */}
+          <motion.div
+            style={{ y: yBrinjal, rotate: rBrinjal, scale: sBrinjal }}
+            className="absolute 
              bottom-1 sm:bottom-10 md:bottom-12
              left-4 sm:left-12 md:left-12 
              -translate-x-full 
              w-8 h-8 sm:w-12 sm:h-12 md:w-16 md:h-16 lg:w-18 lg:h-18"
-  whileHover={{ scale: 1.1, rotate: 50 }}
->
-  <img src={brinjal} alt="Eggplant" className="w-full h-full" />
-</motion.div>
+            whileHover={{ scale: 1.1, rotate: 50 }}
+          >
+            <img src={brinjal} alt="Eggplant" className="w-full h-full" />
+          </motion.div>
 
-{/* Peas */}
-<motion.div
-  style={{ y: yPeas, rotate: rPeas, scale: sPeas }}
-  className="absolute 
+          {/* Peas */}
+          <motion.div
+            style={{ y: yPeas, rotate: rPeas, scale: sPeas }}
+            className="absolute 
              bottom-4 sm:bottom-20 md:bottom-14 
              right-20 sm:right-20 md:right-50 lg:right-80 
              translate-x-full 
              w-8 h-8 sm:w-12 sm:h-12 md:w-16 md:h-16 lg:w-20 lg:h-20"
-  whileHover={{ scale: 1.2, rotate: 20 }}
->
-  <img src={peas} alt="Peas" className="w-full h-full" />
-</motion.div>
+            whileHover={{ scale: 1.2, rotate: 20 }}
+          >
+            <img src={peas} alt="Peas" className="w-full h-full" />
+          </motion.div>
 
-{/* Carrot */}
-<motion.div
-  style={{ y: yCarrot, rotate: rCarrot, scale: sCarrot }}
-  className="absolute 
+          {/* Carrot */}
+          <motion.div
+            style={{ y: yCarrot, rotate: rCarrot, scale: sCarrot }}
+            className="absolute 
              right-4 sm:right-8 md:right-12 lg:right-16 
              top-6 sm:top-12 md:top-16 
              translate-x-full -translate-y-1/2 
              w-8 h-8 sm:w-12 sm:h-12 md:w-16 md:h-16 lg:w-24 lg:h-24"
-  whileHover={{ scale: 1.2, rotate: 2 }}
->
-  <img src={carrot} alt="Carrot" className="w-full h-full" />
-</motion.div>
+            whileHover={{ scale: 1.2, rotate: 2 }}
+          >
+            <img src={carrot} alt="Carrot" className="w-full h-full" />
+          </motion.div>
         </div>
       </div>
-
-      
-
-
-
-
-
 
       {/* ribbon */}
       <div className="relative w-full h-[140px] overflow-visible bg-white">
@@ -397,7 +389,10 @@ const HomePage = ({ onContactClick }) => {
         </motion.div>
       </div>
 
-      <div id="service" className="flex items-center justify-center px-4 sm:px-6 lg:px-8 py-8 sm:py-10 md:py-12 2xl:py-16">
+      <div
+        id="service"
+        className="flex items-center justify-center px-4 sm:px-6 lg:px-8 py-8 sm:py-10 md:py-12 2xl:py-16"
+      >
         <motion.div
           className="w-full md:w-[95%] lg:max-w-[84%] border-[5px] border-[#C20000] flex flex-col md:flex-row rounded-3xl md:rounded-[3rem] overflow-hidden shadow-md"
           initial={{ x: -200, opacity: 1 }}
@@ -428,11 +423,10 @@ const HomePage = ({ onContactClick }) => {
               transition={{ duration: 0.8, ease: "easeOut" }}
               viewport={{ once: true }}
             >
-              
               <Link to="/wedding-event">
-              <button className="whitespace-nowrap font-barber text-sm sm:text-base md:text-lg lg:text-xl 2xl:text-3xl bg-white text-[#C20000] px-5 sm:px-6 md:px-10 pt-2 sm:pt-3 md:pt-4 pb-1 sm:pb-2 md:pb-3 rounded-2xl shadow-xl leading-[1.2] transition-transform duration-300 ease-in-out transform hover:scale-110">
-                KNOW MORE
-              </button>
+                <button className="whitespace-nowrap font-barber text-sm sm:text-base md:text-lg lg:text-xl 2xl:text-3xl bg-white text-[#C20000] px-5 sm:px-6 md:px-10 pt-2 sm:pt-3 md:pt-4 pb-1 sm:pb-2 md:pb-3 rounded-2xl shadow-xl leading-[1.2] transition-transform duration-300 ease-in-out transform hover:scale-110">
+                  KNOW MORE
+                </button>
               </Link>
               <img
                 src={wine}
@@ -453,9 +447,7 @@ const HomePage = ({ onContactClick }) => {
         </motion.div>
       </div>
 
-
-
-              <div className="flex items-center justify-center px-4 sm:px-6 lg:px-8 py-8 sm:py-10 md:py-12 2xl:py-16">
+      <div className="flex items-center justify-center px-4 sm:px-6 lg:px-8 py-8 sm:py-10 md:py-12 2xl:py-16">
         <motion.div
           className="w-full md:w-[95%] lg:max-w-[84%] border-[5px] border-[#C20000] flex flex-col md:flex-row-reverse rounded-3xl md:rounded-[3rem] overflow-hidden shadow-md"
           initial={{ x: 200, opacity: 1 }}
@@ -492,9 +484,9 @@ const HomePage = ({ onContactClick }) => {
                 className="w-[72px] sm:w-[152px] md:w-[144px] 2xl:w-[152px] 3xl:w-[136px]"
               />
               <Link to="/corporate-event">
-              <button className="whitespace-nowrap font-barber text-sm sm:text-base md:text-lg lg:text-xl 2xl:text-3xl 3xl:text-4xl bg-white text-[#C20000] px-5 sm:px-6 md:px-10 pt-2 sm:pt-3 md:pt-4 pb-1 sm:pb-2 md:pb-3 rounded-2xl shadow-xl leading-[1.2] transition-transform duration-300 ease-in-out transform hover:scale-110">
-                KNOW MORE
-              </button>
+                <button className="whitespace-nowrap font-barber text-sm sm:text-base md:text-lg lg:text-xl 2xl:text-3xl 3xl:text-4xl bg-white text-[#C20000] px-5 sm:px-6 md:px-10 pt-2 sm:pt-3 md:pt-4 pb-1 sm:pb-2 md:pb-3 rounded-2xl shadow-xl leading-[1.2] transition-transform duration-300 ease-in-out transform hover:scale-110">
+                  KNOW MORE
+                </button>
               </Link>
             </motion.div>
           </div>
@@ -509,8 +501,8 @@ const HomePage = ({ onContactClick }) => {
           </div>
         </motion.div>
       </div>
-      
-     <div className="flex items-center justify-center px-4 sm:px-6 lg:px-8 py-8 sm:py-10 md:py-12 2xl:py-16 2xl:mb-22">
+
+      <div className="flex items-center justify-center px-4 sm:px-6 lg:px-8 py-8 sm:py-10 md:py-12 2xl:py-16 2xl:mb-22">
         <motion.div
           className="w-full md:w-[95%] lg:max-w-[84%] border-[5px] border-[#C20000] flex flex-col md:flex-row rounded-3xl md:rounded-[3rem] overflow-hidden shadow-md"
           initial={{ x: -200, opacity: 1 }}
@@ -534,15 +526,15 @@ const HomePage = ({ onContactClick }) => {
 
             {/* Button fixed bottom-left */}
             <Link to="/grab-go">
-            <motion.button
-              className="absolute bottom-6 sm:bottom-8 md:bottom-12 left-4 sm:left-6 md:left-12 whitespace-nowrap font-barber text-sm sm:text-base md:text-lg lg:text-xl 2xl:text-3xl 3xl:text-4xl bg-white text-[#C20000] px-5 sm:px-6 md:px-10 pt-2 sm:pt-3 md:pt-4 pb-1 sm:pb-2 md:pb-3 rounded-2xl shadow-xl leading-[1.2] transition-transform duration-300 ease-in-out transform hover:scale-110"
-              initial={{ opacity: 0, y: 30, scale: 0.95 }}
-              whileInView={{ opacity: 1, y: 0, scale: 1 }}
-              transition={{ duration: 0.8, ease: "easeOut" }}
-              viewport={{ once: true }}
-            >
-              KNOW MORE
-            </motion.button>
+              <motion.button
+                className="absolute bottom-6 sm:bottom-8 md:bottom-12 left-4 sm:left-6 md:left-12 whitespace-nowrap font-barber text-sm sm:text-base md:text-lg lg:text-xl 2xl:text-3xl 3xl:text-4xl bg-white text-[#C20000] px-5 sm:px-6 md:px-10 pt-2 sm:pt-3 md:pt-4 pb-1 sm:pb-2 md:pb-3 rounded-2xl shadow-xl leading-[1.2] transition-transform duration-300 ease-in-out transform hover:scale-110"
+                initial={{ opacity: 0, y: 30, scale: 0.95 }}
+                whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                transition={{ duration: 0.8, ease: "easeOut" }}
+                viewport={{ once: true }}
+              >
+                KNOW MORE
+              </motion.button>
             </Link>
             {/* Bag image fixed bottom-right */}
             <motion.img
@@ -566,7 +558,6 @@ const HomePage = ({ onContactClick }) => {
           </div>
         </motion.div>
       </div>
-
 
       {/* ribbon */}
 
@@ -687,7 +678,10 @@ const HomePage = ({ onContactClick }) => {
 
           {/* Button fixed bottom-left on desktop, centered on mobile */}
           <motion.button
-           onClick={() => { onContactClick(); setIsOpen(false); }}
+            onClick={() => {
+              onContactClick();
+              setIsOpen(false);
+            }}
             className="absolute md:bottom-12 md:left-22 left-1/2 transform -translate-x-1/2 md:transform-none whitespace-nowrap font-barber text-sm sm:text-base md:text-lg lg:text-xl 2xl:text-3xl 3xl:text-4xl bg-white text-[#C20000] px-5 sm:px-6 md:px-10 pt-2 sm:pt-3 md:pt-4 pb-1 sm:pb-2 md:pb-3 rounded-2xl shadow-xl leading-[1.2] transition-transform duration-300 ease-in-out transform hover:scale-110"
             initial={{ opacity: 0, y: 30, scale: 0.95 }}
             whileInView={{ opacity: 1, y: 0, scale: 1 }}
@@ -700,15 +694,14 @@ const HomePage = ({ onContactClick }) => {
 
         {/* Right Side Image */}
         <div className="w-full md:w-1/3 h-[320px] md:h-[640px] flex justify-center items-center md:items-end mt-4 md:pr-12">
-  <img
-    src={Call}
-    alt="Chef Illustration"
-    className="max-w-[75%] md:max-w-full h-auto object-contain"
-  />
-</div>
-
+          <img
+            src={Call}
+            alt="Chef Illustration"
+            className="max-w-[75%] md:max-w-full h-auto object-contain"
+          />
+        </div>
       </motion.section>
-      <Footer  onContactClick={() => setShowContact(true)} />
+      <Footer onContactClick={() => setShowContact(true)} />
     </>
   );
 };
