@@ -200,8 +200,7 @@ const WeddingEvent = () => {
                 className="block w-8 h-8 sm:w-10 sm:h-10 md:w-14 md:h-14 lg:w-20 lg:h-20"
                 whileHover={{ scale: 1.12, rotate: -15 }}
               />
-              <span>LIKE</span>
-              <span>HOMES</span>
+              <span>LIKE HOMES</span>
               <motion.img
                 src={ringIcon}
                 alt="Ring"
