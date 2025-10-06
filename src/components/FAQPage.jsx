@@ -1,8 +1,8 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 import wed from "../assets/icons/WeddingsandEvents.jpg";
 import { FaFacebookF, FaInstagram, FaTwitter, FaTiktok } from "react-icons/fa";
-import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import charfoot from "../assets/icons/charfoot.svg";
 import footmob from "../assets/icons/footmob.svg";
@@ -57,6 +57,19 @@ export default function FAQPage() {
   const [openIndex, setOpenIndex] = useState(null);
   const [is1440, setIs1440] = useState(false);
 
+  const parallaxRef = useRef(null);
+
+  // Track scroll progress for this section
+  const { scrollYProgress: parallaxScrollYProgress } = useScroll({
+    target: parallaxRef,
+    offset: ["start end", "end start"], // section enters viewport -> leaves viewport
+  });
+
+  // Map scroll progress to Y translation and scale
+  const parallaxY = useTransform(parallaxScrollYProgress, [0, 1], ["-10%", "15%"]);
+  const parallaxScale = useTransform(parallaxScrollYProgress, [0, 1], [1.05, 1]);
+
+
   useEffect(() => {
     const checkSize = () => setIs1440(window.innerWidth <= 1440);
     checkSize();
@@ -89,26 +102,33 @@ export default function FAQPage() {
       </div>
 
       {/* Image placeholder section */}
-      <section className="relative -mt-0.5 z-10">
-        {/* Half red, half white background */}
-        <div className="absolute inset-0 h-full w-full">
-          <div className="h-1/2 bg-[#C20000]"></div> {/* top half red */}
-          <div className="h-1/2 bg-white"></div> {/* bottom half white */}
-        </div>
+       <section
+      ref={parallaxRef}
+      className="relative py-10 -mt-0.5 z-10 overflow-hidden"
+    >
+      {/* Half red, half white background */}
+      <div className="absolute inset-0 h-full w-full">
+        <div className="h-1/2 bg-[#C20000]" />
+        <div className="h-1/2 bg-white" />
+      </div>
 
-        {/* Content */}
-        <div className="container mx-auto px-1 relative z-20">
-          <div className="overflow-hidden shadow-xl rounded-[3rem] max-w-[100%] mx-auto">
-            <div className="relative w-full aspect-[1637/623]">
-              <img
-                src={faq}
-                alt="Buffet"
-                className="absolute inset-0 w-full h-full object-cover"
-              />
-            </div>
-          </div>
+      {/* Content */}
+      <div className="container mx-auto px-4 relative z-20">
+        <div className="overflow-hidden shadow-xl rounded-[3rem] max-w-[90%] mx-auto">
+          <motion.div
+            style={{ y: parallaxY, scale: parallaxScale }}
+            className="relative w-full aspect-[1637/623]"
+            transition={{ type: "spring", stiffness: 50 }}
+          >
+            <img
+              src={faq}
+              alt="Buffet"
+              className="absolute inset-0 w-full h-full object-cover"
+            />
+          </motion.div>
         </div>
-      </section>
+      </div>
+    </section>
 
       {/* FAQ section */}
       <div className="flex flex-col items-center justify-center my-20">
