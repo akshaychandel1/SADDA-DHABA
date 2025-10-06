@@ -44,7 +44,7 @@ const OurStory = ({ onContactClick }) => {
               initial={{ opacity: 0, x: -200 }} // start off to the left and invisible
               whileInView={{ opacity: 1, x: 0 }} // animate when in viewport
               viewport={{ once: true, amount: 0.3 }} // only animate once when 30% visible
-              transition={{ duration: 1, ease: "easeOut" }}
+              transition={{ duration: 2, ease: "easeOut" }}
             />
 
             {/* Overlay Mascot */}

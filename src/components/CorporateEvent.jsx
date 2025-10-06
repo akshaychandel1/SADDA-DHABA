@@ -95,17 +95,17 @@ const CorporateEvent = () => {
   const parallaxY = useTransform(
     parallaxScrollYProgress,
     [0, 1],
-    ["-10%", "15%"]
+    ["-15%", "25%"]
   );
   const parallaxScale = useTransform(
     parallaxScrollYProgress,
     [0, 1],
-    [1.05, 1]
+    [1, 1.3]
   );
 
   const [emblaRef] = useEmblaCarousel({ loop: true, align: "center" });
   const ref = useRef(null);
-  const [active, setActive] = useState("MITHAAS");
+  
   const buttons = ["OCCASION", "MITHAAS", "MEMORIES"];
 
   // ✅ Add ref for Section 2 (Dhol image)
@@ -171,7 +171,7 @@ const CorporateEvent = () => {
                 key={btn}
                 onClick={() => setActive(btn)}
                 className={`px-4 sm:px-6 py-2 text-sm sm:text-base md:text-lg rounded-full transition-all duration-300 transform ${
-                  active === btn
+                  btn === "MITHAAS"
                     ? "bg-white text-[#C20000] scale-110"
                     : "bg-transparent border-2 border-white text-white hover:bg-white hover:text-[#C20000]"
                 }`}
@@ -428,205 +428,206 @@ const CorporateEvent = () => {
       </motion.section>
 
       <motion.div
-        className="w-full bg-white xl:my-48 py-16 my-16 flex flex-col items-center text-center"
-        initial={{ opacity: 1, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
+  className="w-full bg-white xl:my-48 py-16 my-16 flex flex-col items-center text-center"
+  initial={{ opacity: 1, y: 50 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.8 }}
+>
+  {/* Heading */}
+  <h2 className="text-[#C20000] font-barber tracking-wider text-5xl md:text-7xl 2xl:text-9xl font-bold mb-4">
+    WHERE CELEBRATIONS SHINE
+  </h2>
+  <p className="text-[#C20000] text-base md:text-2xl 2xl:text-3xl mb-14">
+    A little peek at the parties we’ve sprinkled with mithas. <br />
+    Because memories taste better when shared.
+  </p>
+
+  {/* Wire + Hanging Photos */}
+  <div className="relative w-full flex justify-center">
+    {/* Curved wire */}
+    <svg
+      className="absolute top-0 left-0 w-full"
+      height="150"
+      viewBox="0 0 100 120"
+      preserveAspectRatio="none"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M0 0 Q50 100 100 0"
+        stroke="#C20000"
+        strokeWidth="4"
+        fill="transparent"
+      />
+    </svg>
+
+    {/* Hanging squares */}
+    <div className="flex w-full justify-between relative z-10 mt-16 px-4 md:px-0">
+      {/* 1st square */}
+      <div
+        className="hidden md:block relative w-36 h-40 md:w-90 md:h-96 bg-[#C20000] rounded-lg md:-top-6 2xl:-top-10 animate-swing"
+        style={{ transform: "rotate(6deg)", animationDelay: "0s" }}
       >
-        {/* Heading */}
-        <h2 className="text-[#C20000] font-barber tracking-wider text-4xl md:text-6xl 2xl:text-8xl font-bold mb-2">
-          WHERE CELEBRATIONS SHINE
-        </h2>
-        <p className="text-[#C20000] text-sm md:text-xl 2xl:text-2xl mb-10">
-          A little peek at the parties we’ve sprinkled with mithas. <br />
-          Because memories taste better when shared.
-        </p>
-        {/* Wire + Hanging Photos */}
-        <div className="relative w-full flex justify-center">
-  {/* Curved wire (responsive) */}
-  <svg
-    className="absolute top-0 left-0 w-full"
-    height="120"
-    viewBox="0 0 100 120"
-    preserveAspectRatio="none"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <path
-      d="M0 0 Q50 100 100 0"
-      stroke="#C20000"
-      strokeWidth="4"
-      fill="transparent"
-    />
-  </svg>
+        <div className="absolute -top-5 left-1/2 -translate-x-1/2 w-3 md:w-4 h-8 md:h-12 bg-[#C20000] rounded-sm"></div>
+        <img
+          src={photo1}
+          alt="Photo 1"
+          className="w-full h-full border-2 border-[#C20000] rounded-lg object-cover"
+        />
+      </div>
 
-  {/* Hanging squares */}
-  <div className="flex w-full justify-between relative z-10 mt-12 px-4 md:px-0">
-    {/* 1st square */}
-    <div
-      className="hidden md:block relative w-24 h-28 md:w-60 md:h-60 bg-[#C20000] rounded-lg md:-top-4 2xl:-top-7 animate-swing"
-      style={{ transform: "rotate(6deg)", animationDelay: "0s" }}
-    >
-      <div className="absolute -top-4 left-1/2 -translate-x-1/2 w-2 md:w-3 h-6 md:h-9 bg-[#C20000] rounded-sm"></div>
-      <img
-        src={photo1}
-        alt="Photo 5"
-        className="w-full h-full border-2 border-[#C20000] rounded-lg object-cover"
-      />
+      {/* 2nd square */}
+      <div
+        className="relative w-36 h-40 md:w-90 md:h-96 bg-[#C20000] rounded-lg md:top-2 2xl:top-2 -top-2 animate-swing"
+        style={{ transform: "rotate(3deg)", animationDelay: "0.2s" }}
+      >
+        <div className="absolute -top-8 left-1/2 -translate-x-1/2 w-3 md:w-4 h-8 md:h-12 bg-[#C20000] rounded-sm"></div>
+        <img
+          src={photo2}
+          alt="Photo 2"
+          className="w-full h-full border-2 border-[#C20000] rounded-lg object-cover"
+        />
+      </div>
+
+      {/* 3rd square */}
+      <div
+        className="relative w-36 h-40 md:w-90 md:h-96 bg-[#C20000] rounded-lg md:top-4 2xl:top-4 top-2 animate-swing"
+        style={{ transform: "rotate(0deg)", animationDelay: "0.4s" }}
+      >
+        <div className="absolute -top-7 left-1/2 -translate-x-1/2 w-3 md:w-4 h-8 md:h-12 bg-[#C20000] rounded-sm"></div>
+        <img
+          src={photo3}
+          alt="Photo 3"
+          className="w-full h-full border-2 border-[#C20000] rounded-lg object-cover"
+        />
+      </div>
+
+      {/* 4th square */}
+      <div
+        className="relative w-36 h-40 md:w-90 md:h-96 bg-[#C20000] rounded-lg md:top-2 2xl:top-0 -top-2 animate-swing"
+        style={{ transform: "rotate(-3deg)", animationDelay: "0.6s" }}
+      >
+        <div className="absolute -top-8 left-1/2 -translate-x-1/2 w-3 md:w-4 h-8 md:h-12 bg-[#C20000] rounded-sm"></div>
+        <img
+          src={photo4}
+          alt="Photo 4"
+          className="w-full h-full border-2 border-[#C20000] rounded-lg object-cover"
+        />
+      </div>
+
+      {/* 5th square */}
+      <div
+        className="hidden md:block relative w-36 h-40 md:w-90 md:h-96 bg-[#C20000] rounded-lg md:-top-6 2xl:-top-10 animate-swing"
+        style={{ transform: "rotate(-6deg)", animationDelay: "0.8s" }}
+      >
+        <div className="absolute -top-5 left-1/2 -translate-x-1/2 w-3 md:w-4 h-8 md:h-12 bg-[#C20000] rounded-sm"></div>
+        <img
+          src={photo5}
+          alt="Photo 5"
+          className="w-full h-full border-2 border-[#C20000] rounded-lg object-cover"
+        />
+      </div>
     </div>
 
-    {/* 2nd square */}
-    <div
-      className="relative w-24 h-28 md:w-60 md:h-60 bg-[#C20000] rounded-lg md:top-1 2xl:top-1 -top-2 animate-swing"
-      style={{ transform: "rotate(3deg)", animationDelay: "0.2s" }}
-    >
-      <div className="absolute -top-4 left-1/2 -translate-x-1/2 w-2 md:w-3 h-6 md:h-9 bg-[#C20000] rounded-sm"></div>
+    <style jsx>{`
+      @keyframes swing {
+        0% {
+          transform: rotate(3deg);
+        }
+        50% {
+          transform: rotate(-3deg);
+        }
+        100% {
+          transform: rotate(3deg);
+        }
+      }
+      .animate-swing {
+        animation: swing 3s ease-in-out infinite;
+        transform-origin: top center;
+      }
+    `}</style>
+  </div>
+</motion.div>
+
+
+<motion.div
+  className="bg-[#C20000] text-white rounded-[3rem] px-9 sm:px-15 2xl:mx-15 text-center 2xl:py-26 py-24 my-24"
+  initial={{ y: 150, opacity: 1 }}
+  whileInView={{ y: 0, opacity: 1 }}
+  transition={{ duration: 0.8, ease: "easeOut" }}
+  viewport={{ once: true, amount: 0.3 }}
+>
+  {/* Heading */}
+  <h2 className="text-4xl sm:text-6xl md:text-[7.5rem] font-barber mb-24">
+    HOW TO GET YOUR HALWAI FIX
+  </h2>
+
+  {/* Grid Section */}
+  <div className="grid grid-cols-1 md:grid-cols-3 gap-18 lg:gap-30">
+    {/* Pick Your Feast */}
+    <div className="flex flex-col items-center space-y-9">
       <img
-        src={photo2}
-        alt="Photo 5"
-        className="w-full h-full border-2 border-[#C20000] rounded-lg object-cover"
+        src={Menuborder}
+        alt="Pick Your Feast"
+        className="w-30 h-30 sm:w-42 sm:h-42 md:w-48 md:h-48"
       />
+      <h3 className="font-barber text-xl sm:text-1.5xl md:text-3xl">
+        PICK YOUR FEAST
+      </h3>
+      <p className="text-base sm:text-lg leading-relaxed max-w-xs">
+        Browse through our menu full of chaats, curries, and mithais. Think
+        of it as your ticket to India, plated fresh in the UK.
+      </p>
     </div>
 
-    {/* 3rd square */}
-    <div
-      className="relative w-24 h-28 md:w-60 md:h-60 bg-[#C20000] rounded-lg md:top-2 2xl:top-2 top-2 animate-swing"
-      style={{ transform: "rotate(0deg)", animationDelay: "0.4s" }}
-    >
-      <div className="absolute -top-4 left-1/2 -translate-x-1/2 w-2 md:w-3 h-6 md:h-9 bg-[#C20000] rounded-sm"></div>
+    {/* Share Your Details */}
+    <div className="flex flex-col items-center space-y-9">
       <img
-        src={photo3}
-        alt="Photo 5"
-        className="w-full h-full border-2 border-[#C20000] rounded-lg object-cover"
+        src={ChatBorderIcon}
+        alt="Share Your Details"
+        className="w-30 h-30 sm:w-42 sm:h-42 md:w-48 md:h-48"
       />
+      <h3 className="font-barber text-xl sm:text-1.5xl md:text-3xl">
+        SHARE YOUR DETAILS
+      </h3>
+      <p className="text-base sm:text-lg leading-relaxed max-w-xs">
+        From guest count to venue vibes, just spill the beans. We’ll tailor
+        the spread so it feels made just for you.
+      </p>
     </div>
 
-    {/* 4th square */}
-    <div
-      className="relative w-24 h-28 md:w-60 md:h-60 bg-[#C20000] rounded-lg md:top-1 2xl:top-0 -top-2 animate-swing"
-      style={{ transform: "rotate(-3deg)", animationDelay: "0.6s" }}
-    >
-      <div className="absolute -top-4 left-1/2 -translate-x-1/2 w-2 md:w-3 h-6 md:h-9 bg-[#C20000] rounded-sm"></div>
+    {/* Sit Back & Savour */}
+    <div className="flex flex-col items-center space-y-9">
       <img
-        src={photo4}
-        alt="Photo 5"
-        className="w-full h-full border-2 border-[#C20000] rounded-lg object-cover"
+        src={menuborder}
+        alt="Sit Back & Savour"
+        className="w-30 h-30 sm:w-42 sm:h-42 md:w-48 md:h-48"
       />
-    </div>
-
-    {/* 5th square */}
-    <div
-      className="hidden md:block relative w-24 h-28 md:w-60 md:h-60 bg-[#C20000] rounded-lg md:-top-4 2xl:-top-7 animate-swing"
-      style={{ transform: "rotate(-6deg)", animationDelay: "0.8s" }}
-    >
-      <div className="absolute -top-4 left-1/2 -translate-x-1/2 w-2 md:w-3 h-6 md:h-9 bg-[#C20000] rounded-sm"></div>
-      <img
-        src={photo5}
-        alt="Photo 5"
-        className="w-full h-full border-2 border-[#C20000] rounded-lg object-cover"
-      />
+      <h3 className="font-barber text-xl sm:text-1.5xl md:text-3xl">
+        SIT BACK & SAVOUR
+      </h3>
+      <p className="text-base sm:text-lg leading-relaxed max-w-xs">
+        When the day arrives, we roll in with flavours and flair. You just
+        enjoy and we’ll make sure no plate leaves empty.
+      </p>
     </div>
   </div>
 
-  <style jsx>{`
-    @keyframes swing {
-      0% {
-        transform: rotate(3deg);
-      }
-      50% {
-        transform: rotate(-3deg);
-      }
-      100% {
-        transform: rotate(3deg);
-      }
-    }
-    .animate-swing {
-      animation: swing 3s ease-in-out infinite;
-      transform-origin: top center;
-    }
-  `}</style>
-</div>
+  {/* CTA Button */}
+  <Link to="/booking">
+    <motion.button
+      className="mt-16 bg-white 2xl:mt-24 text-[#C20000] px-9 sm:px-12 md:px-18 py-3 sm:py-4 md:py-6 rounded-full font-barber font-semibold text-base sm:text-lg md:text-2xl lg:text-3xl shadow-xl transition-transform duration-300 ease-in-out transform hover:scale-110 hover:bg-gray-100"
+      initial={{ opacity: 0, y: 30, scale: 0.95 }}
+      whileInView={{ opacity: 1, y: 0, scale: 1 }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
+      viewport={{ once: true }}
+    >
+      PLACE YOUR ORDER
+    </motion.button>
+  </Link>
+</motion.div>
 
-      </motion.div>
-
-      <motion.div
-        className="bg-[#C20000] text-white rounded-[3rem] px-6 sm:px-10 max-w-8xl mx-4 2xl:mx-20 text-center 2xl:py-26 py-16 my-16"
-        initial={{ y: 150, opacity: 1 }}
-        whileInView={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
-        viewport={{ once: true, amount: 0.3 }}
-      >
-        {/* Heading */}
-        <h2 className="text-3xl sm:text-4xl md:text-5xl font-barber mb-10">
-          HOW TO GET YOUR HALWAI FIX
-        </h2>
-
-        {/* Grid Section */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-20">
-          {/* Pick Your Feast */}
-          <div className="flex flex-col items-center space-y-6">
-            <img
-              src={Menuborder}
-              alt="Pick Your Feast"
-              className="w-20 h-20 sm:w-28 sm:h-28 md:w-32 md:h-32"
-            />
-            <h3 className="font-barber text-lg sm:text-xl md:text-2xl">
-              PICK YOUR FEAST
-            </h3>
-            <p className="text-sm sm:text-base leading-relaxed max-w-xs">
-              Browse through our menu full of chaats, curries, and mithais.
-              Think of it as your ticket to India, plated fresh in the UK.
-            </p>
-          </div>
-
-          {/* Share Your Details */}
-          <div className="flex flex-col items-center space-y-6">
-            <img
-              src={ChatBorderIcon}
-              alt="Share Your Details"
-              className="w-20 h-20 sm:w-28 sm:h-28 md:w-32 md:h-32"
-            />
-            <h3 className="font-barber text-lg sm:text-xl md:text-2xl">
-              SHARE YOUR DETAILS
-            </h3>
-            <p className="text-sm sm:text-base leading-relaxed max-w-xs">
-              From guest count to venue vibes, just spill the beans. We’ll
-              tailor the spread so it feels made just for you.
-            </p>
-          </div>
-
-          {/* Sit Back & Savour */}
-          <div className="flex flex-col items-center space-y-6">
-            <img
-              src={menuborder}
-              alt="Sit Back & Savour"
-              className="w-20 h-20 sm:w-28 sm:h-28 md:w-32 md:h-32"
-            />
-            <h3 className="font-barber text-lg sm:text-xl md:text-2xl">
-              SIT BACK & SAVOUR
-            </h3>
-            <p className="text-sm sm:text-base leading-relaxed max-w-xs">
-              When the day arrives, we roll in with flavours and flair. You just
-              enjoy and we’ll make sure no plate leaves empty.
-            </p>
-          </div>
-        </div>
-
-        {/* CTA Button */}
-
-        <Link to="/booking">
-          <motion.button
-            className="mt-10 bg-white 2xl:mt-16 text-[#C20000] px-6 sm:px-8 md:px-12 py-2 sm:py-3 md:py-4 rounded-full font-barber font-semibold text-sm sm:text-base md:text-lg lg:text-xl shadow-xl transition-transform duration-300 ease-in-out transform hover:scale-110 hover:bg-gray-100"
-            initial={{ opacity: 0, y: 30, scale: 0.95 }}
-            whileInView={{ opacity: 1, y: 0, scale: 1 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            viewport={{ once: true }}
-          >
-            PLACE YOUR ORDER
-          </motion.button>
-        </Link>
-      </motion.div>
-
+      
       <section className="flex flex-col items-center my-26 ">
         <h2 className="text-[#C20000] font-barber tracking-wider text-4xl md:text-6xl 2xl:text-8xl font-bold mb-6 text-center pt-16">
           THEY CRAVE IT!
