@@ -119,7 +119,7 @@ const ShCrousel = () => {
     lidTop = "39%";
     }  else if (window.innerWidth >= 1024) {
     // xl and above: map width from 1024 -> 1920 to top 36% -> 42%
-    lidTop = `${map(window.innerWidth, 1024, 1920, 36, 42)}%`;
+    lidTop = `${map(window.innerWidth, 1024, 1920, 36, 40)}%`;
     // return `${topValue}%`;
   }
   // } else if (window.innerWidth >= 1024&& window.innerWidth < 1224) {
