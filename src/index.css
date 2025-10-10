@@ -185,7 +185,9 @@ section {
     font-family: var(--font-lato); /* Default font = Lato */
   }
 }
-html, body {
+/* html, body {
   overscroll-behavior: contain;
   scroll-behavior: smooth;
-}
+} */
+/* In App.css or global CSS */
+
