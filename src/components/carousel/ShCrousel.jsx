@@ -117,20 +117,15 @@ const ShCrousel = () => {
   } else if (window.innerWidth >= 768 && window.innerWidth < 1024) {
     // lg
     lidTop = "39%";
-    }  else if (window.innerWidth >= 1024) {
-    // xl and above: map width from 1024 -> 1920 to top 36% -> 42%
-    lidTop = `${map(window.innerWidth, 1024, 1920, 36, 40)}%`;
-    // return `${topValue}%`;
+  } else if (window.innerWidth >= 1024&& window.innerWidth < 1224) {
+    // xl & 2xl
+    lidTop = "42%";
+  } else if (window.innerWidth >= 1224&& window.innerWidth < 1624) {
+    // xl & 2xl
+    lidTop = "39%";
+  }else{
+    lidTop = "33%";
   }
-  // } else if (window.innerWidth >= 1024&& window.innerWidth < 1224) {
-  //   // xl & 2xl
-  //   lidTop = "42%";
-  // } else if (window.innerWidth >= 1224&& window.innerWidth < 1624) {
-  //   // xl & 2xl
-  //   lidTop = "39%";
-  // }else{
-  //   lidTop = "33%";
-  // }
 
  }
             return (
