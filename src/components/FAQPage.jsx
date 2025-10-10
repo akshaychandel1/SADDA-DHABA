@@ -8,7 +8,7 @@ import charfoot from "../assets/icons/charfoot.svg";
 import footmob from "../assets/icons/footmob.svg";
 import { Link } from "react-router-dom";
 import cartoon from "../assets/icons/cartoon.svg";
-import faq from "../assets/icons/faq.jpeg";
+import faq from "../assets/icons/faq.jpg";
 import footdesk from "../assets/icons/footdesk.svg";
 import Footer from "./Footer";
 
@@ -66,8 +66,8 @@ export default function FAQPage() {
   });
 
   // Map scroll progress to Y translation and scale
-  const parallaxY = useTransform(parallaxScrollYProgress, [0, 1], ["-10%", "15%"]);
-  const parallaxScale = useTransform(parallaxScrollYProgress, [0, 1], [1.05, 1]);
+  const parallaxY = useTransform(parallaxScrollYProgress, [0, 1], ["-15%", "20%"]);
+  const parallaxScale = useTransform(parallaxScrollYProgress, [0, 1], [1.05, 1.08]);
 
 
   useEffect(() => {

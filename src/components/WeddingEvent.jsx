@@ -6,7 +6,7 @@ import Footer from "./Footer";
 // Replace with your actual paths
 import bookIcon from "../assets/icons/Calender.svg";
 import ringIcon from "../assets/icons/Ring.svg";
-import wed from "../assets/icons/WeddingsandEvents.jpg";
+import wed from "../assets/icons/wed.jpg";
 
 import carrotIcon from "../assets/icons/carrot.svg";
 import eggplantIcon from "../assets/icons/brinjal.svg";
@@ -26,6 +26,7 @@ import photo3 from "../assets/icons/photo-3.jpeg";
 import photo4 from "../assets/icons/photo-4.jpeg";
 import photo5 from "../assets/icons/photo-5.jpeg";
 import { Link } from "react-router-dom";
+import ShCrousel from "./carousel/ShCrousel";
 
 const testimonials = [
   {
@@ -92,12 +93,12 @@ const WeddingEvent = () => {
   const parallaxY = useTransform(
     parallaxScrollYProgress,
     [0, 1],
-    ["-20%", "20%"]
+    ["-10%", "10%"]
   );
   const parallaxScale = useTransform(
     parallaxScrollYProgress,
     [0, 1],
-    [1.05, 1]
+    [1.05, 1.08]
   );
 
   const [emblaRef] = useEmblaCarousel({ loop: true, align: "center" });
@@ -244,7 +245,7 @@ const WeddingEvent = () => {
 
       {/* SECTION 3 */}
       <section
-        ref={parallaxRef}
+        
         className="relative py-10 -mt-0.5 z-10 overflow-hidden"
       >
         {/* Half red, half white background */}
@@ -256,7 +257,7 @@ const WeddingEvent = () => {
         {/* Content */}
 
         <div className="container mx-auto px-4 relative z-20">
-          <div className="overflow-hidden shadow-xl rounded-full max-w-[90%] mx-auto">
+          <div ref={parallaxRef} className="overflow-hidden shadow-xl rounded-full max-w-[90%] mx-auto">
             <motion.div
               style={{ y: parallaxY, scale: parallaxScale }}
               className="relative w-full aspect-[1637/623]"
@@ -275,7 +276,7 @@ const WeddingEvent = () => {
       {/* SECTION 4 */}
       <div
         ref={ref}
-        className="pt-6 2xl:pt-28 2xl:pb-38 flex items-center justify-center bg-white text-[#C20000] p-2 pb-10"
+        className="pt-6 2xl:pt-28 2xl:pb-28 flex items-center justify-center bg-white text-[#C20000] p-2 pb-10"
       >
         <div className="font-barber relative inline-block my-6 text-center leading-snug text-2xl md:text-6xl 2xl:text-8xl">
           <p>
@@ -360,6 +361,51 @@ const WeddingEvent = () => {
           </motion.div>
         </div>
       </div>
+
+
+<div>
+  <h2 className="font-barber text-[#C20000] tracking-wider text-4xl md:text-6xl 2xl:text-8xl mb-2 mx-auto text-center">
+            HALWAI'S PICK
+          </h2>
+          <p className="text-[#C20000] font-bold text-xs md:text-xl 2xl:text-2xl mx-auto text-center mb-10 mt-4">
+            A handpicked collection straight from our kitchen to your plate
+            <br />
+             The recipes we’re most proud to serve, crafted with love and tradition.
+          </p>
+  <ShCrousel/>
+ <div className="flex justify-center">
+  <Link to="/menu">
+    <motion.button
+      className="mt-16 2xl:mt-24 text-white bg-[#C20000] px-9 sm:px-12 md:px-18 py-3 sm:py-4 md:py-6 rounded-full font-barber font-semibold text-base sm:text-lg md:text-2xl lg:text-3xl shadow-xl transition-transform duration-300 ease-in-out transform hover:scale-110 hover:text-gray-100"
+      initial={{ opacity: 0, y: 30, scale: 0.95 }}
+      whileInView={{ opacity: 1, y: 0, scale: 1 }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
+      viewport={{ once: true }}
+    >
+      EXPLORE MENU
+    </motion.button>
+  </Link>
+</div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
       {/* Top Border (flipped) */}
       <motion.section

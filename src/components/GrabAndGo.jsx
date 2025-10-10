@@ -22,14 +22,16 @@ import Footer from "./Footer";
 
 const GrabAndGo = () => {
   const samosaRef = useRef(null);
-  const { scrollYProgress } = useScroll({
+  
+  // Parallax effect for the samosa image
+  const { scrollYProgress: parallaxScrollYProgress } = useScroll({
     target: samosaRef,
-    offset: ["start end", "end start"], // image starts moving as it enters the viewport
+    offset: ["start end", "end start"],
   });
 
-  // You can tweak these transform values for different speeds
-  const y = useTransform(scrollYProgress, [0, 1], ["-10%", "10%"]);
-  const scale = useTransform(scrollYProgress, [0, 1], [1.05, 1]);
+  const parallaxY = useTransform(parallaxScrollYProgress, [0, 1], ["-30%", "30%"]);
+  const parallaxScale = useTransform(parallaxScrollYProgress, [0, 1], [1.05, 1]);
+
   const [is1440, setIs1440] = useState(false);
 
   useEffect(() => {
@@ -43,9 +45,10 @@ const GrabAndGo = () => {
     triggerOnce: true,
     threshold: 0.4,
   });
+
   return (
     <>
-      <div className="bg-[#C20000]  text-white  overflow-hidden -mb-px">
+      <div className="bg-[#C20000] text-white overflow-hidden -mb-px">
         <div className="relative container mx-auto px-1 py-12 md:py-20 text-center">
           {/* Header Content */}
           <motion.div className="mx-auto md:mb-0 text-center">
@@ -58,7 +61,7 @@ const GrabAndGo = () => {
                 duration: 1.2,
                 ease: [0.22, 1, 0.36, 1],
                 delay: 0.2,
-              }} // smooth ease-out cubic
+              }}
             >
               Fresh Flavors On the Go
             </motion.h1>
@@ -74,36 +77,41 @@ const GrabAndGo = () => {
                 delay: 0.2,
               }}
             >
-              Whether it’s a quick bite or a single order, we’ve got you
+              Whether it's a quick bite or a single order, we've got you
               covered.
               <br /> Step in, pick your favorite, and enjoy happiness served
               fresh.
             </motion.p>
 
+            {/* Parallax Image Container */}
             <div
-      ref={samosaRef}
-      className="rounded-[2rem] relative z-30 mt-16 px-4 md:px-6 2xl:px-0 overflow-hidden"
-    >
-      <motion.img
-        src={samosa}
-        alt="Display of various Indian sweets and chaat dishes"
-        style={{ y, scale }}
-        transition={{ type: "spring", stiffness: 50 }}
-        className="w-full object-cover object-center rounded-[2rem] shadow-lg mx-auto"
-      />
-    </div>
+              ref={samosaRef}
+              className="rounded-[2rem] relative z-30 mt-16 px-4 md:px-6 2xl:px-0 overflow-hidden"
+            >
+              <motion.div
+                style={{ y: parallaxY, scale: parallaxScale }}
+                className="w-full overflow-hidden rounded-[2rem] shadow-lg"
+                transition={{ type: "spring", stiffness: 50 }}
+              >
+                <img
+                  src={samosa}
+                  alt="Display of various Indian sweets and chaat dishes"
+                  className="w-full h-full object-cover object-center"
+                />
+              </motion.div>
+            </div>
           </motion.div>
         </div>
       </div>
 
-      <section className="bg-[#C20000] text-white py-5 md:py-20 md:pb-40 items-center -mt-px  px-5 md:px-20 ">
-        <div className="container mx-auto flex flex-col  md:flex-row items-center justify-between gap-10">
+      <section className="bg-[#C20000] text-white py-5 md:py-20 md:pb-40 items-center -mt-px px-5 md:px-20">
+        <div className="container mx-auto flex flex-col md:flex-row items-center justify-between gap-10">
           {/* Left Side: Heading & Paragraph */}
           <div className="md:w-2/3">
             <h2 className="font-barber tracking-wide text-4xl md:text-6xl 2xl:text-8xl font-bold mb-6">
               THE HALWAI WAY
             </h2>
-            <p className="mt-2 md:text-xl 2xl:text-2xl text-base  leading-relaxed text-red-100">
+            <p className="mt-2 md:text-xl 2xl:text-2xl text-base leading-relaxed text-red-100">
               Sadaq Halwai started with one simple idea – bring the magic of
               Indian street corners, wedding feasts, and mithai shops straight
               to the UK. With recipes passed down through generations, we serve
@@ -128,11 +136,11 @@ const GrabAndGo = () => {
       <div className="relative w-full h-[140px] overflow-visible bg-white">
         {/* Ribbon 1 - tilt left */}
         <div
-          className="absolute left-1/2  mt-[-59px] top-1/2 w-[360%]  h-6 2xl:h-16 -translate-x-1/2 -translate-y-1/2 bg-repeat-x"
+          className="absolute left-1/2 mt-[-59px] top-1/2 w-[360%] h-6 2xl:h-16 -translate-x-1/2 -translate-y-1/2 bg-repeat-x"
           style={{
             backgroundImage: `url(${ribbon})`,
             backgroundSize: "auto 100%",
-            transform: "rotate(-2deg)", // tilt to bottom-left
+            transform: "rotate(-2deg)",
             animation: "ribbon-marquee 18s linear infinite",
             filter: "drop-shadow(0 10px 12px rgba(0,0,0,0.25))",
             willChange: "background-position",
@@ -145,7 +153,7 @@ const GrabAndGo = () => {
           style={{
             backgroundImage: `url(${ribbon})`,
             backgroundSize: "auto 100%",
-            transform: "rotate(2deg)", // tilt to bottom-right
+            transform: "rotate(2deg)",
             animation: "ribbon-marquee 22s linear infinite reverse",
             filter: "drop-shadow(0 10px 12px rgba(0,0,0,0.25))",
             willChange: "background-position",
@@ -163,10 +171,10 @@ const GrabAndGo = () => {
         {/* Left Side (Text + Button) */}
         <div className="flex-1 py-10 text-center md:text-left md:ml-12 relative">
           <div>
-            <p className="text-xl md:text-5xl md:mb-6 mb-6">LET’S CHAT</p>
+            <p className="text-xl md:text-5xl md:mb-6 mb-6">LET'S CHAT</p>
             <h2 className="text-3xl sm:text-4xl md:text-6xl 2xl:text-8xl font-barber md:leading-[1.2] text-center md:text-left mb-6">
               TELL US YOUR PLANS, <br />
-              WE’LL BRING THE PANS
+              WE'LL BRING THE PANS
             </h2>
           </div>
 

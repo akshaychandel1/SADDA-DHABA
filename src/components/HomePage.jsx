@@ -35,10 +35,10 @@ import Img3 from "../assets/icons/Img3.jpg";
 import Img4 from "../assets/icons/Img4.jpg";
 import Img5 from "../assets/icons/Img5.jpg";
 import Img6 from "../assets/icons/Img6.jpg";
-import samosa from "../assets/icons/samosa.jpg";
 import Call from "../assets/icons/Call.png";
 import EmblaCarousel from "./carousel/EmblaCarousel";
 import "./carousel/css/embla.css";
+import ParallaxImage from "./ParallaxImage";
 
 const testimonials = [
   {
@@ -215,11 +215,7 @@ const HomePage = ({ onContactClick }) => {
             {/* White background card for food */}
             {/* <div className="absolute  md:pt-28 pb-10 shadow-2xl z-10"> */}
             <div className="relative z-30 px-4 md:px-6 2xl:px-0 ">
-              <img
-                src={samosa}
-                alt="Display of various Indian sweets and chaat dishes"
-                className="w-full object-cover object-center rounded-[2rem] shadow-lg mx-auto"
-              />
+              <ParallaxImage />
 
               {/* </div> */}
             </div>

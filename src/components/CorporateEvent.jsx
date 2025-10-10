@@ -25,6 +25,7 @@ import menuborder from "../assets/icons/MenuBorderIcon.svg";
 import TestimonialCarousel from "./carousel/TestimonialCarousel";
 import Call from "../assets/icons/Call.png";
 import CompanyTestimonials from "./carousel/CompanyTestimonials";
+import ShCrousel from "./carousel/ShCrousel";
 
 const testimonials = [
   {
@@ -95,12 +96,12 @@ const CorporateEvent = () => {
   const parallaxY = useTransform(
     parallaxScrollYProgress,
     [0, 1],
-    ["-15%", "25%"]
+    ["-15%", "15%"]
   );
   const parallaxScale = useTransform(
     parallaxScrollYProgress,
     [0, 1],
-    [1.05, 1]
+    [1.05, 1.08]
   );
 
   const [emblaRef] = useEmblaCarousel({ loop: true, align: "center" });
@@ -268,7 +269,7 @@ const CorporateEvent = () => {
       {/* SECTION 4 */}
       <div
         ref={ref}
-        className="pt-6 2xl:pt-28  2xl:pb-38 flex items-center justify-center bg-white text-[#C20000] p-2 pb-10"
+        className="pt-6 2xl:pt-28  2xl:pb-28 flex items-center justify-center bg-white text-[#C20000] p-2 pb-10"
       >
         <div className="font-barber relative inline-block my-6 text-center leading-snug text-2xl md:text-6xl 2xl:text-8xl">
           <p>
@@ -353,6 +354,43 @@ const CorporateEvent = () => {
           </motion.div>
         </div>
       </div>
+
+
+
+<div>
+  <h2 className="font-barber text-[#C20000] tracking-wider text-4xl md:text-6xl 2xl:text-8xl mb-2 mx-auto text-center">
+            HALWAI'S PICK
+          </h2>
+          <p className="text-[#C20000] font-bold text-xs md:text-xl 2xl:text-2xl mx-auto text-center mb-10 mt-4">
+            A handpicked collection straight from our kitchen to your plate
+            <br />
+             The recipes we’re most proud to serve, crafted with love and tradition.
+          </p>
+  <ShCrousel/>
+ <div className="flex justify-center">
+  <Link to="/menu">
+    <motion.button
+      className="mt-16 2xl:mt-24 text-white bg-[#C20000] px-9 sm:px-12 md:px-18 py-3 sm:py-4 md:py-6 rounded-full font-barber font-semibold text-base sm:text-lg md:text-2xl lg:text-3xl shadow-xl transition-transform duration-300 ease-in-out transform hover:scale-110 hover:text-gray-100"
+      initial={{ opacity: 0, y: 30, scale: 0.95 }}
+      whileInView={{ opacity: 1, y: 0, scale: 1 }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
+      viewport={{ once: true }}
+    >
+      EXPLORE MENU
+    </motion.button>
+  </Link>
+</div>
+
+</div>
+
+
+
+
+
+
+
+
+
 
       {/* Top Border (flipped) */}
       <motion.section
