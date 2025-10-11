@@ -14,40 +14,44 @@ import Footer from "./Footer";
 
 const faqs = [
   {
-    q: "How do I book Snacks Mahal for my event?",
-    a: "You can reach out to us via our contact form or email to book Snacks Mahal for your event.",
+    q: " How do I book Saada Halwai for my event?",
+    a: " Booking us is easy-peasy! Just reach out through our contact page or give us a call/WhatsApp. Share your event details, guest count, and menu preferences, and we’ll take care of the rest.",
   },
   {
-    q: "Do you ship foods for out-of-town orders?",
-    a: "Currently, we only deliver locally. We are working on expanding shipping soon!",
+    q: " Do you use frozen food or fresh ingredients?",
+    a: "Freshness is our mantra 🌿✨. We source farm-fresh vegetables and quality ingredients for every dish. No shortcuts, no frozen compromises, just pure, honest flavors.",
   },
   {
     q: "What types of events do you cater for?",
-    a: "We cater for birthdays, weddings, corporate events, and more.",
+    a: "From dreamy weddings 💍 to corporate gatherings 👔, birthday parties 🎉 to intimate family celebrations, if there’s a reason to feast, Saada Halwai is there. Big or small, we’ve got your tables covered.",
   },
   {
-    q: "Can you customize the menu as per our needs?",
-    a: "Yes! We specialize in customizable solutions, offering tailored vegetarian and non-vegetarian menus.",
+    q: " Can you customize the menu for my event?",
+    a: "Absolutely! Every event is unique, and so is every menu. Pick your favorites, share your theme or vibe, and we’ll curate a spread that’s perfectly tailored to your taste (and your guests’ cravings).",
+  },
+  {
+    q: "Do you offer vegetarian and vegan options?",
+    a: "Yes, we do — and proudly! Many of our dishes are naturally vegetarian, and we happily create vegan-friendly versions on request. No guest should feel left out of the feast. Good food, after all, is for everyone.",
   },
   {
     q: "How far in advance should I book?",
-    a: "We recommend booking at least 2 weeks in advance.",
+    a: "The earlier, the better! For big events like weddings, we recommend booking 2–3 months ahead. For smaller gatherings, a few weeks’ notice works. But if it’s last-minute, still call us, we’ll try our best to make it happen!",
   },
   {
-    q: "Do you provide tasting sessions before finalizing the menu?",
-    a: "Yes, we provide tasting sessions so you can finalize your menu confidently.",
+    q: " Do you provide tasting sessions before finalizing the menu?",
+    a: "Yes! We offer tasting sessions so you can experience the flavors firsthand. After all, it’s your event, the menu should feel just right for you and your guests.",
   },
   {
-    q: "Where are you based, and where do you deliver your food?",
-    a: "We are based in the city center and deliver within a 20-mile radius.",
+    q: " Where are you based, and do you cater outside your city?",
+    a: "We’re based in the UK 🇬🇧, but our halwai spirit travels far. We cater across cities and regions depending on the event scale. Just let us know your location, and we’ll confirm availability.",
   },
   {
-    q: "How do you deal with special diet concerns?",
-    a: "We accommodate allergies, vegan, and gluten-free needs — just let us know in advance.",
+    q: "How big or small of an event can you handle?",
+    a: " Whether it’s an intimate gathering of 20 or a grand celebration with thousands, Saada Halwai has the team, expertise, and flavors to match your guest list.",
   },
   {
-    q: "Do you do bulk orders for office snacks?",
-    a: "Yes! We offer bulk snack delivery for offices and events.",
+    q: "Do you also do grab-and-go or daily meals?",
+    a: " Our main focus is on events and celebrations. But for special occasions, corporate needs, or bulk daily orders, we can create custom solutions. Just ask, we’re happy to explore options with you.",
   },
 ];
 
